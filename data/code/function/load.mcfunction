@@ -19,6 +19,9 @@ scoreboard players set .32 math 32
 scoreboard players set .90 math 90
 
 scoreboard objectives add count dummy
+scoreboard objectives add stagger dummy
+scoreboard players set .stagger stagger 0
+scoreboard players set .tick stagger 0
 scoreboard objectives add timer dummy
 scoreboard players add .timer timer 1
 scoreboard objectives add id dummy
@@ -29,7 +32,7 @@ scoreboard objectives add money dummy
 scoreboard objectives add plot trigger
 scoreboard objectives add spawn trigger
 scoreboard objectives add kill_items trigger
-scoreboard objectives add wipe_plot_be_careful_it_goes_poof_no_confirm trigger
+scoreboard objectives add reload_plot trigger
 
 # default team
 team add default
@@ -48,4 +51,6 @@ say Reloaded
 schedule function code:tick 1t replace
 schedule function code:tick_1s 1s replace
 schedule function code:tick_5s 5s replace
+schedule function code:tick_1_10s 1s replace
 schedule function code:backups 1800s replace
+schedule function code:stagger 2s replace
