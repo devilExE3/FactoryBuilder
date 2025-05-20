@@ -1,0 +1,43 @@
+{
+    "type": "minecraft:entity",
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:wooden_pickaxe",
+                    "functions": [
+                        {
+                            "function": "minecraft:set_components",
+                            "components": {
+                                "minecraft:can_break": {
+                                    "predicates": [
+                                        {
+                                            "blocks": "#code:factory"
+                                        }
+                                    ],
+                                    "show_in_tooltip": false
+                                },
+                                "minecraft:custom_name": "{\"text\":\"Destroy Tool\",\"italic\":false,\"color\":\"white\"}",
+                                "minecraft:enchantments": {
+                                    "levels": {
+                                        "minecraft:efficiency": 5
+                                    },
+                                    "show_in_tooltip": false
+                                },
+                                "minecraft:enchantment_glint_override": false,
+                                "minecraft:unbreakable": {
+                                    "show_in_tooltip": false
+                                },
+                                "minecraft:lore": [
+                                    "{\"text\":\"Use to break tiles\",\"color\":\"gray\",\"italic\":false}"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

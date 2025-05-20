@@ -1,0 +1,8 @@
+{
+    "criteria": {
+        "req": {
+            "trigger": "impossible"
+        }
+    },
+    "requirements": [["req"]]
+}

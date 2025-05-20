@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:entity",
+    "pools": [{
+        "rolls": 1,
+        "entries": [{
+            "type": "item",
+            "name": "llama_spawn_egg",
+            "functions": [{
+                "function": "set_components",
+                "components": {
+                    "custom_name": "{\"text\":\"Oak Tree Farm\",\"italic\":false}",
+                    "entity_data": {
+                        "id": "marker",
+                        "Silent": true,
+                        "Tags": ["place","place.generator","place.generator.oak"]
+                    },
+                    "max_stack_size": 99,
+                    "can_place_on": {
+                        "predicates": [ { "blocks": "#code:factory_place" } ],
+                        "show_in_tooltip": false
+                    }
+                }
+            }]
+        }]
+    }]
+}

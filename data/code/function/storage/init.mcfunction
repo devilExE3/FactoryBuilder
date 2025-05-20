@@ -1,0 +1,1 @@
+function code:storage/init.macro with entity @s

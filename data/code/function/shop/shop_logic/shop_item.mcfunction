@@ -1,0 +1,50 @@
+# TODO: process item
+execute if items entity @s player.cursor *[custom_data~{shop:"conveyor"}] unless score @s money matches 10.. run tellraw @s {"text":"You don't have enough money","color":"red"}
+execute if items entity @s player.cursor *[custom_data~{shop:"conveyor"}] unless score @s money matches 10.. run playsound block.note_block.bass
+execute if items entity @s player.cursor *[custom_data~{shop:"conveyor"}] if score @s money matches 10.. run loot give @s loot code:blocks/conveyor
+execute if items entity @s player.cursor *[custom_data~{shop:"conveyor"}] if score @s money matches 10.. run playsound block.note_block.pling master @s ~ ~ ~ 1 2
+execute if items entity @s player.cursor *[custom_data~{shop:"conveyor"}] if score @s money matches 10.. run scoreboard players remove @s money 10
+
+execute if items entity @s player.cursor *[custom_data~{shop:"chute"}] unless score @s money matches 25.. run tellraw @s {"text":"You don't have enough money","color":"red"}
+execute if items entity @s player.cursor *[custom_data~{shop:"chute"}] unless score @s money matches 25.. run playsound block.note_block.bass
+execute if items entity @s player.cursor *[custom_data~{shop:"chute"}] if score @s money matches 25.. run loot give @s loot code:blocks/chute
+execute if items entity @s player.cursor *[custom_data~{shop:"chute"}] if score @s money matches 25.. run playsound block.note_block.pling master @s ~ ~ ~ 1 2
+execute if items entity @s player.cursor *[custom_data~{shop:"chute"}] if score @s money matches 25.. run scoreboard players remove @s money 25
+
+execute if items entity @s player.cursor *[custom_data~{shop:"elevator"}] unless score @s money matches 75.. run tellraw @s {"text":"You don't have enough money","color":"red"}
+execute if items entity @s player.cursor *[custom_data~{shop:"elevator"}] unless score @s money matches 75.. run playsound block.note_block.bass
+execute if items entity @s player.cursor *[custom_data~{shop:"elevator"}] if score @s money matches 75.. run loot give @s loot code:blocks/elevator
+execute if items entity @s player.cursor *[custom_data~{shop:"elevator"}] if score @s money matches 75.. run playsound block.note_block.pling master @s ~ ~ ~ 1 2
+execute if items entity @s player.cursor *[custom_data~{shop:"elevator"}] if score @s money matches 75.. run scoreboard players remove @s money 75
+
+execute if items entity @s player.cursor *[custom_data~{shop:"sell"}] unless score @s money matches 50.. run tellraw @s {"text":"You don't have enough money","color":"red"}
+execute if items entity @s player.cursor *[custom_data~{shop:"sell"}] unless score @s money matches 50.. run playsound block.note_block.bass
+execute if items entity @s player.cursor *[custom_data~{shop:"sell"}] if score @s money matches 50.. run loot give @s loot code:blocks/sell
+execute if items entity @s player.cursor *[custom_data~{shop:"sell"}] if score @s money matches 50.. run playsound block.note_block.pling master @s ~ ~ ~ 1 2
+execute if items entity @s player.cursor *[custom_data~{shop:"sell"}] if score @s money matches 50.. run scoreboard players remove @s money 50
+
+execute if items entity @s player.cursor *[custom_data~{shop:"cutter"}] unless score @s money matches 500.. run tellraw @s {"text":"You don't have enough money","color":"red"}
+execute if items entity @s player.cursor *[custom_data~{shop:"cutter"}] unless score @s money matches 500.. run playsound block.note_block.bass
+execute if items entity @s player.cursor *[custom_data~{shop:"cutter"}] if score @s money matches 500.. run loot give @s loot code:blocks/cutter
+execute if items entity @s player.cursor *[custom_data~{shop:"cutter"}] if score @s money matches 500.. run playsound block.note_block.pling master @s ~ ~ ~ 1 2
+execute if items entity @s player.cursor *[custom_data~{shop:"cutter"}] if score @s money matches 500.. run scoreboard players remove @s money 500
+
+execute if items entity @s player.cursor *[custom_data~{shop:"furnace"}] unless score @s money matches 1000.. run tellraw @s {"text":"You don't have enough money","color":"red"}
+execute if items entity @s player.cursor *[custom_data~{shop:"furnace"}] unless score @s money matches 1000.. run playsound block.note_block.bass
+execute if items entity @s player.cursor *[custom_data~{shop:"furnace"}] if score @s money matches 1000.. run loot give @s loot code:blocks/furnace
+execute if items entity @s player.cursor *[custom_data~{shop:"furnace"}] if score @s money matches 1000.. run playsound block.note_block.pling master @s ~ ~ ~ 1 2
+execute if items entity @s player.cursor *[custom_data~{shop:"furnace"}] if score @s money matches 1000.. run scoreboard players remove @s money 1000
+
+execute if items entity @s player.cursor *[custom_data~{shop:"generator.oak"}] unless score @s money matches 100.. run tellraw @s {"text":"You don't have enough money","color":"red"}
+execute if items entity @s player.cursor *[custom_data~{shop:"generator.oak"}] unless score @s money matches 100.. run playsound block.note_block.bass
+execute if items entity @s player.cursor *[custom_data~{shop:"generator.oak"}] if score @s money matches 100.. run loot give @s loot code:blocks/generator/oak
+execute if items entity @s player.cursor *[custom_data~{shop:"generator.oak"}] if score @s money matches 100.. run playsound block.note_block.pling master @s ~ ~ ~ 1 2
+execute if items entity @s player.cursor *[custom_data~{shop:"generator.oak"}] if score @s money matches 100.. run scoreboard players remove @s money 100
+
+execute if items entity @s player.cursor *[custom_data~{shop:"generator.stone"}] unless score @s money matches 500.. run tellraw @s {"text":"You don't have enough money","color":"red"}
+execute if items entity @s player.cursor *[custom_data~{shop:"generator.stone"}] unless score @s money matches 500.. run playsound block.note_block.bass
+execute if items entity @s player.cursor *[custom_data~{shop:"generator.stone"}] if score @s money matches 500.. run loot give @s loot code:blocks/generator/stone
+execute if items entity @s player.cursor *[custom_data~{shop:"generator.stone"}] if score @s money matches 500.. run playsound block.note_block.pling master @s ~ ~ ~ 1 2
+execute if items entity @s player.cursor *[custom_data~{shop:"generator.stone"}] if score @s money matches 500.. run scoreboard players remove @s money 500
+
+item replace entity @s player.cursor with air

@@ -1,0 +1,1 @@
+$data modify storage storage "$(UUID)" merge from storage storage player

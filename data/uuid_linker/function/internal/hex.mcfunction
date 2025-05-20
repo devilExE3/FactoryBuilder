@@ -1,0 +1,9 @@
+# Get the the hex value in the lookup table
+$data modify storage uuid_linker Temp.a set from storage uuid_linker Hex[$(a)]
+$data modify storage uuid_linker Temp.b set from storage uuid_linker Hex[$(b)]
+$data modify storage uuid_linker Temp.c set from storage uuid_linker Hex[$(c)]
+$data modify storage uuid_linker Temp.d set from storage uuid_linker Hex[$(d)]
+$data modify storage uuid_linker Temp.e set from storage uuid_linker Hex[$(e)]
+$data modify storage uuid_linker Temp.f set from storage uuid_linker Hex[$(f)]
+$data modify storage uuid_linker Temp.g set from storage uuid_linker Hex[$(g)]
+$data modify storage uuid_linker Temp.h set from storage uuid_linker Hex[$(h)]

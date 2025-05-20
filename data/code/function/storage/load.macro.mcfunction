@@ -1,0 +1,1 @@
+$data modify storage storage player set from storage storage "$(UUID)"

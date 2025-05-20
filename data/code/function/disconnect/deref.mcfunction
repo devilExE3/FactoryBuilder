@@ -1,0 +1,1 @@
+$data remove storage storage copy[{uuid:"$(UUID)"}]

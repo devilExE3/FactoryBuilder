@@ -1,0 +1,9 @@
+execute if entity @n[type=marker,tag=block.cutter,distance=..0.01] run function code:logic/cutter
+execute if entity @n[type=marker,tag=block.furnace,distance=..0.01] run function code:logic/furnace
+
+execute if entity @n[type=marker,tag=block.conveyor.n,distance=..0.01] positioned ~ ~ ~-1 unless entity @n[type=item_display,tag=item,distance=..0.01] run function code:logic/item.move.n
+execute if entity @n[type=marker,tag=block.conveyor.s,distance=..0.01] positioned ~ ~ ~1 unless entity @n[type=item_display,tag=item,distance=..0.01] run function code:logic/item.move.s
+execute if entity @n[type=marker,tag=block.conveyor.e,distance=..0.01] positioned ~1 ~ ~ unless entity @n[type=item_display,tag=item,distance=..0.01] run function code:logic/item.move.e
+execute if entity @n[type=marker,tag=block.conveyor.w,distance=..0.01] positioned ~-1 ~ ~ unless entity @n[type=item_display,tag=item,distance=..0.01] run function code:logic/item.move.w
+execute if entity @n[type=marker,tag=block.conveyor.u,distance=..0.01] positioned ~ ~1 ~ unless entity @n[type=item_display,tag=item,distance=..0.01] run function code:logic/item.move.u
+execute if entity @n[type=marker,tag=block.conveyor.d,distance=..0.01] positioned ~ ~-1 ~ unless entity @n[type=item_display,tag=item,distance=..0.01] run function code:logic/item.move.d

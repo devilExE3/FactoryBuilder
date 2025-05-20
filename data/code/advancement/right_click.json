@@ -1,0 +1,12 @@
+{
+    "parent": "code:trigger",
+    "criteria": {
+        "req": {
+            "trigger": "item_used_on_block"
+        }
+    },
+    "requirements": [["req"]],
+    "rewards": {
+        "function": "code:right_click"
+    }
+}
