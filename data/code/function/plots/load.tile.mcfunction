@@ -8,6 +8,7 @@ function code:plots/load.tile.offset with storage temp this
 
 # frontbone of place
 $data modify entity @n[type=marker,tag=block.this,distance=..330] data.Owner set value "$(hex)"
+$data modify entity @n[type=marker,tag=block.this,distance=..330] data.OwnerUUID set value "$(uuid)"
 $scoreboard players set @n[type=marker,tag=block.this,distance=..330] id $(id)
 tag @n[type=marker,tag=block.this,distance=..330] remove block.this
 
