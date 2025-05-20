@@ -18,7 +18,8 @@
                     "can_place_on": {
                         "blocks": "#code:factory_place"
                     },
-                    "item_model": "lime_carpet"
+                    "item_model": "lime_carpet",
+                    "minecraft:hide_additional_tooltip": {}
                 }
             }]
         }]

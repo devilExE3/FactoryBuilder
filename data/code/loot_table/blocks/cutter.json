@@ -18,7 +18,8 @@
                     "can_place_on": {
                         "blocks": "#code:factory_place"
                     },
-                    "item_model": "stonecutter"
+                    "item_model": "stonecutter",
+                    "minecraft:hide_additional_tooltip": {}
                 }
             }]
         }]

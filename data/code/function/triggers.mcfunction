@@ -9,3 +9,7 @@ scoreboard players set @a spawn 0
 execute as @a[scores={kill_items=1..}] run function code:trigger/kill_items
 scoreboard players enable @a kill_items
 scoreboard players set @a kill_items 0
+
+execute as @a[scores={wipe_plot_be_careful_it_goes_poof_no_confirm=1..}] run function code:trigger/wipe_plot
+scoreboard players enable @a wipe_plot_be_careful_it_goes_poof_no_confirm
+scoreboard players set @a wipe_plot_be_careful_it_goes_poof_no_confirm 0

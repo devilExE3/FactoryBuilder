@@ -18,7 +18,8 @@
                     "can_place_on": {
                         "blocks": "#code:factory_place"
                     },
-                    "item_model": "lodestone"
+                    "item_model": "lodestone",
+                    "minecraft:hide_additional_tooltip": {}
                 }
             }]
         }]

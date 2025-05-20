@@ -29,6 +29,7 @@ scoreboard objectives add money dummy
 scoreboard objectives add plot trigger
 scoreboard objectives add spawn trigger
 scoreboard objectives add kill_items trigger
+scoreboard objectives add wipe_plot_be_careful_it_goes_poof_no_confirm trigger
 
 # default team
 team add default

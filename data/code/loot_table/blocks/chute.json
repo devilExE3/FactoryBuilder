@@ -18,7 +18,8 @@
                     "can_place_on": {
                         "blocks": "#code:factory_place"
                     },
-                    "item_model": "hopper"
+                    "item_model": "hopper",
+                    "minecraft:hide_additional_tooltip": {}
                 }
             }]
         }]

@@ -18,7 +18,8 @@
                     "can_place_on": {
                         "blocks": "#code:factory_place"
                     },
-                    "item_model": "blast_furnace"
+                    "item_model": "blast_furnace",
+                    "minecraft:hide_additional_tooltip": {}
                 }
             }]
         }]

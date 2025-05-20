@@ -18,7 +18,8 @@
                     "can_place_on": {
                         "blocks": "#code:factory_place"
                     },
-                    "item_model": "oak_sapling"
+                    "item_model": "oak_sapling",
+                    "minecraft:hide_additional_tooltip": {}
                 }
             }]
         }]

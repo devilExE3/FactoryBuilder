@@ -33,3 +33,4 @@ data modify storage storage tiles append from storage temp this
 
 # remove block
 execute if score #backup math matches 0 run setblock ~ ~ ~ air
+execute if score #backup math matches 0 run kill @n[type=item,distance=..3,nbt={Age:0s,Item:{id:"minecraft:structure_void"}}]
