@@ -16,9 +16,9 @@
                     },
                     "max_stack_size": 99,
                     "can_place_on": {
-                        "predicates": [ { "blocks": "#code:factory_place" } ],
-                        "show_in_tooltip": false
-                    }
+                        "blocks": "#code:factory_place"
+                    },
+                    "item_model": "cobblestone"
                 }
             }]
         }]

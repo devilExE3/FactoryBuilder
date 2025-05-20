@@ -8,6 +8,8 @@ gamerule doDaylightCycle false
 gamerule doWeatherCycle false
 gamerule randomTickSpeed 0
 gamerule maxCommandChainLength 2147483647
+gamerule maxCommandForkCount 2147483647
+gamerule fallDamage false
 
 # objectives
 scoreboard objectives add math dummy
