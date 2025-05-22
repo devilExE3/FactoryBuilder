@@ -26,8 +26,9 @@ execute as @s[tag=place.generator] run function code:blocks/place.generator
 
 execute as @p[tag=rc] run function uuid_linker:get_uuid
 data modify entity @n[type=marker,tag=block.this,distance=..1] data.Owner set from storage minecraft:uuid_linker UUID.HexString
-data modify entity @n[type=marker,tag=block.this,distance=..1] data.OwnerUUID set from storage minecraft:uuid_linker UUID.IntArray
+    data modify entity @n[type=marker,tag=block.this,distance=..1] data.OwnerUUID set from entity @p[tag=rc] UUID
 scoreboard players operation @n[type=marker,tag=block.this,distance=..1] id = @p[tag=rc] id
+execute as @n[type=marker,tag=block.this,distance=..1] run function code:blocks/util/stagger
 tag @n[type=marker,tag=block.this,distance=..1] remove block.this
 
 kill @s

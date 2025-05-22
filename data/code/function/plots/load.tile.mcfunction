@@ -10,6 +10,7 @@ function code:plots/load.tile.offset with storage temp this
 $data modify entity @n[type=marker,tag=block.this,distance=..330] data.Owner set value "$(hex)"
 $data modify entity @n[type=marker,tag=block.this,distance=..330] data.OwnerUUID set value $(uuid)
 $scoreboard players set @n[type=marker,tag=block.this,distance=..330] id $(id)
+execute as @n[type=marker,tag=block.this,distance=..330] run function code:blocks/util/stagger
 tag @n[type=marker,tag=block.this,distance=..330] remove block.this
 
 data remove storage storage tiles[0]

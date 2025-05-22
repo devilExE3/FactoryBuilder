@@ -3,6 +3,7 @@ tellraw @s "Welcome to Factory Builder!"
 scoreboard players operation @s timer = .timer timer
 execute unless score @s id matches 0.. run function code:assign_id
 function code:storage/init
+execute unless score @s plot_fix matches 1 run function code:joined.fixplot
 
 advancement revoke @s through code:trigger
 

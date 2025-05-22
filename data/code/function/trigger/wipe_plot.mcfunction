@@ -1,0 +1,6 @@
+tag @s add score
+execute as @e[type=marker,tag=block] if score @s id = @p[tag=score] id at @s run setblock ~ ~ ~ air destroy
+tag @s remove score
+
+function code:destroied
+tellraw @s {"text":"Your plot has been wiped!","color":"green"}
