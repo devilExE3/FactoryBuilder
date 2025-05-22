@@ -10,6 +10,7 @@ gamerule randomTickSpeed 0
 gamerule maxCommandChainLength 2147483647
 gamerule maxCommandForkCount 2147483647
 gamerule fallDamage false
+gamerule announceAdvancements false
 
 # objectives
 scoreboard objectives add math dummy
@@ -17,6 +18,8 @@ scoreboard players set .2 math 2
 scoreboard players set .4 math 4
 scoreboard players set .32 math 32
 scoreboard players set .90 math 90
+scoreboard objectives add plot.x dummy
+scoreboard objectives add plot.y dummy
 
 scoreboard objectives add count dummy
 scoreboard objectives add stagger dummy
@@ -29,8 +32,8 @@ scoreboard objectives add id dummy
 execute unless score .last_id id matches 0.. run scoreboard players set .last_id id 0
 scoreboard objectives add money dummy
 
-# band aid
-scoreboard objectives add plot_fix dummy
+# band aid 2
+scoreboard objectives add plot_fix2 dummy
 
 scoreboard objectives add used.pickaxe used:wooden_pickaxe
 

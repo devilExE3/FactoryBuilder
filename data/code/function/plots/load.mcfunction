@@ -8,4 +8,6 @@ function code:plots/load.offset with storage storage player.plot
 data remove storage storage player.plot.uuid
 data remove storage storage player.plot.hex
 
+# if any blocks are improperly placed
+function code:destroied
 tellraw @s {"text":"Your plot has been loaded.","color":"light_purple"}

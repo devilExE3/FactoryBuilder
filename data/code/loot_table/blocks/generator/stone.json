@@ -16,10 +16,12 @@
                     },
                     "max_stack_size": 99,
                     "can_place_on": {
-                        "blocks": "#code:factory_place"
+                        "predicates": [{
+                            "blocks": "#code:factory_place"
+                        }],
+                        "show_in_tooltip": false
                     },
-                    "item_model": "cobblestone",
-                    "minecraft:hide_additional_tooltip": {}
+                    "item_model": "cobblestone"
                 }
             }]
         }]

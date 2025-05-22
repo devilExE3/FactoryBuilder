@@ -1,6 +1,6 @@
 setblock ~ ~ ~ tripwire
-summon block_display ~.5 ~.5 ~.5 {block_state:{Name:"white_concrete"},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[.1f,.3f,.8f],translation:[.4f,-.5f,-.4f]},Tags:["block"]}
-summon block_display ~.5 ~.5 ~.5 {block_state:{Name:"white_concrete"},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[.9f,.3f,.1f],translation:[-.4f,-.5f,.4f]},Tags:["block"]}
-summon block_display ~.5 ~.5 ~.5 {block_state:{Name:"white_concrete"},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[.1f,.3f,.9f],translation:[-.5f,-.5f,-.4f]},Tags:["block"]}
-summon block_display ~.5 ~.5 ~.5 {block_state:{Name:"white_concrete"},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[1f,.3f,.1f],translation:[-.5f,-.5f,-.5f]},Tags:["block"]}
+summon block_display ~.5 ~.5 ~.5 {block_state:{Name:"white_concrete"},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[.1f,.3f,.8f],translation:[.4f,-.5f,-.4f]},Tags:["block"],view_range:0.15}
+summon block_display ~.5 ~.5 ~.5 {block_state:{Name:"white_concrete"},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[.9f,.3f,.1f],translation:[-.4f,-.5f,.4f]},Tags:["block"],view_range:0.15}
+summon block_display ~.5 ~.5 ~.5 {block_state:{Name:"white_concrete"},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[.1f,.3f,.9f],translation:[-.5f,-.5f,-.4f]},Tags:["block"],view_range:0.15}
+summon block_display ~.5 ~.5 ~.5 {block_state:{Name:"white_concrete"},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[1f,.3f,.1f],translation:[-.5f,-.5f,-.5f]},Tags:["block"],view_range:0.15}
 summon marker ~.5 ~.5 ~.5 {Tags:["block","block.chute","block.conveyor.d","block.this"]}

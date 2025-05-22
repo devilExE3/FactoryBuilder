@@ -21,7 +21,7 @@ scoreboard players add arg2 math 1
 execute if score arg1 math < n math if score n math <= arg2 math run function code:math/id_to_coords.3
 execute if score arg1 math < n math if score n math <= arg2 math run return 0
 scoreboard players set x math 0
-scoreboard players operation x math -= nath math
+scoreboard players operation x math -= nhat math
 scoreboard players operation x math /= .2 math
 scoreboard players remove x math 1
 scoreboard players operation y math = x math
