@@ -36,6 +36,7 @@ scoreboard objectives add money dummy
 scoreboard objectives add plot_fix2 dummy
 
 scoreboard objectives add used.pickaxe used:wooden_pickaxe
+scoreboard objectives add shop_page dummy
 
 # triggers
 scoreboard objectives add plot trigger
@@ -43,17 +44,26 @@ scoreboard objectives add spawn trigger
 scoreboard objectives add kill_items trigger
 scoreboard objectives add reload_plot trigger
 scoreboard objectives add wipe_plot_be_careful_it_goes_poof_no_confirm trigger
+scoreboard objectives add spec trigger
 
 # default team
 team add default
 team modify default collisionRule never
 team modify default friendlyFire false
 
+team add spec_head
+team modify spec_head prefix {"text":"<SPEC> ","color": "gray"}
+
 # auxiliary blocks
 forceload add 29999999 0
 setblock 29999999 -64 0 bedrock
 setblock 29999999 -63 0 oak_sign
 function code:shop_pages
+
+# purge plots
+execute as @e[type=marker,tag=block] at @s run setblock ~ ~ ~ air
+execute as @e[type=marker,tag=block] at @s run kill @n[type=item,distance=..3,nbt={Age:0s,Item:{id:"minecraft:structure_void"}}]
+# TODO: save block to player
 
 say Reloaded
 
@@ -63,3 +73,6 @@ schedule function code:tick_1s 1s replace
 schedule function code:tick_1_10s 1s replace
 schedule function code:backups 1800s replace
 schedule function code:stagger 2s replace
+
+tp @e[type=chest_minecart,tag=shop] 0 -64 0
+kill @e[type=chest_minecart,tag=shop]

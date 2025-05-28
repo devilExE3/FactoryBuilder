@@ -5,3 +5,4 @@ execute if items entity @s container.* *[custom_data~{shop_item:1b}] run functio
 
 clear @s *[custom_data~{shop_item:1b}]
 clear @s light_gray_stained_glass_pane
+clear @s black_stained_glass_pane

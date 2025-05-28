@@ -1,4 +1,8 @@
 # TODO: process item
+
+execute if items entity @s player.cursor *[custom_data~{next_page:1b}] run scoreboard players add @s shop_page 1
+execute if items entity @s player.cursor *[custom_data~{prev_page:1b}] run scoreboard players remove @s shop_page 1
+
 execute if items entity @s player.cursor *[custom_data~{shop:"conveyor"}] unless score @s money matches 10.. run tellraw @s {"text":"You don't have enough money","color":"red"}
 execute if items entity @s player.cursor *[custom_data~{shop:"conveyor"}] unless score @s money matches 10.. run playsound block.note_block.bass
 execute if items entity @s player.cursor *[custom_data~{shop:"conveyor"}] if score @s money matches 10.. run loot give @s loot code:blocks/conveyor

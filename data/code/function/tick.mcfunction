@@ -18,3 +18,5 @@ execute as @a at @s run function code:shop/tick
 
 execute as @a if score @s used.pickaxe matches 1.. run function code:destroied
 scoreboard players reset @a used.pickaxe
+
+execute as @a[gamemode=spectator] at @s anchored eyes rotated ~ ~ run function code:tick.spec
