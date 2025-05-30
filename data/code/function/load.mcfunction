@@ -61,11 +61,11 @@ setblock 29999999 -63 0 oak_sign
 function code:shop_pages
 
 # purge plots
-execute as @e[type=marker,tag=block] at @s run setblock ~ ~ ~ air
-execute as @e[type=marker,tag=block] at @s run kill @n[type=item,distance=..3,nbt={Age:0s,Item:{id:"minecraft:structure_void"}}]
-# TODO: save block to player
-
+scoreboard players set purged math 0
+execute as @e[type=marker,tag=block] at @s run function code:plots/purge
+function code:destroied
 say Reloaded
+tellraw @a [{"text":"\u2139 ","color":"green"},{"text":"Purged ","color":"white"},{"score": {"name": "purged","objective": "math"},"color": "green"},{"text": " stray blocks.","color":"white"}]
 
 # tick functions
 schedule function code:tick 1t replace
