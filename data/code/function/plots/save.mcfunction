@@ -9,7 +9,8 @@ data modify storage storage player.tiles set from storage storage tiles
 
 # remove all items from plot
 $execute if score #backup math matches 0 run kill @e[type=item_display,tag=item,scores={id=$(id)}]
-$execute positioned $(x) 0 $(y) run data modify block ~2 ~1 ~2 front_text.messages[3] set value '{"text":"Offline","color":"red"}'
+# remove plot
+$execute if score #backup math matches 0 positioned $(x) 0 $(y) run fill ~ ~ ~ ~31 ~ ~31 air
 
 # run destroied
 execute if score #backup math matches 0 run function code:destroied

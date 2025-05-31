@@ -18,6 +18,7 @@ scoreboard players set .2 math 2
 scoreboard players set .4 math 4
 scoreboard players set .32 math 32
 scoreboard players set .90 math 90
+scoreboard players set playercount math 0
 scoreboard objectives add plot.x dummy
 scoreboard objectives add plot.y dummy
 
@@ -70,7 +71,6 @@ tellraw @a [{"text":"\u2139 ","color":"green"},{"text":"Purged ","color":"white"
 # tick functions
 schedule function code:tick 1t replace
 schedule function code:tick_1s 1s replace
-schedule function code:tick_1_10s 1s replace
 schedule function code:backups 1800s replace
 schedule function code:stagger 2s replace
 

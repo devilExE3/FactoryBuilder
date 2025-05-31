@@ -1,9 +1,23 @@
 tellraw @s "Welcome to Factory Builder!"
 
 scoreboard players operation @s timer = .timer timer
-execute unless score @s id matches 1.. run function code:assign_id
+scoreboard players set .ID id 1
+function code:assign_id
+tellraw @s [{"text": "\u2139 Assigned plot ID: ","color": "aqua"},{"score": {"name": "@s","objective": "id"},"color": "aqua"}]
 function code:storage/init
-execute unless score @s plot_fix2 matches 1 run function code:joined.fixplot
+
+# calculate plot
+function code:storage/load
+scoreboard players operation n math = @s id
+function code:math/id_to_coords
+scoreboard players operation @s plot.x = x math
+scoreboard players operation @s plot.x *= .32 math
+scoreboard players operation @s plot.y = y math
+scoreboard players operation @s plot.y *= .32 math
+execute store result storage storage player.plot.x int 32 run scoreboard players get x math
+execute store result storage storage player.plot.y int 32 run scoreboard players get y math
+execute store result storage storage player.plot.id int 1 run scoreboard players get @s id
+function code:storage/save
 
 advancement revoke @s through code:trigger
 
@@ -13,5 +27,4 @@ effect give @s night_vision infinite 0 true
 team join default @s
 
 execute unless score @s money matches 0.. run scoreboard players set @s money 0
-function code:storage/load
 function code:plots/load

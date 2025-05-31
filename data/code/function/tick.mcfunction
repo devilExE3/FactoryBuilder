@@ -9,9 +9,9 @@ function code:triggers
 execute as @a run function code:plots/in_plot
 
 # check for players that left
-data modify storage storage copy set from storage storage online
-execute as @a run function code:disconnect/deref with entity @s
-execute if data storage storage copy[0] run function code:disconnect/disconnected with storage storage copy[0]
+scoreboard players operation old_playercount math = playercount math
+execute store result score playercount math if entity @a
+execute if score old_playercount math > playercount math run function code:disconnect/run
 
 execute as @a[gamemode=adventure] at @s run function code:inventory
 execute as @a at @s run function code:shop/tick
