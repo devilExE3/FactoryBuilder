@@ -2,6 +2,7 @@ tellraw @s "Welcome to Factory Builder!"
 
 scoreboard players operation @s timer = .timer timer
 scoreboard players set .ID id 1
+scoreboard players set @s id 0
 function code:assign_id
 tellraw @s [{"text": "\u2139 Assigned plot ID: ","color": "aqua"},{"score": {"name": "@s","objective": "id"},"color": "aqua"}]
 function code:storage/init
@@ -28,3 +29,4 @@ team join default @s
 
 execute unless score @s money matches 0.. run scoreboard players set @s money 0
 function code:plots/load
+tp @s 0 1 0 -45 0

@@ -3,6 +3,7 @@ execute unless items entity @s weapon.mainhand nether_star as @s[tag=holding_sho
 
 tag @s add old_score
 execute as @s[tag=holding_shop] as @n[type=chest_minecart,tag=shop,distance=..15] if score @s id = @p[tag=old_score] id run function code:shop/shop_logic/minecart_tick
+#execute as @s[tag=holding_shop] as @n[type=interaction,tag=shop.interaction,distance=..15] if score @s id = @p[tag=old_score] id run tp @s ~ ~-.3 ~
 tag @s remove old_score
 
 execute as @s[tag=holding_shop] run function code:shop/shop_logic/tick

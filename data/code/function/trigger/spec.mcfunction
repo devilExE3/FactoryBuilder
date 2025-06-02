@@ -4,3 +4,4 @@ tag @s remove executor
 execute as @s[gamemode=spectator] run return run gamemode adventure @s
 function code:trigger/spec.make_head
 gamemode spectator @s
+tellraw @s [{"text":"\u2139 You can leave spectator mode by using ","color": "yellow"},{"text":"/trigger spec","underlined": true,"clickEvent": {"action": "run_command","value": "/trigger spec"},"color": "white"},{"text": " again","color": "yellow"}]
