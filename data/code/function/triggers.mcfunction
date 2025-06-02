@@ -21,3 +21,7 @@ scoreboard players set @a wipe_plot_be_careful_it_goes_poof_no_confirm 0
 execute as @a[scores={spec=1..}] at @s run function code:trigger/spec
 scoreboard players enable @a spec
 scoreboard players set @a spec 0
+
+execute as @a[scores={shrink=1..}] at @s run function code:trigger/shrink
+scoreboard players enable @a shrink
+scoreboard players set @a shrink 0

@@ -4,7 +4,7 @@ gamerule mobGriefing false
 gamerule doFireTick false
 gamerule doImmediateRespawn true
 gamerule keepInventory true
-gamerule doDaylightCycle false
+gamerule doDaylightCycle true
 gamerule doWeatherCycle false
 gamerule randomTickSpeed 0
 gamerule maxCommandChainLength 2147483647
@@ -33,6 +33,8 @@ scoreboard objectives add id dummy
 execute unless score .last_id id matches 0.. run scoreboard players set .last_id id 0
 scoreboard objectives add money dummy
 
+scoreboard objectives add stats.playtime dummy
+
 # band aid 2
 scoreboard objectives add plot_fix2 dummy
 
@@ -46,6 +48,7 @@ scoreboard objectives add kill_items trigger
 scoreboard objectives add reload_plot trigger
 scoreboard objectives add wipe_plot_be_careful_it_goes_poof_no_confirm trigger
 scoreboard objectives add spec trigger
+scoreboard objectives add shrink trigger
 
 # default team
 team add default
