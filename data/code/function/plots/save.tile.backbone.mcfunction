@@ -6,5 +6,4 @@ execute as @s[tag=block.sell] run data modify storage temp this.id set value "se
 execute as @s[tag=block.cutter] run data modify storage temp this.id set value "cutter"
 execute as @s[tag=block.furnace] run data modify storage temp this.id set value "furnace"
 
-execute as @s[tag=block.generator.oak] run data modify storage temp this.id set value "generator.oak"
-execute as @s[tag=block.generator.stone] run data modify storage temp this.id set value "generator.stone"
+execute as @s[tag=block.generator] run function code:plots/save.tile.backbone.generator

@@ -9,8 +9,7 @@ execute as @s[tag=block.sell] run loot replace entity @n[type=item,tag=item.targ
 execute as @s[tag=block.cutter] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/cutter
 execute as @s[tag=block.furnace] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/furnace
 
-execute as @s[tag=block.generator.oak] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/generator/oak
-execute as @s[tag=block.generator.stone] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/generator/stone
+execute as @s[tag=block.generator] run function code:blocks/destroy.generator
 
 tag @n[type=item,tag=item.target,distance=..3] add item.target
 kill @n[type=item_display,tag=item,distance=..0.01]

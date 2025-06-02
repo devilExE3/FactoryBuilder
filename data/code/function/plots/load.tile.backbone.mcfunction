@@ -6,5 +6,4 @@ execute if data storage temp this{id:"sell"} run function code:blocks/backbone/s
 execute if data storage temp this{id:"cutter"} run function code:blocks/backbone/cutter
 execute if data storage temp this{id:"furnace"} run function code:blocks/backbone/furnace
 
-execute if data storage temp this{id:"generator.oak"} run function code:blocks/backbone/generator/oak
-execute if data storage temp this{id:"generator.stone"} run function code:blocks/backbone/generator/stone
+function code:plots/load.tile.backbone.generator

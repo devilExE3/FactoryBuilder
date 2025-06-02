@@ -25,7 +25,11 @@ advancement revoke @s through code:trigger
 effect clear @s
 effect give @s saturation infinite 0 true
 effect give @s night_vision infinite 0 true
+attribute @s minecraft:attack_damage base set 0
 team join default @s
+execute as @s[tag=is_am] run team join am @s
+execute as @s[tag=is_fm] run team join fm @s
+execute as @s[tag=is_owner] run team join dev @s
 
 execute unless score @s money matches 0.. run scoreboard players set @s money 0
 function code:plots/load

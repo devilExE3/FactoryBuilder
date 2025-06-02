@@ -50,13 +50,25 @@ scoreboard objectives add wipe_plot_be_careful_it_goes_poof_no_confirm trigger
 scoreboard objectives add spec trigger
 scoreboard objectives add shrink trigger
 
-# default team
+# default teams
 team add default
 team modify default collisionRule never
-team modify default friendlyFire false
 
 team add spec_head
 team modify spec_head prefix {"text":"<SPEC> ","color": "gray"}
+
+# prefix teams
+team add dev
+team modify dev collisionRule never
+team modify dev prefix {"text":"ᴅᴇᴠ ","color":"red"}
+
+team add am
+team modify am collisionRule never
+team modify am prefix {"text":"ᴀᴍ ","color":"#96f9b2"}
+
+team add fm
+team modify fm collisionRule never
+team modify fm prefix {"text":"ꜰᴍ ","color":"#8686fb"}
 
 # auxiliary blocks
 forceload add 29999999 0
@@ -70,6 +82,8 @@ execute as @e[type=marker,tag=block] at @s run function code:plots/purge
 function code:destroied
 say Reloaded
 tellraw @a [{"text":"\u2139 ","color":"green"},{"text":"Purged ","color":"white"},{"score": {"name": "purged","objective": "math"},"color": "green"},{"text": " stray blocks.","color":"white"}]
+
+kill @e[type=item_display,tag=item]
 
 # tick functions
 schedule function code:tick 1t replace
