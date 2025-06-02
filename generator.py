@@ -127,7 +127,7 @@ with open("data/code/function/plots/save.tile.backbone.generator.mcfunction", "w
 # logic/generator.item
 with open("data/code/function/logic/generator.item.mcfunction", "w") as f:
     for gen in GENERATORS:
-        f.write("""execute as @s[tag=block.generator.%id%] unless entity @n[type=item_display,tag=item,distance=..0.01] run summon item_display ~ ~ ~ {item:{id:"%output%",count:1},teleport_duration:20,Tags:["item","item.this"]}""".replace("%id%", gen["id"]).replace("%output%", gen["output"]))
+        f.write("""execute as @s[tag=block.generator.%id%] unless entity @n[type=item_display,tag=item,distance=..0.01] run summon item_display ~ ~ ~ {item:{id:"%output%",count:1},teleport_duration:20,Tags:["item","item.this"]}\n""".replace("%id%", gen["id"]).replace("%output%", gen["output"]))
         if not gen["output"] in ITEMS:
             print("[gen] Unpriced item " + gen["output"])
 
