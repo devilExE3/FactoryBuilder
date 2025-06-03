@@ -15,12 +15,12 @@ scoreboard players operation @s plot.x = #x math
 scoreboard players operation @s plot.x *= #32 math
 scoreboard players operation @s plot.y = #y math
 scoreboard players operation @s plot.y *= #32 math
-execute store result storage storage player.plot.x int 32 run scoreboard players get #x math
-execute store result storage storage player.plot.y int 32 run scoreboard players get #y math
-execute store result storage storage player.plot.id int 1 run scoreboard players get @s id
+execute store result storage player player.plot.x int 32 run scoreboard players get #x math
+execute store result storage player player.plot.y int 32 run scoreboard players get #y math
+execute store result storage player player.plot.id int 1 run scoreboard players get @s id
 
 # update player name
-execute if data entity @s bukkit run data modify storage storage player.name set from entity @s bukkit.lastKnownName
+execute if data entity @s bukkit run data modify storage player player.name set from entity @s bukkit.lastKnownName
 execute unless data entity @s bukkit positioned 0 0 0 run function code:joined.vanilla_name
 
 function code:storage/save

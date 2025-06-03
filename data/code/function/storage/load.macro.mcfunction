@@ -1,1 +1,1 @@
-$data modify storage storage player set from storage storage "$(UUID)"
+$data modify storage player player set from storage storage "$(UUID)"

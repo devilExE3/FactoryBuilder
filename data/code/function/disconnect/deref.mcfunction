@@ -1,1 +1,1 @@
-$data remove storage storage copy[{uuid:"$(UUID)"}]
+$data remove storage online copy[{uuid:"$(UUID)"}]

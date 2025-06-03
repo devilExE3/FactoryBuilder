@@ -20,7 +20,7 @@ execute as @s[tag=block.conveyor.w] run data modify storage temp this.direction 
 execute as @s[tag=block.conveyor.s] run data modify storage temp this.direction set value 2
 execute as @s[tag=block.conveyor.e] run data modify storage temp this.direction set value 3
 
-data modify storage storage tiles append from storage temp this
+data modify storage tiles tiles append from storage temp this
 
 # remove block
 execute if score #backup math matches 0 run setblock ~ ~ ~ air

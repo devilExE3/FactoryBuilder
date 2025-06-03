@@ -1,7 +1,7 @@
 # calculate plot x / y
-data modify storage storage player.tiles set value []
+data modify storage player player.tiles set value []
 function code:storage/save
-function code:plots/generate.macro with storage storage player.plot
+function code:plots/generate.macro with storage player player.plot
 
 # hello thing
 loot give @s loot code:blocks/generator/oak

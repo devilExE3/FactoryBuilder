@@ -1,1 +1,1 @@
-$data modify storage storage "$(UUID)" merge from storage storage player
+$data modify storage storage "$(UUID)" set from storage player player

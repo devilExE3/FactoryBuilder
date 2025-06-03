@@ -2,7 +2,7 @@
 
 scoreboard players add #tiles math 1
 
-data modify storage temp this set from storage storage tiles[0]
+data modify storage temp this set from storage tiles tiles[0]
 # prepare direction score
 execute store result score #direction math run data get storage temp this.direction
 # run backbone for tile
@@ -15,5 +15,5 @@ $scoreboard players set @n[type=marker,tag=block.this,distance=..330] id $(id)
 execute as @n[type=marker,tag=block.this,distance=..330] run function code:blocks/util/stagger
 tag @n[type=marker,tag=block.this,distance=..330] remove block.this
 
-data remove storage storage tiles[0]
-execute if data storage storage tiles[0] run function code:plots/load.tile with storage storage player.plot
+data remove storage tiles tiles[0]
+execute if data storage tiles tiles[0] run function code:plots/load.tile with storage player player.plot
