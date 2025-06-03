@@ -34,3 +34,4 @@ execute as @s[tag=is_owner] run team join dev @s
 execute unless score @s money matches 0.. run scoreboard players set @s money 0
 function code:plots/load
 tp @s 0 1 0 -45 0
+gamemode adventure @s

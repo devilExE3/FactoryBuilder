@@ -1,0 +1,2 @@
+$data modify block ~2 ~1 ~2 front_text.messages[2] set value '{"text":"$(lastKnownName)","color":"white"}'
+$data modify block ~2 ~1 ~2 front_text.messages[3] set value '[{"text":"Plot ID ","color": "aqua"},{"score":{"name": "$(lastKnownName)","objective": "id"},"color": "aqua","bold": true}]'
