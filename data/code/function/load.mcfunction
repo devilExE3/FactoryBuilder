@@ -99,3 +99,6 @@ schedule function code:stagger 2s replace
 
 tp @e[type=chest_minecart,tag=shop] 0 -64 0
 kill @e[type=chest_minecart,tag=shop]
+
+# reset online list
+data modify storage online online set value []

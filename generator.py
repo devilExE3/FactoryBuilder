@@ -112,9 +112,12 @@ with open("data/code/function/blocks/destroy.generator.mcfunction", "w") as f:
     for gen in GENERATORS:
         f.write("execute as @s[tag=block.generator.%id%] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/generator/%id%\n".replace("%id%", gen['id']))
 # block/place.generator
-with open("data/code/function/blocks/place.generator.mcfunction", "w") as f:
+with open("data/code/function/blocks/place.generator.loot.mcfunction", "w") as f:
     for gen in GENERATORS:
-        f.write("execute as @s[tag=place.generator.%id%] if score #can_place math matches 0 run loot give @p[tag=rc] loot code:blocks/generator/%id%\nexecute as @s[tag=place.generator.%id%] if score #can_place math matches 1 run function code:blocks/frontbone/generator/%id%\n".replace("%id%", gen["id"]))
+        f.write("execute as @s[tag=place.generator.%id%] run loot give @p[tag=rc] loot code:blocks/generator/%id%\n".replace("%id%", gen["id"]))
+with open("data/code/function/blocks/place.generator.block.mcfunction", "w") as f:
+    for gen in GENERATORS:
+        f.write("execute as @s[tag=place.generator.%id%] run function code:blocks/frontbone/generator/%id%\n".replace("%id%", gen["id"]))
 # load.tile.backbone.generator
 with open("data/code/function/plots/load.tile.backbone.generator.mcfunction", "w") as f:
     for gen in GENERATORS:
@@ -158,3 +161,8 @@ with open("data/code/function/logic/furnace.recipes.mcfunction", "w") as f:
                 .replace("%input%", recipe["input"]).replace("%output%", recipe["output"]))
         if not recipe["output"] in ITEMS:
             print("[recipe/furnace] Unpriced item " + recipe["output"])
+
+# generate shop for generators
+# page 0 is hardcoded
+#pages = 0
+#for gen in GENERATORS:

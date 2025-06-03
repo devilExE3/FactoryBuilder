@@ -47,4 +47,4 @@ tag @s remove holding_shop
 tag @s remove shrinked
 attribute @s scale base set 1
 
-execute positioned 0 1 0 run function code:reload_inventory
+execute at @s run function code:reload_inventory
