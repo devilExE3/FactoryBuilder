@@ -6,7 +6,10 @@
 
         "lime_carpet",
         "stonecutter",
-        "blast_furnace",
+        "light_gray_stained_glass",
+        "gray_stained_glass",
+        "black_stained_glass",
+        "white_stained_glass",
         "#code:generators"
     ]
 }

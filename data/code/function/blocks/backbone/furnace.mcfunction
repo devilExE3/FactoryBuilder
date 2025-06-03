@@ -1,7 +1,7 @@
-execute if score #direction math matches 0 run setblock ~ ~ ~ blast_furnace[facing=north,lit=true]
-execute if score #direction math matches 1 run setblock ~ ~ ~ blast_furnace[facing=west,lit=true]
-execute if score #direction math matches 2 run setblock ~ ~ ~ blast_furnace[facing=south,lit=true]
-execute if score #direction math matches 3 run setblock ~ ~ ~ blast_furnace[facing=east,lit=true]
+execute if score #direction math matches 0 run setblock ~ ~ ~ light_gray_stained_glass
+execute if score #direction math matches 1 run setblock ~ ~ ~ gray_stained_glass
+execute if score #direction math matches 2 run setblock ~ ~ ~ black_stained_glass
+execute if score #direction math matches 3 run setblock ~ ~ ~ white_stained_glass
 
 data modify block ~ ~ ~ lock set value {items:"minecraft:command_block",components:{"minecraft:custom_data":{__locked__:1b}}}
 
