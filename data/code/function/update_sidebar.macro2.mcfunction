@@ -1,1 +1,1 @@
-$scoreboard players display name #1 sidebar [{"text":"TPS: ","color": "gray"},{"text":"$(value)","color": "gold"}]
+$scoreboard players display name .2 sidebar [{"text":"TPS: ","color": "gray"},{"text":"$(value)","color": "gold"}]
