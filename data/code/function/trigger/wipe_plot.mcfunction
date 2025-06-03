@@ -4,3 +4,5 @@ tag @s remove score
 
 function code:destroied
 tellraw @s {"text":"Your plot has been wiped!","color":"green"}
+
+scoreboard players set @s wipe_plot 0

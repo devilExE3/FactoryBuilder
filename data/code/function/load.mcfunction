@@ -11,6 +11,9 @@ gamerule maxCommandChainLength 2147483647
 gamerule maxCommandForkCount 2147483647
 gamerule fallDamage false
 gamerule announceAdvancements false
+gamerule commandBlockOutput false
+gamerule disableElytraMovementCheck true
+gamerule disablePlayerMovementCheck true
 
 # objectives
 scoreboard objectives add math dummy
@@ -45,7 +48,7 @@ scoreboard objectives add plot trigger
 scoreboard objectives add spawn trigger
 scoreboard objectives add kill_items trigger
 scoreboard objectives add reload_plot trigger
-scoreboard objectives add wipe_plot_be_careful_it_goes_poof_no_confirm trigger
+scoreboard objectives add wipe_plot trigger
 scoreboard objectives add spec trigger
 scoreboard objectives add shrink trigger
 
