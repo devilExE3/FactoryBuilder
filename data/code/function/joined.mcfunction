@@ -4,7 +4,7 @@ scoreboard players operation @s timer = #timer timer
 scoreboard players set #ID id 1
 scoreboard players set @s id 0
 function code:assign_id
-tellraw @s [{"text": "\u2139 Assigned plot ID: ","color": "aqua"},{"score": {"name": "@s","objective": "id"},"color": "aqua"}]
+tellraw @s {"text": "\u2139 Assigned plot ID: ","color": "aqua","extra":[{"score": {"name": "@s","objective": "id"},"color": "aqua"}],"hoverEvent": {"action": "show_text","contents": {"text": "Click to teleport","color": "white"}},"clickEvent": {"action": "run_command","value": "/trigger plot"}}
 function code:storage/init
 
 # calculate plot
@@ -46,3 +46,5 @@ tag @s remove in_plot
 tag @s remove holding_shop
 tag @s remove shrinked
 attribute @s scale base set 1
+
+execute positioned 0 1 0 run function code:reload_inventory
