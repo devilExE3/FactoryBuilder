@@ -54,6 +54,10 @@ team modify default collisionRule never
 team add spec_head
 team modify spec_head prefix {"text":"<SPEC> ","color": "gray"}
 
+# dropped item color
+team add yellow
+team modify yellow color yellow
+
 # prefix teams
 team add dev
 team modify dev collisionRule never
