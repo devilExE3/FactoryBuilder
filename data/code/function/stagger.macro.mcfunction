@@ -1,0 +1,1 @@
+$execute as @e[type=marker,tag=block.generator,scores={stagger=$(tick)}] at @s run function code:logic/generator

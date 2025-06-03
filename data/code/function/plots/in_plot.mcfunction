@@ -1,6 +1,7 @@
-# check if player is in plot, we have $(x) and $(y)
-execute store result score #x math run data get entity @s Pos[0]
-execute store result score #y math run data get entity @s Pos[2]
+# check if player is in plot
+data modify storage temp player.pos set from entity @s Pos
+execute store result score #x math run data get storage temp player.pos[0]
+execute store result score #y math run data get storage temp player.pos[2]
 scoreboard players operation #x math -= @s plot.x
 scoreboard players operation #y math -= @s plot.y
 scoreboard players set #in_plot math 0

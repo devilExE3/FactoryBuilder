@@ -40,3 +40,9 @@ execute unless score @s money matches 0.. run scoreboard players set @s money 0
 function code:plots/load
 tp @s 0 1 0 -45 0
 gamemode adventure @s
+
+# remove stray tags / states
+tag @s remove in_plot
+tag @s remove holding_shop
+tag @s remove shrinked
+attribute @s scale base set 1
