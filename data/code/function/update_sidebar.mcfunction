@@ -1,5 +1,10 @@
 # playercount
 execute store result storage temp sidebar.playercount int 1 run scoreboard players get #playercount math
+# tps color
+execute if score #TPS math matches 1900.. run data modify storage temp sidebar.tps_color set value "green"
+execute if score #TPS math matches 1600..1899 run data modify storage temp sidebar.tps_color set value "yellow"
+execute if score #TPS math matches 1200..1599 run data modify storage temp sidebar.tps_color set value "orange"
+execute if score #TPS math matches ..1199 run data modify storage temp sidebar.tps_color set value "red"
 # format tps display
 # calculate whole and frac part of TPS
 execute store result storage temp sidebar.tps_whole int 0.01 run scoreboard players get #TPS math
