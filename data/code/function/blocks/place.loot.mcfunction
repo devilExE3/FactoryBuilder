@@ -6,3 +6,5 @@ execute as @s[tag=place.cutter] run loot give @p[tag=rc] loot code:blocks/cutter
 execute as @s[tag=place.furnace] run loot give @p[tag=rc] loot code:blocks/furnace
 
 execute as @s[tag=place.generator] run function code:blocks/place.generator.loot
+
+kill @s
