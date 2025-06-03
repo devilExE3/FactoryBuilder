@@ -1,0 +1,3 @@
+$scoreboard players display name .1 sidebar [" "," ",{"text":"Online: ","color": "gray"},{"text": "$(playercount)","color": "gold"}]
+$scoreboard players display name .2 sidebar [" "," ",{"text":"TPS: ","color": "gray"},{"text":"$(tps_whole).$(tps_0)$(tps_frac)","color": "gold"}]
+$scoreboard players display name .3 sidebar [" "," ",{"text":"Entities: ","color": "gray"},{"text": "$(entity_count)","color": "gold"}]

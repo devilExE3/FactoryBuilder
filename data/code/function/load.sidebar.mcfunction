@@ -2,13 +2,15 @@ scoreboard objectives add sidebar dummy [{"text": "Factory ","bold": true,"color
 scoreboard objectives setdisplay sidebar sidebar
 scoreboard objectives modify sidebar numberformat blank
 scoreboard players reset * sidebar
-scoreboard players set .0 sidebar 0
-scoreboard players display name .0 sidebar ""
+scoreboard players set .sp0 sidebar 0
+scoreboard players display name .sp0 sidebar ""
 scoreboard players set .1 sidebar -1
 scoreboard players display name .1 sidebar ""
-scoreboard players set .2 sidebar -2
+scoreboard players set .sp1 sidebar -2
+scoreboard players display name .sp1 sidebar ""
+scoreboard players set .2 sidebar -3
 scoreboard players display name .2 sidebar ""
-scoreboard players set .3 sidebar -3
+scoreboard players set .3 sidebar -4
 scoreboard players display name .3 sidebar ""
-scoreboard players set .4 sidebar -4
-scoreboard players display name .4 sidebar ""
+scoreboard players set .sp2 sidebar -5
+scoreboard players display name .sp2 sidebar ""

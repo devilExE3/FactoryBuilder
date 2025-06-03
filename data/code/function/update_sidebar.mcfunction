@@ -1,4 +1,14 @@
-scoreboard players display name .1 sidebar [{"text":"Online: ","color": "gray"},{"score": {"name": "#playercount","objective": "math"},"color": "gold"}]
-function code:update_sidebar.macro2 with storage temp tps
-execute store result score #entity_count math if entity @e
-scoreboard players display name .3 sidebar [{"text":"Entities: ","color": "gray"},{"score": {"name": "#entity_count","objective": "math"},"color": "gold"}]
+# playercount
+execute store result storage temp sidebar.playercount int 1 run scoreboard players get #playercount math
+# format tps display
+# calculate whole and frac part of TPS
+execute store result storage temp sidebar.tps_whole int 0.01 run scoreboard players get #TPS math
+# frac part
+scoreboard players operation #TPS math %= #100 math
+execute store result storage temp sidebar.tps_frac int 1 run scoreboard players get #TPS math
+execute if score #TPS math matches 10.. run data modify storage temp sidebar.tps_0 set value ""
+execute unless score #TPS math matches 10.. run data modify storage temp sidebar.tps_0 set value "0"
+# entity count
+execute store result storage temp sidebar.entity_count int 1 if entity @e
+
+function code:update_sidebar.macro with storage temp sidebar

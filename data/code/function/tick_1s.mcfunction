@@ -6,12 +6,15 @@ tag @e[type=item_display,tag=item.cut] remove item.cut
 execute as @e[type=item_display,tag=item] at @s run function code:logic/item
 
 # calculate mspt average
+scoreboard players operation #round_factor math = #avg_COUNT math
+scoreboard players add #round_factor math 1
+scoreboard players operation #round_factor math /= #2 math
+scoreboard players operation #avg_MSPT math += #round_factor math
 scoreboard players operation #avg_MSPT math /= #avg_COUNT math
 # calculate TPS
 scoreboard players set #TPS math 100000
 scoreboard players operation #TPS math /= #avg_MSPT math
 execute if score #TPS math matches 2000.. run scoreboard players set #TPS math 2000
-execute store result storage minecraft:temp tps.value double 0.01 run scoreboard players get #TPS math
 # reset averages
 scoreboard players set #avg_MSPT math 0
 scoreboard players set #avg_COUNT math 0

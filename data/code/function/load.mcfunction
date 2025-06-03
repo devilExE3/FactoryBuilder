@@ -18,6 +18,7 @@ scoreboard players set #2 math 2
 scoreboard players set #4 math 4
 scoreboard players set #32 math 32
 scoreboard players set #90 math 90
+scoreboard players set #100 math 100
 scoreboard players set #playercount math 0
 scoreboard objectives add plot.x dummy
 scoreboard objectives add plot.y dummy
