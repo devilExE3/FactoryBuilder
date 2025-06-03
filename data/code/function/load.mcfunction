@@ -84,7 +84,7 @@ function code:shop_pages
 
 # purge plots
 scoreboard players set #purged math 0
-execute as @e[type=marker,tag=block] at @s run function code:plots/purge
+execute as @e[type=#code:block,tag=block] at @s run function code:plots/purge
 function code:destroied
 say Reloaded
 tellraw @a [{"text":"\u2139 ","color":"green"},{"text":"Purged ","color":"white"},{"score": {"name": "#purged","objective": "math"},"color": "green"},{"text": " stray blocks.","color":"white"}]
@@ -102,3 +102,6 @@ kill @e[type=chest_minecart,tag=shop]
 
 # reset online list
 data modify storage online online set value []
+
+# setup sidebar
+function code:load.sidebar

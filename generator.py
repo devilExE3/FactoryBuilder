@@ -3,19 +3,21 @@ GENERATORS = [
         "name": "Oak Tree Farm",
         "model": "oak_sapling",
         "output": "oak_log",
-        "type": "tree",
-        "gen_model": "oak_sapling",
+        "gen_block": "petrified_oak_slab[type=double]",
         "price": 150,
-        "id": "oak"
+        "id": "oak",
+        "type": "cross",
+        "rp_texture": "minecraft:blocks/oak_sapling"
     },
     {
         "name": "Cobblestone Farm",
         "model": "cobblestone",
         "output": "cobblestone",
-        "type": "ore",
-        "gen_model": "stone",
+        "gen_block": "cobblestone",
         "price": 500,
-        "id": "stone"
+        "id": "stone",
+        "type": "ore",
+        "rp_texture": "minecraft:blocks/stone"
     }
 ]
 
@@ -73,12 +75,12 @@ RECIPES = [
 TEMPLATE_LOOT_TABLE = ""
 with open("generator_templates/loot_table.json", "r") as f:
     TEMPLATE_LOOT_TABLE = f.read()
-TEMPLATE_BACKBONE_ORE = ""
-with open("generator_templates/backbone_ore.mcfunction", "r") as f:
-    TEMPLATE_BACKBONE_ORE = f.read()
-TEMPLATE_BACKBONE_TREE = ""
-with open("generator_templates/backbone_tree.mcfunction", "r") as f:
-    TEMPLATE_BACKBONE_TREE = f.read()
+TEMPLATE_GENERIC_LOOT_TABLE = ""
+with open("generator_templates/generic_loot_table.json", "r") as f:
+    TEMPLATE_GENERIC_LOOT_TABLE = f.read()
+TEMPLATE_BACKBONE = ""
+with open("generator_templates/backbone.mcfunction", "r") as f:
+    TEMPLATE_BACKBONE = f.read()
 TEMPLATE_FRONTBONE = ""
 with open("generator_templates/frontbone.mcfunction", "r") as f:
     TEMPLATE_FRONTBONE = f.read()
@@ -92,20 +94,36 @@ for gen in GENERATORS:
                 .replace("%model%", gen["model"]))
     # backbone
     with open("data/code/function/blocks/backbone/generator/" + gen["id"] + ".mcfunction", "w") as f:
-        template = ""
-        if gen["type"] == "tree":
-            template = TEMPLATE_BACKBONE_TREE
-        elif gen["type"] == "ore":
-            template = TEMPLATE_BACKBONE_ORE
-        else:
-            print("Unknown generator type " + gen["type"])
-            continue
-        f.write(template\
-                .replace("%gen_model%", gen["gen_model"])\
+        f.write(TEMPLATE_BACKBONE\
+                .replace("%gen_block%", gen["gen_block"])\
                 .replace("%id%", gen["id"]))
     # frontbone
     with open("data/code/function/blocks/frontbone/generator/" + gen["id"] + ".mcfunction", "w") as f:
         f.write(TEMPLATE_FRONTBONE.replace("%id%", gen["id"]))
+    # vanilla loot_table
+    
+    # get block state
+    block_state = str(gen["gen_block"])
+    if block_state.count("[") > 0:
+        block_state = block_state[:block_state.find("[")]
+    with open("data/minecraft/loot_table/blocks/" + block_state + ".json", "w") as f:
+        f.write(TEMPLATE_GENERIC_LOOT_TABLE)
+
+# tags/block/generators
+with open("data/code/tags/block/generators.json", "w") as f:
+    f.write('{"values":[')
+    first = True
+    for gen in GENERATORS:
+        if first:
+            first = False
+        else:
+            f.write(",")
+        # get block state
+        block_state = str(gen["gen_block"])
+        if block_state.count("[") > 0:
+            block_state = block_state[:block_state.find("[")]
+        f.write('"' + block_state + '"')
+    f.write("]}")
 
 # block/destroy.generator
 with open("data/code/function/blocks/destroy.generator.mcfunction", "w") as f:

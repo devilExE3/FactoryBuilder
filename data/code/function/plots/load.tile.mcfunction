@@ -9,11 +9,11 @@ execute store result score #direction math run data get storage temp this.direct
 function code:plots/load.tile.offset with storage temp this
 
 # frontbone of place
-$data modify entity @n[type=marker,tag=block.this,distance=..330] data.Owner set value "$(hex)"
-$data modify entity @n[type=marker,tag=block.this,distance=..330] data.OwnerUUID set value $(uuid)
-$scoreboard players set @n[type=marker,tag=block.this,distance=..330] id $(id)
-execute as @n[type=marker,tag=block.this,distance=..330] run function code:blocks/util/stagger
-tag @n[type=marker,tag=block.this,distance=..330] remove block.this
+$data modify entity @n[type=#code:block,tag=block.this,distance=..330] data.Owner set value "$(hex)"
+$data modify entity @n[type=#code:block,tag=block.this,distance=..330] data.OwnerUUID set value $(uuid)
+$scoreboard players set @n[type=#code:block,tag=block.this,distance=..330] id $(id)
+execute as @n[type=#code:block,tag=block.this,distance=..330] run function code:blocks/util/stagger
+tag @n[type=#code:block,tag=block.this,distance=..330] remove block.this
 
 data remove storage tiles tiles[0]
 execute if data storage tiles tiles[0] run function code:plots/load.tile with storage player player.plot

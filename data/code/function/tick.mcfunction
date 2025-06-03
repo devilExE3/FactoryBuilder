@@ -1,5 +1,13 @@
 schedule function code:tick 1t replace
 
+# calculate tps
+execute store result score #MSPT math run worldborder get
+scoreboard players remove #MSPT math 59998000
+# average out mspt
+scoreboard players operation #avg_MSPT math += #MSPT math
+scoreboard players add #avg_COUNT math 1
+# TODO: sidebar
+
 scoreboard players add @a timer 1
 scoreboard players add #timer timer 1
 execute as @a unless score @s timer = #timer timer run function code:joined
@@ -25,3 +33,7 @@ execute as @a[gamemode=spectator] at @s anchored eyes rotated ~ ~ run function c
 
 execute as @a[scores={death=1..}] run function code:died
 scoreboard players reset @a death
+
+
+worldborder set 59998000 0
+worldborder set 59999000 1

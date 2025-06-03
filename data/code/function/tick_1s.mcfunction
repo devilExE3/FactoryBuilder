@@ -1,15 +1,20 @@
 schedule function code:tick_1s 1s replace
-# calculate tps
-execute store result score #TPS math run worldborder get
-scoreboard players remove #TPS math 59998000
-# #TPS = 1000 <-> TPS = 20.00 so divide by 50
-# TODO: sidebar
 
 # conveyor logic
 tag @e[type=item_display,tag=item.moved] remove item.moved
 tag @e[type=item_display,tag=item.cut] remove item.cut
 execute as @e[type=item_display,tag=item] at @s run function code:logic/item
 
+# calculate mspt average
+scoreboard players operation #avg_MSPT math /= #avg_COUNT math
+# calculate TPS
+scoreboard players set #TPS math 100000
+scoreboard players operation #TPS math /= #avg_MSPT math
+execute if score #TPS math matches 2000.. run scoreboard players set #TPS math 2000
+execute store result storage minecraft:temp tps.value double 0.01 run scoreboard players get #TPS math
+# reset averages
+scoreboard players set #avg_MSPT math 0
+scoreboard players set #avg_COUNT math 0
 
 scoreboard players add #wait stagger 1
 execute if score #wait stagger matches 5.. run scoreboard players set #tick stagger 0
@@ -18,5 +23,4 @@ execute if score #wait stagger matches 5.. run scoreboard players set #wait stag
 
 scoreboard players add @a stats.playtime 1
 
-worldborder set 59999000 0
-worldborder set 59998000 1
+function code:update_sidebar

@@ -7,6 +7,6 @@
         "lime_carpet",
         "stonecutter",
         "blast_furnace",
-        "glass"
+        "#code:generators"
     ]
 }

@@ -11,10 +11,10 @@ execute if score #can_place math matches 0 run return run function code:blocks/p
 function code:blocks/place.block
 
 execute as @p[tag=rc] run function uuid_linker:get_uuid
-data modify entity @n[type=marker,tag=block.this,distance=..1] data.Owner set from storage minecraft:uuid_linker UUID.HexString
-    data modify entity @n[type=marker,tag=block.this,distance=..1] data.OwnerUUID set from entity @p[tag=rc] UUID
-scoreboard players operation @n[type=marker,tag=block.this,distance=..1] id = @p[tag=rc] id
-execute as @n[type=marker,tag=block.this,distance=..1] run function code:blocks/util/stagger
-tag @n[type=marker,tag=block.this,distance=..1] remove block.this
+data modify entity @n[type=#code:block,tag=block.this,distance=..1] data.Owner set from storage minecraft:uuid_linker UUID.HexString
+data modify entity @n[type=#code:block,tag=block.this,distance=..1] data.OwnerUUID set from entity @p[tag=rc] UUID
+scoreboard players operation @n[type=#code:block,tag=block.this,distance=..1] id = @p[tag=rc] id
+execute as @n[type=#code:block,tag=block.this,distance=..1] run function code:blocks/util/stagger
+tag @n[type=#code:block,tag=block.this,distance=..1] remove block.this
 
 kill @s
