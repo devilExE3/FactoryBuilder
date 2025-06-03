@@ -37,6 +37,7 @@ scoreboard objectives add stats.playtime dummy
 
 scoreboard objectives add used.pickaxe used:wooden_pickaxe
 scoreboard objectives add shop_page dummy
+scoreboard objectives add death deathCount
 
 # triggers
 scoreboard objectives add plot trigger

@@ -22,3 +22,6 @@ scoreboard players reset @a used.pickaxe
 execute if score #destroied math matches 1 run function code:destroied
 
 execute as @a[gamemode=spectator] at @s anchored eyes rotated ~ ~ run function code:tick.spec
+
+execute as @a[scores={death=1..}] run function code:died
+scoreboard players reset @a death
