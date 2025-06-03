@@ -1,17 +1,17 @@
 schedule function code:tick 1t replace
 
 scoreboard players add @a timer 1
-scoreboard players add .timer timer 1
-execute as @a unless score @s timer = .timer timer run function code:joined
+scoreboard players add #timer timer 1
+execute as @a unless score @s timer = #timer timer run function code:joined
 
 function code:triggers
 
 execute as @a run function code:plots/in_plot
 
 # check for players that left
-scoreboard players operation old_playercount math = playercount math
-execute store result score playercount math if entity @a
-execute if score old_playercount math > playercount math run function code:disconnect/run
+scoreboard players operation #old_playercount math = #playercount math
+execute store result score #playercount math if entity @a
+execute if score #old_playercount math > #playercount math run function code:disconnect/run
 
 execute as @a[gamemode=adventure] at @s run function code:inventory
 execute as @a at @s run function code:shop/tick

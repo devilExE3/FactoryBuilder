@@ -1,6 +1,6 @@
 # we have $(id) plot id, $(uuid) raw uuid, $(hex) hex string
 
-scoreboard players add tiles math 1
+scoreboard players add #tiles math 1
 
 data modify storage temp this set from storage storage tiles[0]
 # prepare direction score

@@ -11,6 +11,6 @@ scoreboard players operation #direction math -= #player_rot math
 # if it's above 360, we want to keep direction 0
 execute if score #direction math matches 360.. run scoreboard players set #direction math 0
 # this will now give [0-3] with respect to direction
-scoreboard players operation #direction math /= .90 math
+scoreboard players operation #direction math /= #90 math
 execute as @p[tag=rc] if predicate code:sneaking run scoreboard players add #direction math 2
-execute as @p[tag=rc] if predicate code:sneaking run scoreboard players operation #direction math %= .4 math
+execute as @p[tag=rc] if predicate code:sneaking run scoreboard players operation #direction math %= #4 math

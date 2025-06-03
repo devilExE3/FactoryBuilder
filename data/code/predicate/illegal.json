@@ -5,28 +5,11 @@
             "condition": "entity_properties",
             "entity": "this",
             "predicate": {
-                "nbt": "{Item:{id:\"minecraft:barrier\"}}"
-            }
-        },
-        {
-            "condition": "entity_properties",
-            "entity": "this",
-            "predicate": {
-                "nbt": "{Item:{id:\"minecraft:wooden_pickaxe\"}}"
-            }
-        },
-        {
-            "condition": "entity_properties",
-            "entity": "this",
-            "predicate": {
-                "nbt": "{Item:{id:\"minecraft:nether_star\"}}"
-            }
-        },
-        {
-            "condition": "entity_properties",
-            "entity": "this",
-            "predicate": {
-                "nbt": "{Item:{id:\"minecraft:light_gray_stained_glass_pane\"}}"
+                "slots": {
+                    "contents": {
+                        "items": "#code:illegal"
+                    }
+                }
             }
         }
     ]

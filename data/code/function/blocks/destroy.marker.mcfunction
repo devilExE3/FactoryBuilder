@@ -1,4 +1,4 @@
-tag @n[type=item,nbt={Age:0s,Item:{id:"minecraft:structure_void"}},distance=..3] add item.target
+tag @n[type=item,predicate=code:structure_void,distance=..3] add item.target
 
 data modify entity @n[type=item,tag=item.target,distance=..3] Owner set from entity @s data.OwnerUUID
 

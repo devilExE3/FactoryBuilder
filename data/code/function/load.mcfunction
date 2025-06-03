@@ -14,29 +14,26 @@ gamerule announceAdvancements false
 
 # objectives
 scoreboard objectives add math dummy
-scoreboard players set .2 math 2
-scoreboard players set .4 math 4
-scoreboard players set .32 math 32
-scoreboard players set .90 math 90
-scoreboard players set playercount math 0
+scoreboard players set #2 math 2
+scoreboard players set #4 math 4
+scoreboard players set #32 math 32
+scoreboard players set #90 math 90
+scoreboard players set #playercount math 0
 scoreboard objectives add plot.x dummy
 scoreboard objectives add plot.y dummy
 
 scoreboard objectives add count dummy
 scoreboard objectives add stagger dummy
-scoreboard players set .stagger stagger 0
-scoreboard players set .tick stagger 0
-scoreboard players set .wait stagger 0
+scoreboard players set #stagger stagger 0
+scoreboard players set #tick stagger 0
+scoreboard players set #wait stagger 0
 scoreboard objectives add timer dummy
-scoreboard players add .timer timer 1
+scoreboard players add #timer timer 1
 scoreboard objectives add id dummy
-execute unless score .last_id id matches 0.. run scoreboard players set .last_id id 0
+execute unless score #last_id id matches 0.. run scoreboard players set #last_id id 0
 scoreboard objectives add money dummy
 
 scoreboard objectives add stats.playtime dummy
-
-# band aid 2
-scoreboard objectives add plot_fix2 dummy
 
 scoreboard objectives add used.pickaxe used:wooden_pickaxe
 scoreboard objectives add shop_page dummy
@@ -77,11 +74,11 @@ setblock 29999999 -63 0 oak_sign
 function code:shop_pages
 
 # purge plots
-scoreboard players set purged math 0
+scoreboard players set #purged math 0
 execute as @e[type=marker,tag=block] at @s run function code:plots/purge
 function code:destroied
 say Reloaded
-tellraw @a [{"text":"\u2139 ","color":"green"},{"text":"Purged ","color":"white"},{"score": {"name": "purged","objective": "math"},"color": "green"},{"text": " stray blocks.","color":"white"}]
+tellraw @a [{"text":"\u2139 ","color":"green"},{"text":"Purged ","color":"white"},{"score": {"name": "#purged","objective": "math"},"color": "green"},{"text": " stray blocks.","color":"white"}]
 
 kill @e[type=item_display,tag=item]
 

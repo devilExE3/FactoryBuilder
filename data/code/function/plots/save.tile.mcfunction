@@ -1,14 +1,14 @@
 # save tile type and position to tiles[]
 data modify storage temp this set value {}
 # tile position
-execute store result score x math run data get entity @s Pos[0]
-execute store result score y math run data get entity @s Pos[1]
-execute store result score z math run data get entity @s Pos[2]
-scoreboard players operation x math -= .rx math
-scoreboard players operation z math -= .ry math
-execute store result storage temp this.x int 1 run scoreboard players get x math
-execute store result storage temp this.y int 1 run scoreboard players get y math
-execute store result storage temp this.z int 1 run scoreboard players get z math
+execute store result score #x math run data get entity @s Pos[0]
+execute store result score #y math run data get entity @s Pos[1]
+execute store result score #z math run data get entity @s Pos[2]
+scoreboard players operation #x math -= #rx math
+scoreboard players operation #z math -= #ry math
+execute store result storage temp this.x int 1 run scoreboard players get #x math
+execute store result storage temp this.y int 1 run scoreboard players get #y math
+execute store result storage temp this.z int 1 run scoreboard players get #z math
 
 # tile type
 function code:plots/save.tile.backbone
@@ -24,4 +24,4 @@ data modify storage storage tiles append from storage temp this
 
 # remove block
 execute if score #backup math matches 0 run setblock ~ ~ ~ air
-execute if score #backup math matches 0 run kill @n[type=item,distance=..3,nbt={Age:0s,Item:{id:"minecraft:structure_void"}}]
+execute if score #backup math matches 0 run kill @n[type=item,distance=..3,predicate=code:structure_void]

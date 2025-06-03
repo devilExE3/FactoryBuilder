@@ -1,7 +1,7 @@
 # called with $(uuid), $(x), $(y), $(id) (plot id)
 data modify storage storage tiles set value []
-$scoreboard players set .rx math $(x)
-$scoreboard players set .ry math $(y)
+$scoreboard players set #rx math $(x)
+$scoreboard players set #ry math $(y)
 $execute as @e[type=marker,tag=block,scores={id=$(id)}] at @s run function code:plots/save.tile
 
 # save tiles to player

@@ -1,14 +1,14 @@
-scoreboard players add purged math 1
+scoreboard players add #purged math 1
 data modify storage temp this set value {}
 # get relative pos
-execute store result score x math run data get entity @s Pos[0]
-execute store result score y math run data get entity @s Pos[1]
-execute store result score z math run data get entity @s Pos[2]
-scoreboard players operation x math %= .32 math
-scoreboard players operation z math %= .32 math
-execute store result storage temp this.x int 1 run scoreboard players get x math
-execute store result storage temp this.y int 1 run scoreboard players get y math
-execute store result storage temp this.z int 1 run scoreboard players get z math
+execute store result score #x math run data get entity @s Pos[0]
+execute store result score #y math run data get entity @s Pos[1]
+execute store result score #z math run data get entity @s Pos[2]
+scoreboard players operation #x math %= #32 math
+scoreboard players operation #z math %= #32 math
+execute store result storage temp this.x int 1 run scoreboard players get #x math
+execute store result storage temp this.y int 1 run scoreboard players get #y math
+execute store result storage temp this.z int 1 run scoreboard players get #z math
 # tile type
 function code:plots/save.tile.backbone
 # save direction
@@ -25,4 +25,4 @@ function code:plots/purge.macro with entity @s data
 
 # remove block
 setblock ~ ~ ~ air
-kill @n[type=item,distance=..3,nbt={Age:0s,Item:{id:"minecraft:structure_void"}}]
+kill @n[type=item,distance=..3,predicate=code:structure_void]

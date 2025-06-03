@@ -114,7 +114,7 @@ with open("data/code/function/blocks/destroy.generator.mcfunction", "w") as f:
 # block/place.generator
 with open("data/code/function/blocks/place.generator.mcfunction", "w") as f:
     for gen in GENERATORS:
-        f.write("execute as @s[tag=place.generator.%id%] if score can_place math matches 0 run loot give @p[tag=rc] loot code:blocks/generator/%id%\nexecute as @s[tag=place.generator.%id%] if score can_place math matches 1 run function code:blocks/frontbone/generator/%id%\n".replace("%id%", gen["id"]))
+        f.write("execute as @s[tag=place.generator.%id%] if score #can_place math matches 0 run loot give @p[tag=rc] loot code:blocks/generator/%id%\nexecute as @s[tag=place.generator.%id%] if score #can_place math matches 1 run function code:blocks/frontbone/generator/%id%\n".replace("%id%", gen["id"]))
 # load.tile.backbone.generator
 with open("data/code/function/plots/load.tile.backbone.generator.mcfunction", "w") as f:
     for gen in GENERATORS:
@@ -134,7 +134,7 @@ with open("data/code/function/logic/generator.item.mcfunction", "w") as f:
 # item prices
 with open("data/code/function/logic/sell.prices.mcfunction", "w") as f:
     for item in ITEMS:
-        f.write("""execute if data entity @s item{id:"minecraft:%id%"} run scoreboard players set price math %price%\n""".replace("%id%", item).replace("%price%", str(ITEMS[item])))
+        f.write("""execute if data entity @s item{id:"minecraft:%id%"} run scoreboard players set #price math %price%\n""".replace("%id%", item).replace("%price%", str(ITEMS[item])))
 
 
 # # # RECIPES # # #
@@ -144,7 +144,7 @@ with open("data/code/function/logic/cutter.recipes.mcfunction", "w") as f:
     for recipe in RECIPES:
         if recipe["type"] != "cutter":
             continue
-        f.write("""execute if data entity @s item{id:"minecraft:%input%"} run scoreboard players set mul math %mul%\nexecute if data entity @s item{id:"minecraft:%input%"} run return run data modify entity @s item.id set value "minecraft:%output%"\n"""\
+        f.write("""execute if data entity @s item{id:"minecraft:%input%"} run scoreboard players set #mul math %mul%\nexecute if data entity @s item{id:"minecraft:%input%"} run return run data modify entity @s item.id set value "minecraft:%output%"\n"""\
                 .replace("%input%", recipe["input"]).replace("%output%", recipe["output"]).replace("%mul%", str(recipe["mul"])))
         if not recipe["output"] in ITEMS:
             print("[recipe/cutter] Unpriced item " + recipe["output"])

@@ -15,7 +15,7 @@ execute if items entity @s weapon.offhand * unless items entity @s weapon.offhan
 execute if items entity @s weapon.offhand * run item replace entity @s weapon.offhand with air
 
 kill @e[type=item,distance=..3,predicate=code:illegal]
-kill @e[type=item,distance=..3,nbt={Item:{components:{"minecraft:custom_data":{"shop_item":1b}}}}]
+kill @e[type=item,distance=..3,predicate=code:shop_item]
 execute if items entity @s player.cursor #code:illegal run item replace entity @s player.cursor with air
 
 title @s actionbar [{"text":"Money: ","color":"white"},{"text": "$","color": "green"},{"score":{"name":"@s","objective": "money"},"color": "green"}]
