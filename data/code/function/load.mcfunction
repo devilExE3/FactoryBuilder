@@ -50,6 +50,7 @@ scoreboard objectives add shrink trigger
 # default teams
 team add default
 team modify default collisionRule never
+team modify default deathMessageVisibility never
 
 team add spec_head
 team modify spec_head prefix {"text":"<SPEC> ","color": "gray"}
@@ -62,14 +63,17 @@ team modify yellow color yellow
 team add dev
 team modify dev collisionRule never
 team modify dev prefix {"text":"ᴅᴇᴠ ","color":"red"}
+team modify dev deathMessageVisibility never
 
 team add am
 team modify am collisionRule never
 team modify am prefix {"text":"ᴀᴍ ","color":"#96f9b2"}
+team modify am deathMessageVisibility never
 
 team add fm
 team modify fm collisionRule never
 team modify fm prefix {"text":"ꜰᴍ ","color":"#8686fb"}
+team modify fm deathMessageVisibility never
 
 # auxiliary blocks
 forceload add 29999999 0
