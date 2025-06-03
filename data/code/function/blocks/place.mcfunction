@@ -1,5 +1,5 @@
 # check if we can place the block
-scoreboard players set ##can_place math 1
+scoreboard players set #can_place math 1
 execute unless block ~ ~ ~ air run scoreboard players set #can_place math 0
 execute if entity @p[tag=rc,tag=!in_plot] run scoreboard players set #can_place math 0
 execute if entity @p[tag=rc,tag=!in_plot] run tellraw @p[tag=rc] "You need to be in your plot to place"

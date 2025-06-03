@@ -16,7 +16,9 @@ execute if score #old_playercount math > #playercount math run function code:dis
 execute as @a[gamemode=adventure] at @s run function code:inventory
 execute as @a at @s run function code:shop/tick
 
-execute as @a if score @s used.pickaxe matches 1.. run function code:destroied
+scoreboard players set #destroied math 0
+execute as @a if score @s used.pickaxe matches 1.. run scoreboard players set #destroied math 1
 scoreboard players reset @a used.pickaxe
+execute if score #destroied math matches 1 run function code:destroied
 
 execute as @a[gamemode=spectator] at @s anchored eyes rotated ~ ~ run function code:tick.spec
