@@ -23,7 +23,8 @@ execute if score #destroied math matches 1 run function code:destroied
 
 execute as @a[gamemode=spectator] at @s anchored eyes rotated ~ ~ run function code:tick.spec
 
-execute as @a[scores={death_wait=1..}] run function code:died
-scoreboard players reset @s death_wait
-scoreboard players add @a[scores={death=1..}] death_wait 1
+scoreboard players add @a[scores={death_wait=1..}] death_wait 1
+execute as @a[scores={death_wait=20..}] run function code:died.effects
+scoreboard players reset @a[scores={death_wait=20..}] death_wait
+execute as @a[scores={death=1..}] run function code:died
 scoreboard players reset @a death
