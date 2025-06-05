@@ -1,7 +1,6 @@
 # calculate plot x / y
 data modify storage player player.tiles set value []
 function code:storage/save
-function code:plots/generate.macro with storage player player.plot
 
 # clear old items
 clear @s

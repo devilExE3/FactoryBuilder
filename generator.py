@@ -1,3 +1,5 @@
+import os
+
 GENERATORS = [
     {
         "name": "Oak Tree Farm",
@@ -7,7 +9,7 @@ GENERATORS = [
         "price": 150,
         "id": "oak",
         "type": "cross",
-        "rp_texture": "minecraft:blocks/oak_sapling"
+        "rp_texture": "minecraft:block/oak_sapling"
     },
     {
         "name": "Cobblestone Farm",
@@ -17,7 +19,7 @@ GENERATORS = [
         "price": 500,
         "id": "stone",
         "type": "ore",
-        "rp_texture": "minecraft:blocks/stone"
+        "rp_texture": "minecraft:block/stone"
     },
     {
         "name": "Coal Farm",
@@ -27,7 +29,7 @@ GENERATORS = [
         "price": 100000,
         "id": "coal",
         "type": "ore",
-        "rp_texture": "minecraft:blocks/coal_ore"
+        "rp_texture": "minecraft:block/coal_ore"
     }
 ]
 
@@ -242,3 +244,29 @@ with open("data/code/function/shop/shop_logic/shop_item.generator.mcfunction", "
 with open("data/code/function/shop/shop_logic/bulk_item.generator.mcfunction", "w") as f:
     for gen in GENERATORS:
         f.write(TEMPLATE_BULK_ITEM.replace("%id%", gen["id"]).replace("%b_price%", str(5 * gen["price"])) + "\n")
+
+
+# # #  RESOURCE PACK AUTO GENERATOR  # # #
+
+if not os.path.exists("../rp/assets/fb/models/block/generator"):
+    os.makedirs("../rp/assets/fb/models/block/generator")
+if not os.path.exists("../rp/assets/minecraft/blockstates"):
+    os.makedirs("../rp/assets/minecraft/blockstates")
+
+for gen in GENERATORS:
+    # block model
+    with open("../rp/assets/fb/models/block/generator/" + gen["id"] + ".json", "w") as f:
+        if gen["type"] == "cross":
+            f.write("""{"parent":"fb:block/cross","textures":{"cross":"%"}}""".replace("%", gen["rp_texture"]))
+        elif gen["type"] == "ore":
+            f.write("""{"parent":"fb:block/ore","textures":{"ore":"%"}}""".replace("%", gen["rp_texture"]))
+        else:
+            print("[rp/model] Unknown generator type " + gen["type"])
+    # block state
+    # get block state
+    block_state = str(gen["gen_block"])
+    if block_state.count("[") > 0:
+        block_state = block_state[:block_state.find("[")]
+    
+    with open("../rp/assets/minecraft/blockstates/" + block_state + ".json", "w") as f:
+        f.write("""{"variants":{"":{"model":"fb:block/generator/%"}}}""".replace("%", gen["id"]))
