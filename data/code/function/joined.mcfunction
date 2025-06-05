@@ -12,11 +12,11 @@ function code:storage/load
 scoreboard players operation #n math = @s id
 function code:math/id_to_coords
 scoreboard players operation @s plot.x = #x math
-scoreboard players operation @s plot.x *= #32 math
+scoreboard players operation @s plot.x *= #16 math
 scoreboard players operation @s plot.y = #y math
-scoreboard players operation @s plot.y *= #32 math
-execute store result storage player player.plot.x int 32 run scoreboard players get #x math
-execute store result storage player player.plot.y int 32 run scoreboard players get #y math
+scoreboard players operation @s plot.y *= #16 math
+execute store result storage player player.plot.x int 1 run scoreboard players get @s plot.x
+execute store result storage player player.plot.y int 1 run scoreboard players get @s plot.y
 execute store result storage player player.plot.id int 1 run scoreboard players get @s id
 
 # update player name

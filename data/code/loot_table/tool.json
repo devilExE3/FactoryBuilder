@@ -30,6 +30,23 @@
                                         "efficiency": 5
                                     },
                                     "show_in_tooltip": false
+                                },
+                                "attribute_modifiers": {
+                                    "modifiers": [
+                                        {
+                                            "id": "a",
+                                            "type": "attack_damage",
+                                            "amount": -1,
+                                            "operation": "add_multiplied_total"
+                                        },
+                                        {
+                                            "id": "b",
+                                            "type": "block_interaction_range",
+                                            "amount": -1.5,
+                                            "operation": "add_value"
+                                        }
+                                    ],
+                                    "show_in_tooltip": false
                                 }
                             }
                         }

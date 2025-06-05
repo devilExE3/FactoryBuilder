@@ -14,3 +14,5 @@ scoreboard players set .3 sidebar -4
 scoreboard players display name .3 sidebar ""
 scoreboard players set .sp2 sidebar -5
 scoreboard players display name .sp2 sidebar ""
+scoreboard players set .footer sidebar -15
+scoreboard players display name .footer sidebar [{"text":"Remember to ","color": "gray"},{"text":"/vote","color": "gold"}]

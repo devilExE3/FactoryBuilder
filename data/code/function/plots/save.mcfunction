@@ -10,8 +10,8 @@ data modify storage player player.tiles set from storage tiles tiles
 # remove all items from plot
 $execute if score #backup math matches 0 run kill @e[type=item_display,tag=item,scores={id=$(id)}]
 # remove plot
-$execute if score #backup math matches 0 positioned $(x) 0 $(y) run setblock ~2 ~1 ~2 air
-$execute if score #backup math matches 0 positioned $(x) 0 $(y) run fill ~ ~ ~ ~31 ~ ~31 air
+$execute if score #backup math matches 0 positioned $(x) 0 $(y) run setblock ~1 ~1 ~1 air
+$execute if score #backup math matches 0 positioned $(x) 0 $(y) run fill ~ ~ ~ ~15 ~ ~15 air
 
 # run destroied
 execute if score #backup math matches 0 run function code:destroied

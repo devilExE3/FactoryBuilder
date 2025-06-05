@@ -19,6 +19,7 @@ gamerule disablePlayerMovementCheck true
 scoreboard objectives add math dummy
 scoreboard players set #2 math 2
 scoreboard players set #4 math 4
+scoreboard players set #16 math 16
 scoreboard players set #32 math 32
 scoreboard players set #90 math 90
 scoreboard players set #100 math 100

@@ -4,8 +4,8 @@ data modify storage temp this set value {}
 execute store result score #x math run data get entity @s Pos[0]
 execute store result score #y math run data get entity @s Pos[1]
 execute store result score #z math run data get entity @s Pos[2]
-scoreboard players operation #x math %= #32 math
-scoreboard players operation #z math %= #32 math
+scoreboard players operation #x math %= #16 math
+scoreboard players operation #z math %= #16 math
 execute store result storage temp this.x int 1 run scoreboard players get #x math
 execute store result storage temp this.y int 1 run scoreboard players get #y math
 execute store result storage temp this.z int 1 run scoreboard players get #z math
