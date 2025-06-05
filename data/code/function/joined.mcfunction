@@ -1,4 +1,8 @@
-tellraw @s "Welcome to Factory Builder!"
+tellraw @s ""
+tellraw @s ""
+tellraw @s ""
+tellraw @s ""
+tellraw @s [{"text":"Welcome to ","color": "white"},{"text":"Factory ","color": "gold"},{"text":"Builder","color": "gray"},{"text":"!","color": "white"}]
 
 scoreboard players operation @s timer = #timer timer
 scoreboard players set #ID id 1
