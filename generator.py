@@ -18,6 +18,16 @@ GENERATORS = [
         "id": "stone",
         "type": "ore",
         "rp_texture": "minecraft:blocks/stone"
+    },
+    {
+        "name": "Coal Farm",
+        "model": "coal_ore",
+        "output": "coal",
+        "gen_block": "coal_block",
+        "price": 100000,
+        "id": "coal",
+        "type": "ore",
+        "rp_texture": "minecraft:blocks/coal_ore"
     }
 ]
 
@@ -29,7 +39,8 @@ ITEMS = {
     "charcoal": 25,
     "cobblestone": 20,
     "stone": 50,
-    "smooth_stone": 75
+    "smooth_stone": 75,
+    "coal": 1000
 }
 
 RECIPES = [
@@ -84,6 +95,12 @@ with open("generator_templates/backbone.mcfunction", "r") as f:
 TEMPLATE_FRONTBONE = ""
 with open("generator_templates/frontbone.mcfunction", "r") as f:
     TEMPLATE_FRONTBONE = f.read()
+TEMPLATE_SHOP_ITEM = ""
+with open("generator_templates/shop_item.mcfunction", "r") as f:
+    TEMPLATE_SHOP_ITEM = f.read()
+TEMPLATE_BULK_ITEM = ""
+with open("generator_templates/bulk_item.mcfunction", "r") as f:
+    TEMPLATE_BULK_ITEM = f.read()
 
 for gen in GENERATORS:
     # loot table generator
@@ -181,6 +198,47 @@ with open("data/code/function/logic/furnace.recipes.mcfunction", "w") as f:
             print("[recipe/furnace] Unpriced item " + recipe["output"])
 
 # generate shop for generators
-# page 0 is hardcoded
-#pages = 0
-#for gen in GENERATORS:
+with open("data/code/function/shop_pages.generate.mcfunction", "w") as f:
+    # page 0 is hardcoded
+    pages = (len(GENERATORS) + 23) // 24 # amount of pages generators take up
+    page = 1 # current page
+    i = 0 # current item index
+    # first page boiler
+    f.write("setblock 29999998 -64 1 barrel\ndata remove block 29999998 -64 1 Items\n")
+    for gen in GENERATORS:
+        if i == 24:
+            # end of current page
+            f.write("""data modify block 29999998 -64 % Items append value {id:"prismarine_shard",count:1,components:{itm_name:'"Prev Page"',custom_data:{shop_item:1b,prev_page:1b}},Slot:8}\ndata modify block 29999998 -64 % Items append value {id:"black_stained_glass_pane",count:1,components:{hide_tooltip:{}},Slot:17}\ndata modify block 29999998 -64 % Items append value {id:"arrow",count:1,components:{item_name:'"Next Page"',custom_data:{shop_item:1b,next_page:1b}},Slot:26}\n""".replace("%", str(page)))
+            # start new one
+            page += 1
+            i = 0
+            f.write("setblock 29999998 -64 % barrel\ndata remove block 29999998 -64 % Items\n".replace("%", str(page)))
+        # item
+        # convert i to slot
+        ii = i // 8
+        jj = i % 8
+        k = ii * 9 + jj
+        f.write("""data modify block 29999998 -64 % Items append value {id:"@model@",count:1,components:{item_name:'"@name@"',lore:['[{"text":"Price: ","color":"gray","italic":false},{"text":"$@price@","color":"green","italic":false}]'],custom_data:{shop:"generator.@id@",shop_item:1b}},Slot:&}\n"""\
+                .replace("%", str(page)).replace("&", str(k))\
+                .replace("@model@", gen["model"])\
+                .replace("@name@", gen["name"])\
+                .replace("@id@", gen["id"])\
+                .replace("@price@", str(gen["price"])))
+        i += 1
+    # end of last page
+    # fill with stained glass
+    while i < 24:
+        ii = i // 8
+        jj = i % 8
+        k = ii * 9 + jj
+        f.write("""data modify block 29999998 -64 % Items append value {id:"light_gray_stained_glass_pane",count:1,components:{hide_tooltip:{}},Slot:&}\n"""\
+                .replace("%", str(page)).replace("&", str(k)))
+        i += 1
+    f.write("""data modify block 29999998 -64 % Items append value {id:"prismarine_shard",count:1,components:{itm_name:'"Prev Page"',custom_data:{shop_item:1b,prev_page:1b}},Slot:8}\ndata modify block 29999998 -64 % Items append value {id:"black_stained_glass_pane",count:1,components:{hide_tooltip:{}},Slot:17}\ndata modify block 29999998 -64 % Items append value {id:"black_stained_glass_pane",count:1,components:{hide_tooltip:{}},Slot:26}""".replace("%", str(page)))
+# shop definitions
+with open("data/code/function/shop/shop_logic/shop_item.generator.mcfunction", "w") as f:
+    for gen in GENERATORS:
+        f.write(TEMPLATE_SHOP_ITEM.replace("%id%", gen["id"]).replace("%price%", str(gen["price"])) + "\n")
+with open("data/code/function/shop/shop_logic/bulk_item.generator.mcfunction", "w") as f:
+    for gen in GENERATORS:
+        f.write(TEMPLATE_BULK_ITEM.replace("%id%", gen["id"]).replace("%b_price%", str(5 * gen["price"])) + "\n")
