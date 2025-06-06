@@ -42,47 +42,61 @@ ITEMS = {
     "cobblestone": 20,
     "stone": 50,
     "smooth_stone": 75,
-    "coal": 1000
+    "stone_bricks": 150,
+    "coal": 1000,
+    "torch": 1500
 }
 
-RECIPES = [
-    # cutter recipes
-    {
-        "type": "cutter",
-        "input": "oak_log",
-        "output": "oak_planks",
-        "mul": 4
-    },
-    {
-        "type": "cutter",
-        "input": "oak_planks",
-        "output": "oak_slab",
-        "mul": 2
-    },
-    {
-        "type": "cutter",
-        "input": "oak_slab",
-        "output": "stick",
-        "mul": 2
-    },
-
-    # furnace recipes
-    {
-        "type": "furnace",
-        "input": "oak_log",
-        "output": "charcoal"
-    },
-    {
-        "type": "furnace",
-        "input": "cobblestone",
-        "output": "stone"
-    },
-    {
-        "type": "furnace",
-        "input": "stone",
-        "output": "smooth_stone"
-    }
-]
+RECIPES = {
+    "cutter": [
+        # cutter recipes
+        {
+            "input": "oak_log",
+            "output": "oak_planks",
+            "mul": 4
+        },
+        {
+            "input": "oak_planks",
+            "output": "oak_slab",
+            "mul": 2
+        },
+        {
+            "input": "oak_slab",
+            "output": "stick",
+            "mul": 2
+        }
+    ],
+    "furnace": [
+        # furnace recipes
+        {
+            "input": "oak_log",
+            "output": "charcoal"
+        },
+        {
+            "input": "cobblestone",
+            "output": "stone"
+        },
+        {
+            "input": "stone",
+            "output": "smooth_stone"
+        }
+    ],
+    "crafter_2": [
+        # crafter_2 recipes
+        {
+            "in1": "stick",
+            "in2": "coal",
+            "out": "torch",
+            "count": 4
+        },
+        {
+            "in1": "smooth_stone",
+            "in2": "smooth_stone",
+            "out": "stone_bricks",
+            "count": 1
+        }
+    ]
+}
 
 # templates
 TEMPLATE_LOOT_TABLE = ""
@@ -177,13 +191,11 @@ with open("data/code/function/logic/sell.prices.mcfunction", "w") as f:
         f.write("""execute if data entity @s item{id:"minecraft:%id%"} run scoreboard players set #price math %price%\n""".replace("%id%", item).replace("%price%", str(ITEMS[item])))
 
 
-# # # RECIPES # # #
+# # #  RECIPES  # # #
 
 # Cutter recipes
 with open("data/code/function/logic/cutter.recipes.mcfunction", "w") as f:
-    for recipe in RECIPES:
-        if recipe["type"] != "cutter":
-            continue
+    for recipe in RECIPES["cutter"]:
         f.write("""execute if data entity @s item{id:"minecraft:%input%"} run scoreboard players set #mul math %mul%\nexecute if data entity @s item{id:"minecraft:%input%"} run return run data modify entity @s item.id set value "minecraft:%output%"\n"""\
                 .replace("%input%", recipe["input"]).replace("%output%", recipe["output"]).replace("%mul%", str(recipe["mul"])))
         if not recipe["output"] in ITEMS:
@@ -191,13 +203,26 @@ with open("data/code/function/logic/cutter.recipes.mcfunction", "w") as f:
 
 # Furnace recipes
 with open("data/code/function/logic/furnace.recipes.mcfunction", "w") as f:
-    for recipe in RECIPES:
-        if recipe["type"] != "furnace":
-            continue
+    for recipe in RECIPES["furnace"]:
         f.write("""execute if data entity @s item{id:"minecraft:%input%"} run return run data modify entity @s item.id set value "minecraft:%output%"\n"""\
                 .replace("%input%", recipe["input"]).replace("%output%", recipe["output"]))
         if not recipe["output"] in ITEMS:
             print("[recipe/furnace] Unpriced item " + recipe["output"])
+
+# Crafter 2 recipes
+with open("data/code/function/logic/crafter_2.recipe.mcfunction", "w") as f:
+    for recipe in RECIPES["crafter_2"]:
+        if recipe["in1"] == recipe["in2"]:
+            f.write("""execute if entity @n[type=item_display,tag=crafting.1,distance=..2,nbt={item:{id:"minecraft:%in%"}}] if entity @n[type=item_display,tag=crafting.2,distance=..2,nbt={item:{id:"minecraft:%in%"}}] run scoreboard players remove @n[type=item_display,tag=crafting.1,distance=..2,nbt={item:{id:"minecraft:%in%"}}] count 1\nexecute if entity @n[type=item_display,tag=crafting.1,distance=..2,nbt={item:{id:"minecraft:%in%"}}] if entity @n[type=item_display,tag=crafting.2,distance=..2,nbt={item:{id:"minecraft:%in%"}}] run scoreboard players remove @n[type=item_display,tag=crafting.2,distance=..2,nbt={item:{id:"minecraft:%in%"}}] count 1\nexecute if entity @n[type=item_display,tag=crafting.1,distance=..2,nbt={item:{id:"minecraft:%in%"}}] if entity @n[type=item_display,tag=crafting.2,distance=..2,nbt={item:{id:"minecraft:%in%"}}] run scoreboard players set #count math %count%\nexecute if entity @n[type=item_display,tag=crafting.1,distance=..2,nbt={item:{id:"minecraft:%in%"}}] if entity @n[type=item_display,tag=crafting.2,distance=..2,nbt={item:{id:"minecraft:%in%"}}] run return run summon item_display ~ ~ ~ {item:{id:"%out%",count:1},teleport_duration:20,transformation:{scale:[0.4f,0.4f,0.4f],translation:[0f,-.23f,0f],left_rotation:[0,0,0,1],right_rotation:[0,0,0,1]},view_range:0.25,Tags:["item","crafting.output"]}\n"""\
+                .replace("%in%", recipe["in1"]).replace("%out%", recipe["out"]).replace("%count%", str(recipe["count"])))
+        else:
+            f.write("""execute if entity @n[type=item_display,tag=crafting.input,distance=..2,nbt={item:{id:"minecraft:%in1%"}}] if entity @n[type=item_display,tag=crafting.input,distance=..2,nbt={item:{id:"minecraft:%in2%"}}] run scoreboard players remove @n[type=item_display,tag=crafting.input,distance=..2,nbt={item:{id:"minecraft:%in1%"}}] count 1\nexecute if entity @n[type=item_display,tag=crafting.input,distance=..2,nbt={item:{id:"minecraft:%in1%"}}] if entity @n[type=item_display,tag=crafting.input,distance=..2,nbt={item:{id:"minecraft:%in2%"}}] run scoreboard players remove @n[type=item_display,tag=crafting.input,distance=..2,nbt={item:{id:"minecraft:%in2%"}}] count 1\nexecute if entity @n[type=item_display,tag=crafting.input,distance=..2,nbt={item:{id:"minecraft:%in1%"}}] if entity @n[type=item_display,tag=crafting.input,distance=..2,nbt={item:{id:"minecraft:%in2%"}}] run scoreboard players set #count math %count%\nexecute if entity @n[type=item_display,tag=crafting.input,distance=..2,nbt={item:{id:"minecraft:%in1%"}}] if entity @n[type=item_display,tag=crafting.input,distance=..2,nbt={item:{id:"minecraft:%in2%"}}] run return run summon item_display ~ ~ ~ {item:{id:"%out%",count:1},teleport_duration:20,transformation:{scale:[0.4f,0.4f,0.4f],translation:[0f,-.23f,0f],left_rotation:[0,0,0,1],right_rotation:[0,0,0,1]},view_range:0.25,Tags:["item","crafting.output"]}\n"""\
+                .replace("%in1%", recipe["in1"]).replace("%in2%", recipe["in2"]).replace("%out%", recipe["out"]).replace("%count%", str(recipe["count"])))
+        if not recipe["out"] in ITEMS:
+            print("[recipe/crafter_2] Unpriced item " + recipe["out"])
+    f.write("return fail")
+
+# # #  SHOP PAGES  # # #
 
 # generate shop for generators
 with open("data/code/function/shop_pages.generate.mcfunction", "w") as f:
@@ -210,7 +235,7 @@ with open("data/code/function/shop_pages.generate.mcfunction", "w") as f:
     for gen in GENERATORS:
         if i == 24:
             # end of current page
-            f.write("""data modify block 29999998 -64 % Items append value {id:"prismarine_shard",count:1,components:{itm_name:'"Prev Page"',custom_data:{shop_item:1b,prev_page:1b}},Slot:8}\ndata modify block 29999998 -64 % Items append value {id:"black_stained_glass_pane",count:1,components:{hide_tooltip:{}},Slot:17}\ndata modify block 29999998 -64 % Items append value {id:"arrow",count:1,components:{item_name:'"Next Page"',custom_data:{shop_item:1b,next_page:1b}},Slot:26}\n""".replace("%", str(page)))
+            f.write("""data modify block 29999998 -64 % Items append value {id:"prismarine_shard",count:1,components:{item_name:'"Prev Page"',custom_data:{shop_item:1b,prev_page:1b}},Slot:8}\ndata modify block 29999998 -64 % Items append value {id:"black_stained_glass_pane",count:1,components:{hide_tooltip:{}},Slot:17}\ndata modify block 29999998 -64 % Items append value {id:"arrow",count:1,components:{item_name:'"Next Page"',custom_data:{shop_item:1b,next_page:1b}},Slot:26}\n""".replace("%", str(page)))
             # start new one
             page += 1
             i = 0
@@ -225,7 +250,7 @@ with open("data/code/function/shop_pages.generate.mcfunction", "w") as f:
                 .replace("@model@", gen["model"])\
                 .replace("@name@", gen["name"])\
                 .replace("@id@", gen["id"])\
-                .replace("@price@", str(gen["price"])))
+                .replace("@price@", "{:,}".format(gen["price"])))
         i += 1
     # end of last page
     # fill with stained glass
@@ -236,7 +261,7 @@ with open("data/code/function/shop_pages.generate.mcfunction", "w") as f:
         f.write("""data modify block 29999998 -64 % Items append value {id:"light_gray_stained_glass_pane",count:1,components:{hide_tooltip:{}},Slot:&}\n"""\
                 .replace("%", str(page)).replace("&", str(k)))
         i += 1
-    f.write("""data modify block 29999998 -64 % Items append value {id:"prismarine_shard",count:1,components:{itm_name:'"Prev Page"',custom_data:{shop_item:1b,prev_page:1b}},Slot:8}\ndata modify block 29999998 -64 % Items append value {id:"black_stained_glass_pane",count:1,components:{hide_tooltip:{}},Slot:17}\ndata modify block 29999998 -64 % Items append value {id:"black_stained_glass_pane",count:1,components:{hide_tooltip:{}},Slot:26}""".replace("%", str(page)))
+    f.write("""data modify block 29999998 -64 % Items append value {id:"prismarine_shard",count:1,components:{item_name:'"Prev Page"',custom_data:{shop_item:1b,prev_page:1b}},Slot:8}\ndata modify block 29999998 -64 % Items append value {id:"black_stained_glass_pane",count:1,components:{hide_tooltip:{}},Slot:17}\ndata modify block 29999998 -64 % Items append value {id:"black_stained_glass_pane",count:1,components:{hide_tooltip:{}},Slot:26}""".replace("%", str(page)))
 # shop definitions
 with open("data/code/function/shop/shop_logic/shop_item.generator.mcfunction", "w") as f:
     for gen in GENERATORS:
@@ -244,6 +269,10 @@ with open("data/code/function/shop/shop_logic/shop_item.generator.mcfunction", "
 with open("data/code/function/shop/shop_logic/bulk_item.generator.mcfunction", "w") as f:
     for gen in GENERATORS:
         f.write(TEMPLATE_BULK_ITEM.replace("%id%", gen["id"]).replace("%b_price%", str(5 * gen["price"])) + "\n")
+with open("data/code/function/shop/shop_logic/shop_sell.generator.mcfunction", "w") as f:
+    for gen in GENERATORS:
+        f.write("""execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.generator.%"]} run scoreboard players add @s money $\n"""\
+                .replace("%", gen["id"]).replace("$", str(gen["price"])))
 
 
 # # #  RESOURCE PACK AUTO GENERATOR  # # #

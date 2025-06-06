@@ -4,6 +4,7 @@ execute as @s[tag=place.elevator] run loot give @p[tag=rc] loot code:blocks/elev
 execute as @s[tag=place.sell] run loot give @p[tag=rc] loot code:blocks/sell
 execute as @s[tag=place.cutter] run loot give @p[tag=rc] loot code:blocks/cutter
 execute as @s[tag=place.furnace] run loot give @p[tag=rc] loot code:blocks/furnace
+execute as @s[tag=place.crafter_2] run loot give @p[tag=rc] loot code:blocks/crafter_2
 
 execute as @s[tag=place.generator] run function code:blocks/place.generator.loot
 

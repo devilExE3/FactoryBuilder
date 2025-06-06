@@ -39,6 +39,12 @@ execute if items entity @s player.cursor *[custom_data~{shop:"furnace"}] if scor
 execute if items entity @s player.cursor *[custom_data~{shop:"furnace"}] if score @s money matches 1000.. run playsound block.note_block.pling master @s ~ ~ ~ 1 2
 execute if items entity @s player.cursor *[custom_data~{shop:"furnace"}] if score @s money matches 1000.. run scoreboard players remove @s money 1000
 
+execute if items entity @s player.cursor *[custom_data~{shop:"crafter_2"}] unless score @s money matches 500000.. run tellraw @s {"text":"You don't have enough money","color":"red"}
+execute if items entity @s player.cursor *[custom_data~{shop:"crafter_2"}] unless score @s money matches 500000.. run playsound block.note_block.bass
+execute if items entity @s player.cursor *[custom_data~{shop:"crafter_2"}] if score @s money matches 500000.. run loot give @s loot code:blocks/crafter_2
+execute if items entity @s player.cursor *[custom_data~{shop:"crafter_2"}] if score @s money matches 500000.. run playsound block.note_block.pling master @s ~ ~ ~ 1 2
+execute if items entity @s player.cursor *[custom_data~{shop:"crafter_2"}] if score @s money matches 500000.. run scoreboard players remove @s money 500000
+
 function code:shop/shop_logic/shop_item.generator
 
 item replace entity @s player.cursor with air

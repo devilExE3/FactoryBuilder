@@ -14,8 +14,8 @@ data modify block 29999998 -64 0 Items append value {id:"light_gray_stained_glas
 data modify block 29999998 -64 0 Items append value {id:"black_stained_glass_pane",count:1,components:{hide_tooltip:{}},Slot:8}
 
 data modify block 29999998 -64 0 Items append value {id:"stonecutter",count:1,components:{item_name:'"Block Cutter"',lore:['[{"text":"Price: ","color":"gray","italic":false},{"text":"$500","color":"green","italic":false}]'],custom_data:{shop:"cutter",shop_item:1b}},Slot:9}
-data modify block 29999998 -64 0 Items append value {id:"blast_furnace",count:1,components:{item_name:'"Furnace"',lore:['[{"text":"Price: ","color":"gray","italic":false},{"text":"$1000","color":"green","italic":false}]'],custom_data:{shop:"furnace",shop_item:1b}},Slot:10}
-data modify block 29999998 -64 0 Items append value {id:"light_gray_stained_glass_pane",count:1,components:{hide_tooltip:{}},Slot:11}
+data modify block 29999998 -64 0 Items append value {id:"blast_furnace",count:1,components:{item_name:'"Furnace"',lore:['[{"text":"Price: ","color":"gray","italic":false},{"text":"$1,000","color":"green","italic":false}]'],custom_data:{shop:"furnace",shop_item:1b}},Slot:10}
+data modify block 29999998 -64 0 Items append value {id:"crafting_table",count:1,components:{item_name:'"Crafter (2 inputs)"',lore:['[{"text":"Price: ","color":"gray","italic":false},{"text":"$500,000","color":"green","italic":false}]'],custom_data:{shop:"crafter_2",shop_item:1b}},Slot:11}
 data modify block 29999998 -64 0 Items append value {id:"light_gray_stained_glass_pane",count:1,components:{hide_tooltip:{}},Slot:12}
 data modify block 29999998 -64 0 Items append value {id:"light_gray_stained_glass_pane",count:1,components:{hide_tooltip:{}},Slot:13}
 data modify block 29999998 -64 0 Items append value {id:"light_gray_stained_glass_pane",count:1,components:{hide_tooltip:{}},Slot:14}

@@ -10,6 +10,12 @@
         "gray_stained_glass",
         "black_stained_glass",
         "white_stained_glass",
+
+        "bricks",
+        "brick_slab",
+        "tuff_bricks",
+        "tuff_brick_slab",
+        "barrier",
         "#code:generators"
     ]
 }

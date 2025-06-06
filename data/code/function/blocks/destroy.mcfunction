@@ -10,6 +10,7 @@ execute as @s[tag=block.elevator] run loot replace entity @n[type=item,tag=item.
 execute as @s[tag=block.sell] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/sell
 execute as @s[tag=block.cutter] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/cutter
 execute as @s[tag=block.furnace] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/furnace
+execute as @s[tag=block.crafter_2] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/crafter_2
 
 execute as @s[tag=block.generator] run function code:blocks/destroy.generator
 
