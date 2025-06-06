@@ -6,8 +6,8 @@ execute if entity @p[tag=rc,tag=!in_plot] run tellraw @p[tag=rc] "You need to be
 # check if it's in the plot
 execute if score #can_place math matches 1 run function code:blocks/place.check_plot
 # check for special block place
-execute if score #can_place math matches 1 if block ~ ~-1 ~ air run tellraw @p[tag=rc] "All blocks need support below!"
-execute if score #can_place math matches 1 if block ~ ~-1 ~ air run scoreboard players set #can_place math 0
+execute if score #can_place math matches 1 as @s[tag=place.carpet] if block ~ ~-1 ~ air run tellraw @p[tag=rc] "This block needs support below!"
+execute if score #can_place math matches 1 as @s[tag=place.carpet] if block ~ ~-1 ~ air run scoreboard players set #can_place math 0
 
 execute if score #can_place math matches 0 run return run function code:blocks/place.loot
 
