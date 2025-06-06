@@ -25,7 +25,7 @@ kill @n[type=item_display,tag=crafting.1,distance=..2,scores={count=..0}]
 kill @n[type=item_display,tag=crafting.2,distance=..2,scores={count=..0}]
 tag @n[type=item_display,tag=crafting.1,distance=..2] remove crafting.1
 tag @n[type=item_display,tag=crafting.2,distance=..2] remove crafting.2
-tag @e[type=item_display,tag=crafting.2,distance=..2,limit=2] remove crafting.input
+tag @e[type=item_display,tag=crafting.input,distance=..2,limit=2] remove crafting.input
 
 # setup crafting.output count
 scoreboard players operation @n[type=item_display,tag=crafting.output,distance=..0.01] count = #count math
