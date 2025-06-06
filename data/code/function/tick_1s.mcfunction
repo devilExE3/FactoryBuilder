@@ -1,5 +1,8 @@
 schedule function code:tick_1s 1s replace
 
+# item decay logic
+execute as @e[type=item_display,tag=item] run function code:logic/item.despawn
+
 # crafters
 execute as @e[type=marker,tag=block.crafter_2] at @s run function code:logic/crafter_2
 
