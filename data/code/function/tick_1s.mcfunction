@@ -1,6 +1,7 @@
 schedule function code:tick_1s 1s replace
 
 execute as @a run scoreboard players operation @s prev_money = @s money
+
 # item decay logic
 execute as @e[type=item_display,tag=item] run function code:logic/item.despawn
 
@@ -14,6 +15,9 @@ execute as @e[type=item_display,tag=item] at @s run function code:logic/item
 
 execute as @a run scoreboard players operation @s prev_money -= @s money
 execute as @a run scoreboard players operation @s prev_money *= #-1 math
+
+# update item count
+execute as @e[type=item_display,tag=item] run function code:logic/item.name
 
 # calculate mspt average
 scoreboard players operation #round_factor math = #avg_COUNT math

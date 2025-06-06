@@ -31,6 +31,7 @@ scoreboard objectives add plot.x dummy
 scoreboard objectives add plot.y dummy
 
 scoreboard objectives add count dummy
+scoreboard objectives add prev_count dummy
 scoreboard objectives add stagger dummy
 scoreboard players set #stagger stagger 0
 scoreboard players set #tick stagger 0
