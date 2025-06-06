@@ -17,6 +17,7 @@ gamerule disablePlayerMovementCheck true
 
 # objectives
 scoreboard objectives add math dummy
+scoreboard players set #-1 math -1
 scoreboard players set #2 math 2
 scoreboard players set #4 math 4
 scoreboard players set #10 math 10
@@ -39,6 +40,7 @@ scoreboard players add #timer timer 1
 scoreboard objectives add id dummy
 execute unless score #last_id id matches 0.. run scoreboard players set #last_id id 0
 scoreboard objectives add money dummy
+scoreboard objectives add prev_money dummy
 
 scoreboard objectives add stats.playtime dummy
 scoreboard objectives add list dummy
