@@ -19,10 +19,12 @@ gamerule disablePlayerMovementCheck true
 scoreboard objectives add math dummy
 scoreboard players set #2 math 2
 scoreboard players set #4 math 4
+scoreboard players set #10 math 10
 scoreboard players set #16 math 16
 scoreboard players set #32 math 32
 scoreboard players set #90 math 90
 scoreboard players set #100 math 100
+scoreboard players set #1000 math 1000
 scoreboard players set #playercount math 0
 scoreboard objectives add plot.x dummy
 scoreboard objectives add plot.y dummy
@@ -39,6 +41,8 @@ execute unless score #last_id id matches 0.. run scoreboard players set #last_id
 scoreboard objectives add money dummy
 
 scoreboard objectives add stats.playtime dummy
+scoreboard objectives add list dummy
+scoreboard objectives setdisplay list list
 
 scoreboard objectives add used.pickaxe used:wooden_pickaxe
 scoreboard objectives add shop_page dummy

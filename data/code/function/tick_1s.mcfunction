@@ -30,3 +30,4 @@ execute if score #wait stagger matches 5.. run scoreboard players set #wait stag
 scoreboard players add @a stats.playtime 1
 
 function code:update_sidebar
+execute as @a run function code:update_list

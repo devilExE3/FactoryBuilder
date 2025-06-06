@@ -1,0 +1,1 @@
+$scoreboard players display numberformat @s list fixed {"text":"$$(int).$(frac)$(mul)","color": "green"}
