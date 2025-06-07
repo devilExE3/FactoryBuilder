@@ -1,7 +1,7 @@
 execute if items entity @s hotbar.8 * unless items entity @s hotbar.8 nether_star run summon item ~ ~ ~ {Item:{id:"barrier",count:1},Tags:["inventory.drop"],PickupDelay:1s}
 execute if items entity @s hotbar.8 * unless items entity @s hotbar.8 nether_star run item replace entity @n[type=item,tag=inventory.drop,distance=..1] container.0 from entity @s hotbar.8
 execute if items entity @s hotbar.8 * unless items entity @s hotbar.8 nether_star run data modify entity @n[type=item,tag=inventory.drop,distance=..1] Owner set from entity @s UUID
-item replace entity @s hotbar.8 with nether_star[custom_name='{"text":"Shop","color":"white","italic":false}',lore=['{"text":"Hold in your hand and right click","color":"gray","italic":false}'],consumable={animation:"bundle",consume_seconds:32767,has_consume_particles:false}]
+item replace entity @s hotbar.8 with nether_star[custom_name='{"text":"Shop","color":"white","italic":false}',lore=['{"text":"Hold in your hand and right click","color":"gray","italic":false}'],consumable={animation:"none",consume_seconds:0.1,has_consume_particles:false,sound:"fb:none"}]
 
 execute if items entity @s hotbar.7 * unless items entity @s hotbar.7 wooden_pickaxe unless items entity @s hotbar.7 barrier run summon item ~ ~ ~ {Item:{id:"barrier",count:1},Tags:["inventory.drop"],PickupDelay:1s}
 execute if items entity @s hotbar.7 * unless items entity @s hotbar.7 wooden_pickaxe unless items entity @s hotbar.7 barrier run item replace entity @n[type=item,tag=inventory.drop,distance=..1] container.0 from entity @s hotbar.7

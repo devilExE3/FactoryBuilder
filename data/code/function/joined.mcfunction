@@ -53,5 +53,3 @@ tag @s remove shrinked
 attribute @s scale base set 1
 
 execute at @s run function code:reload_inventory
-
-tellraw @s [{"text":"For the best experience I recommend you download the "},{"text":"resource pack (click)","underlined": true,"clickEvent": {"action": "open_url","value": "https://download.mc-packs.net/pack/4cf8d8fa85e705342a04d01aaf38279d74637f86.zip"}}]
