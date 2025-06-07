@@ -60,6 +60,7 @@ scoreboard objectives add reload_plot trigger
 scoreboard objectives add wipe_plot trigger
 scoreboard objectives add spec trigger
 scoreboard objectives add shrink trigger
+scoreboard objectives add book trigger
 
 # default teams
 team add default

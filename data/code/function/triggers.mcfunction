@@ -26,3 +26,7 @@ scoreboard players set @a spec 0
 execute as @a[scores={shrink=1..}] at @s run function code:trigger/shrink
 scoreboard players enable @a shrink
 scoreboard players set @a shrink 0
+
+execute as @a[scores={book=1..}] at @s run loot give @s loot code:book
+scoreboard players enable @a book
+scoreboard players set @a book 0
