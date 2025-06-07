@@ -10,7 +10,6 @@ attribute @s scale base set 1
 
 # remove possible stray entites
 tag @s add died
-execute as @e[type=chest_minecart,tag=shop] if score @s id = @p[tag=died] id run function code:shop/kill_shop
 execute as @e[type=item_display,tag=playerhead] if score @s id = @p[tag=died] id run kill @s
 tag @s remove died
 

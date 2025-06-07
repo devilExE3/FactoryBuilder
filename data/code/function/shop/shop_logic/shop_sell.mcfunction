@@ -5,6 +5,7 @@ execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_d
 execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.cutter"]} run scoreboard players add @s money 500
 execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.furnace"]} run scoreboard players add @s money 1000
 execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.crafter_2"]} run scoreboard players add @s money 500000
+execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.crafter_3"]} run scoreboard players add @s money 100000000
 
 function code:shop/shop_logic/shop_sell.generator
 
