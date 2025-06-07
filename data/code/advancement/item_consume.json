@@ -12,6 +12,6 @@
     },
     "requirements": [["req"]],
     "rewards": {
-        "function": 
+        "function": "code:shop/shop_logic/open"
     }
 }
