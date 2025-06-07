@@ -2,7 +2,7 @@
 data modify storage tiles tiles set value []
 $scoreboard players set #rx math $(x)
 $scoreboard players set #ry math $(y)
-$execute positioned $(x).0 $(y).0 $(z).0 positioned ~8.0 ~ ~8.0 as @e[type=#code:block,tag=block,sort=nearest,scores={id=$(id)}] at @s run function code:plots/save.tile
+$execute positioned $(x).0 0 $(y).0 positioned ~8.0 ~ ~8.0 as @e[type=#code:block,tag=block,sort=nearest,scores={id=$(id)}] at @s run function code:plots/save.tile
 
 # save tiles to player
 data modify storage player player.tiles set from storage tiles tiles
