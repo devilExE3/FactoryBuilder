@@ -1,0 +1,1 @@
+$inventory @s block 29999999 -64 $(value)

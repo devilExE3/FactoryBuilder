@@ -1,4 +1,5 @@
 setblock 29999999 -64 1 barrel
+data modify block 29999999 -64 1 CustomName set value '"Shop"'
 setblock 29999998 -64 1 barrel
 data remove block 29999998 -64 1 Items
 data modify block 29999998 -64 1 Items append value {id:"oak_sapling",count:1,components:{item_name:'"Oak Tree Farm"',lore:['[{"text":"Price: ","color":"gray","italic":false},{"text":"$150","color":"green","italic":false}]'],custom_data:{shop:"generator.oak",shop_item:1b}},Slot:0}

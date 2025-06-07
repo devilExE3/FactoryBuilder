@@ -1,0 +1,17 @@
+{
+    "parent": "code:trigger",
+    "criteria": {
+        "req": {
+            "trigger": "consume_item",
+            "conditions": {
+                "item": {
+                    "items": "nether_star"
+                }
+            }
+        }
+    },
+    "requirements": [["req"]],
+    "rewards": {
+        "function": 
+    }
+}
