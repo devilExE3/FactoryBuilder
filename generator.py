@@ -100,7 +100,7 @@ RECIPES = {
     "crafter_3": [
         # crafter_3 recipes
         {
-            "in1": "troch",
+            "in1": "torch",
             "in2": "smooth_stone",
             "in3": "charcoal",
             "out": "glowstone",

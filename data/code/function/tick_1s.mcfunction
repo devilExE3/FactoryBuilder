@@ -7,6 +7,7 @@ execute as @e[type=item_display,tag=item] run function code:logic/item.despawn
 
 # crafters
 execute as @e[type=marker,tag=block.crafter_2] at @s run function code:logic/crafter_2
+execute as @e[type=marker,tag=block.crafter_3] at @s run function code:logic/crafter_3
 
 # conveyor logic
 tag @e[type=item_display,tag=item.cut,tag=item.moved] remove item.cut
