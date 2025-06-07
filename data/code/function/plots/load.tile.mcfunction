@@ -10,7 +10,11 @@ function code:plots/load.tile.offset with storage temp this
 
 # frontbone of place
 $data modify entity @n[type=#code:block,tag=block.this,distance=..330] data.Owner set value "$(hex)"
-$data modify entity @n[type=#code:block,tag=block.this,distance=..330] data.OwnerUUID set value $(uuid)
+$data modify storage temp uuid.uuid set value $(uuid)
+execute store result score @n[type=#code:block,tag=block.this,distance=..330] block.owner0 run data get storage temp uuid.uuid[0]
+execute store result score @n[type=#code:block,tag=block.this,distance=..330] block.owner1 run data get storage temp uuid.uuid[1]
+execute store result score @n[type=#code:block,tag=block.this,distance=..330] block.owner2 run data get storage temp uuid.uuid[2]
+execute store result score @n[type=#code:block,tag=block.this,distance=..330] block.owner3 run data get storage temp uuid.uuid[3]
 $scoreboard players set @n[type=#code:block,tag=block.this,distance=..330] id $(id)
 execute as @n[type=#code:block,tag=block.this,distance=..330] run function code:blocks/util/stagger
 tag @n[type=#code:block,tag=block.this,distance=..330] remove block.this

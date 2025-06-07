@@ -16,16 +16,16 @@ execute if score #orient math matches 0 positioned ~1 ~ ~ run tag @n[type=item_d
 execute if score #orient math matches 1 positioned ~ ~ ~-1 run tag @n[type=item_display,tag=item,distance=..0.01] add crafting.1
 execute if score #orient math matches 1 positioned ~ ~ ~1 run tag @n[type=item_display,tag=item,distance=..0.01] add crafting.2
 # add crafting.input tags
-tag @n[type=item_display,tag=crafting.1,distance=..2] add crafting.input
-tag @n[type=item_display,tag=crafting.2,distance=..2] add crafting.input
+tag @n[type=item_display,tag=crafting.1,distance=..1.01] add crafting.input
+tag @n[type=item_display,tag=crafting.2,distance=..1.01] add crafting.input
 
 execute store success score #recipe math run function code:logic/crafter_2.recipe
 
-kill @n[type=item_display,tag=crafting.1,distance=..2,scores={count=..0}]
-kill @n[type=item_display,tag=crafting.2,distance=..2,scores={count=..0}]
-tag @n[type=item_display,tag=crafting.1,distance=..2] remove crafting.1
-tag @n[type=item_display,tag=crafting.2,distance=..2] remove crafting.2
-tag @e[type=item_display,tag=crafting.input,distance=..2,limit=2] remove crafting.input
+kill @n[type=item_display,tag=crafting.1,distance=..1.01,scores={count=..0}]
+kill @n[type=item_display,tag=crafting.2,distance=..1.01,scores={count=..0}]
+tag @n[type=item_display,tag=crafting.1,distance=..1.01] remove crafting.1
+tag @n[type=item_display,tag=crafting.2,distance=..1.01] remove crafting.2
+tag @e[type=item_display,tag=crafting.input,distance=..1.01,limit=2] remove crafting.input
 
 # setup crafting.output count
 scoreboard players operation @n[type=item_display,tag=crafting.output,distance=..0.01] count = #count math

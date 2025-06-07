@@ -1,6 +1,11 @@
 tag @n[type=item,predicate=code:structure_void,distance=..3] add item.target
 
-data modify entity @n[type=item,tag=item.target,distance=..3] Owner set from entity @s data.OwnerUUID
+data modify storage temp uuid.uuid set value [I;0,0,0,0]
+execute store result storage temp uuid.uuid[0] int 1 run scoreboard players get @s block.owner0
+execute store result storage temp uuid.uuid[1] int 1 run scoreboard players get @s block.owner1
+execute store result storage temp uuid.uuid[2] int 1 run scoreboard players get @s block.owner2
+execute store result storage temp uuid.uuid[3] int 1 run scoreboard players get @s block.owner3
+data modify entity @n[type=item,tag=item.target,distance=..3] Owner set from storage temp uuid.uuid
 data merge entity @n[type=item,tag=item.target,distance=..3] {Glowing:true}
 team join yellow @n[type=item,tag=item.target,distance=..3]
 

@@ -15,7 +15,10 @@ function code:blocks/place.block
 
 execute as @p[tag=rc] run function uuid_linker:get_uuid
 data modify entity @n[type=#code:block,tag=block.this,distance=..1] data.Owner set from storage minecraft:uuid_linker UUID.HexString
-data modify entity @n[type=#code:block,tag=block.this,distance=..1] data.OwnerUUID set from entity @p[tag=rc] UUID
+execute store result score @n[type=#code:block,tag=block.this,distance=..1] block.owner0 run data get entity @p[tag=rc] UUID[0]
+execute store result score @n[type=#code:block,tag=block.this,distance=..1] block.owner1 run data get entity @p[tag=rc] UUID[1]
+execute store result score @n[type=#code:block,tag=block.this,distance=..1] block.owner2 run data get entity @p[tag=rc] UUID[2]
+execute store result score @n[type=#code:block,tag=block.this,distance=..1] block.owner3 run data get entity @p[tag=rc] UUID[3]
 scoreboard players operation @n[type=#code:block,tag=block.this,distance=..1] id = @p[tag=rc] id
 execute as @n[type=#code:block,tag=block.this,distance=..1] run function code:blocks/util/stagger
 tag @n[type=#code:block,tag=block.this,distance=..1] remove block.this

@@ -18,10 +18,15 @@ execute as @s[tag=block.conveyor.w] run data modify storage temp this.direction 
 execute as @s[tag=block.conveyor.s] run data modify storage temp this.direction set value 2
 execute as @s[tag=block.conveyor.e] run data modify storage temp this.direction set value 3
 
-data modify entity @s data.x set from storage temp this.x
-data modify entity @s data.y set from storage temp this.y
-data modify entity @s data.z set from storage temp this.z
-function code:plots/purge.macro with entity @s data
+data modify storage temp purge_data.x set from storage temp this.x
+data modify storage temp purge_data.y set from storage temp this.y
+data modify storage temp purge_data.z set from storage temp this.z
+data modify storage temp purge_data.uuid set value [I;0,0,0,0]
+execute store result storage temp purge_data.uuid[0] int 1 run scoreboard players get @s block.owner0
+execute store result storage temp purge_data.uuid[1] int 1 run scoreboard players get @s block.owner1
+execute store result storage temp purge_data.uuid[2] int 1 run scoreboard players get @s block.owner2
+execute store result storage temp purge_data.uuid[3] int 1 run scoreboard players get @s block.owner3
+function code:plots/purge.macro with storage temp purge_data
 
 # remove block
 setblock ~ ~ ~ air

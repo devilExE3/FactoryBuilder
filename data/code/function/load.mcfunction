@@ -52,6 +52,11 @@ scoreboard objectives add shop_page dummy
 scoreboard objectives add death deathCount
 scoreboard objectives add death_wait dummy
 
+scoreboard objectives add block.owner0 dummy
+scoreboard objectives add block.owner1 dummy
+scoreboard objectives add block.owner2 dummy
+scoreboard objectives add block.owner3 dummy
+
 # triggers
 scoreboard objectives add plot trigger
 scoreboard objectives add spawn trigger
