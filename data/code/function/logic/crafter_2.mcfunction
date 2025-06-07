@@ -29,4 +29,5 @@ tag @e[type=item_display,tag=crafting.input,distance=..2,limit=2] remove craftin
 
 # setup crafting.output count
 scoreboard players operation @n[type=item_display,tag=crafting.output,distance=..0.01] count = #count math
+scoreboard players operation @n[type=item_display,tag=crafting.output,distance=..0.01] id = @s id
 tag @n[type=item_display,tag=crafting.output,distance=..0.01] remove crafting.output
