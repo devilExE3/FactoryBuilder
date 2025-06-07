@@ -1,5 +1,7 @@
 # Page 0
 
+setblock 29999999 -64 0 barrel
+data modify block 29999999 -64 0 CustomName set value '"Shop"'
 setblock 29999998 -64 0 barrel
 data remove block 29999998 -64 0 Items
 

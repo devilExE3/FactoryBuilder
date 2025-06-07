@@ -91,8 +91,6 @@ team modify fm deathMessageVisibility never
 
 # auxiliary blocks
 forceload add 29999999 0
-setblock 29999999 -64 0 bedrock
-setblock 29999999 -63 0 oak_sign
 function code:shop_pages
 
 # purge plots

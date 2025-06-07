@@ -225,13 +225,15 @@ with open("data/code/function/logic/crafter_2.recipe.mcfunction", "w") as f:
 # # #  SHOP PAGES  # # #
 
 # generate shop for generators
+g = open("data/code/function/shop/shop_logic/tick.update.mcfunction", "w")
+g.write("data modify block 29999999 -64 0 Items set from block 29999998 -64 0 Items\n")
 with open("data/code/function/shop_pages.generate.mcfunction", "w") as f:
     # page 0 is hardcoded
-    pages = (len(GENERATORS) + 23) // 24 # amount of pages generators take up
     page = 1 # current page
     i = 0 # current item index
     # first page boiler
-    f.write("setblock 29999998 -64 1 barrel\ndata remove block 29999998 -64 1 Items\n")
+    f.write("setblock 29999999 -64 1 barrel\ndata modify block 29999999 -64 1 CustomName set value '\"Shop\"'\nsetblock 29999998 -64 1 barrel\ndata remove block 29999998 -64 1 Items\n")
+    g.write("data modify block 29999999 -64 1 Items set from block 29999998 -64 1 Items\n")
     for gen in GENERATORS:
         if i == 24:
             # end of current page
@@ -239,7 +241,8 @@ with open("data/code/function/shop_pages.generate.mcfunction", "w") as f:
             # start new one
             page += 1
             i = 0
-            f.write("setblock 29999998 -64 % barrel\ndata remove block 29999998 -64 % Items\n".replace("%", str(page)))
+            f.write("setblock 29999999 -64 % barrel\ndata modify block 29999999 -64 % CustomName set value '\"Shop\"'\n\nsetblock 29999998 -64 % barrel\ndata remove block 29999998 -64 % Items\n".replace("%", str(page)))
+            g.write("data modify block 29999999 -64 % Items set from block 29999998 -64 % Items\n".replace("%", str(page)))
         # item
         # convert i to slot
         ii = i // 8
@@ -262,6 +265,7 @@ with open("data/code/function/shop_pages.generate.mcfunction", "w") as f:
                 .replace("%", str(page)).replace("&", str(k)))
         i += 1
     f.write("""data modify block 29999998 -64 % Items append value {id:"prismarine_shard",count:1,components:{item_name:'"Prev Page"',custom_data:{shop_item:1b,prev_page:1b}},Slot:8}\ndata modify block 29999998 -64 % Items append value {id:"black_stained_glass_pane",count:1,components:{hide_tooltip:{}},Slot:17}\ndata modify block 29999998 -64 % Items append value {id:"black_stained_glass_pane",count:1,components:{hide_tooltip:{}},Slot:26}""".replace("%", str(page)))
+    g.close()
 # shop definitions
 with open("data/code/function/shop/shop_logic/shop_item.generator.mcfunction", "w") as f:
     for gen in GENERATORS:
@@ -299,3 +303,183 @@ for gen in GENERATORS:
     
     with open("../rp/assets/minecraft/blockstates/" + block_state + ".json", "w") as f:
         f.write("""{"variants":{"":{"model":"fb:block/generator/%"}}}""".replace("%", gen["id"]))
+
+
+# # #  BOOK GENERATOR  # # #
+BOOK_TEMPLATE = """{"type":"entity","pools":[{"rolls":1,"entries":[{"type":"item","name":"written_book","functions":[{"function":"set_components","components":{"minecraft:enchantment_glint_override":false,"written_book_content":{"author":"Factory Builder","title":"Factory Builder","pages":[%]}}}]}]}]}"""
+
+class BookSpace:
+    def __init__(self):
+        pass
+    def compile(self):
+        return '" "'
+
+class BookComponent:
+    def __init__(self, text):
+        self._text = text
+        self._italic = False
+        self._bold = False
+        self._color = "black"
+        self._underlined = False
+        self._target_page = -1
+        self._hover = None
+    def italic(self, b :bool):
+        self._italic = b
+        return self
+    def bold(self, b :bool):
+        self._bold = b
+        return self
+    def color(self, b :str):
+        self._color = b
+        return self
+    def underlined(self, b :bool):
+        self._underlined = b
+        return self
+    def target_page(self, b :int):
+        self._target_page = b
+        return self
+    def hover(self, h):
+        self._hover = h
+        return self
+    def compile(self):
+        ret = '{"text":"' + self._text + '"'
+        ret += ',"bold":' + ("true" if self._bold else "false")
+        ret += ',"italic":' + ("true" if self._italic else "false")
+        ret += ',"color":"' + self._color + '"'
+        ret += ',"underlined":' + ("true" if self._underlined else "false")
+        if self._target_page != -1:
+            ret += ',"clickEvent":{"action":"change_page","value":"' + str(self._target_page) + '"}'
+        if not self._hover is None:
+            ret += ',"hoverEvent":{"action":"show_text","value":' + self._hover.compile() + '}'
+        return ret + '}'
+
+class BookLine:
+    def __init__(self):
+        self.components = []
+    def add_comp(self, comp :BookComponent):
+        self.components.append(comp)
+        return self
+    def compile(self):
+        ret = '['
+        for comp in self.components:
+            ret += comp.compile() + ","
+        return ret[:-1] + "]"
+
+class BookLineEmpty:
+    def __init__(self):
+        pass
+    def compile(self): return '""'
+
+class BookPage:
+    def __init__(self):
+        self.lines = []
+    def add_line(self, line: BookLine):
+        self.lines.append(line)
+        return self
+    def compile(self):
+        ret = ""
+        for comp in self.lines:
+            if type(comp) is BookLine:
+                ret += "," + comp.compile()
+            ret += ',"\\n"'
+        return '[' + ret[1:] + ']'
+
+def esc_string(string :str):
+    return string.replace("\\", "\\\\").replace('"', '\\"')
+
+pages = []
+
+pages.append(BookPage()\
+    .add_line(BookLineEmpty())\
+    .add_line(BookLine().add_comp(BookComponent("  Factory Builder").color("gold").bold(True)))\
+    .add_line(BookLine().add_comp(BookComponent("            by devilexe3")))\
+    .add_line(BookLineEmpty())\
+    .add_line(BookLineEmpty())\
+    .add_line(BookLineEmpty())\
+    .add_line(BookLineEmpty())\
+    .add_line(BookLine().add_comp(BookComponent("    A book about all")))\
+    .add_line(BookLine().add_comp(BookComponent("    there is about")))\
+    .add_line(BookLine().add_comp(BookComponent("    this minigame.")))\
+)
+pages.append(BookPage()\
+    .add_line(BookLine().add_comp(BookComponent("TABLE").bold(True)).add_comp(BookComponent(" of ")).add_comp(BookComponent("CONTENTS").bold(True)))\
+    .add_line(BookLineEmpty())\
+    .add_line(BookLine().add_comp(BookComponent("Tutorial").underlined(True).target_page(3)))\
+    .add_line(BookLine().add_comp(BookComponent("Items").underlined(True).target_page(7)))\
+    .add_line(BookLine().add_comp(BookComponent("Recipes").underlined(True).target_page(8)))\
+)
+pages.append(BookPage()\
+    .add_line(BookLine().add_comp(BookComponent("^").target_page(2)).add_comp(BookComponent("     TUTORIAL").bold(True)))\
+    .add_line(BookLineEmpty())\
+    .add_line(BookLine().add_comp(BookComponent("You can go to your plot by using \\n     ")).add_comp(BookComponent("/trigger plot").underlined(True)))\
+    .add_line(BookLineEmpty())\
+    .add_line(BookLine().add_comp(BookComponent("You can buy stuff using the shop (nether star)")))\
+    .add_line(BookLineEmpty())\
+    .add_line(BookLine().add_comp(BookComponent("You can only place tiles when you are strictly inside your plot")))\
+)
+pages.append(BookPage()\
+    .add_line(BookLine().add_comp(BookComponent("You can only destroy tiles with the Destroy Tool")))
+    .add_line(BookLineEmpty())\
+    .add_line(BookLine().add_comp(BookComponent("Generators create different items which can be crafted into other items more valuable")))
+    .add_line(BookLineEmpty())\
+    .add_line(BookLine().add_comp(BookComponent("Items can be moved around with conveyors, elevators and chutes")))
+)
+pages.append(BookPage()\
+    .add_line(BookLine().add_comp(BookComponent("Items can only be sold with Selling Platforms")))
+    .add_line(BookLineEmpty())\
+    .add_line(BookLine().add_comp(BookComponent("You can flip tile orientation by crouching")))
+    .add_line(BookLineEmpty())\
+    .add_line(BookLine().add_comp(BookComponent("Your plot gets automatically saved when you leave")))
+    .add_line(BookLineEmpty())\
+    .add_line(BookLine().add_comp(BookComponent("If you don't know how to get started, check out the plot at spawn")))
+)
+pages.append(BookPage()\
+    .add_line(BookLine().add_comp(BookComponent("Trigger commands:")))
+    .add_line(BookLine().add_comp(BookComponent("/trigger spawn")))
+    .add_line(BookLine().add_comp(BookComponent("/trigger plot")))
+    .add_line(BookLine().add_comp(BookComponent("/trigger spec")))
+    .add_line(BookLine().add_comp(BookComponent("/trigger shrink")))
+    .add_line(BookLine().add_comp(BookComponent("/trigger kill_items")))
+    .add_line(BookLine().add_comp(BookComponent("- removes all item entities in the plot")))
+    .add_line(BookLine().add_comp(BookComponent("/trigger wipe_plot")))
+    .add_line(BookLine().add_comp(BookComponent("- removes and drops all blocks")))
+    .add_line(BookLine().add_comp(BookComponent("/trigger reload_plot")))
+    .add_line(BookLine().add_comp(BookComponent("- reloads the plot and your data")))
+)
+# item pages
+current_page = BookPage().add_line(BookLine().add_comp(BookComponent("^").target_page(2)).add_comp(BookComponent("       ITEMS").bold(True)))
+line = 1
+for item in ITEMS:
+    if line == 14:
+        pages.append(current_page)
+        current_page = BookPage()
+        line = 0
+    current_page.add_line(BookLine().add_comp(BookComponent(item).hover(BookComponent("$" + "{:,}".format(ITEMS[item])).color("green"))))
+    line += 1
+pages.append(current_page)
+# recipes
+current_page = BookPage().add_line(BookLine().add_comp(BookComponent("^").target_page(2)).add_comp(BookComponent("      RECIPES").bold(True)))
+line = 1
+for recipe_type in RECIPES:
+    for recipe in RECIPES[recipe_type]:
+        if line == 14:
+            pages.append(current_page)
+            current_page = BookPage()
+            line = 0
+        if recipe_type == "cutter":
+            current_page.add_line(BookLine().add_comp(BookComponent(recipe["output"]).hover(BookComponent("Block Cutter\\nInput: " + recipe["input"] + "\\nOutput: " + recipe["output"] + "\\nMultiplicator: " + str(recipe["mul"])).color("white"))))
+        elif recipe_type == "furnace":
+            current_page.add_line(BookLine().add_comp(BookComponent(recipe["output"]).hover(BookComponent("Furnace\\nInput: " + recipe["input"] + "\\nOutput: " + recipe["output"]).color("white"))))
+        elif recipe_type == "crafter_2":
+            current_page.add_line(BookLine().add_comp(BookComponent(recipe["out"]).hover(BookComponent("Crafter (2 inputs)\\nInputs:\\n- " + recipe["in1"] + "\\n- " + recipe["in2"] + "\\nOutput: " + str(recipe["count"]) + "x " + recipe["out"]).color("white"))))
+        else:
+            line -= 1
+            print("[book/recipe] Unknown recipe type " + recipe_type)
+        line += 1
+pages.append(current_page)
+# compile pages
+compiled = ""
+for page in pages:
+    compiled += '"' + esc_string(page.compile()) + '",'
+with open("data/code/loot_table/book.json", "w") as f:
+    f.write(BOOK_TEMPLATE.replace("%", compiled[:-1]))

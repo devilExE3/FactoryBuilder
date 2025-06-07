@@ -1,5 +1,6 @@
 tp @s 0 1 0 -45 0
 gamemode adventure @s
+data modify entity @s abilities.mayfly set value 1b
 
 # remove stray tags / states
 tag @s remove in_plot
