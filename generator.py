@@ -44,7 +44,8 @@ ITEMS = {
     "smooth_stone": 75,
     "stone_bricks": 150,
     "coal": 1000,
-    "torch": 1500
+    "torch": 1500,
+    "glowstone": 100000,
 }
 
 RECIPES = {
@@ -93,6 +94,16 @@ RECIPES = {
             "in1": "smooth_stone",
             "in2": "smooth_stone",
             "out": "stone_bricks",
+            "count": 1
+        }
+    ],
+    "crafter_3": [
+        # crafter_3 recipes
+        {
+            "in1": "troch",
+            "in2": "smooth_stone",
+            "in3": "charcoal",
+            "out": "glowstone",
             "count": 1
         }
     ]
@@ -220,6 +231,16 @@ with open("data/code/function/logic/crafter_2.recipe.mcfunction", "w") as f:
                 .replace("%in1%", recipe["in1"]).replace("%in2%", recipe["in2"]).replace("%out%", recipe["out"]).replace("%count%", str(recipe["count"])))
         if not recipe["out"] in ITEMS:
             print("[recipe/crafter_2] Unpriced item " + recipe["out"])
+    f.write("return fail")
+
+# Crafter 3 recipes
+with open("data/code/function/logic/crafter_3.recipe.mcfunction", "w") as f:
+    for recipe in RECIPES["crafter_3"]:
+        # TODO: input matches override
+        f.write("""execute if entity @n[type=item_display,tag=crafting.input,distance=..1.01,nbt={item:{id:"minecraft:%in1%"}}] if entity @n[type=item_display,tag=crafting.input,distance=..1.01,nbt={item:{id:"minecraft:%in2%"}}] if entity @n[type=item_display,tag=crafting.input,distance=..1.01,nbt={item:{id:"minecraft:%in3%"}}] run scoreboard players remove @n[type=item_display,tag=crafting.input,distance=..1.01,nbt={item:{id:"minecraft:%in1%"}}] count 1\nexecute if entity @n[type=item_display,tag=crafting.input,distance=..1.01,nbt={item:{id:"minecraft:%in1%"}}] if entity @n[type=item_display,tag=crafting.input,distance=..1.01,nbt={item:{id:"minecraft:%in2%"}}] if entity @n[type=item_display,tag=crafting.input,distance=..1.01,nbt={item:{id:"minecraft:%in3%"}}] run scoreboard players remove @n[type=item_display,tag=crafting.input,distance=..1.01,nbt={item:{id:"minecraft:%in2%"}}] count 1\nexecute if entity @n[type=item_display,tag=crafting.input,distance=..1.01,nbt={item:{id:"minecraft:%in1%"}}] if entity @n[type=item_display,tag=crafting.input,distance=..1.01,nbt={item:{id:"minecraft:%in2%"}}] if entity @n[type=item_display,tag=crafting.input,distance=..1.01,nbt={item:{id:"minecraft:%in3%"}}] run scoreboard players remove @n[type=item_display,tag=crafting.input,distance=..1.01,nbt={item:{id:"minecraft:%in3%"}}] count 1\nexecute if entity @n[type=item_display,tag=crafting.input,distance=..1.01,nbt={item:{id:"minecraft:%in1%"}}] if entity @n[type=item_display,tag=crafting.input,distance=..1.01,nbt={item:{id:"minecraft:%in2%"}}] if entity @n[type=item_display,tag=crafting.input,distance=..1.01,nbt={item:{id:"minecraft:%in3%"}}] run scoreboard players set #count math %count%\nexecute if entity @n[type=item_display,tag=crafting.input,distance=..1.01,nbt={item:{id:"minecraft:%in1%"}}] if entity @n[type=item_display,tag=crafting.input,distance=..1.01,nbt={item:{id:"minecraft:%in2%"}}] if entity @n[type=item_display,tag=crafting.input,distance=..1.01,nbt={item:{id:"minecraft:%in3%"}}] run return run summon item_display ~ ~ ~ {item:{id:"%out%",count:1},teleport_duration:20,transformation:{scale:[0.4f,0.4f,0.4f],translation:[0f,-.23f,0f],left_rotation:[0,0,0,1],right_rotation:[0,0,0,1]},view_range:0.25,Tags:["item","crafting.output"],CustomName:'"%count%"',CustomNameVisible:true}\n"""\
+            .replace("%in1%", recipe["in1"]).replace("%in2%", recipe["in2"]).replace("%in3%", recipe["in3"]).replace("%out%", recipe["out"]).replace("%count%", str(recipe["count"])))
+        if not recipe["out"] in ITEMS:
+            print("[recipe/crafter_3] Unpriced item " + recipe["out"])
     f.write("return fail")
 
 # # #  SHOP PAGES  # # #
@@ -472,6 +493,8 @@ for recipe_type in RECIPES:
             current_page.add_line(BookLine().add_comp(BookComponent(recipe["output"]).hover(BookComponent("Furnace\\nInput: " + recipe["input"] + "\\nOutput: " + recipe["output"]).color("white"))))
         elif recipe_type == "crafter_2":
             current_page.add_line(BookLine().add_comp(BookComponent(recipe["out"]).hover(BookComponent("Crafter (2 inputs)\\nInputs:\\n- " + recipe["in1"] + "\\n- " + recipe["in2"] + "\\nOutput: " + str(recipe["count"]) + "x " + recipe["out"]).color("white"))))
+        elif recipe_type == "crafter_3":
+            current_page.add_line(BookLine().add_comp(BookComponent(recipe["out"]).hover(BookComponent("Crafter (3 inputs)\\nInputs:\\n- " + recipe["in1"] + "\\n- " + recipe["in2"] + "\\n- " + recipe["in3"] + "\\nOutput: " + str(recipe["count"]) + "x " + recipe["out"]).color("white"))))
         else:
             line -= 1
             print("[book/recipe] Unknown recipe type " + recipe_type)

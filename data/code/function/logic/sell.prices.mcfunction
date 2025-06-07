@@ -9,3 +9,4 @@ execute if data entity @s item{id:"minecraft:smooth_stone"} run scoreboard playe
 execute if data entity @s item{id:"minecraft:stone_bricks"} run scoreboard players set #price math 150
 execute if data entity @s item{id:"minecraft:coal"} run scoreboard players set #price math 1000
 execute if data entity @s item{id:"minecraft:torch"} run scoreboard players set #price math 1500
+execute if data entity @s item{id:"minecraft:glowstone"} run scoreboard players set #price math 100000
