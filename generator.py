@@ -368,7 +368,7 @@ with open("data/code/function/shop/shop_logic/shop_item.item.mcfunction", "w") a
         # execute if items entity @s player.cursor *[custom_data~{shop:"conveyor"}] 
         f.write('execute if items entity @s player.cursor *[custom_data~{shop:"%"}] run return run function code:shop/shop_logic/item/%\n'.replace("%", item["id"]))
         with open("data/code/function/shop/shop_logic/item/%.mcfunction".replace("%", item["id"]), "w") as g:
-            g.write("data modify storage numeral:io B set value %price%\nexecute if function numeral:gte run return run function code:shop/shop_logic/item/%id%.sell\nfunction code:shop/shop_logic/not_enough_money".replace("%id%", item["id"]).replace("%price%", number_to_numeral(item["price"])))
+            g.write("data modify storage numeral:io B set value %price%\nfunction numeral:ext/lda\nexecute if function numeral:gte run return run function code:shop/shop_logic/item/%id%.sell\nfunction code:shop/shop_logic/not_enough_money".replace("%id%", item["id"]).replace("%price%", number_to_numeral(item["price"])))
         with open("data/code/function/shop/shop_logic/item/%.sell.mcfunction".replace("%", item["id"]), "w") as g:
             g.write("loot give @s loot code:blocks/%id%\nfunction code:shop/shop_logic/purchase_ok".replace("%id%", item["id"].replace(".", "/")))
 with open("data/code/function/shop/shop_logic/bulk_item.item.mcfunction", "w") as f:
@@ -378,7 +378,7 @@ with open("data/code/function/shop/shop_logic/bulk_item.item.mcfunction", "w") a
         # execute if items entity @s player.cursor *[custom_data~{shop:"conveyor"}] 
         f.write('execute if items entity @s container.* *[custom_data~{shop:"%"}] run return run function code:shop/shop_logic/bulk/%\n'.replace("%", item["id"]))
         with open("data/code/function/shop/shop_logic/bulk/%.mcfunction".replace("%", item["id"]), "w") as g:
-            g.write("data modify storage numeral:io B set value %price%\nexecute if function numeral:gte run return run function code:shop/shop_logic/bulk/%id%.sell\nfunction code:shop/shop_logic/not_enough_money".replace("%id%", item["id"]).replace("%price%", number_to_numeral(5 * item["price"])))
+            g.write("data modify storage numeral:io B set value %price%\nfunction numeral:ext/lda\nexecute if function numeral:gte run return run function code:shop/shop_logic/bulk/%id%.sell\nfunction code:shop/shop_logic/not_enough_money".replace("%id%", item["id"]).replace("%price%", number_to_numeral(5 * item["price"])))
         with open("data/code/function/shop/shop_logic/bulk/%.sell.mcfunction".replace("%", item["id"]), "w") as g:
             g.write("loot give @s loot code:blocks/%id%\nloot give @s loot code:blocks/%id%\nloot give @s loot code:blocks/%id%\nloot give @s loot code:blocks/%id%\nloot give @s loot code:blocks/%id%\nfunction code:shop/shop_logic/purchase_ok".replace("%id%", item["id"].replace(".", "/")))
 with open("data/code/function/shop/shop_logic/shop_sell.item.mcfunction", "w") as f:
