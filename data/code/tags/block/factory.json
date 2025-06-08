@@ -22,6 +22,9 @@
         "cracked_nether_bricks",
         "chiseled_nether_bricks",
 
+        "water_cauldron",
+        "lava_cauldron",
+
         "#code:generators"
     ]
 }

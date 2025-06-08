@@ -5,6 +5,7 @@ place.loot
 loot_table (item and minecraft block)
 shop (in script)
 load/save backbone
+tags/block/factory
 
 block logic:
 logic
