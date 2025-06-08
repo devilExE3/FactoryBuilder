@@ -20,6 +20,7 @@ execute as @s[tag=block.crafter_3] run loot replace entity @n[type=item,tag=item
 execute as @s[tag=block.washer] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/washer
 execute as @s[tag=block.flashbaker] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/flashbaker
 execute as @s[tag=block.sonic_zapper] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/sonic_zapper
+execute as @s[tag=block.crusher] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/crusher
 
 execute as @s[tag=block.generator] run function code:blocks/destroy.generator
 

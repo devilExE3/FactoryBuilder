@@ -254,6 +254,7 @@ RECIPES = {
         }
     ],
     "washer": [],
+    "crusher": [],
     "flashbaker": [],
     "sonic_zapper": [],
 }
@@ -311,6 +312,12 @@ SHOP_ITEMS = [
         "name": "Washer",
         "id": "washer",
         "model": "water_bucket",
+        "price": 6969
+    },
+    {
+        "name": "Crusher",
+        "id": "crusher",
+        "model": "smoker",
         "price": 6969
     },
     {
@@ -495,6 +502,18 @@ with open("data/code/function/logic/crafter_3.recipe.mcfunction", "w") as f:
                 .replace("%out%", recipe["out"]).replace("%count%", str(recipe["count"])))
         if not recipe["out"] in ITEMS:
             print("[recipe/crafter_3] Unpriced item " + recipe["out"])
+    f.write("return fail")
+
+# Crusher recipes
+with open("data/code/function/logic/crusher.recipe.mcfunction", "w") as f:
+    for recipe in RECIPES["crusher"]:
+        f.write("""execute if entity @n[type=item_display,tag=crusher.side,distance=..1.01,tag=itemid.%side%] if entity @n[type=item_display,tag=crusher.top,distance=..1.01,tag=itemid.%top%] run return run function code:logic/crusher/%out%\n"""\
+            .replace("%side%", recipe["side"]).replace("%top%", recipe["top"]).replace("%out%", recipe["out"]))
+        with open("data/code/function/logic/crusher/%.mcfunction".replace("%", recipe["out"]), "w") as g:
+            g.write("""scoreboard players remove @n[type=item_display,tag=crusher.side,distance=..1.01] count 1\nscoreboard players remove @n[type=item_display,tag=crusher.top,distance=..1.01] count 1\nscoreboard players set #count math %count%\nsummon item_display ~ ~ ~ {item:{id:"%out%",count:1},teleport_duration:20,transformation:{scale:[0.4f,0.4f,0.4f],translation:[0f,-.23f,0f],left_rotation:[0,0,0,1],right_rotation:[0,0,0,1]},view_range:0.25,Tags:["item","crusher.output","itemid.%out%"],CustomName:'"1"',CustomNameVisible:true}"""\
+                .replace("%out%", recipe["out"]).replace("%count%", str(recipe["count"])))
+        if not recipe["out"] in ITEMS:
+            print("[recipe/crusher] Unpriced item " + recipe["out"])
     f.write("return fail")
 
 # Washer recipes
@@ -736,12 +755,15 @@ pages.append(BookPage()\
     .add_line(BookLine().add_comp(BookComponent("    there is about")))\
     .add_line(BookLine().add_comp(BookComponent("    this minigame.")))\
 )
+# pre-calc item pages
+# max 14 lines per page
+item_pages = (len(ITEMS) + 14) // 14
 pages.append(BookPage()\
     .add_line(BookLine().add_comp(BookComponent("TABLE").bold(True)).add_comp(BookComponent(" of ")).add_comp(BookComponent("CONTENTS").bold(True)))\
     .add_line(BookLineEmpty())\
     .add_line(BookLine().add_comp(BookComponent("Tutorial").underlined(True).target_page(3)))\
     .add_line(BookLine().add_comp(BookComponent("Items").underlined(True).target_page(7)))\
-    .add_line(BookLine().add_comp(BookComponent("Recipes").underlined(True).target_page(9)))\
+    .add_line(BookLine().add_comp(BookComponent("Recipes").underlined(True).target_page(7 + item_pages)))\
 )
 pages.append(BookPage()\
     .add_line(BookLine().add_comp(BookComponent("^").target_page(2)).add_comp(BookComponent("     TUTORIAL").bold(True)))\
@@ -811,6 +833,8 @@ for recipe_type in RECIPES:
             current_page.add_line(BookLine().add_comp(BookComponent(ITEM_TRANSLATE[recipe["out"]]).hover(BookComponent("Crafter (3 inputs)\\nInputs:\\n- " + ITEM_TRANSLATE[recipe["in1"]] + "\\n- " + ITEM_TRANSLATE[recipe["in2"]] + "\\n- " + ITEM_TRANSLATE[recipe["in3"]] + "\\nOutput: " + str(recipe["count"]) + "x " + ITEM_TRANSLATE[recipe["out"]]).color("white"))))
         elif recipe_type == "washer":
             current_page.add_line(BookLine().add_comp(BookComponent(ITEM_TRANSLATE[recipe["output"]]).hover(BookComponent("Washer \\nInput: " + ITEM_TRANSLATE[recipe["input"]] + "\\nOutput: " + ITEM_TRANSLATE[recipe["output"]]).color("white"))))
+        elif recipe_type == "crusher":
+            current_page.add_line(BookLine().add_comp(BookComponent(ITEM_TRANSLATE[recipe["out"]]).hover(BookComponent("Crusher \\nSide Input: " + ITEM_TRANSLATE[recipe["side"]] + "\\nTop Input: " + ITEM_TRANSLATE[recipe["top"]] + "\\nOutput: " + str(recipe["count"]) + "x " + ITEM_TRANSLATE[recipe["out"]]).color("white"))))
         elif recipe_type == "flashbaker":
             current_page.add_line(BookLine().add_comp(BookComponent(ITEM_TRANSLATE[recipe["output"]]).hover(BookComponent("Flashbaker \\nInput: " + ITEM_TRANSLATE[recipe["input"]] + "\\nOutput: " + ITEM_TRANSLATE[recipe["output"]]).color("white"))))
         elif recipe_type == "sonic_zapper":

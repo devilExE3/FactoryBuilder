@@ -27,6 +27,11 @@
         "lava_cauldron",
         "black_glazed_terracotta",
 
+        "terracotta",
+        "white_terracotta",
+        "light_gray_terracotta",
+        "gray_terracotta",
+
         "#code:generators"
     ]
 }

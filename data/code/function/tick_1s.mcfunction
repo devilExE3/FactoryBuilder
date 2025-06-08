@@ -11,6 +11,7 @@ execute as @e[type=item_display,tag=item,x=0] run function code:logic/item.despa
 # crafters
 execute as @e[type=marker,tag=block.crafter_2,x=0] at @s run function code:logic/crafter_2
 execute as @e[type=marker,tag=block.crafter_3,x=0] at @s run function code:logic/crafter_3
+execute as @e[type=marker,tag=block.crusher,x=0] at @s run function code:logic/crusher
 
 # conveyor logic
 tag @e[type=item_display,tag=item.cut,tag=item.moved,x=0] remove item.cut

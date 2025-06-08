@@ -9,5 +9,6 @@ execute as @s[tag=place.crafter_3] run function code:blocks/frontbone/crafter_3
 execute as @s[tag=place.washer] run function code:blocks/frontbone/washer
 execute as @s[tag=place.flashbaker] run function code:blocks/frontbone/flashbaker
 execute as @s[tag=place.sonic_zapper] run function code:blocks/frontbone/sonic_zapper
+execute as @s[tag=place.crusher] run function code:blocks/frontbone/crusher
 
 execute as @s[tag=place.generator] run function code:blocks/place.generator.block
