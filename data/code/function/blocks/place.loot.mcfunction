@@ -8,6 +8,7 @@ execute as @s[tag=place.crafter_2] run loot give @p[tag=rc] loot code:blocks/cra
 execute as @s[tag=place.crafter_3] run loot give @p[tag=rc] loot code:blocks/crafter_3
 execute as @s[tag=place.washer] run loot give @p[tag=rc] loot code:blocks/washer
 execute as @s[tag=place.flashbaker] run loot give @p[tag=rc] loot code:blocks/flashbaker
+execute as @s[tag=place.sonic_zapper] run loot give @p[tag=rc] loot code:blocks/sonic_zapper
 
 execute as @s[tag=place.generator] run function code:blocks/place.generator.loot
 

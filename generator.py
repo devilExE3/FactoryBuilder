@@ -254,7 +254,8 @@ RECIPES = {
         }
     ],
     "washer": [],
-    "flashbaker": []
+    "flashbaker": [],
+    "sonic_zapper": [],
 }
 
 SHOP_ITEMS = [
@@ -316,6 +317,12 @@ SHOP_ITEMS = [
         "name": "Flashbaker",
         "id": "flashbaker",
         "model": "lava_bucket",
+        "price": 6969
+    },
+    {
+        "name": "Sonic Zapper",
+        "id": "sonic_zapper",
+        "model": "reinforced_deepslate",
         "price": 6969
     }
 ]
@@ -511,6 +518,17 @@ with open("data/code/function/logic/flashbaker.recipes.mcfunction", "w") as f:
                     .replace("%input%", recipe["input"]).replace("%output%", recipe["output"]))
         if not recipe["output"] in ITEMS:
             print("[recipe/flashbaker] Unpriced item " + recipe["output"])
+            
+# Sonic Zapper recipes
+with open("data/code/function/logic/sonic_zapper.recipes.mcfunction", "w") as f:
+    for recipe in RECIPES["sonic_zapper"]:
+        f.write("""execute as @s[tag=itemid.%input%] run return run function code:logic/sonic_zapper/%output%\n"""\
+                .replace("%input%", recipe["input"]).replace("%output%", recipe["output"]))
+        with open("data/code/function/logic/sonic_zapper/%.mcfunction".replace("%", recipe["output"]), "w") as g:
+            g.write('data modify entity @s item.id set value "minecraft:%output%"\ntag @s remove itemid.%input%\ntag @s add itemid.%output%'\
+                    .replace("%input%", recipe["input"]).replace("%output%", recipe["output"]))
+        if not recipe["output"] in ITEMS:
+            print("[recipe/sonic_zapper] Unpriced item " + recipe["output"])
 
 # # #  SHOP PAGES  # # #
 # convert generators to SHOP_ITEMS
@@ -792,7 +810,11 @@ for recipe_type in RECIPES:
         elif recipe_type == "crafter_3":
             current_page.add_line(BookLine().add_comp(BookComponent(ITEM_TRANSLATE[recipe["out"]]).hover(BookComponent("Crafter (3 inputs)\\nInputs:\\n- " + ITEM_TRANSLATE[recipe["in1"]] + "\\n- " + ITEM_TRANSLATE[recipe["in2"]] + "\\n- " + ITEM_TRANSLATE[recipe["in3"]] + "\\nOutput: " + str(recipe["count"]) + "x " + ITEM_TRANSLATE[recipe["out"]]).color("white"))))
         elif recipe_type == "washer":
-            current_page.add_line(BookLine().add_comp(BookComponent(ITEM_TRANSLATE[recipe["output"]]).hover(BookComponent("Washerso \\nInput: " + ITEM_TRANSLATE[recipe["input"]] + "\\nOutput: " + ITEM_TRANSLATE[recipe["output"]]).color("white"))))
+            current_page.add_line(BookLine().add_comp(BookComponent(ITEM_TRANSLATE[recipe["output"]]).hover(BookComponent("Washer \\nInput: " + ITEM_TRANSLATE[recipe["input"]] + "\\nOutput: " + ITEM_TRANSLATE[recipe["output"]]).color("white"))))
+        elif recipe_type == "flashbaker":
+            current_page.add_line(BookLine().add_comp(BookComponent(ITEM_TRANSLATE[recipe["output"]]).hover(BookComponent("Flashbaker \\nInput: " + ITEM_TRANSLATE[recipe["input"]] + "\\nOutput: " + ITEM_TRANSLATE[recipe["output"]]).color("white"))))
+        elif recipe_type == "sonic_zapper":
+            current_page.add_line(BookLine().add_comp(BookComponent(ITEM_TRANSLATE[recipe["output"]]).hover(BookComponent("Sonic Zapper \\nInput: " + ITEM_TRANSLATE[recipe["input"]] + "\\nOutput: " + ITEM_TRANSLATE[recipe["output"]]).color("white"))))
         else:
             line -= 1
             print("[book/recipe] Unknown recipe type " + recipe_type)
