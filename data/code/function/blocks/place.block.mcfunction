@@ -1,4 +1,4 @@
-execute as @s[tag=place.conveyor_belt] run function code:blocks/frontbone/conveyor
+execute as @s[tag=place.conveyor] run function code:blocks/frontbone/conveyor
 execute as @s[tag=place.chute] run function code:blocks/frontbone/chute
 execute as @s[tag=place.elevator] run function code:blocks/frontbone/elevator
 execute as @s[tag=place.sell] run function code:blocks/frontbone/sell

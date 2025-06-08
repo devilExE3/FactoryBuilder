@@ -12,7 +12,7 @@
                     "entity_data": {
                         "id": "marker",
                         "Silent": true,
-                        "Tags": ["place","place.carpet","place.conveyor_belt"]
+                        "Tags": ["place","place.carpet","place.conveyor"]
                     },
                     "max_stack_size": 99,
                     "can_place_on": {

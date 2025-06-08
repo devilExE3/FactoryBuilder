@@ -1,4 +1,4 @@
-execute as @s[tag=place.conveyor_belt] run loot give @p[tag=rc] loot code:blocks/conveyor
+execute as @s[tag=place.conveyor] run loot give @p[tag=rc] loot code:blocks/conveyor
 execute as @s[tag=place.chute] run loot give @p[tag=rc] loot code:blocks/chute
 execute as @s[tag=place.elevator] run loot give @p[tag=rc] loot code:blocks/elevator
 execute as @s[tag=place.sell] run loot give @p[tag=rc] loot code:blocks/sell
