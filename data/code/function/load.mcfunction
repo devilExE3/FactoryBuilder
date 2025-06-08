@@ -44,7 +44,10 @@ scoreboard objectives add money.0 dummy
 scoreboard objectives add money.1 dummy
 scoreboard objectives add money.2 dummy
 scoreboard objectives add money.3 dummy
-scoreboard objectives add prev_money dummy
+scoreboard objectives add prev_money.0 dummy
+scoreboard objectives add prev_money.1 dummy
+scoreboard objectives add prev_money.2 dummy
+scoreboard objectives add prev_money.3 dummy
 
 scoreboard objectives add stats.playtime dummy
 scoreboard objectives add list dummy

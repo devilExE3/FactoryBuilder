@@ -46,7 +46,7 @@ GENERATORS = [
         "model": "copper_ore",
         "output": "raw_copper",
         "gen_block": "copper_block",
-        "price": 100 * 10 ** 9,
+        "price": 2.5 * 10 ** 9,
         "id": "copper",
         "type": "ore",
         "rp_texture": "minecraft:block/copper_ore"
@@ -56,7 +56,7 @@ GENERATORS = [
         "model": "iron_ore",
         "output": "raw_iron",
         "gen_block": "iron_block",
-        "price": 5 * 10 ** 12,
+        "price": 7.5 * 10 ** 9,
         "id": "iron",
         "type": "ore",
         "rp_texture": "minecraft:block/iron_ore"
