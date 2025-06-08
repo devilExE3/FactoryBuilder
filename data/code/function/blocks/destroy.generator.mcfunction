@@ -4,3 +4,5 @@ execute as @s[tag=block.generator.coal] run loot replace entity @n[type=item,tag
 execute as @s[tag=block.generator.birch] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/generator/birch
 execute as @s[tag=block.generator.copper] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/generator/copper
 execute as @s[tag=block.generator.iron] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/generator/iron
+execute as @s[tag=block.generator.netherrack] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/generator/netherrack
+execute as @s[tag=block.generator.end_stone] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/generator/end_stone

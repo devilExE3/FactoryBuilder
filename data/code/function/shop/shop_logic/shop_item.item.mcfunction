@@ -6,9 +6,12 @@ execute if items entity @s player.cursor *[custom_data~{shop:"cutter"}] run retu
 execute if items entity @s player.cursor *[custom_data~{shop:"furnace"}] run return run function code:shop/shop_logic/item/furnace
 execute if items entity @s player.cursor *[custom_data~{shop:"crafter_2"}] run return run function code:shop/shop_logic/item/crafter_2
 execute if items entity @s player.cursor *[custom_data~{shop:"crafter_3"}] run return run function code:shop/shop_logic/item/crafter_3
+execute if items entity @s player.cursor *[custom_data~{shop:"washer"}] run return run function code:shop/shop_logic/item/washer
 execute if items entity @s player.cursor *[custom_data~{shop:"generator.oak"}] run return run function code:shop/shop_logic/item/generator.oak
 execute if items entity @s player.cursor *[custom_data~{shop:"generator.stone"}] run return run function code:shop/shop_logic/item/generator.stone
 execute if items entity @s player.cursor *[custom_data~{shop:"generator.coal"}] run return run function code:shop/shop_logic/item/generator.coal
 execute if items entity @s player.cursor *[custom_data~{shop:"generator.birch"}] run return run function code:shop/shop_logic/item/generator.birch
 execute if items entity @s player.cursor *[custom_data~{shop:"generator.copper"}] run return run function code:shop/shop_logic/item/generator.copper
 execute if items entity @s player.cursor *[custom_data~{shop:"generator.iron"}] run return run function code:shop/shop_logic/item/generator.iron
+execute if items entity @s player.cursor *[custom_data~{shop:"generator.netherrack"}] run return run function code:shop/shop_logic/item/generator.netherrack
+execute if items entity @s player.cursor *[custom_data~{shop:"generator.end_stone"}] run return run function code:shop/shop_logic/item/generator.end_stone

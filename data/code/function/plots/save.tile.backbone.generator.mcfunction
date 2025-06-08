@@ -4,3 +4,5 @@ execute as @s[tag=block.generator.coal] run data modify storage temp this.id set
 execute as @s[tag=block.generator.birch] run data modify storage temp this.id set value "generator.birch"
 execute as @s[tag=block.generator.copper] run data modify storage temp this.id set value "generator.copper"
 execute as @s[tag=block.generator.iron] run data modify storage temp this.id set value "generator.iron"
+execute as @s[tag=block.generator.netherrack] run data modify storage temp this.id set value "generator.netherrack"
+execute as @s[tag=block.generator.end_stone] run data modify storage temp this.id set value "generator.end_stone"

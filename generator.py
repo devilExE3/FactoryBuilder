@@ -60,6 +60,26 @@ GENERATORS = [
         "id": "iron",
         "type": "ore",
         "rp_texture": "minecraft:block/iron_ore"
+    },
+    {
+        "name": "Netherrack Farm",
+        "model": "netherrack",
+        "output": "netherrack",
+        "gen_block": "netherrack",
+        "price": 6969,
+        "id": "netherrack",
+        "type": "ore",
+        "rp_texture": "minecraft:block/netherrack"
+    },
+    {
+        "name": "End Stone Farm",
+        "model": "end_stone",
+        "output": "end_stone",
+        "gen_block": "end_stone",
+        "price": 6969,
+        "id": "end_stone",
+        "type": "ore",
+        "rp_texture": "minecraft:block/end_stone"
     }
 ]
 
@@ -122,7 +142,6 @@ ITEM_TRANSLATE = {
 
 RECIPES = {
     "cutter": [
-        # cutter recipes
         {
             "input": "oak_log",
             "output": "oak_planks",
@@ -150,7 +169,6 @@ RECIPES = {
         }
     ],
     "furnace": [
-        # furnace recipes
         {
             "input": "oak_log",
             "output": "charcoal"
@@ -181,7 +199,6 @@ RECIPES = {
         }
     ],
     "crafter_2": [
-        # crafter_2 recipes
         {
             "in1": "stick",
             "in2": "coal",
@@ -214,7 +231,6 @@ RECIPES = {
         }
     ],
     "crafter_3": [
-        # crafter_3 recipes
         {
             "in1": "torch",
             "in2": "smooth_stone",
@@ -236,7 +252,8 @@ RECIPES = {
             "out": "iron_door",
             "count": 1
         }
-    ]
+    ],
+    "washer": []
 }
 
 SHOP_ITEMS = [
@@ -443,15 +460,39 @@ with open("data/code/function/logic/crafter_2.recipe.mcfunction", "w") as f:
 # Crafter 3 recipes
 with open("data/code/function/logic/crafter_3.recipe.mcfunction", "w") as f:
     for recipe in RECIPES["crafter_3"]:
-        # TODO: input matches override
-        f.write("""execute if entity @n[type=item_display,tag=crafting.input,distance=..1.01,tag=itemid.%in1%] if entity @n[type=item_display,tag=crafting.input,distance=..1.01,tag=itemid.%in2%] if entity @n[type=item_display,tag=crafting.input,distance=..1.01,tag=itemid.%in3%] run return run function code:logic/crafter_3/%out%\n"""\
-            .replace("%in1%", recipe["in1"]).replace("%in2%", recipe["in2"]).replace("%in3%", recipe["in3"]).replace("%out%", recipe["out"]))
+        # 3 identical
+        if recipe["in1"] == recipe["in2"] and recipe["in1"] == recipe["in3"]:
+            f.write("""execute if entity @n[type=item_display,tag=crafting.1,distance=..1.01,tag=itemid.%in%] if entity @n[type=item_display,tag=crafting.2,distance=..1.01,tag=itemid.%in%] if entity @n[type=item_display,tag=crafting.3,distance=..1.01,tag=itemid.%in%] run return run function code:logic/crafter_3/%out%\n"""\
+                .replace("%in%", recipe["in1"]).replace("%out%", recipe["out"]))
+        # 2 identical
+        elif recipe["in1"] == recipe["in2"]:
+            f.write("""execute if entity @n[type=item_display,tag=crafting.1,distance=..1.01,tag=itemid.%in1%] if entity @n[type=item_display,tag=crafting.2,distance=..1.01,tag=itemid.%in1%] if entity @n[type=item_display,tag=crafting.3,distance=..1.01,tag=itemid.%in3%] run return run function code:logic/crafter_3/%out%\n"""\
+                .replace("%in1%", recipe["in1"]).replace("%in3%", recipe["in3"]).replace("%out%", recipe["out"]))
+            f.write("""execute if entity @n[type=item_display,tag=crafting.1,distance=..1.01,tag=itemid.%in1%] if entity @n[type=item_display,tag=crafting.2,distance=..1.01,tag=itemid.%in3%] if entity @n[type=item_display,tag=crafting.3,distance=..1.01,tag=itemid.%in1%] run return run function code:logic/crafter_3/%out%\n"""\
+                .replace("%in1%", recipe["in1"]).replace("%in3%", recipe["in3"]).replace("%out%", recipe["out"]))
+            f.write("""execute if entity @n[type=item_display,tag=crafting.1,distance=..1.01,tag=itemid.%in3%] if entity @n[type=item_display,tag=crafting.2,distance=..1.01,tag=itemid.%in1%] if entity @n[type=item_display,tag=crafting.3,distance=..1.01,tag=itemid.%in1%] run return run function code:logic/crafter_3/%out%\n"""\
+                .replace("%in1%", recipe["in1"]).replace("%in3%", recipe["in3"]).replace("%out%", recipe["out"]))
+        # none identical
+        else:
+            f.write("""execute if entity @n[type=item_display,tag=crafting.input,distance=..1.01,tag=itemid.%in1%] if entity @n[type=item_display,tag=crafting.input,distance=..1.01,tag=itemid.%in2%] if entity @n[type=item_display,tag=crafting.input,distance=..1.01,tag=itemid.%in3%] run return run function code:logic/crafter_3/%out%\n"""\
+                .replace("%in1%", recipe["in1"]).replace("%in2%", recipe["in2"]).replace("%in3%", recipe["in3"]).replace("%out%", recipe["out"]))
         with open("data/code/function/logic/crafter_3/%.mcfunction".replace("%", recipe["out"]), "w") as g:
             g.write("""scoreboard players remove @e[type=item_display,tag=crafting.input,distance=..1.01,limit=3] count 1\nscoreboard players set #count math %count%\nsummon item_display ~ ~ ~ {item:{id:"%out%",count:1},teleport_duration:20,transformation:{scale:[0.4f,0.4f,0.4f],translation:[0f,-.23f,0f],left_rotation:[0,0,0,1],right_rotation:[0,0,0,1]},view_range:0.25,Tags:["item","crafting.output","itemid.%out%"],CustomName:'"1"',CustomNameVisible:true}"""\
-                .replace("%in1%", recipe["in1"]).replace("%in2%", recipe["in2"]).replace("%in3%", recipe["in3"]).replace("%out%", recipe["out"]).replace("%count%", str(recipe["count"])))
+                .replace("%out%", recipe["out"]).replace("%count%", str(recipe["count"])))
         if not recipe["out"] in ITEMS:
             print("[recipe/crafter_3] Unpriced item " + recipe["out"])
     f.write("return fail")
+
+# Washer recipes
+with open("data/code/function/logic/washer.recipes.mcfunction", "w") as f:
+    for recipe in RECIPES["washer"]:
+        f.write("""execute as @s[tag=itemid.%input%] run return run function code:logic/washer/%output%\n"""\
+                .replace("%input%", recipe["input"]).replace("%output%", recipe["output"]))
+        with open("data/code/function/logic/washer/%.mcfunction".replace("%", recipe["output"]), "w") as g:
+            g.write('data modify entity @s item.id set value "minecraft:%output%"\ntag @s remove itemid.%input%\ntag @s add itemid.%output%'\
+                    .replace("%input%", recipe["input"]).replace("%output%", recipe["output"]))
+        if not recipe["output"] in ITEMS:
+            print("[recipe/washer] Unpriced item " + recipe["output"])
 
 # # #  SHOP PAGES  # # #
 # convert generators to SHOP_ITEMS
@@ -732,6 +773,8 @@ for recipe_type in RECIPES:
             current_page.add_line(BookLine().add_comp(BookComponent(ITEM_TRANSLATE[recipe["out"]]).hover(BookComponent("Crafter (2 inputs)\\nInputs:\\n- " + ITEM_TRANSLATE[recipe["in1"]] + "\\n- " + ITEM_TRANSLATE[recipe["in2"]] + "\\nOutput: " + str(recipe["count"]) + "x " + ITEM_TRANSLATE[recipe["out"]]).color("white"))))
         elif recipe_type == "crafter_3":
             current_page.add_line(BookLine().add_comp(BookComponent(ITEM_TRANSLATE[recipe["out"]]).hover(BookComponent("Crafter (3 inputs)\\nInputs:\\n- " + ITEM_TRANSLATE[recipe["in1"]] + "\\n- " + ITEM_TRANSLATE[recipe["in2"]] + "\\n- " + ITEM_TRANSLATE[recipe["in3"]] + "\\nOutput: " + str(recipe["count"]) + "x " + ITEM_TRANSLATE[recipe["out"]]).color("white"))))
+        elif recipe_type == "washer":
+            current_page.add_line(BookLine().add_comp(BookComponent(ITEM_TRANSLATE[recipe["output"]]).hover(BookComponent("Washerso \\nInput: " + ITEM_TRANSLATE[recipe["input"]] + "\\nOutput: " + ITEM_TRANSLATE[recipe["output"]]).color("white"))))
         else:
             line -= 1
             print("[book/recipe] Unknown recipe type " + recipe_type)
