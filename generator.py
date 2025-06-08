@@ -300,7 +300,7 @@ def number_to_human(n):
     while n >= 1000:
         n = n / 1000
         i += 1
-    return str((n * 100 // 10) / 10) + mul[i]
+    return str((n * 100 // 10) / 10) + " " + mul[i]
 
 # templates
 TEMPLATE_LOOT_TABLE = ""
@@ -513,58 +513,6 @@ with open("data/code/function/shop/shop_logic/shop_sell.item.mcfunction", "w") a
                 .replace("%", item["id"]).replace("$", number_to_numeral(item["price"])))
     f.write("return fail")
 
-# # generate shop for generators
-# with open("data/code/function/shop_pages.generate.mcfunction", "w") as f:
-#     # page 0 is hardcoded
-#     page = 1 # current page
-#     i = 0 # current item index
-#     # first page boiler
-#     f.write("setblock 29999999 -64 1 barrel\ndata modify block 29999999 -64 1 CustomName set value '\"Shop\"'\nsetblock 29999998 -64 1 barrel\ndata remove block 29999998 -64 1 Items\n")
-#     g.write("data modify block 29999999 -64 1 Items set from block 29999998 -64 1 Items\n")
-#     for gen in GENERATORS:
-#         if i == 24:
-#             # end of current page
-#             f.write("""data modify block 29999998 -64 % Items append value {id:"prismarine_shard",count:1,components:{item_name:'"Prev Page"',custom_data:{shop_item:1b,prev_page:1b}},Slot:8}\ndata modify block 29999998 -64 % Items append value {id:"black_stained_glass_pane",count:1,components:{hide_tooltip:{}},Slot:17}\ndata modify block 29999998 -64 % Items append value {id:"arrow",count:1,components:{item_name:'"Next Page"',custom_data:{shop_item:1b,next_page:1b}},Slot:26}\n""".replace("%", str(page)))
-#             # start new one
-#             page += 1
-#             i = 0
-#             f.write("setblock 29999999 -64 % barrel\ndata modify block 29999999 -64 % CustomName set value '\"Shop\"'\n\nsetblock 29999998 -64 % barrel\ndata remove block 29999998 -64 % Items\n".replace("%", str(page)))
-#             g.write("data modify block 29999999 -64 % Items set from block 29999998 -64 % Items\n".replace("%", str(page)))
-#         # item
-#         # convert i to slot
-#         ii = i // 8
-#         jj = i % 8
-#         k = ii * 9 + jj
-#         f.write("""data modify block 29999998 -64 % Items append value {id:"@model@",count:1,components:{item_name:'"@name@"',lore:['[{"text":"Price: ","color":"gray","italic":false},{"text":"$@price@","color":"green","italic":false}]'],custom_data:{shop:"generator.@id@",shop_item:1b}},Slot:&}\n"""\
-#                 .replace("%", str(page)).replace("&", str(k))\
-#                 .replace("@model@", gen["model"])\
-#                 .replace("@name@", gen["name"])\
-#                 .replace("@id@", gen["id"])\
-#                 .replace("@price@", number_to_human(gen["price"])))
-#         i += 1
-#     # end of last page
-#     # fill with stained glass
-#     while i < 24:
-#         ii = i // 8
-#         jj = i % 8
-#         k = ii * 9 + jj
-#         f.write("""data modify block 29999998 -64 % Items append value {id:"light_gray_stained_glass_pane",count:1,components:{hide_tooltip:{}},Slot:&}\n"""\
-#                 .replace("%", str(page)).replace("&", str(k)))
-#         i += 1
-#     f.write("""data modify block 29999998 -64 % Items append value {id:"prismarine_shard",count:1,components:{item_name:'"Prev Page"',custom_data:{shop_item:1b,prev_page:1b}},Slot:8}\ndata modify block 29999998 -64 % Items append value {id:"black_stained_glass_pane",count:1,components:{hide_tooltip:{}},Slot:17}\ndata modify block 29999998 -64 % Items append value {id:"black_stained_glass_pane",count:1,components:{hide_tooltip:{}},Slot:26}""".replace("%", str(page)))
-#     g.close()
-# # shop definitions
-# with open("data/code/function/shop/shop_logic/shop_item.generator.mcfunction", "w") as f:
-#     for gen in GENERATORS:
-#         f.write(TEMPLATE_SHOP_ITEM.replace("%id%", gen["id"]).replace("%price%", str(gen["price"])) + "\n")
-# with open("data/code/function/shop/shop_logic/bulk_item.generator.mcfunction", "w") as f:
-#     for gen in GENERATORS:
-#         f.write(TEMPLATE_BULK_ITEM.replace("%id%", gen["id"]).replace("%b_price%", str(5 * gen["price"])) + "\n")
-# with open("data/code/function/shop/shop_logic/shop_sell.generator.mcfunction", "w") as f:
-#     for gen in GENERATORS:
-#         f.write("""execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.generator.%"]} run scoreboard players add @s money $\n"""\
-#                 .replace("%", gen["id"]).replace("$", str(gen["price"])))
-
 
 # # #  RESOURCE PACK AUTO GENERATOR  # # #
 
@@ -693,7 +641,7 @@ pages.append(BookPage()\
     .add_line(BookLineEmpty())\
     .add_line(BookLine().add_comp(BookComponent("Tutorial").underlined(True).target_page(3)))\
     .add_line(BookLine().add_comp(BookComponent("Items").underlined(True).target_page(7)))\
-    .add_line(BookLine().add_comp(BookComponent("Recipes").underlined(True).target_page(8)))\
+    .add_line(BookLine().add_comp(BookComponent("Recipes").underlined(True).target_page(9)))\
 )
 pages.append(BookPage()\
     .add_line(BookLine().add_comp(BookComponent("^").target_page(2)).add_comp(BookComponent("     TUTORIAL").bold(True)))\
