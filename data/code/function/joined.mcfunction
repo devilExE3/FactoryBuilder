@@ -37,8 +37,8 @@ effect give @s night_vision infinite 0 true
 attribute @s minecraft:attack_damage base set 0
 team join default @s
 execute as @s[tag=is_am] run team join am @s
-execute as @s[tag=is_fm] run team join fm @s
-execute as @s[tag=is_owner] run team join dev @s
+execute as @s[tag=is_fm] run team join afm @s
+execute as @s[tag=is_owner] run team join adev @s
 
 execute unless score @s money.0 matches 0.. run scoreboard players set @s money.0 0
 execute unless score @s money.1 matches 0.. run scoreboard players set @s money.1 0
@@ -65,3 +65,4 @@ attribute @s scale base set 1
 
 execute if items entity @s container.* minecraft:written_book run function code:joined.book
 execute at @s run function code:reload_inventory
+playerlist @s header set <gradient:#ffaa00:#ffff00><bold>Fᴀᴄᴛᴏʀʏ<gradient:#aaaaaa:#dddddd><bold>Bᴜɪʟᴅᴇʀ
