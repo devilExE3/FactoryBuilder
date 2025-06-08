@@ -8,6 +8,7 @@ execute if items entity @s container.* *[custom_data~{shop:"crafter_2"}] run ret
 execute if items entity @s container.* *[custom_data~{shop:"crafter_3"}] run return run function code:shop/shop_logic/bulk/crafter_3
 execute if items entity @s container.* *[custom_data~{shop:"washer"}] run return run function code:shop/shop_logic/bulk/washer
 execute if items entity @s container.* *[custom_data~{shop:"flashbaker"}] run return run function code:shop/shop_logic/bulk/flashbaker
+execute if items entity @s container.* *[custom_data~{shop:"sonic_zapper"}] run return run function code:shop/shop_logic/bulk/sonic_zapper
 execute if items entity @s container.* *[custom_data~{shop:"generator.oak"}] run return run function code:shop/shop_logic/bulk/generator.oak
 execute if items entity @s container.* *[custom_data~{shop:"generator.stone"}] run return run function code:shop/shop_logic/bulk/generator.stone
 execute if items entity @s container.* *[custom_data~{shop:"generator.coal"}] run return run function code:shop/shop_logic/bulk/generator.coal
