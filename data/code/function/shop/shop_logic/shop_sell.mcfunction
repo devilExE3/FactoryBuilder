@@ -7,5 +7,4 @@ function numeral:ext/stc
 
 item modify entity @s weapon.offhand code:remove_one
 execute if items entity @s weapon.offhand * if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place"]} run return run function code:shop/shop_logic/shop_sell
-loot replace entity @s weapon.mainhand loot air
 playsound minecraft:entity.player.levelup master @s ~ ~ ~ 1 2
