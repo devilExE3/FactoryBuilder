@@ -9,3 +9,6 @@ execute if items entity @s player.cursor *[custom_data~{shop:"crafter_3"}] run r
 execute if items entity @s player.cursor *[custom_data~{shop:"generator.oak"}] run return run function code:shop/shop_logic/item/generator.oak
 execute if items entity @s player.cursor *[custom_data~{shop:"generator.stone"}] run return run function code:shop/shop_logic/item/generator.stone
 execute if items entity @s player.cursor *[custom_data~{shop:"generator.coal"}] run return run function code:shop/shop_logic/item/generator.coal
+execute if items entity @s player.cursor *[custom_data~{shop:"generator.birch"}] run return run function code:shop/shop_logic/item/generator.birch
+execute if items entity @s player.cursor *[custom_data~{shop:"generator.copper"}] run return run function code:shop/shop_logic/item/generator.copper
+execute if items entity @s player.cursor *[custom_data~{shop:"generator.iron"}] run return run function code:shop/shop_logic/item/generator.iron

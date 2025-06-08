@@ -1,3 +1,6 @@
 execute as @s[tag=place.generator.oak] run loot give @p[tag=rc] loot code:blocks/generator/oak
 execute as @s[tag=place.generator.stone] run loot give @p[tag=rc] loot code:blocks/generator/stone
 execute as @s[tag=place.generator.coal] run loot give @p[tag=rc] loot code:blocks/generator/coal
+execute as @s[tag=place.generator.birch] run loot give @p[tag=rc] loot code:blocks/generator/birch
+execute as @s[tag=place.generator.copper] run loot give @p[tag=rc] loot code:blocks/generator/copper
+execute as @s[tag=place.generator.iron] run loot give @p[tag=rc] loot code:blocks/generator/iron

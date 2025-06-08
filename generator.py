@@ -30,6 +30,36 @@ GENERATORS = [
         "id": "coal",
         "type": "ore",
         "rp_texture": "minecraft:block/coal_ore"
+    },
+    {
+        "name": "Birch Farm",
+        "model": "birch_sapling",
+        "output": "birch_log",
+        "gen_block": "yellow_glazed_terracotta",
+        "price": 1 * 10 ** 9,
+        "id": "birch",
+        "type": "cross",
+        "rp_texture": "minecraft:block/birch_sapling"
+    },
+    {
+        "name": "Copper Farm",
+        "model": "copper_ore",
+        "output": "raw_copper",
+        "gen_block": "copper_block",
+        "price": 100 * 10 ** 9,
+        "id": "copper",
+        "type": "ore",
+        "rp_texture": "minecraft:block/copper_ore"
+    },
+    {
+        "name": "Iron Farm",
+        "model": "iron_ore",
+        "output": "raw_iron",
+        "gen_block": "iron_block",
+        "price": 5 * 10 ** 12,
+        "id": "iron",
+        "type": "ore",
+        "rp_texture": "minecraft:block/iron_ore"
     }
 ]
 
@@ -42,10 +72,52 @@ ITEMS = {
     "cobblestone": 20,
     "stone": 50,
     "smooth_stone": 75,
-    "stone_bricks": 150,
+    "stone_bricks": 200,
     "coal": 1000,
     "torch": 1500,
-    "glowstone": 100000,
+    "glowstone": 100_000,
+    "birch_log": 1_000_000,
+    "birch_wood": 1_300_000,
+    "birch_planks": 300_000,
+    "birch_slab": 150_000,
+    "raw_copper": 1_000_000,
+    "copper_ingot": 1_500_000,
+    "glowstone_dust": 1_000_000,
+    "orange_dye": 1_700_000,
+    "gunpowder": 1_200_000,
+    "tnt": 1_600_000,
+    "coal_block": 2_000_000,
+    "raw_iron": 1_500_000,
+    "iron_ingot": 2_250_000,
+    "iron_door": 10_000_000,
+}
+ITEM_TRANSLATE = {
+    "oak_log": "Oak Log",
+    "oak_planks": "Oak Planks",
+    "oak_slab": "Oak Slab",
+    "stick": "Stick",
+    "charcoal": "Charcoal",
+    "cobblestone": "Cobblestone",
+    "stone": "Stone",
+    "smooth_stone": "Smooth Stone",
+    "stone_bricks": "Stone Bricks",
+    "coal": "Coal",
+    "torch": "Torch",
+    "glowstone": "Glowstone",
+    "birch_log": "Birch Log",
+    "birch_wood": "Birch Wood",
+    "birch_planks": "Birch Planks",
+    "birch_slab": "Birch Slab",
+    "raw_copper": "Raw Copper",
+    "copper_ingot": "Copper Ingot",
+    "glowstone_dust": "Coal-Copper Blend",
+    "orange_dye": "Coal-Copper Ingot",
+    "gunpowder": "Gunpowder",
+    "tnt": "TNT",
+    "coal_block": "Coal Block",
+    "raw_iron": "Raw Iron",
+    "iron_ingot": "Iron Ingot",
+    "iron_door": "Iron Door"
 }
 
 RECIPES = {
@@ -65,6 +137,16 @@ RECIPES = {
             "input": "oak_slab",
             "output": "stick",
             "mul": 2
+        },
+        {
+            "input": "birch_log",
+            "output": "birch_planks",
+            "mul": 4
+        },
+        {
+            "input": "birch_planks",
+            "output": "birch_slab",
+            "mul": 2
         }
     ],
     "furnace": [
@@ -80,6 +162,18 @@ RECIPES = {
         {
             "input": "stone",
             "output": "smooth_stone"
+        },
+        {
+            "input": "raw_copper",
+            "output": "copper_ingot"
+        },
+        {
+            "input": "glowstone_dust",
+            "output": "orange_dye"
+        },
+        {
+            "input": "gunpowder",
+            "output": "tnt"
         }
     ],
     "crafter_2": [
@@ -95,6 +189,24 @@ RECIPES = {
             "in2": "smooth_stone",
             "out": "stone_bricks",
             "count": 1
+        },
+        {
+            "in1": "birch_log",
+            "in2": "birch_log",
+            "out": "birch_wood",
+            "count": 1
+        },
+        {
+            "in1": "coal",
+            "in2": "raw_copper",
+            "out": "glowstone_dust",
+            "count": 1
+        },
+        {
+            "in1": "birch_log",
+            "in2": "tnt",
+            "out": "coal_block",
+            "count": 1
         }
     ],
     "crafter_3": [
@@ -104,6 +216,20 @@ RECIPES = {
             "in2": "smooth_stone",
             "in3": "charcoal",
             "out": "glowstone",
+            "count": 1
+        },
+        {
+            "in1": "coal",
+            "in2": "charcoal",
+            "in3": "glowstone_dust",
+            "out": "gunpowder",
+            "count": 2
+        },
+        {
+            "in1": "iron_ingot",
+            "in2": "coal_block",
+            "in3": "copper_ingot",
+            "out": "iron_door",
             "count": 1
         }
     ]
@@ -615,7 +741,7 @@ for item in ITEMS:
         pages.append(current_page)
         current_page = BookPage()
         line = 0
-    current_page.add_line(BookLine().add_comp(BookComponent(item).hover(BookComponent("$" + "{:,}".format(ITEMS[item])).color("green"))))
+    current_page.add_line(BookLine().add_comp(BookComponent(ITEM_TRANSLATE[item]).hover(BookComponent("$" + "{:,}".format(ITEMS[item])).color("green"))))
     line += 1
 pages.append(current_page)
 # recipes
@@ -628,13 +754,13 @@ for recipe_type in RECIPES:
             current_page = BookPage()
             line = 0
         if recipe_type == "cutter":
-            current_page.add_line(BookLine().add_comp(BookComponent(recipe["output"]).hover(BookComponent("Block Cutter\\nInput: " + recipe["input"] + "\\nOutput: " + recipe["output"] + "\\nMultiplicator: " + str(recipe["mul"])).color("white"))))
+            current_page.add_line(BookLine().add_comp(BookComponent(ITEM_TRANSLATE[recipe["output"]]).hover(BookComponent("Block Cutter\\nInput: " + ITEM_TRANSLATE[recipe["input"]] + "\\nOutput: " + ITEM_TRANSLATE[recipe["output"]] + "\\nMultiplicator: " + str(recipe["mul"])).color("white"))))
         elif recipe_type == "furnace":
-            current_page.add_line(BookLine().add_comp(BookComponent(recipe["output"]).hover(BookComponent("Furnace\\nInput: " + recipe["input"] + "\\nOutput: " + recipe["output"]).color("white"))))
+            current_page.add_line(BookLine().add_comp(BookComponent(ITEM_TRANSLATE[recipe["output"]]).hover(BookComponent("Furnace\\nInput: " + ITEM_TRANSLATE[recipe["input"]] + "\\nOutput: " + ITEM_TRANSLATE[recipe["output"]]).color("white"))))
         elif recipe_type == "crafter_2":
-            current_page.add_line(BookLine().add_comp(BookComponent(recipe["out"]).hover(BookComponent("Crafter (2 inputs)\\nInputs:\\n- " + recipe["in1"] + "\\n- " + recipe["in2"] + "\\nOutput: " + str(recipe["count"]) + "x " + recipe["out"]).color("white"))))
+            current_page.add_line(BookLine().add_comp(BookComponent(ITEM_TRANSLATE[recipe["out"]]).hover(BookComponent("Crafter (2 inputs)\\nInputs:\\n- " + ITEM_TRANSLATE[recipe["in1"]] + "\\n- " + ITEM_TRANSLATE[recipe["in2"]] + "\\nOutput: " + str(recipe["count"]) + "x " + ITEM_TRANSLATE[recipe["out"]]).color("white"))))
         elif recipe_type == "crafter_3":
-            current_page.add_line(BookLine().add_comp(BookComponent(recipe["out"]).hover(BookComponent("Crafter (3 inputs)\\nInputs:\\n- " + recipe["in1"] + "\\n- " + recipe["in2"] + "\\n- " + recipe["in3"] + "\\nOutput: " + str(recipe["count"]) + "x " + recipe["out"]).color("white"))))
+            current_page.add_line(BookLine().add_comp(BookComponent(ITEM_TRANSLATE[recipe["out"]]).hover(BookComponent("Crafter (3 inputs)\\nInputs:\\n- " + ITEM_TRANSLATE[recipe["in1"]] + "\\n- " + ITEM_TRANSLATE[recipe["in2"]] + "\\n- " + ITEM_TRANSLATE[recipe["in3"]] + "\\nOutput: " + str(recipe["count"]) + "x " + ITEM_TRANSLATE[recipe["out"]]).color("white"))))
         else:
             line -= 1
             print("[book/recipe] Unknown recipe type " + recipe_type)
