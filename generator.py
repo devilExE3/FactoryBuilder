@@ -89,7 +89,7 @@ ITEMS = {
     "coal_block": 5_000_000,
     "raw_iron": 5_000_000,
     "iron_ingot": 10_000_000,
-    "iron_door": 40_000_000,
+    "iron_door": 85_000_000,
 }
 ITEM_TRANSLATE = {
     "oak_log": "Oak Log",

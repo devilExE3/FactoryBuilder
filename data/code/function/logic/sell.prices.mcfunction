@@ -23,4 +23,4 @@ execute as @s[tag=itemid.tnt] run return run data modify storage numeral:io A se
 execute as @s[tag=itemid.coal_block] run return run data modify storage numeral:io A set value [5000000,0,0,0]
 execute as @s[tag=itemid.raw_iron] run return run data modify storage numeral:io A set value [5000000,0,0,0]
 execute as @s[tag=itemid.iron_ingot] run return run data modify storage numeral:io A set value [10000000,0,0,0]
-execute as @s[tag=itemid.iron_door] run return run data modify storage numeral:io A set value [40000000,0,0,0]
+execute as @s[tag=itemid.iron_door] run return run data modify storage numeral:io A set value [85000000,0,0,0]
