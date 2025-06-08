@@ -1,3 +1,4 @@
+clear @s wooden_pickaxe
 execute if items entity @s inventory.0 * run summon item ~ ~ ~ {Item:{id:"barrier",count:1},Tags:["item.target"],PickupDelay:1s}
 execute if items entity @s inventory.0 * run item replace entity @n[type=item,tag=item.target,distance=..0.01] container.0 from entity @s inventory.0
 execute if items entity @s inventory.0 * run data modify entity @n[type=item,tag=item.target,distance=..0.01] Owner set from entity @s UUID
