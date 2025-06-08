@@ -383,14 +383,14 @@ with open("data/code/function/plots/save.tile.backbone.generator.mcfunction", "w
 # logic/generator.item
 with open("data/code/function/logic/generator.item.mcfunction", "w") as f:
     for gen in GENERATORS:
-        f.write("""execute as @s[tag=block.generator.%id%] unless entity @n[type=item_display,tag=item,distance=..0.01] run summon item_display ~ ~ ~ {item:{id:"%output%",count:1},teleport_duration:20,transformation:{scale:[0.4f,0.4f,0.4f],translation:[0f,-.23f,0f],left_rotation:[0,0,0,1],right_rotation:[0,0,0,1]},view_range:0.25,Tags:["item","item.this"],CustomName:'"1"',CustomNameVisible:true}\n""".replace("%id%", gen["id"]).replace("%output%", gen["output"]))
+        f.write("""execute as @s[tag=block.generator.%id%] unless entity @n[type=item_display,tag=item,distance=..0.01] run summon item_display ~ ~ ~ {item:{id:"%output%",count:1},teleport_duration:20,transformation:{scale:[0.4f,0.4f,0.4f],translation:[0f,-.23f,0f],left_rotation:[0,0,0,1],right_rotation:[0,0,0,1]},view_range:0.25,Tags:["item","item.this","itemid.%output%"],CustomName:'"1"',CustomNameVisible:true}\n""".replace("%id%", gen["id"]).replace("%output%", gen["output"]))
         if not gen["output"] in ITEMS:
             print("[gen] Unpriced item " + gen["output"])
 
 # item prices
 with open("data/code/function/logic/sell.prices.mcfunction", "w") as f:
     for item in ITEMS:
-        f.write("""execute if data entity @s item{id:"minecraft:%id%"} run data modify storage numeral:io A set value %price%\n""".replace("%id%", item).replace("%price%", number_to_numeral(ITEMS[item])))
+        f.write("""execute as @s[tag=itemid.%id%] run return run data modify storage numeral:io A set value %price%\n""".replace("%id%", item).replace("%price%", number_to_numeral(ITEMS[item])))
 
 
 # # #  RECIPES  # # #
@@ -398,17 +398,20 @@ with open("data/code/function/logic/sell.prices.mcfunction", "w") as f:
 # Cutter recipes
 with open("data/code/function/logic/cutter.recipes.mcfunction", "w") as f:
     for recipe in RECIPES["cutter"]:
-        f.write('execute if data entity @s item{id:"minecraft:%input%"} run return run function code:logic/cutter/%output%\n'.replace("%input%", recipe["input"]).replace("%output%", recipe["output"]))
+        f.write('execute as @s[tag=itemid.%input%] run return run function code:logic/cutter/%output%\n'.replace("%input%", recipe["input"]).replace("%output%", recipe["output"]))
         with open("data/code/function/logic/cutter/%.mcfunction".replace("%", recipe["output"]), "w") as g:
-            g.write('scoreboard players set #mul math %mul%\ndata modify entity @s item.id set value "minecraft:%output%"'.replace("%output%", recipe["output"]).replace("%mul%", str(recipe["mul"])))
+            g.write('scoreboard players set #mul math %mul%\ndata modify entity @s item.id set value "minecraft:%output%"\ntag @s remove itemid.%input%\ntag @s add itemid.%output%'.replace("%input%", recipe["input"]).replace("%output%", recipe["output"]).replace("%mul%", str(recipe["mul"])))
         if not recipe["output"] in ITEMS:
             print("[recipe/cutter] Unpriced item " + recipe["output"])
 
 # Furnace recipes
 with open("data/code/function/logic/furnace.recipes.mcfunction", "w") as f:
     for recipe in RECIPES["furnace"]:
-        f.write("""execute if data entity @s item{id:"minecraft:%input%"} run return run data modify entity @s item.id set value "minecraft:%output%"\n"""\
+        f.write("""execute as @s[tag=itemid.%input%] run return run function code:logic/furnace/%output%\n"""\
                 .replace("%input%", recipe["input"]).replace("%output%", recipe["output"]))
+        with open("data/code/function/logic/furnace/%.mcfunction".replace("%", recipe["output"]), "w") as g:
+            g.write('data modify entity @s item.id set value "minecraft:%output%"\ntag @s remove itemid.%input%\ntag @s add itemid.%output%'\
+                    .replace("%input%", recipe["input"]).replace("%output%", recipe["output"]))
         if not recipe["output"] in ITEMS:
             print("[recipe/furnace] Unpriced item " + recipe["output"])
 
@@ -416,16 +419,16 @@ with open("data/code/function/logic/furnace.recipes.mcfunction", "w") as f:
 with open("data/code/function/logic/crafter_2.recipe.mcfunction", "w") as f:
     for recipe in RECIPES["crafter_2"]:
         if recipe["in1"] == recipe["in2"]:
-            f.write("""execute if entity @n[type=item_display,tag=crafting.1,distance=..1.01,nbt={item:{id:"minecraft:%in%"}}] if entity @n[type=item_display,tag=crafting.2,distance=..1.01,nbt={item:{id:"minecraft:%in%"}}] run return run function code:logic/crafter_2/%out%\n"""\
+            f.write("""execute if entity @n[type=item_display,tag=crafting.1,distance=..1.01,tag=itemid.%in%] if entity @n[type=item_display,tag=crafting.2,distance=..1.01,tag=itemid.%in%] run return run function code:logic/crafter_2/%out%\n"""\
                 .replace("%in%", recipe["in1"]).replace("%out%", recipe["out"]))
             with open("data/code/function/logic/crafter_2/%.mcfunction".replace("%", recipe["out"]), "w") as g:
-                g.write("""scoreboard players remove @n[type=item_display,tag=crafting.1,distance=..1.01,nbt={item:{id:"minecraft:%in%"}}] count 1\nscoreboard players remove @n[type=item_display,tag=crafting.2,distance=..1.01,nbt={item:{id:"minecraft:%in%"}}] count 1\nscoreboard players set #count math %count%\nsummon item_display ~ ~ ~ {item:{id:"%out%",count:1},teleport_duration:20,transformation:{scale:[0.4f,0.4f,0.4f],translation:[0f,-.23f,0f],left_rotation:[0,0,0,1],right_rotation:[0,0,0,1]},view_range:0.25,Tags:["item","crafting.output"],CustomName:'"4"',CustomNameVisible:true}"""\
+                g.write("""scoreboard players remove @e[type=item_display,tag=crafting.input,distance=..1.01,limit=2] count 1\nscoreboard players set #count math %count%\nsummon item_display ~ ~ ~ {item:{id:"%out%",count:1},teleport_duration:20,transformation:{scale:[0.4f,0.4f,0.4f],translation:[0f,-.23f,0f],left_rotation:[0,0,0,1],right_rotation:[0,0,0,1]},view_range:0.25,Tags:["item","crafting.output","itemid.%out%"],CustomName:'"4"',CustomNameVisible:true}"""\
                     .replace("%in%", recipe["in1"]).replace("%out%", recipe["out"]).replace("%count%", str(recipe["count"])))
         else:
-            f.write("""execute if entity @n[type=item_display,tag=crafting.input,distance=..1.01,nbt={item:{id:"minecraft:%in1%"}}] if entity @n[type=item_display,tag=crafting.input,distance=..1.01,nbt={item:{id:"minecraft:%in2%"}}] run return run function code:logic/crafter_2/%out%\n"""\
+            f.write("""execute if entity @n[type=item_display,tag=crafting.input,distance=..1.01,tag=itemid.%in1%] if entity @n[type=item_display,tag=crafting.input,distance=..1.01,tag=itemid.%in1%] run return run function code:logic/crafter_2/%out%\n"""\
                 .replace("%in1%", recipe["in1"]).replace("%in2%", recipe["in2"]).replace("%out%", recipe["out"]))
             with open("data/code/function/logic/crafter_2/%.mcfunction".replace("%", recipe["out"]), "w") as g:
-                g.write("""scoreboard players remove @n[type=item_display,tag=crafting.input,distance=..1.01,nbt={item:{id:"minecraft:%in1%"}}] count 1\nscoreboard players remove @n[type=item_display,tag=crafting.input,distance=..1.01,nbt={item:{id:"minecraft:%in2%"}}] count 1\nscoreboard players set #count math %count%\nsummon item_display ~ ~ ~ {item:{id:"%out%",count:1},teleport_duration:20,transformation:{scale:[0.4f,0.4f,0.4f],translation:[0f,-.23f,0f],left_rotation:[0,0,0,1],right_rotation:[0,0,0,1]},view_range:0.25,Tags:["item","crafting.output"],CustomName:'"4"',CustomNameVisible:true}"""\
+                g.write("""scoreboard players remove @e[type=item_display,tag=crafting.input,distance=..1.01,limit=2] count 1\nscoreboard players set #count math %count%\nsummon item_display ~ ~ ~ {item:{id:"%out%",count:1},teleport_duration:20,transformation:{scale:[0.4f,0.4f,0.4f],translation:[0f,-.23f,0f],left_rotation:[0,0,0,1],right_rotation:[0,0,0,1]},view_range:0.25,Tags:["item","crafting.output","itemid.%out%"],CustomName:'"4"',CustomNameVisible:true}"""\
                     .replace("%in1%", recipe["in1"]).replace("%in2%", recipe["in2"]).replace("%out%", recipe["out"]).replace("%count%", str(recipe["count"])))
         if not recipe["out"] in ITEMS:
             print("[recipe/crafter_2] Unpriced item " + recipe["out"])
@@ -435,10 +438,10 @@ with open("data/code/function/logic/crafter_2.recipe.mcfunction", "w") as f:
 with open("data/code/function/logic/crafter_3.recipe.mcfunction", "w") as f:
     for recipe in RECIPES["crafter_3"]:
         # TODO: input matches override
-        f.write("""execute if entity @n[type=item_display,tag=crafting.input,distance=..1.01,nbt={item:{id:"minecraft:%in1%"}}] if entity @n[type=item_display,tag=crafting.input,distance=..1.01,nbt={item:{id:"minecraft:%in2%"}}] if entity @n[type=item_display,tag=crafting.input,distance=..1.01,nbt={item:{id:"minecraft:%in3%"}}] run return run function code:logic/crafter_3/%out%\n"""\
+        f.write("""execute if entity @n[type=item_display,tag=crafting.input,distance=..1.01,tag=itemid.%in1%] if entity @n[type=item_display,tag=crafting.input,distance=..1.01,tag=itemid.%in2%] if entity @n[type=item_display,tag=crafting.input,distance=..1.01,tag=itemid.%in3%] run return run function code:logic/crafter_3/%out%\n"""\
             .replace("%in1%", recipe["in1"]).replace("%in2%", recipe["in2"]).replace("%in3%", recipe["in3"]).replace("%out%", recipe["out"]))
         with open("data/code/function/logic/crafter_3/%.mcfunction".replace("%", recipe["out"]), "w") as g:
-            g.write("""scoreboard players remove @n[type=item_display,tag=crafting.input,distance=..1.01,nbt={item:{id:"minecraft:%in1%"}}] count 1\nscoreboard players remove @n[type=item_display,tag=crafting.input,distance=..1.01,nbt={item:{id:"minecraft:%in2%"}}] count 1\nscoreboard players remove @n[type=item_display,tag=crafting.input,distance=..1.01,nbt={item:{id:"minecraft:%in3%"}}] count 1\nscoreboard players set #count math %count%\nsummon item_display ~ ~ ~ {item:{id:"%out%",count:1},teleport_duration:20,transformation:{scale:[0.4f,0.4f,0.4f],translation:[0f,-.23f,0f],left_rotation:[0,0,0,1],right_rotation:[0,0,0,1]},view_range:0.25,Tags:["item","crafting.output"],CustomName:'"1"',CustomNameVisible:true}"""\
+            g.write("""scoreboard players remove @e[type=item_display,tag=crafting.input,distance=..1.01,limit=3] count 1\nscoreboard players set #count math %count%\nsummon item_display ~ ~ ~ {item:{id:"%out%",count:1},teleport_duration:20,transformation:{scale:[0.4f,0.4f,0.4f],translation:[0f,-.23f,0f],left_rotation:[0,0,0,1],right_rotation:[0,0,0,1]},view_range:0.25,Tags:["item","crafting.output","itemid.%out%"],CustomName:'"1"',CustomNameVisible:true}"""\
                 .replace("%in1%", recipe["in1"]).replace("%in2%", recipe["in2"]).replace("%in3%", recipe["in3"]).replace("%out%", recipe["out"]).replace("%count%", str(recipe["count"])))
         if not recipe["out"] in ITEMS:
             print("[recipe/crafter_3] Unpriced item " + recipe["out"])

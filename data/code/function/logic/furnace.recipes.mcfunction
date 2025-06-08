@@ -1,7 +1,7 @@
-execute if data entity @s item{id:"minecraft:oak_log"} run return run data modify entity @s item.id set value "minecraft:charcoal"
-execute if data entity @s item{id:"minecraft:cobblestone"} run return run data modify entity @s item.id set value "minecraft:stone"
-execute if data entity @s item{id:"minecraft:stone"} run return run data modify entity @s item.id set value "minecraft:smooth_stone"
-execute if data entity @s item{id:"minecraft:raw_copper"} run return run data modify entity @s item.id set value "minecraft:copper_ingot"
-execute if data entity @s item{id:"minecraft:raw_iron"} run return run data modify entity @s item.id set value "minecraft:iron_ingot"
-execute if data entity @s item{id:"minecraft:glowstone_dust"} run return run data modify entity @s item.id set value "minecraft:orange_dye"
-execute if data entity @s item{id:"minecraft:gunpowder"} run return run data modify entity @s item.id set value "minecraft:tnt"
+execute as @s[tag=itemid.oak_log] run return run function code:logic/furnace/charcoal
+execute as @s[tag=itemid.cobblestone] run return run function code:logic/furnace/stone
+execute as @s[tag=itemid.stone] run return run function code:logic/furnace/smooth_stone
+execute as @s[tag=itemid.raw_copper] run return run function code:logic/furnace/copper_ingot
+execute as @s[tag=itemid.raw_iron] run return run function code:logic/furnace/iron_ingot
+execute as @s[tag=itemid.glowstone_dust] run return run function code:logic/furnace/orange_dye
+execute as @s[tag=itemid.gunpowder] run return run function code:logic/furnace/tnt
