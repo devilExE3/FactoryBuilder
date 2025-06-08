@@ -63,5 +63,5 @@ tag @s remove holding_shop
 tag @s remove shrinked
 attribute @s scale base set 1
 
-execute unless items entity @s container.* minecraft:written_book run loot give @s loot code:book
+execute if items entity @s container.* minecraft:written_book run function code:joined.book
 execute at @s run function code:reload_inventory
