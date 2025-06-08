@@ -11,5 +11,6 @@ execute if data storage temp this{id:"washer"} run function code:blocks/backbone
 execute if data storage temp this{id:"flashbaker"} run function code:blocks/backbone/flashbaker
 execute if data storage temp this{id:"sonic_zapper"} run function code:blocks/backbone/sonic_zapper
 execute if data storage temp this{id:"crusher"} run function code:blocks/backbone/crusher
+execute if data storage temp this{id:"enchanter"} run function code:blocks/backbone/enchanter
 
 function code:plots/load.tile.backbone.generator

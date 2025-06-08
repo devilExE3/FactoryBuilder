@@ -257,6 +257,7 @@ RECIPES = {
     "crusher": [],
     "flashbaker": [],
     "sonic_zapper": [],
+    "enchanter": [],
 }
 
 SHOP_ITEMS = [
@@ -330,6 +331,12 @@ SHOP_ITEMS = [
         "name": "Sonic Zapper",
         "id": "sonic_zapper",
         "model": "reinforced_deepslate",
+        "price": 6969
+    },
+    {
+        "name": "Enchanter",
+        "id": "enchanter",
+        "model": "enchanting_table",
         "price": 6969
     }
 ]
@@ -514,6 +521,32 @@ with open("data/code/function/logic/crusher.recipe.mcfunction", "w") as f:
                 .replace("%out%", recipe["out"]).replace("%count%", str(recipe["count"])))
         if not recipe["out"] in ITEMS:
             print("[recipe/crusher] Unpriced item " + recipe["out"])
+    f.write("return fail")
+
+# Enchanter recipes
+with open("data/code/function/logic/enchanter.recipe.mcfunction", "w") as f:
+    for recipe in RECIPES["enchanter"]:
+        # 3 identical
+        if recipe["in1"] == recipe["in2"] and recipe["in1"] == recipe["in3"]:
+            f.write("""execute if entity @n[type=item_display,tag=enchanter.1,distance=..1.01,tag=itemid.%in%] if entity @n[type=item_display,tag=enchanter.2,distance=..1.01,tag=itemid.%in%] if entity @n[type=item_display,tag=enchanter.3,distance=..1.01,tag=itemid.%in%] run return run function code:logic/crafter_3/%out%\n"""\
+                .replace("%in%", recipe["in1"]).replace("%out%", recipe["out"]))
+        # 2 identical
+        elif recipe["in1"] == recipe["in2"]:
+            f.write("""execute if entity @n[type=item_display,tag=enchanter.1,distance=..1.01,tag=itemid.%in1%] if entity @n[type=item_display,tag=enchanter.2,distance=..1.01,tag=itemid.%in1%] if entity @n[type=item_display,tag=enchanter.3,distance=..1.01,tag=itemid.%in3%] run return run function code:logic/crafter_3/%out%\n"""\
+                .replace("%in1%", recipe["in1"]).replace("%in3%", recipe["in3"]).replace("%out%", recipe["out"]))
+            f.write("""execute if entity @n[type=item_display,tag=enchanter.1,distance=..1.01,tag=itemid.%in1%] if entity @n[type=item_display,tag=enchanter.2,distance=..1.01,tag=itemid.%in3%] if entity @n[type=item_display,tag=enchanter.3,distance=..1.01,tag=itemid.%in1%] run return run function code:logic/crafter_3/%out%\n"""\
+                .replace("%in1%", recipe["in1"]).replace("%in3%", recipe["in3"]).replace("%out%", recipe["out"]))
+            f.write("""execute if entity @n[type=item_display,tag=enchanter.1,distance=..1.01,tag=itemid.%in3%] if entity @n[type=item_display,tag=enchanter.2,distance=..1.01,tag=itemid.%in1%] if entity @n[type=item_display,tag=enchanter.3,distance=..1.01,tag=itemid.%in1%] run return run function code:logic/crafter_3/%out%\n"""\
+                .replace("%in1%", recipe["in1"]).replace("%in3%", recipe["in3"]).replace("%out%", recipe["out"]))
+        # none identical
+        else:
+            f.write("""execute if entity @n[type=item_display,tag=enchanter.input,distance=..1.01,tag=itemid.%in1%] if entity @n[type=item_display,tag=enchanter.input,distance=..1.01,tag=itemid.%in2%] if entity @n[type=item_display,tag=enchanter.input,distance=..1.01,tag=itemid.%in3%] run return run function code:logic/crafter_3/%out%\n"""\
+                .replace("%in1%", recipe["in1"]).replace("%in2%", recipe["in2"]).replace("%in3%", recipe["in3"]).replace("%out%", recipe["out"]))
+        with open("data/code/function/logic/crafter_3/%.mcfunction".replace("%", recipe["out"]), "w") as g:
+            g.write("""scoreboard players remove @e[type=item_display,tag=enchanter.input,distance=..1.01,limit=3] count 1\nscoreboard players set #count math %count%\nsummon item_display ~ ~ ~ {item:{id:"%out%",count:1},teleport_duration:20,transformation:{scale:[0.4f,0.4f,0.4f],translation:[0f,-.23f,0f],left_rotation:[0,0,0,1],right_rotation:[0,0,0,1]},view_range:0.25,Tags:["item","enchanter.output","itemid.%out%"],CustomName:'"1"',CustomNameVisible:true}"""\
+                .replace("%out%", recipe["out"]).replace("%count%", str(recipe["count"])))
+        if not recipe["out"] in ITEMS:
+            print("[recipe/crafter_3] Unpriced item " + recipe["out"])
     f.write("return fail")
 
 # Washer recipes
@@ -839,6 +872,8 @@ for recipe_type in RECIPES:
             current_page.add_line(BookLine().add_comp(BookComponent(ITEM_TRANSLATE[recipe["output"]]).hover(BookComponent("Flashbaker \\nInput: " + ITEM_TRANSLATE[recipe["input"]] + "\\nOutput: " + ITEM_TRANSLATE[recipe["output"]]).color("white"))))
         elif recipe_type == "sonic_zapper":
             current_page.add_line(BookLine().add_comp(BookComponent(ITEM_TRANSLATE[recipe["output"]]).hover(BookComponent("Sonic Zapper \\nInput: " + ITEM_TRANSLATE[recipe["input"]] + "\\nOutput: " + ITEM_TRANSLATE[recipe["output"]]).color("white"))))
+        elif recipe_type == "enchanter":
+            current_page.add_line(BookLine().add_comp(BookComponent(ITEM_TRANSLATE[recipe["out"]]).hover(BookComponent("Enchanter\\nInputs:\\n- " + ITEM_TRANSLATE[recipe["in1"]] + "\\n- " + ITEM_TRANSLATE[recipe["in2"]] + "\\n- " + ITEM_TRANSLATE[recipe["in3"]] + "\\nOutput: " + str(recipe["count"]) + "x " + ITEM_TRANSLATE[recipe["out"]]).color("white"))))
         else:
             line -= 1
             print("[book/recipe] Unknown recipe type " + recipe_type)

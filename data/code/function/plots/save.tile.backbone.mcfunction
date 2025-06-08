@@ -11,5 +11,6 @@ execute as @s[tag=block.washer] run data modify storage temp this.id set value "
 execute as @s[tag=block.flashbaker] run data modify storage temp this.id set value "flashbaker"
 execute as @s[tag=block.sonic_zapper] run data modify storage temp this.id set value "sonic_zapper"
 execute as @s[tag=block.crusher] run data modify storage temp this.id set value "crusher"
+execute as @s[tag=block.enchanter] run data modify storage temp this.id set value "enchanter"
 
 execute as @s[tag=block.generator] run function code:plots/save.tile.backbone.generator

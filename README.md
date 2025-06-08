@@ -4,9 +4,9 @@ backbone/frontbone
 place.block
 place.loot
 destroy
-shop (in script)
 load/save backbone
 tags/block/factory
+shop (in script)
 
 block logic:
 logic

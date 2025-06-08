@@ -32,6 +32,11 @@
         "light_gray_terracotta",
         "gray_terracotta",
 
+        "blackstone_slab",
+        "polished_blackstone_slab",
+        "polished_blackstone_brick_slab",
+        "purpur_slab",
+
         "#code:generators"
     ]
 }
