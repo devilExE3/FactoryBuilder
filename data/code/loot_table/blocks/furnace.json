@@ -4,7 +4,7 @@
         "rolls": 1,
         "entries": [{
             "type": "item",
-            "name": "spider_spawn_egg",
+            "name": "pig_spawn_egg",
             "functions": [{
                 "function": "set_components",
                 "components": {

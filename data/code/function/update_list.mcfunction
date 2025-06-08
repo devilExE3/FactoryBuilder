@@ -1,5 +1,9 @@
 function numeral:ext/lda
 function numeral:format
+# calculate playing time
+scoreboard players operation #playtime math = @s stats.playtime
+scoreboard players operation #playtime math /= #360 math
+execute store result storage numeral:io playtime double 0.1 run scoreboard players get #playtime math
 function code:update_list.macro with storage numeral:io
 # income thing
 execute store result storage numeral:io B[0] int 1 run scoreboard players get @s prev_money.0

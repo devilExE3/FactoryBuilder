@@ -6,5 +6,6 @@ execute as @s[tag=place.cutter] run function code:blocks/frontbone/cutter
 execute as @s[tag=place.furnace] run function code:blocks/frontbone/furnace
 execute as @s[tag=place.crafter_2] run function code:blocks/frontbone/crafter_2
 execute as @s[tag=place.crafter_3] run function code:blocks/frontbone/crafter_3
+execute as @s[tag=place.washer] run function code:blocks/frontbone/washer
 
 execute as @s[tag=place.generator] run function code:blocks/place.generator.block

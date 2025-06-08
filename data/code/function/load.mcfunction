@@ -25,6 +25,7 @@ scoreboard players set #16 math 16
 scoreboard players set #32 math 32
 scoreboard players set #90 math 90
 scoreboard players set #100 math 100
+scoreboard players set #360 math 360
 scoreboard players set #1000 math 1000
 scoreboard players set #playercount math 0
 scoreboard objectives add plot.x dummy

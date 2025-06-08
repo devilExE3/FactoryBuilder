@@ -287,6 +287,12 @@ SHOP_ITEMS = [
         "id": "crafter_3",
         "model": "crafter",
         "price": 100_000_000
+    },
+    {
+        "name": "Washer",
+        "id": "washer",
+        "model": "water_bucket",
+        "price": 6969
     }
 ]
 
