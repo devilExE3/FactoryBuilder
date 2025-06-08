@@ -5,3 +5,5 @@ execute as @s[tag=itemid.raw_copper] run return run function code:logic/furnace/
 execute as @s[tag=itemid.raw_iron] run return run function code:logic/furnace/iron_ingot
 execute as @s[tag=itemid.glowstone_dust] run return run function code:logic/furnace/orange_dye
 execute as @s[tag=itemid.gunpowder] run return run function code:logic/furnace/tnt
+execute as @s[tag=itemid.gravel] run return run function code:logic/furnace/andesite
+execute as @s[tag=itemid.gold_ore] run return run function code:logic/furnace/raw_gold_block

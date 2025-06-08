@@ -66,7 +66,7 @@ GENERATORS = [
         "model": "netherrack",
         "output": "netherrack",
         "gen_block": "netherrack",
-        "price": 6969,
+        "price": 25 * 10 ** 9,
         "id": "netherrack",
         "type": "ore",
         "rp_texture": "minecraft:block/netherrack"
@@ -76,7 +76,7 @@ GENERATORS = [
         "model": "end_stone",
         "output": "end_stone",
         "gen_block": "end_stone",
-        "price": 6969,
+        "price": 500 * 10 ** 12,
         "id": "end_stone",
         "type": "ore",
         "rp_texture": "minecraft:block/end_stone"
@@ -109,7 +109,41 @@ ITEMS = {
     "coal_block": 5_000_000,
     "raw_iron": 5_000_000,
     "iron_ingot": 10_000_000,
+    "anvil": 25_000_000,
     "iron_door": 85_000_000,
+
+    # LuveelVoom
+    "gravel": 500,
+    "andesite": 1_000,
+    "gold_ore": 5_000,
+    "raw_gold_block": 25_000,
+    "yellow_concrete_powder": 5_000_000,
+    "deepslate_gold_ore": 30_000_000,
+    "gold_ingot": 200_000_000,
+    "end_stone": 100_000_000,
+    "suspicious_sand": 500_000_000,
+    "sand": 4_000_000_000,
+    "tinted_glass": 10_000_000_000,
+    "purpur_block": 50_000_000_000,
+    "purpur_pillar": 300_000_000_000,
+    "soul_sand": 1_000_000_000_000,
+    "soul_soil": 2_000_000_000_000,
+    "spruce_wood": 2_500_000_000_000,
+    "ender_pearl": 1_500_000_000_000,
+    "netherrack": 1_000_000,
+    "nether_bricks": 2_000_000,
+    "nether_brick_slab": 3_000_000,
+    "nether_brick": 5_000_000,
+    "cherry_button": 200_000_000,
+    "cherry_slab": 500_000_000,
+    "stripped_cherry_wood": 1_300_000_000,
+    "cherry_wood": 2_000_000_000,
+    "pale_oak_log": 4_000_000_000,
+    "nether_quartz_ore": 6_000_000_000,
+    "quartz_slab": 10_000_000_000,
+    "quartz_block": 40_000_000_000,
+    "chiseled_quartz_block": 80_000_000_000,
+    "quartz": 50_000_000_000
 }
 ITEM_TRANSLATE = {
     "oak_log": "Oak Log",
@@ -137,7 +171,41 @@ ITEM_TRANSLATE = {
     "coal_block": "Coal Block",
     "raw_iron": "Raw Iron",
     "iron_ingot": "Iron Ingot",
-    "iron_door": "Iron Door"
+    "anvil": "Anvil",
+    "iron_door": "Iron Door",
+
+    # LuveelVoom
+    "gravel": "Gravel",
+    "andesite": "Andesite",
+    "gold_ore": "Unrefined Gold Ore",
+    "raw_gold_block": "Smithed Gold Ore",
+    "yellow_concrete_powder": "Gold Ore Powder",
+    "deepslate_gold_ore": "Gold Ore",
+    "gold_ingot": "Gold Ingot",
+    "end_stone": "End Stone",
+    "suspicious_sand": "Unfiltered Endstone Powder",
+    "sand": "Filtered Endstone Powder",
+    "tinted_glass": "Ender Glass",
+    "purpur_block": "Unchiseled Purpur",
+    "purpur_pillar": "Chiseled Purpur",
+    "soul_sand": "Ender-Infused Soil",
+    "soul_soil": "Hardened Soil",
+    "spruce_wood": "Ender Pearl Clump",
+    "ender_pearl": "Ender Pearl",
+    "netherrack": "Netherrack",
+    "nether_bricks": "Nether Brick Block",
+    "nether_brick_slab": "Nether Brick Slab",
+    "nether_brick": "Nether Brick",
+    "cherry_button": "Uncoagulated Mote",
+    "cherry_slab": "Uncoagulated Chunk",
+    "stripped_cherry_wood": "Uncoagulated Lump",
+    "cherry_wood": "Coagulated Lump",
+    "pale_oak_log": "Calcified Lump",
+    "nether_quartz_ore": "Sparse Nether Quartz",
+    "quartz_slab": "Quartz Slab",
+    "quartz_block": "Quartz Block",
+    "chiseled_quartz_block": "Chieseled Quartz",
+    "quartz": "Quartz"
 }
 
 RECIPES = {
@@ -166,6 +234,11 @@ RECIPES = {
             "input": "birch_planks",
             "output": "birch_slab",
             "mul": 2
+        },
+        {
+            "input": "andesite",
+            "output": "gold_ore",
+            "mul": 1
         }
     ],
     "furnace": [
@@ -196,6 +269,14 @@ RECIPES = {
         {
             "input": "gunpowder",
             "output": "tnt"
+        },
+        {
+            "input": "gravel",
+            "output": "andesite"
+        },
+        {
+            "input": "gold_ore",
+            "output": "raw_gold_block"
         }
     ],
     "crafter_2": [
@@ -228,6 +309,18 @@ RECIPES = {
             "in2": "tnt",
             "out": "coal_block",
             "count": 1
+        },
+        {
+            "in1": "raw_gold_block",
+            "in2": "orange_dye",
+            "out": "yellow_concrete_powder",
+            "count": 1
+        },
+        {
+            "in1": "deepslate_gold_ore",
+            "in2": "tnt",
+            "out": "gold_ingot",
+            "count": 1
         }
     ],
     "crafter_3": [
@@ -251,10 +344,29 @@ RECIPES = {
             "in3": "copper_ingot",
             "out": "iron_door",
             "count": 1
+        },
+        {
+            "in1": "iron_ingot",
+            "in2": "iron_ingot",
+            "in3": "iron_ingot",
+            "out": "anvil",
+            "count": 1
         }
     ],
-    "washer": [],
-    "crusher": [],
+    "washer": [
+        {
+            "input": "yellow_concrete_powder",
+            "output": "deepslate_gold_ore"
+        }
+    ],
+    "crusher": [
+        {
+        "side": "smooth_stone",
+        "top": "anvil",
+        "count": 2,
+        "out": "gravel"
+        }
+    ],
     "flashbaker": [],
     "sonic_zapper": [],
     "enchanter": [],
@@ -313,31 +425,31 @@ SHOP_ITEMS = [
         "name": "Washer",
         "id": "washer",
         "model": "water_bucket",
-        "price": 6969
+        "price": 1 * 10 ** 9
     },
     {
         "name": "Crusher",
         "id": "crusher",
         "model": "smoker",
-        "price": 6969
+        "price": 15 * 10 ** 9
     },
     {
         "name": "Flashbaker",
         "id": "flashbaker",
         "model": "lava_bucket",
-        "price": 6969
-    },
-    {
-        "name": "Sonic Zapper",
-        "id": "sonic_zapper",
-        "model": "reinforced_deepslate",
-        "price": 6969
+        "price": 4 * 10 ** 9
     },
     {
         "name": "Enchanter",
         "id": "enchanter",
         "model": "enchanting_table",
-        "price": 6969
+        "price": 300 * 10 ** 9
+    },
+    {
+        "name": "Sonic Zapper",
+        "id": "sonic_zapper",
+        "model": "reinforced_deepslate",
+        "price": 2 * 10 ** 12
     }
 ]
 
