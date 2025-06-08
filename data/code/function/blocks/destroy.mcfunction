@@ -18,6 +18,7 @@ execute as @s[tag=block.furnace] run loot replace entity @n[type=item,tag=item.t
 execute as @s[tag=block.crafter_2] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/crafter_2
 execute as @s[tag=block.crafter_3] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/crafter_3
 execute as @s[tag=block.washer] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/washer
+execute as @s[tag=block.flashbaker] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/flashbaker
 
 execute as @s[tag=block.generator] run function code:blocks/destroy.generator
 

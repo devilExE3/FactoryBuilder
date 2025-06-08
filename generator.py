@@ -253,7 +253,8 @@ RECIPES = {
             "count": 1
         }
     ],
-    "washer": []
+    "washer": [],
+    "flashbaker": []
 }
 
 SHOP_ITEMS = [
@@ -309,6 +310,12 @@ SHOP_ITEMS = [
         "name": "Washer",
         "id": "washer",
         "model": "water_bucket",
+        "price": 6969
+    },
+    {
+        "name": "Flashbaker",
+        "id": "flashbaker",
+        "model": "lava_bucket",
         "price": 6969
     }
 ]
@@ -493,6 +500,17 @@ with open("data/code/function/logic/washer.recipes.mcfunction", "w") as f:
                     .replace("%input%", recipe["input"]).replace("%output%", recipe["output"]))
         if not recipe["output"] in ITEMS:
             print("[recipe/washer] Unpriced item " + recipe["output"])
+            
+# Flashbaker recipes
+with open("data/code/function/logic/flashbaker.recipes.mcfunction", "w") as f:
+    for recipe in RECIPES["flashbaker"]:
+        f.write("""execute as @s[tag=itemid.%input%] run return run function code:logic/flashbaker/%output%\n"""\
+                .replace("%input%", recipe["input"]).replace("%output%", recipe["output"]))
+        with open("data/code/function/logic/flashbaker/%.mcfunction".replace("%", recipe["output"]), "w") as g:
+            g.write('data modify entity @s item.id set value "minecraft:%output%"\ntag @s remove itemid.%input%\ntag @s add itemid.%output%'\
+                    .replace("%input%", recipe["input"]).replace("%output%", recipe["output"]))
+        if not recipe["output"] in ITEMS:
+            print("[recipe/flashbaker] Unpriced item " + recipe["output"])
 
 # # #  SHOP PAGES  # # #
 # convert generators to SHOP_ITEMS

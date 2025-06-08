@@ -7,6 +7,7 @@ execute as @s[tag=place.furnace] run loot give @p[tag=rc] loot code:blocks/furna
 execute as @s[tag=place.crafter_2] run loot give @p[tag=rc] loot code:blocks/crafter_2
 execute as @s[tag=place.crafter_3] run loot give @p[tag=rc] loot code:blocks/crafter_3
 execute as @s[tag=place.washer] run loot give @p[tag=rc] loot code:blocks/washer
+execute as @s[tag=place.flashbaker] run loot give @p[tag=rc] loot code:blocks/flashbaker
 
 execute as @s[tag=place.generator] run function code:blocks/place.generator.loot
 

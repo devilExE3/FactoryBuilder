@@ -1,6 +1,6 @@
-# washer recipes
+# flashbaker recipes
 execute if entity @s[tag=item.cut] run return 0
 
-function code:logic/washer.recipes
+function code:logic/flashbaker.recipes
 
 tag @s add item.cut
