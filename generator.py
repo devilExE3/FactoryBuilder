@@ -118,7 +118,7 @@ ITEMS = {
     "gold_ore": 5_000,
     "raw_gold_block": 25_000,
     "yellow_concrete_powder": 5_000_000,
-    "deepslate_gold_ore": 30_000_000,
+    "raw_gold": 30_000_000,
     "gold_ingot": 200_000_000,
     "end_stone": 100_000_000,
     "suspicious_sand": 500_000_000,
@@ -180,7 +180,7 @@ ITEM_TRANSLATE = {
     "gold_ore": "Unrefined Gold Ore",
     "raw_gold_block": "Smithed Gold Ore",
     "yellow_concrete_powder": "Gold Ore Powder",
-    "deepslate_gold_ore": "Gold Ore",
+    "raw_gold": "Gold Ore",
     "gold_ingot": "Gold Ingot",
     "end_stone": "End Stone",
     "suspicious_sand": "Unfiltered Endstone Powder",
@@ -317,7 +317,7 @@ RECIPES = {
             "count": 1
         },
         {
-            "in1": "deepslate_gold_ore",
+            "in1": "raw_gold",
             "in2": "tnt",
             "out": "gold_ingot",
             "count": 1
@@ -356,7 +356,7 @@ RECIPES = {
     "washer": [
         {
             "input": "yellow_concrete_powder",
-            "output": "deepslate_gold_ore"
+            "output": "raw_gold"
         }
     ],
     "crusher": [

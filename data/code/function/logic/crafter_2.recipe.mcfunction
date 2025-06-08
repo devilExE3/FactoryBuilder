@@ -4,5 +4,5 @@ execute if entity @n[type=item_display,tag=crafting.1,distance=..1.01,tag=itemid
 execute if entity @n[type=item_display,tag=crafting.input,distance=..1.01,tag=itemid.coal] if entity @n[type=item_display,tag=crafting.input,distance=..1.01,tag=itemid.raw_copper] run return run function code:logic/crafter_2/glowstone_dust
 execute if entity @n[type=item_display,tag=crafting.input,distance=..1.01,tag=itemid.birch_wood] if entity @n[type=item_display,tag=crafting.input,distance=..1.01,tag=itemid.tnt] run return run function code:logic/crafter_2/coal_block
 execute if entity @n[type=item_display,tag=crafting.input,distance=..1.01,tag=itemid.raw_gold_block] if entity @n[type=item_display,tag=crafting.input,distance=..1.01,tag=itemid.orange_dye] run return run function code:logic/crafter_2/yellow_concrete_powder
-execute if entity @n[type=item_display,tag=crafting.input,distance=..1.01,tag=itemid.deepslate_gold_ore] if entity @n[type=item_display,tag=crafting.input,distance=..1.01,tag=itemid.tnt] run return run function code:logic/crafter_2/gold_ingot
+execute if entity @n[type=item_display,tag=crafting.input,distance=..1.01,tag=itemid.raw_gold] if entity @n[type=item_display,tag=crafting.input,distance=..1.01,tag=itemid.tnt] run return run function code:logic/crafter_2/gold_ingot
 return fail
