@@ -1,2 +1,2 @@
 # we have $(Owner)
-$scoreboard players operation $(Owner) money += #price math
+$execute as $(Owner) run function code:logic/sell.player

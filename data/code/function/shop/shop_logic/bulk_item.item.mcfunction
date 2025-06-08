@@ -1,0 +1,11 @@
+execute if items entity @s container.* *[custom_data~{shop:"conveyor"}] run return run function code:shop/shop_logic/bulk/conveyor
+execute if items entity @s container.* *[custom_data~{shop:"chute"}] run return run function code:shop/shop_logic/bulk/chute
+execute if items entity @s container.* *[custom_data~{shop:"elevator"}] run return run function code:shop/shop_logic/bulk/elevator
+execute if items entity @s container.* *[custom_data~{shop:"sell"}] run return run function code:shop/shop_logic/bulk/sell
+execute if items entity @s container.* *[custom_data~{shop:"cutter"}] run return run function code:shop/shop_logic/bulk/cutter
+execute if items entity @s container.* *[custom_data~{shop:"furnace"}] run return run function code:shop/shop_logic/bulk/furnace
+execute if items entity @s container.* *[custom_data~{shop:"crafter_2"}] run return run function code:shop/shop_logic/bulk/crafter_2
+execute if items entity @s container.* *[custom_data~{shop:"crafter_3"}] run return run function code:shop/shop_logic/bulk/crafter_3
+execute if items entity @s container.* *[custom_data~{shop:"generator.oak"}] run return run function code:shop/shop_logic/bulk/generator.oak
+execute if items entity @s container.* *[custom_data~{shop:"generator.stone"}] run return run function code:shop/shop_logic/bulk/generator.stone
+execute if items entity @s container.* *[custom_data~{shop:"generator.coal"}] run return run function code:shop/shop_logic/bulk/generator.coal

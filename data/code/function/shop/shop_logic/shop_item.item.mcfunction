@@ -1,0 +1,11 @@
+execute if items entity @s player.cursor *[custom_data~{shop:"conveyor"}] run return run function code:shop/shop_logic/item/conveyor
+execute if items entity @s player.cursor *[custom_data~{shop:"chute"}] run return run function code:shop/shop_logic/item/chute
+execute if items entity @s player.cursor *[custom_data~{shop:"elevator"}] run return run function code:shop/shop_logic/item/elevator
+execute if items entity @s player.cursor *[custom_data~{shop:"sell"}] run return run function code:shop/shop_logic/item/sell
+execute if items entity @s player.cursor *[custom_data~{shop:"cutter"}] run return run function code:shop/shop_logic/item/cutter
+execute if items entity @s player.cursor *[custom_data~{shop:"furnace"}] run return run function code:shop/shop_logic/item/furnace
+execute if items entity @s player.cursor *[custom_data~{shop:"crafter_2"}] run return run function code:shop/shop_logic/item/crafter_2
+execute if items entity @s player.cursor *[custom_data~{shop:"crafter_3"}] run return run function code:shop/shop_logic/item/crafter_3
+execute if items entity @s player.cursor *[custom_data~{shop:"generator.oak"}] run return run function code:shop/shop_logic/item/generator.oak
+execute if items entity @s player.cursor *[custom_data~{shop:"generator.stone"}] run return run function code:shop/shop_logic/item/generator.stone
+execute if items entity @s player.cursor *[custom_data~{shop:"generator.coal"}] run return run function code:shop/shop_logic/item/generator.coal

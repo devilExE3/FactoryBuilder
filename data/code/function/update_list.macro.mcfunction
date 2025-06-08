@@ -1,1 +1,1 @@
-$scoreboard players display numberformat @s list fixed {"text": "$$(int)","color": "green"}
+$scoreboard players display numberformat @s list fixed {"text": "$$(format)","color": "green"}

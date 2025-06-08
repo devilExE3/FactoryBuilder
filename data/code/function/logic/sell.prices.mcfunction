@@ -1,12 +1,12 @@
-execute if data entity @s item{id:"minecraft:oak_log"} run scoreboard players set #price math 5
-execute if data entity @s item{id:"minecraft:oak_planks"} run scoreboard players set #price math 3
-execute if data entity @s item{id:"minecraft:oak_slab"} run scoreboard players set #price math 2
-execute if data entity @s item{id:"minecraft:stick"} run scoreboard players set #price math 1
-execute if data entity @s item{id:"minecraft:charcoal"} run scoreboard players set #price math 25
-execute if data entity @s item{id:"minecraft:cobblestone"} run scoreboard players set #price math 20
-execute if data entity @s item{id:"minecraft:stone"} run scoreboard players set #price math 50
-execute if data entity @s item{id:"minecraft:smooth_stone"} run scoreboard players set #price math 75
-execute if data entity @s item{id:"minecraft:stone_bricks"} run scoreboard players set #price math 150
-execute if data entity @s item{id:"minecraft:coal"} run scoreboard players set #price math 1000
-execute if data entity @s item{id:"minecraft:torch"} run scoreboard players set #price math 1500
-execute if data entity @s item{id:"minecraft:glowstone"} run scoreboard players set #price math 100000
+execute if data entity @s item{id:"minecraft:oak_log"} run data modify storage numeral:io A set value [5,0,0,0]
+execute if data entity @s item{id:"minecraft:oak_planks"} run data modify storage numeral:io A set value [3,0,0,0]
+execute if data entity @s item{id:"minecraft:oak_slab"} run data modify storage numeral:io A set value [2,0,0,0]
+execute if data entity @s item{id:"minecraft:stick"} run data modify storage numeral:io A set value [1,0,0,0]
+execute if data entity @s item{id:"minecraft:charcoal"} run data modify storage numeral:io A set value [25,0,0,0]
+execute if data entity @s item{id:"minecraft:cobblestone"} run data modify storage numeral:io A set value [20,0,0,0]
+execute if data entity @s item{id:"minecraft:stone"} run data modify storage numeral:io A set value [50,0,0,0]
+execute if data entity @s item{id:"minecraft:smooth_stone"} run data modify storage numeral:io A set value [75,0,0,0]
+execute if data entity @s item{id:"minecraft:stone_bricks"} run data modify storage numeral:io A set value [150,0,0,0]
+execute if data entity @s item{id:"minecraft:coal"} run data modify storage numeral:io A set value [1000,0,0,0]
+execute if data entity @s item{id:"minecraft:torch"} run data modify storage numeral:io A set value [1500,0,0,0]
+execute if data entity @s item{id:"minecraft:glowstone"} run data modify storage numeral:io A set value [100000,0,0,0]

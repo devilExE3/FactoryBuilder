@@ -1,0 +1,1 @@
+$data modify storage numeral:io format set value "$(whole)"

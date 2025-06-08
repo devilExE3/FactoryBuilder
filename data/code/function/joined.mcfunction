@@ -40,7 +40,18 @@ execute as @s[tag=is_am] run team join am @s
 execute as @s[tag=is_fm] run team join fm @s
 execute as @s[tag=is_owner] run team join dev @s
 
-execute unless score @s money matches 0.. run scoreboard players set @s money 0
+execute unless score @s money.0 matches 0.. run scoreboard players set @s money.0 0
+execute unless score @s money.1 matches 0.. run scoreboard players set @s money.1 0
+execute unless score @s money.2 matches 0.. run scoreboard players set @s money.2 0
+execute unless score @s money.3 matches 0.. run scoreboard players set @s money.3 0
+execute if score @s money matches ..-1 run tellraw @s "Your money overflowed.. i just give you 3 billions"
+execute if score @s money matches ..-1 run scoreboard players set @s money.1 2
+execute if score @s money matches 2000000000.. run scoreboard players add @s money.1 1
+execute if score @s money matches 2000000000.. run scoreboard players remove @s money 1000000000
+execute if score @s money matches 1000000000.. run scoreboard players add @s money.1 1
+execute if score @s money matches 1000000000.. run scoreboard players remove @s money 1000000000
+execute if score @s money matches 1.. run scoreboard players operation @s money.0 = @s money
+scoreboard players reset @s money
 function code:plots/load
 tp @s 0 1 0 -45 0
 gamemode adventure @s

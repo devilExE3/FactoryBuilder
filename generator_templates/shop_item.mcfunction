@@ -1,5 +1,0 @@
-execute if items entity @s player.cursor *[custom_data~{shop:"generator.%id%"}] unless score @s money matches %price%.. run tellraw @s {"text":"You don't have enough money","color":"red"}
-execute if items entity @s player.cursor *[custom_data~{shop:"generator.%id%"}] unless score @s money matches %price%.. run playsound block.note_block.bass
-execute if items entity @s player.cursor *[custom_data~{shop:"generator.%id%"}] if score @s money matches %price%.. run loot give @s loot code:blocks/generator/%id%
-execute if items entity @s player.cursor *[custom_data~{shop:"generator.%id%"}] if score @s money matches %price%.. run playsound block.note_block.pling master @s ~ ~ ~ 1 2
-execute if items entity @s player.cursor *[custom_data~{shop:"generator.%id%"}] if score @s money matches %price%.. run scoreboard players remove @s money %price%

@@ -1,0 +1,12 @@
+execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.conveyor"]} run return run data modify storage numeral:io B set value [10,0,0,0]
+execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.chute"]} run return run data modify storage numeral:io B set value [25,0,0,0]
+execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.elevator"]} run return run data modify storage numeral:io B set value [75,0,0,0]
+execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.sell"]} run return run data modify storage numeral:io B set value [50,0,0,0]
+execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.cutter"]} run return run data modify storage numeral:io B set value [500,0,0,0]
+execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.furnace"]} run return run data modify storage numeral:io B set value [1000,0,0,0]
+execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.crafter_2"]} run return run data modify storage numeral:io B set value [500000,0,0,0]
+execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.crafter_3"]} run return run data modify storage numeral:io B set value [100000000,0,0,0]
+execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.generator.oak"]} run return run data modify storage numeral:io B set value [150,0,0,0]
+execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.generator.stone"]} run return run data modify storage numeral:io B set value [500,0,0,0]
+execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.generator.coal"]} run return run data modify storage numeral:io B set value [100000,0,0,0]
+return fail

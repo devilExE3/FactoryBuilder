@@ -40,7 +40,10 @@ scoreboard objectives add timer dummy
 scoreboard players add #timer timer 1
 scoreboard objectives add id dummy
 execute unless score #last_id id matches 0.. run scoreboard players set #last_id id 0
-scoreboard objectives add money dummy
+scoreboard objectives add money.0 dummy
+scoreboard objectives add money.1 dummy
+scoreboard objectives add money.2 dummy
+scoreboard objectives add money.3 dummy
 scoreboard objectives add prev_money dummy
 
 scoreboard objectives add stats.playtime dummy
