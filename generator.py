@@ -203,7 +203,7 @@ RECIPES = {
             "count": 1
         },
         {
-            "in1": "birch_log",
+            "in1": "birch_wood",
             "in2": "tnt",
             "out": "coal_block",
             "count": 1
