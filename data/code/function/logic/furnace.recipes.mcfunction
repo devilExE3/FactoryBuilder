@@ -2,5 +2,6 @@ execute if data entity @s item{id:"minecraft:oak_log"} run return run data modif
 execute if data entity @s item{id:"minecraft:cobblestone"} run return run data modify entity @s item.id set value "minecraft:stone"
 execute if data entity @s item{id:"minecraft:stone"} run return run data modify entity @s item.id set value "minecraft:smooth_stone"
 execute if data entity @s item{id:"minecraft:raw_copper"} run return run data modify entity @s item.id set value "minecraft:copper_ingot"
+execute if data entity @s item{id:"minecraft:raw_iron"} run return run data modify entity @s item.id set value "minecraft:iron_ingot"
 execute if data entity @s item{id:"minecraft:glowstone_dust"} run return run data modify entity @s item.id set value "minecraft:orange_dye"
 execute if data entity @s item{id:"minecraft:gunpowder"} run return run data modify entity @s item.id set value "minecraft:tnt"

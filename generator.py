@@ -168,6 +168,10 @@ RECIPES = {
             "output": "copper_ingot"
         },
         {
+            "input": "raw_iron",
+            "output": "iron_ingot"
+        },
+        {
             "input": "glowstone_dust",
             "output": "orange_dye"
         },
