@@ -10,7 +10,7 @@ attribute @s scale base set 1
 
 # remove possible stray entites
 tag @s add died
-execute as @e[type=item_display,tag=playerhead] if score @s id = @p[tag=died] id run kill @s
+execute as @e[type=item_display,tag=playerhead,x=0] if score @s id = @p[tag=died] id run kill @s
 tag @s remove died
 
 scoreboard players set @s death_wait 1

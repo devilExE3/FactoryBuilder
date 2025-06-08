@@ -14,6 +14,6 @@ execute store result storage temp sidebar.tps_frac int 1 run scoreboard players 
 execute if score #TPS math matches 10.. run data modify storage temp sidebar.tps_0 set value ""
 execute unless score #TPS math matches 10.. run data modify storage temp sidebar.tps_0 set value "0"
 # entity count
-execute store result storage temp sidebar.entity_count int 1 if entity @e
+execute store result storage temp sidebar.entity_count int 1 if entity @e[x=0]
 
 function code:update_sidebar.macro with storage temp sidebar

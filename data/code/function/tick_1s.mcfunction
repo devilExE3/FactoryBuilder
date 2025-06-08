@@ -6,19 +6,19 @@ execute as @a run scoreboard players operation @s prev_money.2 = @s money.2
 execute as @a run scoreboard players operation @s prev_money.3 = @s money.3
 
 # item decay logic
-execute as @e[type=item_display,tag=item] run function code:logic/item.despawn
+execute as @e[type=item_display,tag=item,x=0] run function code:logic/item.despawn
 
 # crafters
-execute as @e[type=marker,tag=block.crafter_2] at @s run function code:logic/crafter_2
-execute as @e[type=marker,tag=block.crafter_3] at @s run function code:logic/crafter_3
+execute as @e[type=marker,tag=block.crafter_2,x=0] at @s run function code:logic/crafter_2
+execute as @e[type=marker,tag=block.crafter_3,x=0] at @s run function code:logic/crafter_3
 
 # conveyor logic
-tag @e[type=item_display,tag=item.cut,tag=item.moved] remove item.cut
-tag @e[type=item_display,tag=item.moved] remove item.moved
-execute as @e[type=item_display,tag=item] at @s run function code:logic/item
+tag @e[type=item_display,tag=item.cut,tag=item.moved,x=0] remove item.cut
+tag @e[type=item_display,tag=item.moved,x=0] remove item.moved
+execute as @e[type=item_display,tag=item,x=0] at @s run function code:logic/item
 
 # update item count
-execute as @e[type=item_display,tag=item] run function code:logic/item.name
+execute as @e[type=item_display,tag=item,x=0] run function code:logic/item.name
 
 # calculate mspt average
 scoreboard players operation #round_factor math = #avg_COUNT math

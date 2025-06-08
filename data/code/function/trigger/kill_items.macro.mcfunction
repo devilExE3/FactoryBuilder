@@ -1,1 +1,1 @@
-$kill @e[type=item_display,tag=item,scores={id=$(plotid)}]
+$kill @e[type=item_display,tag=item,scores={id=$(plotid)}x=0]

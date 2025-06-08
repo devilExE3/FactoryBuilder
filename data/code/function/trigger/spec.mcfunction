@@ -1,5 +1,5 @@
 tag @s add executor
-execute as @s[gamemode=spectator] at @s as @e[type=item_display,tag=playerhead] if score @s id = @p[tag=executor] id run kill @s
+execute as @s[gamemode=spectator] at @s as @e[type=item_display,tag=playerhead,x=0] if score @s id = @p[tag=executor] id run kill @s
 tag @s remove executor
 execute as @s[gamemode=spectator] run return run function code:trigger/spec.adventure
 function code:trigger/spec.make_head
