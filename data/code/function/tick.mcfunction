@@ -30,5 +30,5 @@ execute as @a[scores={death=1..}] run function code:died
 scoreboard players reset @a death
 
 scoreboard players set #gmc math 0
-execute as @a[gamemode=creative] run scoreboard players set #gmc math 1
-execute if score #gmc math matches 1 as @a[tag=spawnblock] at @s if block ~ ~ ~ air run kill @s
+execute as @a[gamemode=creative,x=0] run scoreboard players set #gmc math 1
+execute if score #gmc math matches 1 as @e[type=#code:block,tag=spawnblock,x=0] at @s if block ~ ~ ~ air run kill @s
