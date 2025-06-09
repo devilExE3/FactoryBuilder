@@ -93,15 +93,20 @@ team modify adev collisionRule never
 team modify adev prefix {"text":"ᴅᴇᴠ ","color":"red"}
 team modify adev deathMessageVisibility never
 
-team add am
-team modify am collisionRule never
-team modify am prefix {"text":"ᴀᴍ ","color":"#96f9b2"}
-team modify am deathMessageVisibility never
+team add aerecipes
+team modify aerecipes collisionRule never
+team modify aerecipes prefix {"text":"ʀᴇᴄɪᴘᴇѕ ","color":"green"}
+team modify aerecipes deathMessageVisibility never
 
 team add afm
 team modify afm collisionRule never
 team modify afm prefix {"text":"ꜰᴍ ","color":"#8686fb"}
 team modify afm deathMessageVisibility never
+
+team add am
+team modify am collisionRule never
+team modify am prefix {"text":"ᴀᴍ ","color":"#96f9b2"}
+team modify am deathMessageVisibility never
 
 # auxiliary blocks
 forceload add 29999999 0

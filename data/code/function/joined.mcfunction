@@ -40,6 +40,7 @@ attribute @s minecraft:burning_time base set 0
 team join default @s
 execute as @s[tag=is_am] run team join am @s
 execute as @s[tag=is_fm] run team join afm @s
+execute as @s[nbt={UUID:[I;1429119367,1574388562,-1077129316,-394790930]}] run team join aerecipes @s
 execute as @s[tag=is_owner] run team join adev @s
 
 execute unless score @s money.0 matches 0.. run scoreboard players set @s money.0 0
