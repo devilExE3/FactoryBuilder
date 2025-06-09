@@ -1,4 +1,5 @@
 # from n @ data -> x @ data, y @ data
+scoreboard players add #n math 8
 function code:math/sqrt
 scoreboard players operation #nhat math = #sqrt math
 scoreboard players operation #sqrt math %= #2 math
