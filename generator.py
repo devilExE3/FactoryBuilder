@@ -1056,20 +1056,20 @@ class BookComponent:
         # generate lore
         lore = ""
         if in1 == 0 and in3 == 0:
-            lore += """'{"text":"Input: %","color":"white","italic":false}'""".replace("%", ITEM_TRANSLATE[in2])
+            lore += '"{\\"text\\":\\"Input: %\\",\\"color\\":\\"white\\",\\"italic\\":false}"'.replace("%", ITEM_TRANSLATE[in2])
         else:
-            lore += """'{"text":"Inputs:","color":"white","italic":false}'"""
+            lore += '"{\\"text\\":\\"Inputs:\\",\\"color\\":\\"white\\",\\"italic\\":false}"'
             if in1 != 0:
-                lore += """,'{"text":"- %","color":"white","italic":false}'""".replace("%", ITEM_TRANSLATE[in1])
+                lore += ',"{\\"text\\":\\"- %\\",\\"color\\":\\"white\\",\\"italic\\":false}"'.replace("%", ITEM_TRANSLATE[in1])
             if in2 != 0:
-                lore += """,'{"text":"- %","color":"white","italic":false}'""".replace("%", ITEM_TRANSLATE[in2])
+                lore += ',"{\\"text\\":\\"- %\\",\\"color\\":\\"white\\",\\"italic\\":false}"'.replace("%", ITEM_TRANSLATE[in2])
             if in3 != 0:
-                lore += """,'{"text":"- %","color":"white","italic":false}'""".replace("%", ITEM_TRANSLATE[in3])
-        lore += """,'{"text":"Output: $x %","color":"white","italic":false}""".replace("$", str(out_cnt)).replace("%", ITEM_TRANSLATE[out])
-        self._hover_item = '{"bundle_contents":[{"id":"barrier","components":{"item_model":"%in1%"}},{"id":"barrier","components":{"item_model":"air"}},{"id":"barrier","components":{"item_model":"air"}},{"id":"barrier","components":{"item_model":"air"}},{"id":"barrier","components":{"item_model":"%in2%"}},{"id":"barrier","components":{"item_model":"%block%"}},{"id":"barrier","components":{"item_model":"%output%"},"count":%count%},{"id":"barrier","components":{"item_model":"air"}},{"id":"barrier","components":{"item_model":"%in3%"}},{"id":"barrier","components":{"item_model":"air"}},{"id":"barrier","components":{"item_model":"air"}},{"id":"barrier","components":{"item_model":"air"}}],"item_name":"\\"%recipe_name%\\""}'\
+                lore += ',"{\\"text\\":\\"- %\\",\\"color\\":\\"white\\",\\"italic\\":false}"'.replace("%", ITEM_TRANSLATE[in3])
+        lore += ',"{\\"text\\":\\"Output: $x %\\",\\"color\\":\\"white\\",\\"italic\\":false}"'.replace("$", str(out_cnt)).replace("%", ITEM_TRANSLATE[out])
+        self._hover_item = '{"bundle_contents":[{"id":"barrier","components":{"item_model":"%in1%"}},{"id":"barrier","components":{"item_model":"air"}},{"id":"barrier","components":{"item_model":"air"}},{"id":"barrier","components":{"item_model":"air"}},{"id":"barrier","components":{"item_model":"%in2%"}},{"id":"barrier","components":{"item_model":"%block%"}},{"id":"barrier","components":{"item_model":"%output%"},"count":%count%},{"id":"barrier","components":{"item_model":"air"}},{"id":"barrier","components":{"item_model":"%in3%"}},{"id":"barrier","components":{"item_model":"air"}},{"id":"barrier","components":{"item_model":"air"}},{"id":"barrier","components":{"item_model":"air"}}],"item_name":"\\"%recipe_name%\\"","lore":[%lore%]}'\
             .replace("%in1%", in1 == 0 and "air" or in1)\
-            .replace("%in2%", in1 == 0 and "air" or in2)\
-            .replace("%in3%", in1 == 0 and "air" or in3)\
+            .replace("%in2%", in2 == 0 and "air" or in2)\
+            .replace("%in3%", in3 == 0 and "air" or in3)\
             .replace("%block%", block)\
             .replace("%output%", out)\
             .replace("%count%", str(out_cnt))\
