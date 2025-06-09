@@ -443,6 +443,12 @@ RECIPES = {
             "out": "suspicious_sand"
         },
         {
+            "side": "nether_brick_slab",
+            "top": "anvil",
+            "count": 4,
+            "out": "nether_brick"
+        },
+        {
             "side": "nether_quartz_ore",
             "top": "anvil",
             "count": 1,
