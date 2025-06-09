@@ -552,7 +552,7 @@ SHOP_ITEMS = [
         "id": "air_conveyor",
         "model": "pale_moss_carpet",
         "price": 25_000_000,
-        "description": "Doesn\\'t need a support block below!"
+        "description": "Doesn't need a support block below!"
     },
     {
         "name": "Chute",
@@ -580,7 +580,7 @@ SHOP_ITEMS = [
         "id": "air_sell",
         "model": "moss_carpet",
         "price": 1_000_000_000_000,
-        "description": "Doesn\\'t need a support block below!"
+        "description": "Doesn't need a support block below!"
     },
     {
         "name": "Limiter",
@@ -1033,6 +1033,7 @@ class BookComponent:
         self._underlined = False
         self._target_page = -1
         self._hover = None
+        self._hover_item = None
     def italic(self, b :bool):
         self._italic = b
         return self
@@ -1051,6 +1052,30 @@ class BookComponent:
     def hover(self, h):
         self._hover = h
         return self
+    def hover_recipe(self, in1,in2,in3,block,recipe_name,out,out_cnt):
+        # generate lore
+        lore = ""
+        if in1 == 0 and in3 == 0:
+            lore += """'{"text":"Input: %","color":"white","italic":false}'""".replace("%", ITEM_TRANSLATE[in2])
+        else:
+            lore += """'{"text":"Inputs:","color":"white","italic":false}'"""
+            if in1 != 0:
+                lore += """,'{"text":"- %","color":"white","italic":false}'""".replace("%", ITEM_TRANSLATE[in1])
+            if in2 != 0:
+                lore += """,'{"text":"- %","color":"white","italic":false}'""".replace("%", ITEM_TRANSLATE[in2])
+            if in3 != 0:
+                lore += """,'{"text":"- %","color":"white","italic":false}'""".replace("%", ITEM_TRANSLATE[in3])
+        lore += """,'{"text":"Output: $x %","color":"white","italic":false}""".replace("$", str(out_cnt)).replace("%", ITEM_TRANSLATE[out])
+        self._hover_item = '{"bundle_contents":[{"id":"barrier","components":{"item_model":"%in1%"}},{"id":"barrier","components":{"item_model":"air"}},{"id":"barrier","components":{"item_model":"air"}},{"id":"barrier","components":{"item_model":"air"}},{"id":"barrier","components":{"item_model":"%in2%"}},{"id":"barrier","components":{"item_model":"%block%"}},{"id":"barrier","components":{"item_model":"%output%"},"count":%count%},{"id":"barrier","components":{"item_model":"air"}},{"id":"barrier","components":{"item_model":"%in3%"}},{"id":"barrier","components":{"item_model":"air"}},{"id":"barrier","components":{"item_model":"air"}},{"id":"barrier","components":{"item_model":"air"}}],"lore":[%lore%],"item_name":"%recipe_name%"}'\
+            .replace("%in1%", in1 == 0 and "air" or in1)\
+            .replace("%in2%", in1 == 0 and "air" or in2)\
+            .replace("%in3%", in1 == 0 and "air" or in3)\
+            .replace("%block%", block)\
+            .replace("%output%", out)\
+            .replace("%count%", str(out_cnt))\
+            .replace("%recipe_name%", recipe_name)\
+            .replace("%lore%", lore)
+        return self
     def compile(self):
         ret = '{"text":"' + self._text + '"'
         ret += ',"bold":' + ("true" if self._bold else "false")
@@ -1060,8 +1085,12 @@ class BookComponent:
         if self._target_page != -1:
             ret += ',"clickEvent":{"action":"change_page","value":"' + str(self._target_page) + '"}'
         if not self._hover is None:
-            ret += ',"hoverEvent":{"action":"show_text","value":' + self._hover.compile() + '}'
+            ret += ',"hoverEvent":{"action":"show_text","value":' + esc_string(self._hover.compile()) + '}'
+        elif not self._hover_item is None:
+            ret += ',"hoverEvent":{"action":"show_item","id":"bundle","count":1,"components":%}'.replace("%", self._hover_item)
         return ret + '}'
+# bundle[bundle_contents=[{id:"barrier",components:{item_model:"raw_gold_block"}},{id:"barrier",components:{item_model:"air"}},{id:"barrier",components:{item_model:"air"}},{id:"barrier",components:{item_model:"air"}},{id:"barrier",components:{item_model:"raw_gold"}},{id:"barrier",components:{item_model:"air"}},{id:"barrier",components:{item_model:"air"}},{id:"barrier",components:{item_model:"coal_block"},count:4},{id:"barrier",components:{item_model:"gold_ingot"}},{id:"barrier",components:{item_model:"air"}},{id:"barrier",components:{item_model:"air"}},{id:"barrier",components:{item_model:"air"}}],lore=['{"text":"Input:","color":"white","italic":false}','{"text":"- A","color":"white","italic":false}','{"text":"- B","color":"white","italic":false}','{"text":"- C","color":"white","italic":false}','{"text":"Output: 4x idk","color":"white","italic":false}']]
+# {"id":"bundle","count":1,"components":{"bundle_contents":[{id:"barrier",components:{item_model:"raw_gold_block"}},{id:"barrier",components:{item_model:"air"}},{id:"barrier",components:{item_model:"air"}},{id:"barrier",components:{item_model:"air"}},{id:"barrier",components:{item_model:"raw_gold"}},{id:"barrier",components:{item_model:"air"}},{id:"barrier",components:{item_model:"air"}},{id:"barrier",components:{item_model:"coal_block"},count:4},{id:"barrier",components:{item_model:"gold_ingot"}},{id:"barrier",components:{item_model:"air"}},{id:"barrier",components:{item_model:"air"}},{id:"barrier",components:{item_model:"air"}}]}}
 
 class BookLine:
     def __init__(self):
@@ -1178,7 +1207,8 @@ recipe_lines = []
 for recipe_type in RECIPES:
     for recipe in RECIPES[recipe_type]:
         if recipe_type == "cutter":
-            recipe_lines.append(BookLine().add_comp(BookComponent(ellipse(ITEM_TRANSLATE[recipe["output"]])).hover(BookComponent("Block Cutter\\nInput: " + ITEM_TRANSLATE[recipe["input"]] + "\\nOutput: " + ITEM_TRANSLATE[recipe["output"]] + "\\nMultiplicator: " + str(recipe["mul"])).color("white"))))
+            #recipe_lines.append(BookLine().add_comp(BookComponent(ellipse(ITEM_TRANSLATE[recipe["output"]])).hover(BookComponent("Block Cutter\\nInput: " + ITEM_TRANSLATE[recipe["input"]] + "\\nOutput: " + ITEM_TRANSLATE[recipe["output"]] + "\\nMultiplicator: " + str(recipe["mul"])).color("white"))))
+            recipe_lines.append(BookLine().add_comp(BookComponent(ellipse(ITEM_TRANSLATE[recipe["output"]])).hover_recipe(0,recipe["input"],0,"stonecutter","Block Cutter",recipe["output"],recipe["mul"])))
         elif recipe_type == "furnace":
             recipe_lines.append(BookLine().add_comp(BookComponent(ellipse(ITEM_TRANSLATE[recipe["output"]])).hover(BookComponent("Furnace\\nInput: " + ITEM_TRANSLATE[recipe["input"]] + "\\nOutput: " + ITEM_TRANSLATE[recipe["output"]]).color("white"))))
         elif recipe_type == "crafter_2":
