@@ -24,5 +24,6 @@ kill @n[type=item_display,tag=limiter,distance=..1.01,scores={count=..0}]
 tag @n[type=item_display,tag=limiter,distance=..1.01] remove limiter
 
 # setup limiter count
-scoreboard players set @n[type=item_display,tag=limiter.output,distance=..0.01] id 1
+scoreboard players set @n[type=item_display,tag=limiter.output,distance=..0.01] count 1
+scoreboard players operation @n[type=item_display,tag=limiter.output,distance=..0.01] id = @s id
 tag @n[type=item_display,tag=limiter.output,distance=..0.01] remove limiter.output
