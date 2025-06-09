@@ -1,4 +1,4 @@
-tp @s 0 1 0 -45 0
+tp @s -15.5 1 -15.5 -45 0
 gamemode adventure @s
 data modify entity @s abilities.mayfly set value 1b
 

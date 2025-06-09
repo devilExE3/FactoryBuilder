@@ -56,7 +56,7 @@ execute if score @s money matches 1000000000.. run scoreboard players remove @s 
 execute if score @s money matches 1.. run scoreboard players operation @s money.0 = @s money
 scoreboard players reset @s money
 function code:plots/load
-tp @s 0 1 0 -45 0
+tp @s -15.5 1 -15.5 -45 0
 gamemode adventure @s
 data modify entity @s abilities.mayfly set value 1b
 
