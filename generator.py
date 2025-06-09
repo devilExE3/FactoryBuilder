@@ -552,7 +552,7 @@ SHOP_ITEMS = [
         "id": "air_conveyor",
         "model": "pale_moss_carpet",
         "price": 25_000_000,
-        "description": "Doesn't need a support block below!"
+        "description": "Doesn\\'t need a support block below!"
     },
     {
         "name": "Chute",
@@ -580,7 +580,7 @@ SHOP_ITEMS = [
         "id": "air_sell",
         "model": "moss_carpet",
         "price": 1_000_000_000_000,
-        "description": "Doesn't need a support block below!"
+        "description": "Doesn\\'t need a support block below!"
     },
     {
         "name": "Limiter",
@@ -1085,7 +1085,7 @@ class BookComponent:
         if self._target_page != -1:
             ret += ',"clickEvent":{"action":"change_page","value":"' + str(self._target_page) + '"}'
         if not self._hover is None:
-            ret += ',"hoverEvent":{"action":"show_text","value":' + esc_string(self._hover.compile()) + '}'
+            ret += ',"hoverEvent":{"action":"show_text","value":' + self._hover.compile() + '}'
         elif not self._hover_item is None:
             ret += ',"hoverEvent":{"action":"show_item","id":"bundle","count":1,"components":%}'.replace("%", self._hover_item)
         return ret + '}'
