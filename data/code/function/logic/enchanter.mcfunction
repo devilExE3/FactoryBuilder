@@ -33,7 +33,7 @@ tag @n[type=item_display,tag=enchanter.1,distance=..1.01] add enchanter.input
 tag @n[type=item_display,tag=enchanter.2,distance=..1.01] add enchanter.input
 tag @n[type=item_display,tag=enchanter.3,distance=..1.01] add enchanter.input
 
-execute store success score #recipe math run function code:logic/crafter_3.recipe
+execute store success score #recipe math run function code:logic/enchanter.recipe
 
 kill @n[type=item_display,tag=enchanter.1,distance=..1.01,scores={count=..0}]
 kill @n[type=item_display,tag=enchanter.2,distance=..1.01,scores={count=..0}]
