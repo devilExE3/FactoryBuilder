@@ -9,7 +9,7 @@ execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_d
 execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.crafter_2"]} run return run data modify storage numeral:io B set value [500000,0,0,0]
 execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.crafter_3"]} run return run data modify storage numeral:io B set value [100000000,0,0,0]
 execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.washer"]} run return run data modify storage numeral:io B set value [50000000,0,0,0]
-execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.crusher"]} run return run data modify storage numeral:io B set value [0,15,0,0]
+execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.crusher"]} run return run data modify storage numeral:io B set value [0,5,0,0]
 execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.flashbaker"]} run return run data modify storage numeral:io B set value [0,4,0,0]
 execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.enchanter"]} run return run data modify storage numeral:io B set value [0,300,0,0]
 execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.sonic_zapper"]} run return run data modify storage numeral:io B set value [0,2000,0,0]

@@ -610,7 +610,7 @@ SHOP_ITEMS = [
         "name": "Crusher",
         "id": "crusher",
         "model": "smoker",
-        "price": 15 * 10 ** 9
+        "price": 5 * 10 ** 9
     },
     {
         "name": "Flashbaker",
@@ -647,6 +647,11 @@ def number_to_human(n):
         n = n / 1000
         i += 1
     return str((n * 100 // 10) / 10) + " " + mul[i]
+
+def ellipse(str):
+    if len(str) <= 20:
+        return str
+    return str[:17] + "..."
 
 # templates
 TEMPLATE_LOOT_TABLE = ""
@@ -1136,17 +1141,10 @@ for item in ITEMS:
         pages.append(current_page)
         current_page = BookPage()
         line = 0
-    item_name = ITEM_TRANSLATE[item]
-    if len(item_name) > 15:
-        item_name = item_name[:12] + " ..."
-    current_page.add_line(BookLine().add_comp(BookComponent(ITEM_TRANSLATE[item]).hover(BookLine().add_comp(BookComponent(item).color("white")).add_comp(BookComponent("\\n$" + number_to_human(ITEMS[item])).color("green")))))
+    current_page.add_line(BookLine().add_comp(BookComponent(ellipse(ITEM_TRANSLATE[item])).hover(BookLine().add_comp(BookComponent(ITEM_TRANSLATE[item]).color("white")).add_comp(BookComponent("\\n$" + number_to_human(ITEMS[item])).color("green")))))
     line += 1
 pages.append(current_page)
 # recipes
-def ellipse(str):
-    if len(str) <= 15:
-        return str
-    return str[:12] + "..."
 current_page = BookPage().add_line(BookLine().add_comp(BookComponent("^").target_page(2)).add_comp(BookComponent("      RECIPES").bold(True)))
 line = 1
 for recipe_type in RECIPES:
