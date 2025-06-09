@@ -1,3 +1,3 @@
 # check for splitter phase
-execute if entity @n[type=marker,tag=!block.splitter.alt,distance=..0.01] positioned ~ ~ ~-1 unless entity @n[type=item_display,tag=item,distance=..0.01] run return run function code:logic/splitter/e
-execute if entity @n[type=marker,tag=block.splitter.alt,distance=..0.01] positioned ~ ~ ~1 unless entity @n[type=item_display,tag=item,distance=..0.01] run function code:logic/splitter/w
+execute if entity @n[type=marker,tag=!block.splitter.alt,distance=..0.01] positioned ~1 ~ ~ unless entity @n[type=item_display,tag=item,distance=..0.01] run return run function code:logic/splitter/e
+execute if entity @n[type=marker,tag=block.splitter.alt,distance=..0.01] positioned ~-1 ~ ~ unless entity @n[type=item_display,tag=item,distance=..0.01] run function code:logic/splitter/w
