@@ -513,6 +513,12 @@ SHOP_ITEMS = [
         "price": 50
     },
     {
+        "name": "Limiter",
+        "id": "limiter",
+        "model": "redstone_block",
+        "price": 500
+    },
+    {
         "name": "Block Cutter",
         "id": "cutter",
         "model": "stonecutter",

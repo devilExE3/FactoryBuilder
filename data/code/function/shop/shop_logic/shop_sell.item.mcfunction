@@ -2,6 +2,7 @@ execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_d
 execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.chute"]} run return run data modify storage numeral:io B set value [25,0,0,0]
 execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.elevator"]} run return run data modify storage numeral:io B set value [75,0,0,0]
 execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.sell"]} run return run data modify storage numeral:io B set value [50,0,0,0]
+execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.limiter"]} run return run data modify storage numeral:io B set value [500,0,0,0]
 execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.cutter"]} run return run data modify storage numeral:io B set value [500,0,0,0]
 execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.furnace"]} run return run data modify storage numeral:io B set value [1000,0,0,0]
 execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.crafter_2"]} run return run data modify storage numeral:io B set value [500000,0,0,0]

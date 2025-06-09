@@ -2,6 +2,7 @@ execute if items entity @s container.* *[custom_data~{shop:"conveyor"}] run retu
 execute if items entity @s container.* *[custom_data~{shop:"chute"}] run return run function code:shop/shop_logic/bulk/chute
 execute if items entity @s container.* *[custom_data~{shop:"elevator"}] run return run function code:shop/shop_logic/bulk/elevator
 execute if items entity @s container.* *[custom_data~{shop:"sell"}] run return run function code:shop/shop_logic/bulk/sell
+execute if items entity @s container.* *[custom_data~{shop:"limiter"}] run return run function code:shop/shop_logic/bulk/limiter
 execute if items entity @s container.* *[custom_data~{shop:"cutter"}] run return run function code:shop/shop_logic/bulk/cutter
 execute if items entity @s container.* *[custom_data~{shop:"furnace"}] run return run function code:shop/shop_logic/bulk/furnace
 execute if items entity @s container.* *[custom_data~{shop:"crafter_2"}] run return run function code:shop/shop_logic/bulk/crafter_2
