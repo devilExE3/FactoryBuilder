@@ -7,9 +7,13 @@ execute if score #can_place math matches 1 run function code:blocks/place.check_
 execute if score #can_place math matches 1 as @s[tag=place.carpet] if block ~ ~-1 ~ air run tellraw @p[tag=rc] [{"text":"⬇","color": "yellow","bold": true},{"text":" This block needs support below!","color": "yellow","bold": false}]
 execute if score #can_place math matches 1 as @s[tag=place.carpet] if block ~ ~-1 ~ air run scoreboard players set #can_place math 0
 
+execute as @p[tag=rc,tag=spawn_placing] if block ~ ~ ~ air run scoreboard players set #can_place math 1
 execute if score #can_place math matches 0 run return run function code:blocks/place.loot
 
 function code:blocks/place.block
+
+execute as @p[tag=rc,tag=spawn_placing] run return run function code:blocks/place.spawn
+
 
 execute as @p[tag=rc] run function uuid_linker:get_uuid
 data modify entity @n[type=#code:block,tag=block.this,distance=..1] data.Owner set from storage minecraft:uuid_linker UUID.HexString

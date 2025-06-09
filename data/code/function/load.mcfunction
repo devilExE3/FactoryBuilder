@@ -132,3 +132,8 @@ data modify storage online online set value []
 
 # setup sidebar
 function code:load.sidebar
+
+# load spawn plot
+fill -16 0 -16 31 0 31 grass_block
+fill -15 0 -15 30 0 30 smooth_stone
+fill -14 0 -14 29 0 29 stone_bricks
