@@ -80,6 +80,16 @@ GENERATORS = [
         "id": "end_stone",
         "type": "ore",
         "rp_texture": "minecraft:block/end_stone"
+    },
+    {
+        "name": "Debug Farm Farm",
+        "model": "barrier",
+        "output": "cherry_wood",
+        "gen_block": "cherry_wood",
+        "price": 1,
+        "id": "debug",
+        "type": "ore",
+        "rp_texture": "minecraft:block/end_stone"
     }
 ]
 

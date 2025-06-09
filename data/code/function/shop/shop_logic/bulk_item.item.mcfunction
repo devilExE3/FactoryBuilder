@@ -21,3 +21,4 @@ execute if items entity @s container.* *[custom_data~{shop:"generator.copper"}] 
 execute if items entity @s container.* *[custom_data~{shop:"generator.iron"}] run return run function code:shop/shop_logic/bulk/generator.iron
 execute if items entity @s container.* *[custom_data~{shop:"generator.netherrack"}] run return run function code:shop/shop_logic/bulk/generator.netherrack
 execute if items entity @s container.* *[custom_data~{shop:"generator.end_stone"}] run return run function code:shop/shop_logic/bulk/generator.end_stone
+execute if items entity @s container.* *[custom_data~{shop:"generator.debug"}] run return run function code:shop/shop_logic/bulk/generator.debug

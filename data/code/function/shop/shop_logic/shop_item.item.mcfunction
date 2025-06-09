@@ -21,3 +21,4 @@ execute if items entity @s player.cursor *[custom_data~{shop:"generator.copper"}
 execute if items entity @s player.cursor *[custom_data~{shop:"generator.iron"}] run return run function code:shop/shop_logic/item/generator.iron
 execute if items entity @s player.cursor *[custom_data~{shop:"generator.netherrack"}] run return run function code:shop/shop_logic/item/generator.netherrack
 execute if items entity @s player.cursor *[custom_data~{shop:"generator.end_stone"}] run return run function code:shop/shop_logic/item/generator.end_stone
+execute if items entity @s player.cursor *[custom_data~{shop:"generator.debug"}] run return run function code:shop/shop_logic/item/generator.debug
