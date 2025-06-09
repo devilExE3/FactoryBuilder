@@ -143,7 +143,15 @@ ITEMS = {
     "quartz_slab": 4_000_000_000,
     "quartz_block": 12_000_000_000,
     "chiseled_quartz_block": 80_000_000_000,
-    "quartz": 50_000_000_000
+    "quartz": 50_000_000_000,
+
+    # birch rework
+    "jungle_slab": 300_000,
+    "jungle_planks": 800_000,
+    "stripped_jungle_wood": 2_000_000,
+    "stripped_mangrove_wood": 3_000_000,
+    "stripped_crimson_hyphae": 5_000_000,
+    "crimson_hyphae": 10_000_000,
 }
 ITEM_TRANSLATE = {
     "oak_log": "Oak Log",
@@ -205,7 +213,15 @@ ITEM_TRANSLATE = {
     "quartz_slab": "Quartz Slab",
     "quartz_block": "Quartz Block",
     "chiseled_quartz_block": "Chieseled Quartz",
-    "quartz": "Quartz"
+    "quartz": "Quartz",
+
+    # birch rework
+    "jungle_slab": "Tannin Slice",
+    "jungle_planks": "Tannin Clump",
+    "stripped_jungle_wood": "Tannin Cluster",
+    "stripped_mangrove_wood": "Dehydrated Cluster",
+    "stripped_crimson_hyphae": "Inactive Cluster",
+    "crimson_hyphae": "Active Hyphae Cluster",
 }
 
 RECIPES = {
@@ -270,6 +286,10 @@ RECIPES = {
             "output": "smooth_stone"
         },
         {
+            "input": "stripped_jungle_wood",
+            "output": "stripped_mangrove_wood"
+        },
+        {
             "input": "raw_copper",
             "output": "copper_ingot"
         },
@@ -316,6 +336,24 @@ RECIPES = {
             "in2": "birch_log",
             "out": "birch_wood",
             "count": 1
+        },
+        {
+            "in1": "jungle_slab",
+            "in2": "jungle_slab",
+            "out": "jungle_planks",
+            "count": 1
+        },
+        {
+            "in1": "jungle_planks",
+            "in2": "jungle_planks",
+            "out": "stripped_jungle_wood",
+            "count": 1
+        },
+        {
+            "in1": "stripped_mangrove_wood",
+            "in2": "coal",
+            "out": "stripped_crimson_hyphae",
+            "count": 1,
         },
         {
             "in1": "coal",
@@ -416,6 +454,14 @@ RECIPES = {
         }
     ],
     "washer": [
+        {
+            "input": "birch_planks",
+            "output": "jungle_slab"
+        },
+        {
+            "input": "stripped_crimson_hyphae",
+            "output": "crimson_hyphae"
+        },
         {
             "input": "yellow_concrete_powder",
             "output": "raw_gold"
@@ -558,7 +604,7 @@ SHOP_ITEMS = [
         "name": "Washer",
         "id": "washer",
         "model": "water_bucket",
-        "price": 1 * 10 ** 9
+        "price": 50 * 10 ** 6
     },
     {
         "name": "Crusher",
@@ -1090,7 +1136,10 @@ for item in ITEMS:
         pages.append(current_page)
         current_page = BookPage()
         line = 0
-    current_page.add_line(BookLine().add_comp(BookComponent(ITEM_TRANSLATE[item]).hover(BookComponent("$" + "{:,}".format(ITEMS[item])).color("green"))))
+    item_name = ITEM_TRANSLATE[item]
+    if len(item_name) > 15:
+        item_name = item_name[:12] + " ..."
+    current_page.add_line(BookLine().add_comp(BookComponent(ITEM_TRANSLATE[item]).hover(BookLine().add_comp(BookComponent(item).color("white")).add_comp(BookComponent("\\n$" + number_to_human(ITEMS[item])).color("green")))))
     line += 1
 pages.append(current_page)
 # recipes
