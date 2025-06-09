@@ -6,7 +6,7 @@ scoreboard players operation #playtime math /= #360 math
 scoreboard players operation #playtime.frac math = #playtime math
 scoreboard players operation #playtime.frac math %= #10 math
 execute store result storage numeral:io playtime int 0.1 run scoreboard players get #playtime math
-execute store result storage numeral:io playtime_frac int 0.1 run scoreboard players get #playtime.frac math
+execute store result storage numeral:io playtime_frac int 1 run scoreboard players get #playtime.frac math
 function code:update_list.macro with storage numeral:io
 # income thing
 execute store result storage numeral:io B[0] int 1 run scoreboard players get @s prev_money.0
