@@ -552,7 +552,7 @@ SHOP_ITEMS = [
         "id": "air_conveyor",
         "model": "pale_moss_carpet",
         "price": 1_000_000,
-        "description": "Doesn't need a support block below!"
+        "description": "Doesn\\'t need a support block below!"
     },
     {
         "name": "Chute",
