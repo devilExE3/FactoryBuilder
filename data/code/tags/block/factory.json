@@ -37,6 +37,13 @@
         "polished_blackstone_brick_slab",
         "purpur_slab",
 
+        "black_terracotta",
+        "brown_terracotta",
+        "red_terracotta",
+        "orange_terracotta",
+        "yellow_terracotta",
+        "lime_terracotta",
+
         "#code:generators"
     ]
 }

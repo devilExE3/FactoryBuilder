@@ -1,1 +1,1 @@
-$scoreboard players display numberformat @s list fixed [{"text": "$$(format)","color": "green"},{"text":" ● ","color":"dark_gray"},{"text": "$(playtime)h","color":"aqua"}]
+$scoreboard players display numberformat @s list fixed [{"text": "$$(format)","color": "green"},{"text":" ● ","color":"dark_gray"},{"text": "$(playtime).$(playtime_frac)h","color":"aqua"}]

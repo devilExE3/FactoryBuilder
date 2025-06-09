@@ -11,6 +11,7 @@ execute as @s[tag=place.flashbaker] run loot give @p[tag=rc] loot code:blocks/fl
 execute as @s[tag=place.sonic_zapper] run loot give @p[tag=rc] loot code:blocks/sonic_zapper
 execute as @s[tag=place.crusher] run loot give @p[tag=rc] loot code:blocks/crusher
 execute as @s[tag=place.enchanter] run loot give @p[tag=rc] loot code:blocks/enchanter
+execute as @s[tag=place.limiter] run loot give @p[tag=rc] loot code:blocks/limiter
 
 execute as @s[tag=place.generator] run function code:blocks/place.generator.loot
 

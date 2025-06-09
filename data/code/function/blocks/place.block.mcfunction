@@ -11,5 +11,6 @@ execute as @s[tag=place.flashbaker] run function code:blocks/frontbone/flashbake
 execute as @s[tag=place.sonic_zapper] run function code:blocks/frontbone/sonic_zapper
 execute as @s[tag=place.crusher] run function code:blocks/frontbone/crusher
 execute as @s[tag=place.enchanter] run function code:blocks/frontbone/enchanter
+execute as @s[tag=place.limiter] run function code:blocks/frontbone/limiter
 
 execute as @s[tag=place.generator] run function code:blocks/place.generator.block
