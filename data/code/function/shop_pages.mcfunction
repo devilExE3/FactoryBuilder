@@ -25,7 +25,7 @@ data modify block 29999998 -64 0 Items append value {id:"copper_ore",count:1,com
 data modify block 29999998 -64 0 Items append value {id:"iron_ore",count:1,components:{item_name:'"Iron Farm"',lore:['[{"text":"Price: ","color":"gray","italic":false},{"text":"$7.5 B","color":"green","italic":false}]'],custom_data:{shop:"generator.iron",shop_item:1b}},Slot:22}
 data modify block 29999998 -64 0 Items append value {id:"netherrack",count:1,components:{item_name:'"Netherrack Farm"',lore:['[{"text":"Price: ","color":"gray","italic":false},{"text":"$25.0 B","color":"green","italic":false}]'],custom_data:{shop:"generator.netherrack",shop_item:1b}},Slot:23}
 data modify block 29999998 -64 0 Items append value {id:"end_stone",count:1,components:{item_name:'"End Stone Farm"',lore:['[{"text":"Price: ","color":"gray","italic":false},{"text":"$10.0 T","color":"green","italic":false}]'],custom_data:{shop:"generator.end_stone",shop_item:1b}},Slot:24}
-data modify block 29999998 -64 0 Items append value {id:"barrier",count:1,components:{item_name:'"Debug Farm Farm"',lore:['[{"text":"Price: ","color":"gray","italic":false},{"text":"$1","color":"green","italic":false}]'],custom_data:{shop:"generator.debug",shop_item:1b}},Slot:25}
+data modify block 29999998 -64 0 Items append value {id:"light_gray_stained_glass_pane",count:1,components:{hide_tooltip:{}},Slot:25}
 data modify block 29999998 -64 0 Items append value {id:"black_stained_glass_pane",count:1,components:{hide_tooltip:{}},Slot:8}
 data modify block 29999998 -64 0 Items append value {id:"black_stained_glass_pane",count:1,components:{hide_tooltip:{}},Slot:17}
 data modify block 29999998 -64 0 Items append value {id:"black_stained_glass_pane",count:1,components:{hide_tooltip:{}},Slot:26}

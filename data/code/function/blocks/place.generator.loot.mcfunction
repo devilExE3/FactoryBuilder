@@ -6,4 +6,3 @@ execute as @s[tag=place.generator.copper] run loot give @p[tag=rc] loot code:blo
 execute as @s[tag=place.generator.iron] run loot give @p[tag=rc] loot code:blocks/generator/iron
 execute as @s[tag=place.generator.netherrack] run loot give @p[tag=rc] loot code:blocks/generator/netherrack
 execute as @s[tag=place.generator.end_stone] run loot give @p[tag=rc] loot code:blocks/generator/end_stone
-execute as @s[tag=place.generator.debug] run loot give @p[tag=rc] loot code:blocks/generator/debug

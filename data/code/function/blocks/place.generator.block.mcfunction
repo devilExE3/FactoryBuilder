@@ -6,4 +6,3 @@ execute as @s[tag=place.generator.copper] run function code:blocks/frontbone/gen
 execute as @s[tag=place.generator.iron] run function code:blocks/frontbone/generator/iron
 execute as @s[tag=place.generator.netherrack] run function code:blocks/frontbone/generator/netherrack
 execute as @s[tag=place.generator.end_stone] run function code:blocks/frontbone/generator/end_stone
-execute as @s[tag=place.generator.debug] run function code:blocks/frontbone/generator/debug
