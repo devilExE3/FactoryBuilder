@@ -1,2 +1,4 @@
 execute if entity @n[type=item_display,tag=crusher.side,distance=..1.01,tag=itemid.smooth_stone] if entity @n[type=item_display,tag=crusher.top,distance=..1.01,tag=itemid.anvil] run return run function code:logic/crusher/gravel
+execute if entity @n[type=item_display,tag=crusher.side,distance=..1.01,tag=itemid.end_stone] if entity @n[type=item_display,tag=crusher.top,distance=..1.01,tag=itemid.anvil] run return run function code:logic/crusher/suspicious_sand
+execute if entity @n[type=item_display,tag=crusher.side,distance=..1.01,tag=itemid.nether_quartz_ore] if entity @n[type=item_display,tag=crusher.top,distance=..1.01,tag=itemid.anvil] run return run function code:logic/crusher/quartz_slab
 return fail

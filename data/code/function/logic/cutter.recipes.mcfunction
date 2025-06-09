@@ -4,3 +4,6 @@ execute as @s[tag=itemid.oak_slab] run return run function code:logic/cutter/sti
 execute as @s[tag=itemid.birch_log] run return run function code:logic/cutter/birch_planks
 execute as @s[tag=itemid.birch_planks] run return run function code:logic/cutter/birch_slab
 execute as @s[tag=itemid.andesite] run return run function code:logic/cutter/gold_ore
+execute as @s[tag=itemid.prismarine] run return run function code:logic/cutter/ender_pearl
+execute as @s[tag=itemid.nether_bricks] run return run function code:logic/cutter/nether_brick_slab
+execute as @s[tag=itemid.chiseled_quartz_block] run return run function code:logic/cutter/quartz

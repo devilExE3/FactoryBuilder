@@ -1,1 +1,3 @@
+execute if entity @n[type=item_display,tag=enchanter.input,distance=..1.01,tag=itemid.purpur_pillar] if entity @n[type=item_display,tag=enchanter.input,distance=..1.01,tag=itemid.tinted_glass] if entity @n[type=item_display,tag=enchanter.input,distance=..1.01,tag=itemid.quartz] run return run function code:logic/crafter_3/soul_sand
+execute if entity @n[type=item_display,tag=enchanter.input,distance=..1.01,tag=itemid.nether_brick] if entity @n[type=item_display,tag=enchanter.input,distance=..1.01,tag=itemid.birch_planks] if entity @n[type=item_display,tag=enchanter.input,distance=..1.01,tag=itemid.gold_ingot] run return run function code:logic/crafter_3/cherry_button
 return fail

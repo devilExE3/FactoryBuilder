@@ -128,7 +128,7 @@ ITEMS = {
     "purpur_pillar": 300_000_000_000,
     "soul_sand": 1_000_000_000_000,
     "soul_soil": 2_000_000_000_000,
-    "spruce_wood": 2_500_000_000_000,
+    "prismarine": 2_500_000_000_000,
     "ender_pearl": 1_500_000_000_000,
     "netherrack": 1_000_000,
     "nether_bricks": 2_000_000,
@@ -138,10 +138,10 @@ ITEMS = {
     "cherry_slab": 500_000_000,
     "stripped_cherry_wood": 1_300_000_000,
     "cherry_wood": 2_000_000_000,
-    "pale_oak_log": 4_000_000_000,
+    "stripped_pale_oak_wood": 4_000_000_000,
     "nether_quartz_ore": 6_000_000_000,
-    "quartz_slab": 10_000_000_000,
-    "quartz_block": 40_000_000_000,
+    "quartz_slab": 4_000_000_000,
+    "quartz_block": 12_000_000_000,
     "chiseled_quartz_block": 80_000_000_000,
     "quartz": 50_000_000_000
 }
@@ -190,7 +190,7 @@ ITEM_TRANSLATE = {
     "purpur_pillar": "Chiseled Purpur",
     "soul_sand": "Ender-Infused Soil",
     "soul_soil": "Hardened Soil",
-    "spruce_wood": "Ender Pearl Clump",
+    "prismarine": "Ender Pearl Clump",
     "ender_pearl": "Ender Pearl",
     "netherrack": "Netherrack",
     "nether_bricks": "Nether Brick Block",
@@ -200,7 +200,7 @@ ITEM_TRANSLATE = {
     "cherry_slab": "Uncoagulated Chunk",
     "stripped_cherry_wood": "Uncoagulated Lump",
     "cherry_wood": "Coagulated Lump",
-    "pale_oak_log": "Calcified Lump",
+    "stripped_pale_oak_wood": "Calcified Lump",
     "nether_quartz_ore": "Sparse Nether Quartz",
     "quartz_slab": "Quartz Slab",
     "quartz_block": "Quartz Block",
@@ -239,6 +239,21 @@ RECIPES = {
             "input": "andesite",
             "output": "gold_ore",
             "mul": 1
+        },
+        {
+            "input": "prismarine",
+            "output": "ender_pearl",
+            "mul": 4
+        },
+        {
+            "input": "nether_bricks",
+            "output": "nether_brick_slab",
+            "mul": 2
+        },
+        {
+            "input": "chiseled_quartz_block",
+            "output": "quartz",
+            "mul": 4
         }
     ],
     "furnace": [
@@ -277,6 +292,10 @@ RECIPES = {
         {
             "input": "gold_ore",
             "output": "raw_gold_block"
+        },
+        {
+            "input": "sand",
+            "output": "tinted_glass"
         }
     ],
     "crafter_2": [
@@ -321,6 +340,42 @@ RECIPES = {
             "in2": "tnt",
             "out": "gold_ingot",
             "count": 1
+        },
+        {
+            "in1": "soul_soil",
+            "in2": "iron_ingot",
+            "out": "prismarine",
+            "count": 1
+        },
+        {
+            "in1": "cherry_button",
+            "in2": "cherry_button",
+            "out": "cherry_slab",
+            "count": 1
+        },
+        {
+            "in1": "cherry_slab",
+            "in2": "cherry_slab",
+            "out": "stripped_cherry_wood",
+            "count": 1
+        },
+        {
+            "in1": "stripped_cherry_wood",
+            "in2": "stripped_cherry_wood",
+            "out": "cherry_wood",
+            "count": 1
+        },
+        {
+            "in1": "stripped_pale_oak_wood",
+            "in2": "netherrack",
+            "out": "nether_quartz_ore",
+            "count": 1
+        },
+        {
+            "in1": "quartz_slab",
+            "in2": "quartz_slab",
+            "out": "quartz_block",
+            "count": 1
         }
     ],
     "crafter_3": [
@@ -351,25 +406,85 @@ RECIPES = {
             "in3": "iron_ingot",
             "out": "anvil",
             "count": 1
+        },
+        {
+            "in1": "tinted_glass",
+            "in2": "glowstone",
+            "in3": "gold_ingot",
+            "out": "purpur_block",
+            "count": 1
         }
     ],
     "washer": [
         {
             "input": "yellow_concrete_powder",
             "output": "raw_gold"
+        },
+        {
+            "input": "suspicious_sand",
+            "output": "sand"
+        },
+        {
+            "input": "soul_sand",
+            "output": "soul_soil"
         }
     ],
     "crusher": [
         {
-        "side": "smooth_stone",
-        "top": "anvil",
-        "count": 2,
-        "out": "gravel"
+            "side": "smooth_stone",
+            "top": "anvil",
+            "count": 2,
+            "out": "gravel"
+        },
+        {
+            "side": "end_stone",
+            "top": "anvil",
+            "count": 1,
+            "out": "suspicious_sand"
+        },
+        {
+            "side": "nether_quartz_ore",
+            "top": "anvil",
+            "count": 1,
+            "out": "quartz_slab"
         }
     ],
-    "flashbaker": [],
-    "sonic_zapper": [],
-    "enchanter": [],
+    "flashbaker": [
+        {
+            "input": "netherrack",
+            "output": "nether_bricks"
+        }
+    ],
+    "sonic_zapper": [
+        {
+            "input": "purpur_block",
+            "output": "purpur_pillar"
+        },
+        {
+            "input": "cherry_wood",
+            "output": "stripped_pale_oak_wood"
+        },
+        {
+            "input": "quartz_block",
+            "output": "chiseled_quartz_block"
+        }
+    ],
+    "enchanter": [
+        {
+            "in1": "purpur_pillar",
+            "in2": "tinted_glass",
+            "in3": "quartz",
+            "count": 1,
+            "out": "soul_sand"
+        },
+        {
+            "in1": "nether_brick",
+            "in2": "birch_planks",
+            "in3": "gold_ingot",
+            "count": 4,
+            "out": "cherry_button"
+        }
+    ],
 }
 
 SHOP_ITEMS = [
@@ -893,6 +1008,7 @@ pages.append(BookPage()\
     .add_line(BookLine().add_comp(BookComponent("  Factory Builder").color("gold").bold(True)))\
     .add_line(BookLine().add_comp(BookComponent("            by devilexe3")))\
     .add_line(BookLineEmpty())\
+    .add_line(BookLine().add_comp(BookComponent("Recipes: LuveelVoom")))\
     .add_line(BookLineEmpty())\
     .add_line(BookLineEmpty())\
     .add_line(BookLineEmpty())\
