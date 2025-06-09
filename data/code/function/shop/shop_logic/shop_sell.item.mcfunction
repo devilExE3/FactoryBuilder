@@ -16,9 +16,9 @@ execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_d
 execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.generator.oak"]} run return run data modify storage numeral:io B set value [150,0,0,0]
 execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.generator.stone"]} run return run data modify storage numeral:io B set value [500,0,0,0]
 execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.generator.coal"]} run return run data modify storage numeral:io B set value [100000,0,0,0]
-execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.generator.birch"]} run return run data modify storage numeral:io B set value [0,1,0,0]
+execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.generator.birch"]} run return run data modify storage numeral:io B set value [500000000.0,0.0,0.0,0.0]
 execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.generator.copper"]} run return run data modify storage numeral:io B set value [500000000.0,2.0,0.0,0.0]
 execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.generator.iron"]} run return run data modify storage numeral:io B set value [500000000.0,7.0,0.0,0.0]
 execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.generator.netherrack"]} run return run data modify storage numeral:io B set value [0,25,0,0]
-execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.generator.end_stone"]} run return run data modify storage numeral:io B set value [0,500000,0,0]
+execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.generator.end_stone"]} run return run data modify storage numeral:io B set value [0,10000,0,0]
 return fail

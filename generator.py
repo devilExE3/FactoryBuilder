@@ -36,7 +36,7 @@ GENERATORS = [
         "model": "birch_sapling",
         "output": "birch_log",
         "gen_block": "yellow_glazed_terracotta",
-        "price": 1 * 10 ** 9,
+        "price": 0.5 * 10 ** 9,
         "id": "birch",
         "type": "cross",
         "rp_texture": "minecraft:block/birch_sapling"
@@ -76,7 +76,7 @@ GENERATORS = [
         "model": "end_stone",
         "output": "end_stone",
         "gen_block": "end_stone",
-        "price": 500 * 10 ** 12,
+        "price": 10 * 10 ** 12,
         "id": "end_stone",
         "type": "ore",
         "rp_texture": "minecraft:block/end_stone"
