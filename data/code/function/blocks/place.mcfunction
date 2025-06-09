@@ -1,12 +1,10 @@
 # check if we can place the block
 scoreboard players set #can_place math 1
 execute unless block ~ ~ ~ air run scoreboard players set #can_place math 0
-execute if entity @p[tag=rc,tag=!in_plot] run scoreboard players set #can_place math 0
-execute if entity @p[tag=rc,tag=!in_plot] run tellraw @p[tag=rc] {"text":"❎ You need to be in your plot to place","color": "red"}
 # check if it's in the plot
 execute if score #can_place math matches 1 run function code:blocks/place.check_plot
 # check for special block place
-execute if score #can_place math matches 1 as @s[tag=place.carpet] if block ~ ~-1 ~ air run tellraw @p[tag=rc] {"text":"⬇ This block needs support below!","color": "yellow"}
+execute if score #can_place math matches 1 as @s[tag=place.carpet] if block ~ ~-1 ~ air run tellraw @p[tag=rc] [{"text":"⬇","color": "yellow","bold": true},{"text":" This block needs support below!","color": "yellow","bold": false}]
 execute if score #can_place math matches 1 as @s[tag=place.carpet] if block ~ ~-1 ~ air run scoreboard players set #can_place math 0
 
 execute if score #can_place math matches 0 run return run function code:blocks/place.loot
