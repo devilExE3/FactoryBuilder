@@ -17,6 +17,7 @@ function code:plots/save.tile.backbone
 data modify storage temp this.direction set value 0
 #execute as @s[tag=block.conveyor.n] run data modify storage temp this.direction set value 0
 execute as @s[tag=block.conveyor.w] run data modify storage temp this.direction set value 1
+execute as @s[tag=block.splitter.ew] run data modify storage temp this.direction set value 1
 execute as @s[tag=block.conveyor.s] run data modify storage temp this.direction set value 2
 execute as @s[tag=block.conveyor.e] run data modify storage temp this.direction set value 3
 

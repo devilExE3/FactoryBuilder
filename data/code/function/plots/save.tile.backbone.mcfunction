@@ -13,5 +13,6 @@ execute as @s[tag=block.sonic_zapper] run data modify storage temp this.id set v
 execute as @s[tag=block.crusher] run data modify storage temp this.id set value "crusher"
 execute as @s[tag=block.enchanter] run data modify storage temp this.id set value "enchanter"
 execute as @s[tag=block.limiter] run data modify storage temp this.id set value "limiter"
+execute as @s[tag=block.splitter] run data modify storage temp this.id set value "splitter"
 
 execute as @s[tag=block.generator] run function code:plots/save.tile.backbone.generator

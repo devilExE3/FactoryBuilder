@@ -23,6 +23,7 @@ execute as @s[tag=block.sonic_zapper] run loot replace entity @n[type=item,tag=i
 execute as @s[tag=block.crusher] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/crusher
 execute as @s[tag=block.enchanter] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/enchanter
 execute as @s[tag=block.limiter] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/limiter
+execute as @s[tag=block.splitter] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/splitter
 
 execute as @s[tag=block.generator] run function code:blocks/destroy.generator
 
