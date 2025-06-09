@@ -6,7 +6,7 @@ GENERATORS = [
         "model": "oak_sapling",
         "output": "oak_log",
         "gen_block": "petrified_oak_slab[type=double]",
-        "price": 150,
+        "price": 50,
         "id": "oak",
         "type": "cross",
         "rp_texture": "minecraft:block/oak_sapling"
@@ -545,13 +545,13 @@ SHOP_ITEMS = [
         "id": "conveyor",
         "model": "gray_carpet",
         "price": 10,
-        "description": "Moves items arond horizontally"
+        "description": "Moves items around horizontally"
     },
     {
         "name": "Floating Conveyor",
         "id": "air_conveyor",
         "model": "pale_moss_carpet",
-        "price": 1_000_000,
+        "price": 25_000_000,
         "description": "Doesn\\'t need a support block below!"
     },
     {
