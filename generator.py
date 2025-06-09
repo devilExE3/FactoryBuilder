@@ -1047,7 +1047,8 @@ class BookLine:
         for comp in self.components:
             ret += comp.compile() + ","
         return ret[:-1] + "]"
-
+    def sort_key(self):
+        return self.components[0]._text
 class BookLineEmpty:
     def __init__(self):
         pass
@@ -1136,7 +1137,7 @@ pages.append(BookPage()\
 # item pages
 current_page = BookPage().add_line(BookLine().add_comp(BookComponent("^").target_page(2)).add_comp(BookComponent("       ITEMS").bold(True)))
 line = 1
-for item in ITEMS:
+for item in dict(sorted(ITEMS.items(), key=lambda item: item[1])):
     if line == 14:
         pages.append(current_page)
         current_page = BookPage()
@@ -1145,36 +1146,38 @@ for item in ITEMS:
     line += 1
 pages.append(current_page)
 # recipes
-current_page = BookPage().add_line(BookLine().add_comp(BookComponent("^").target_page(2)).add_comp(BookComponent("      RECIPES").bold(True)))
-line = 1
+recipe_lines = []
 for recipe_type in RECIPES:
     for recipe in RECIPES[recipe_type]:
-        if line == 14:
-            pages.append(current_page)
-            current_page = BookPage()
-            line = 0
         if recipe_type == "cutter":
-            current_page.add_line(BookLine().add_comp(BookComponent(ellipse(ITEM_TRANSLATE[recipe["output"]])).hover(BookComponent("Block Cutter\\nInput: " + ITEM_TRANSLATE[recipe["input"]] + "\\nOutput: " + ITEM_TRANSLATE[recipe["output"]] + "\\nMultiplicator: " + str(recipe["mul"])).color("white"))))
+            recipe_lines.append(BookLine().add_comp(BookComponent(ellipse(ITEM_TRANSLATE[recipe["output"]])).hover(BookComponent("Block Cutter\\nInput: " + ITEM_TRANSLATE[recipe["input"]] + "\\nOutput: " + ITEM_TRANSLATE[recipe["output"]] + "\\nMultiplicator: " + str(recipe["mul"])).color("white"))))
         elif recipe_type == "furnace":
-            current_page.add_line(BookLine().add_comp(BookComponent(ellipse(ITEM_TRANSLATE[recipe["output"]])).hover(BookComponent("Furnace\\nInput: " + ITEM_TRANSLATE[recipe["input"]] + "\\nOutput: " + ITEM_TRANSLATE[recipe["output"]]).color("white"))))
+            recipe_lines.append(BookLine().add_comp(BookComponent(ellipse(ITEM_TRANSLATE[recipe["output"]])).hover(BookComponent("Furnace\\nInput: " + ITEM_TRANSLATE[recipe["input"]] + "\\nOutput: " + ITEM_TRANSLATE[recipe["output"]]).color("white"))))
         elif recipe_type == "crafter_2":
-            current_page.add_line(BookLine().add_comp(BookComponent(ellipse(ITEM_TRANSLATE[recipe["out"]])).hover(BookComponent("Crafter (2 inputs)\\nInputs:\\n- " + ITEM_TRANSLATE[recipe["in1"]] + "\\n- " + ITEM_TRANSLATE[recipe["in2"]] + "\\nOutput: " + str(recipe["count"]) + "x " + ITEM_TRANSLATE[recipe["out"]]).color("white"))))
+            recipe_lines.append(BookLine().add_comp(BookComponent(ellipse(ITEM_TRANSLATE[recipe["out"]])).hover(BookComponent("Crafter (2 inputs)\\nInputs:\\n- " + ITEM_TRANSLATE[recipe["in1"]] + "\\n- " + ITEM_TRANSLATE[recipe["in2"]] + "\\nOutput: " + str(recipe["count"]) + "x " + ITEM_TRANSLATE[recipe["out"]]).color("white"))))
         elif recipe_type == "crafter_3":
-            current_page.add_line(BookLine().add_comp(BookComponent(ellipse(ITEM_TRANSLATE[recipe["out"]])).hover(BookComponent("Crafter (3 inputs)\\nInputs:\\n- " + ITEM_TRANSLATE[recipe["in1"]] + "\\n- " + ITEM_TRANSLATE[recipe["in2"]] + "\\n- " + ITEM_TRANSLATE[recipe["in3"]] + "\\nOutput: " + str(recipe["count"]) + "x " + ITEM_TRANSLATE[recipe["out"]]).color("white"))))
+            recipe_lines.append(BookLine().add_comp(BookComponent(ellipse(ITEM_TRANSLATE[recipe["out"]])).hover(BookComponent("Crafter (3 inputs)\\nInputs:\\n- " + ITEM_TRANSLATE[recipe["in1"]] + "\\n- " + ITEM_TRANSLATE[recipe["in2"]] + "\\n- " + ITEM_TRANSLATE[recipe["in3"]] + "\\nOutput: " + str(recipe["count"]) + "x " + ITEM_TRANSLATE[recipe["out"]]).color("white"))))
         elif recipe_type == "washer":
-            current_page.add_line(BookLine().add_comp(BookComponent(ellipse(ITEM_TRANSLATE[recipe["output"]])).hover(BookComponent("Washer \\nInput: " + ITEM_TRANSLATE[recipe["input"]] + "\\nOutput: " + ITEM_TRANSLATE[recipe["output"]]).color("white"))))
+            recipe_lines.append(BookLine().add_comp(BookComponent(ellipse(ITEM_TRANSLATE[recipe["output"]])).hover(BookComponent("Washer \\nInput: " + ITEM_TRANSLATE[recipe["input"]] + "\\nOutput: " + ITEM_TRANSLATE[recipe["output"]]).color("white"))))
         elif recipe_type == "crusher":
-            current_page.add_line(BookLine().add_comp(BookComponent(ellipse(ITEM_TRANSLATE[recipe["out"]])).hover(BookComponent("Crusher \\nSide Input: " + ITEM_TRANSLATE[recipe["side"]] + "\\nTop Input: " + ITEM_TRANSLATE[recipe["top"]] + "\\nOutput: " + str(recipe["count"]) + "x " + ITEM_TRANSLATE[recipe["out"]]).color("white"))))
+            recipe_lines.append(BookLine().add_comp(BookComponent(ellipse(ITEM_TRANSLATE[recipe["out"]])).hover(BookComponent("Crusher \\nSide Input: " + ITEM_TRANSLATE[recipe["side"]] + "\\nTop Input: " + ITEM_TRANSLATE[recipe["top"]] + "\\nOutput: " + str(recipe["count"]) + "x " + ITEM_TRANSLATE[recipe["out"]]).color("white"))))
         elif recipe_type == "flashbaker":
-            current_page.add_line(BookLine().add_comp(BookComponent(ellipse(ITEM_TRANSLATE[recipe["output"]])).hover(BookComponent("Flashbaker \\nInput: " + ITEM_TRANSLATE[recipe["input"]] + "\\nOutput: " + ITEM_TRANSLATE[recipe["output"]]).color("white"))))
+            recipe_lines.append(BookLine().add_comp(BookComponent(ellipse(ITEM_TRANSLATE[recipe["output"]])).hover(BookComponent("Flashbaker \\nInput: " + ITEM_TRANSLATE[recipe["input"]] + "\\nOutput: " + ITEM_TRANSLATE[recipe["output"]]).color("white"))))
         elif recipe_type == "sonic_zapper":
-            current_page.add_line(BookLine().add_comp(BookComponent(ellipse(ITEM_TRANSLATE[recipe["output"]])).hover(BookComponent("Sonic Zapper \\nInput: " + ITEM_TRANSLATE[recipe["input"]] + "\\nOutput: " + ITEM_TRANSLATE[recipe["output"]]).color("white"))))
+            recipe_lines.append(BookLine().add_comp(BookComponent(ellipse(ITEM_TRANSLATE[recipe["output"]])).hover(BookComponent("Sonic Zapper \\nInput: " + ITEM_TRANSLATE[recipe["input"]] + "\\nOutput: " + ITEM_TRANSLATE[recipe["output"]]).color("white"))))
         elif recipe_type == "enchanter":
-            current_page.add_line(BookLine().add_comp(BookComponent(ellipse(ITEM_TRANSLATE[recipe["out"]])).hover(BookComponent("Enchanter\\nInputs:\\n- " + ITEM_TRANSLATE[recipe["in1"]] + "\\n- " + ITEM_TRANSLATE[recipe["in2"]] + "\\n- " + ITEM_TRANSLATE[recipe["in3"]] + "\\nOutput: " + str(recipe["count"]) + "x " + ITEM_TRANSLATE[recipe["out"]]).color("white"))))
+            recipe_lines.append(BookLine().add_comp(BookComponent(ellipse(ITEM_TRANSLATE[recipe["out"]])).hover(BookComponent("Enchanter\\nInputs:\\n- " + ITEM_TRANSLATE[recipe["in1"]] + "\\n- " + ITEM_TRANSLATE[recipe["in2"]] + "\\n- " + ITEM_TRANSLATE[recipe["in3"]] + "\\nOutput: " + str(recipe["count"]) + "x " + ITEM_TRANSLATE[recipe["out"]]).color("white"))))
         else:
-            line -= 1
             print("[book/recipe] Unknown recipe type " + recipe_type)
-        line += 1
+current_page = BookPage().add_line(BookLine().add_comp(BookComponent("^").target_page(2)).add_comp(BookComponent("      RECIPES").bold(True)))
+line = 1
+for recipe in sorted(recipe_lines, key=lambda x: x.sort_key()):
+    if line == 14:
+        pages.append(current_page)
+        current_page = BookPage()
+        line = 0
+    current_page.add_line(recipe)
+    line += 1
 pages.append(current_page)
 # compile pages
 compiled = ""
