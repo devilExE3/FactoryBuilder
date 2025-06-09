@@ -576,6 +576,13 @@ SHOP_ITEMS = [
         "description": "Sell your items for profit!"
     },
     {
+        "name": "Floating Selling Platform",
+        "id": "air_sell",
+        "model": "moss_carpet",
+        "price": 1_000_000_000_000,
+        "description": "Doesn\\'t need a support block below!"
+    },
+    {
         "name": "Limiter",
         "id": "limiter",
         "model": "redstone_block",
@@ -1098,13 +1105,14 @@ pages.append(BookPage()\
     .add_line(BookLine().add_comp(BookComponent("  Factory Builder").color("gold").bold(True)))\
     .add_line(BookLine().add_comp(BookComponent("            by devilexe3")))\
     .add_line(BookLineEmpty())\
-    .add_line(BookLine().add_comp(BookComponent("Recipes: LuveelVoom")))\
-    .add_line(BookLineEmpty())\
-    .add_line(BookLineEmpty())\
-    .add_line(BookLineEmpty())\
     .add_line(BookLine().add_comp(BookComponent("    A book about all")))\
     .add_line(BookLine().add_comp(BookComponent("    there is about")))\
     .add_line(BookLine().add_comp(BookComponent("    this minigame.")))\
+    .add_line(BookLineEmpty())\
+    .add_line(BookLine().add_comp(BookComponent("Made with help from:")))\
+    .add_line(BookLine().add_comp(BookComponent("  LuveelVoom")))\
+    .add_line(BookLineEmpty())\
+    .add_line(BookLineEmpty())\
 )
 # pre-calc item pages
 # max 14 lines per page

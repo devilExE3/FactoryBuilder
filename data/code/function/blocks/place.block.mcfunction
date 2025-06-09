@@ -14,5 +14,6 @@ execute as @s[tag=place.enchanter] run function code:blocks/frontbone/enchanter
 execute as @s[tag=place.limiter] run function code:blocks/frontbone/limiter
 execute as @s[tag=place.splitter] run function code:blocks/frontbone/splitter
 execute as @s[tag=place.air_conveyor] run function code:blocks/frontbone/air_conveyor
+execute as @s[tag=place.air_sell] run function code:blocks/frontbone/air_sell
 
 execute as @s[tag=place.generator] run function code:blocks/place.generator.block
