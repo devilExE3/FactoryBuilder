@@ -13,6 +13,7 @@ execute as @s[tag=place.crusher] run loot give @p[tag=rc] loot code:blocks/crush
 execute as @s[tag=place.enchanter] run loot give @p[tag=rc] loot code:blocks/enchanter
 execute as @s[tag=place.limiter] run loot give @p[tag=rc] loot code:blocks/limiter
 execute as @s[tag=place.splitter] run loot give @p[tag=rc] loot code:blocks/splitter
+execute as @s[tag=place.air_conveyor] run loot give @p[tag=rc] loot code:blocks/air_conveyor
 
 execute as @s[tag=place.generator] run function code:blocks/place.generator.loot
 

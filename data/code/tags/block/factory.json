@@ -44,6 +44,8 @@
         "yellow_terracotta",
         "lime_terracotta",
 
+        "iron_trapdoor",
+
         "#code:generators"
     ]
 }

@@ -1,4 +1,5 @@
 execute if items entity @s player.cursor *[custom_data~{shop:"conveyor"}] run return run function code:shop/shop_logic/item/conveyor
+execute if items entity @s player.cursor *[custom_data~{shop:"air_conveyor"}] run return run function code:shop/shop_logic/item/air_conveyor
 execute if items entity @s player.cursor *[custom_data~{shop:"chute"}] run return run function code:shop/shop_logic/item/chute
 execute if items entity @s player.cursor *[custom_data~{shop:"elevator"}] run return run function code:shop/shop_logic/item/elevator
 execute if items entity @s player.cursor *[custom_data~{shop:"sell"}] run return run function code:shop/shop_logic/item/sell

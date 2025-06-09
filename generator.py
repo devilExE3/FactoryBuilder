@@ -544,91 +544,113 @@ SHOP_ITEMS = [
         "name": "Conveyor",
         "id": "conveyor",
         "model": "gray_carpet",
-        "price": 10
+        "price": 10,
+        "description": "Moves items arond horizontally"
+    },
+    {
+        "name": "Floating Conveyor",
+        "id": "air_conveyor",
+        "model": "pale_moss_carpet",
+        "price": 1_000_000,
+        "description": "Doesn't need a support block below!"
     },
     {
         "name": "Chute",
         "id": "chute",
         "model": "hopper",
-        "price": 25
+        "price": 25,
+        "description": "Moves items down"
     },
     {
         "name": "Elevator",
         "id": "elevator",
         "model": "lodestone",
-        "price": 75
+        "price": 75,
+        "description": "Moves items up"
     },
     {
         "name": "Selling Platform",
         "id": "sell",
         "model": "lime_carpet",
-        "price": 50
+        "price": 50,
+        "description": "Sell your items for profit!"
     },
     {
         "name": "Limiter",
         "id": "limiter",
         "model": "redstone_block",
-        "price": 50_000
+        "price": 50_000,
+        "description": "Takes one item from the stack."
     },
     {
         "name": "Splitter",
         "id": "splitter",
         "model": "lapis_block",
-        "price": 750_000
+        "price": 750_000,
+        "description": "Splits an item stream into two."
     },
     {
         "name": "Block Cutter",
         "id": "cutter",
         "model": "stonecutter",
-        "price": 500
+        "price": 500,
+        "description": "Used for various recipes."
     },
     {
         "name": "Furnace",
         "id": "furnace",
         "model": "blast_furnace",
-        "price": 1_000
+        "price": 1_000,
+        "description": "Used for various recipes."
     },
     {
         "name": "Crafter (2 inputs)",
         "id": "crafter_2",
         "model": "crafting_table",
-        "price": 500_000
+        "price": 500_000,
+        "description": "Used for various recipes."
     },
     {
         "name": "Crafter (3 inputs)",
         "id": "crafter_3",
         "model": "crafter",
-        "price": 100_000_000
+        "price": 100_000_000,
+        "description": "Used for various recipes."
     },
     {
         "name": "Washer",
         "id": "washer",
         "model": "water_bucket",
-        "price": 50 * 10 ** 6
+        "price": 50 * 10 ** 6,
+        "description": "Used for various recipes."
     },
     {
         "name": "Crusher",
         "id": "crusher",
         "model": "smoker",
-        "price": 5 * 10 ** 9
+        "price": 5 * 10 ** 9,
+        "description": "Used for various recipes."
     },
     {
         "name": "Flashbaker",
         "id": "flashbaker",
         "model": "lava_bucket",
-        "price": 4 * 10 ** 9
+        "price": 4 * 10 ** 9,
+        "description": "Used for various recipes."
     },
     {
         "name": "Enchanter",
         "id": "enchanter",
         "model": "enchanting_table",
-        "price": 300 * 10 ** 9
+        "price": 300 * 10 ** 9,
+        "description": "Used for various recipes."
     },
     {
         "name": "Sonic Zapper",
         "id": "sonic_zapper",
         "model": "reinforced_deepslate",
-        "price": 2 * 10 ** 12
+        "price": 700 * 10 ** 9,
+        "description": "Used for various recipes."
     }
 ]
 
@@ -885,7 +907,8 @@ for gen in GENERATORS:
         "name": gen["name"],
         "id": "generator." + gen["id"],
         "model": gen["model"],
-        "price": gen["price"]
+        "price": gen["price"],
+        "description": "Generates " + ITEM_TRANSLATE[gen["output"]]
     })
 
 # page 0 logic
@@ -913,12 +936,13 @@ with open("data/code/function/shop_pages.mcfunction", "w") as f:
         ii = i // 8
         jj = i % 8
         k = ii * 9 + jj
-        f.write("""data modify block 29999998 -64 0 Items append value {id:"@model@",count:1,components:{item_name:'"@name@"',lore:['[{"text":"Price: ","color":"gray","italic":false},{"text":"$@price@","color":"green","italic":false}]'],custom_data:{shop:"@id@",shop_item:1b}},Slot:&}\n"""\
-            .replace("&", str(k))\
+        f.write("""data modify block 29999998 -64 % Items append value {id:"@model@",count:1,components:{item_name:'"@name@"',lore:['[{"text":"Price: ","color":"gray","italic":false},{"text":"$@price@","color":"green","italic":false}]','[{"text":"@description@","color":"gray","italic":false}]'],custom_data:{shop:"@id@",shop_item:1b}},Slot:&}\n"""\
+            .replace("%", str(page)).replace("&", str(k))\
             .replace("@model@", item["model"])\
             .replace("@name@", item["name"])\
             .replace("@id@", item["id"])\
-            .replace("@price@", number_to_human(item["price"])))
+            .replace("@price@", number_to_human(item["price"]))\
+            .replace("@description@", item["description"]))
         i += 1
     # end of last page
     # fill with stained glass
@@ -937,8 +961,6 @@ with open("data/code/function/shop_pages.mcfunction", "w") as f:
 # page 0 shop defs
 with open("data/code/function/shop/shop_logic/shop_item.item.mcfunction", "w") as f:
     for item in SHOP_ITEMS:
-        if item == 0:
-            continue
         # execute if items entity @s player.cursor *[custom_data~{shop:"conveyor"}] 
         f.write('execute if items entity @s player.cursor *[custom_data~{shop:"%"}] run return run function code:shop/shop_logic/item/%\n'.replace("%", item["id"]))
         with open("data/code/function/shop/shop_logic/item/%.mcfunction".replace("%", item["id"]), "w") as g:
@@ -947,8 +969,6 @@ with open("data/code/function/shop/shop_logic/shop_item.item.mcfunction", "w") a
             g.write("loot give @s loot code:blocks/%id%\nfunction code:shop/shop_logic/purchase_ok".replace("%id%", item["id"].replace(".", "/")))
 with open("data/code/function/shop/shop_logic/bulk_item.item.mcfunction", "w") as f:
     for item in SHOP_ITEMS:
-        if item == 0:
-            continue
         # execute if items entity @s player.cursor *[custom_data~{shop:"conveyor"}] 
         f.write('execute if items entity @s container.* *[custom_data~{shop:"%"}] run return run function code:shop/shop_logic/bulk/%\n'.replace("%", item["id"]))
         with open("data/code/function/shop/shop_logic/bulk/%.mcfunction".replace("%", item["id"]), "w") as g:

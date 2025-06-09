@@ -14,5 +14,6 @@ execute if data storage temp this{id:"crusher"} run function code:blocks/backbon
 execute if data storage temp this{id:"enchanter"} run function code:blocks/backbone/enchanter
 execute if data storage temp this{id:"limiter"} run function code:blocks/backbone/limiter
 execute if data storage temp this{id:"splitter"} run function code:blocks/backbone/splitter
+execute if data storage temp this{id:"air_conveyor"} run function code:blocks/backbone/air_conveyor
 
 function code:plots/load.tile.backbone.generator
