@@ -1217,7 +1217,7 @@ for recipe_type in RECIPES:
         elif recipe_type == "crafter_2":
             recipe_lines.append(BookLine().add_comp(BookComponent(ellipse(ITEM_TRANSLATE[recipe["out"]])).hover_recipe(recipe["in1"],0,recipe["in2"],"crafting_table","Crafter (2 inputs)",recipe["out"],recipe["count"])))
         elif recipe_type == "crafter_3":
-            recipe_lines.append(BookLine().add_comp(BookComponent(ellipse(ITEM_TRANSLATE[recipe["out"]])).hover_recipe(recipe["in1"],recipe["in2"],recipe["in3"],"crafting_table","Crafter (2 inputs)",recipe["out"],recipe["count"])))
+            recipe_lines.append(BookLine().add_comp(BookComponent(ellipse(ITEM_TRANSLATE[recipe["out"]])).hover_recipe(recipe["in1"],recipe["in2"],recipe["in3"],"crafter","Crafter (3 inputs)",recipe["out"],recipe["count"])))
         elif recipe_type == "washer":
             recipe_lines.append(BookLine().add_comp(BookComponent(ellipse(ITEM_TRANSLATE[recipe["output"]])).hover_recipe(0,recipe["input"],0,"water_bucket","Washer",recipe["output"],1)))
         elif recipe_type == "crusher":
