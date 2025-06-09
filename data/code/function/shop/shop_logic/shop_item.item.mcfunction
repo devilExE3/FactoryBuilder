@@ -3,6 +3,7 @@ execute if items entity @s player.cursor *[custom_data~{shop:"air_conveyor"}] ru
 execute if items entity @s player.cursor *[custom_data~{shop:"chute"}] run return run function code:shop/shop_logic/item/chute
 execute if items entity @s player.cursor *[custom_data~{shop:"elevator"}] run return run function code:shop/shop_logic/item/elevator
 execute if items entity @s player.cursor *[custom_data~{shop:"sell"}] run return run function code:shop/shop_logic/item/sell
+execute if items entity @s player.cursor *[custom_data~{shop:"air_sell"}] run return run function code:shop/shop_logic/item/air_sell
 execute if items entity @s player.cursor *[custom_data~{shop:"limiter"}] run return run function code:shop/shop_logic/item/limiter
 execute if items entity @s player.cursor *[custom_data~{shop:"splitter"}] run return run function code:shop/shop_logic/item/splitter
 execute if items entity @s player.cursor *[custom_data~{shop:"cutter"}] run return run function code:shop/shop_logic/item/cutter
