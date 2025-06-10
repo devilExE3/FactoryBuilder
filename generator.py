@@ -35,11 +35,11 @@ GENERATORS = [
         "name": "Birch Farm",
         "model": "birch_sapling",
         "output": "birch_log",
-        "gen_block": "yellow_glazed_terracotta",
+        "gen_block": "exposed_copper_grate",
         "price": 400 * 10 ** 6,
         "id": "birch",
         "type": "cross",
-        "rp_texture": "exposed_copper_grate"
+        "rp_texture": "minecraft:block/birch_sapling"
     },
     {
         "name": "Copper Farm",
