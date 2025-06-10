@@ -915,7 +915,7 @@ for gen in GENERATORS:
         "id": "generator." + gen["id"],
         "model": gen["model"],
         "price": gen["price"],
-        "description": "Generates " + ITEM_TRANSLATE[gen["output"]]
+        "description": "Generates " + ITEM_TRANSLATE[gen["output"]] + " ($" + number_to_human(ITEMS[gen["output"]]) + ")"
     })
 
 # page 0 logic
@@ -1056,19 +1056,19 @@ class BookComponent:
         # generate lore
         lore = ""
         if in1 == 0 and in3 == 0:
-            lore += '"{\\"text\\":\\"Input: %\\",\\"color\\":\\"white\\",\\"italic\\":false}"'.replace("%", ITEM_TRANSLATE[in2])
+            lore += '"{\\"text\\":\\"Input: % ($*)\\",\\"color\\":\\"white\\",\\"italic\\":false}"'.replace("%", ITEM_TRANSLATE[in2]).replace("*", number_to_human(ITEMS[in2]))
         else:
             lore += '"{\\"text\\":\\"Inputs:\\",\\"color\\":\\"white\\",\\"italic\\":false}"'
             if in1 != 0:
-                lore += ',"{\\"text\\":\\"- %\\",\\"color\\":\\"white\\",\\"italic\\":false}"'.replace("%", ITEM_TRANSLATE[in1])
+                lore += ',"{\\"text\\":\\"- % ($*)\\",\\"color\\":\\"white\\",\\"italic\\":false}"'.replace("%", ITEM_TRANSLATE[in1]).replace("*", number_to_human(ITEMS[in1]))
             if in2 != 0:
-                lore += ',"{\\"text\\":\\"- %\\",\\"color\\":\\"white\\",\\"italic\\":false}"'.replace("%", ITEM_TRANSLATE[in2])
+                lore += ',"{\\"text\\":\\"- % ($*)\\",\\"color\\":\\"white\\",\\"italic\\":false}"'.replace("%", ITEM_TRANSLATE[in2]).replace("*", number_to_human(ITEMS[in2]))
             if in3 != 0:
-                lore += ',"{\\"text\\":\\"- %\\",\\"color\\":\\"white\\",\\"italic\\":false}"'.replace("%", ITEM_TRANSLATE[in3])
+                lore += ',"{\\"text\\":\\"- % ($*)\\",\\"color\\":\\"white\\",\\"italic\\":false}"'.replace("%", ITEM_TRANSLATE[in3]).replace("*", number_to_human(ITEMS[in3]))
         if out_cnt > 1:
-            lore += ',"{\\"text\\":\\"Output: $x %\\",\\"color\\":\\"white\\",\\"italic\\":false}"'.replace("$", str(out_cnt)).replace("%", ITEM_TRANSLATE[out])
+            lore += ',"{\\"text\\":\\"Output: $x % ($*)\\",\\"color\\":\\"white\\",\\"italic\\":false}"'.replace("$", str(out_cnt)).replace("%", ITEM_TRANSLATE[out]).replace("*", number_to_human(ITEMS[out]))
         else:
-            lore += ',"{\\"text\\":\\"Output: %\\",\\"color\\":\\"white\\",\\"italic\\":false}"'.replace("%", ITEM_TRANSLATE[out])
+            lore += ',"{\\"text\\":\\"Output: % ($*)\\",\\"color\\":\\"white\\",\\"italic\\":false}"'.replace("%", ITEM_TRANSLATE[out]).replace("*", number_to_human(ITEMS[out]))
         self._hover_item = '{"bundle_contents":[{"id":"barrier","components":{"item_model":"%in1%"}},{"id":"barrier","components":{"item_model":"%in4%"}},{"id":"barrier","components":{"item_model":"air"}},{"id":"barrier","components":{"item_model":"air"}},{"id":"barrier","components":{"item_model":"%in2%"}},{"id":"barrier","components":{"item_model":"%block%"}},{"id":"barrier","components":{"item_model":"%output%"},"count":%count%},{"id":"barrier","components":{"item_model":"air"}},{"id":"barrier","components":{"item_model":"%in3%"}},{"id":"barrier","components":{"item_model":"air"}},{"id":"barrier","components":{"item_model":"air"}},{"id":"barrier","components":{"item_model":"air"}}],"item_name":"\\"%recipe_name%\\"","lore":[%lore%]}'\
             .replace("%in1%", in1 == 0 and "air" or in1)\
             .replace("%in2%", in2 == 0 and "air" or in2)\
