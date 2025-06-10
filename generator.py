@@ -1066,7 +1066,7 @@ class BookComponent:
             if in3 != 0:
                 lore += ',"{\\"text\\":\\"- % ($*)\\",\\"color\\":\\"white\\",\\"italic\\":false}"'.replace("%", ITEM_TRANSLATE[in3]).replace("*", number_to_human(ITEMS[in3]))
         if out_cnt > 1:
-            lore += ',"{\\"text\\":\\"Output: $x % ($*)\\",\\"color\\":\\"white\\",\\"italic\\":false}"'.replace("$", str(out_cnt)).replace("%", ITEM_TRANSLATE[out]).replace("*", number_to_human(ITEMS[out]))
+            lore += ',"{\\"text\\":\\"Output: &x % ($*)\\",\\"color\\":\\"white\\",\\"italic\\":false}"'.replace("&", str(out_cnt)).replace("%", ITEM_TRANSLATE[out]).replace("*", number_to_human(ITEMS[out]))
         else:
             lore += ',"{\\"text\\":\\"Output: % ($*)\\",\\"color\\":\\"white\\",\\"italic\\":false}"'.replace("%", ITEM_TRANSLATE[out]).replace("*", number_to_human(ITEMS[out]))
         self._hover_item = '{"bundle_contents":[{"id":"barrier","components":{"item_model":"%in1%"}},{"id":"barrier","components":{"item_model":"%in4%"}},{"id":"barrier","components":{"item_model":"air"}},{"id":"barrier","components":{"item_model":"air"}},{"id":"barrier","components":{"item_model":"%in2%"}},{"id":"barrier","components":{"item_model":"%block%"}},{"id":"barrier","components":{"item_model":"%output%"},"count":%count%},{"id":"barrier","components":{"item_model":"air"}},{"id":"barrier","components":{"item_model":"%in3%"}},{"id":"barrier","components":{"item_model":"air"}},{"id":"barrier","components":{"item_model":"air"}},{"id":"barrier","components":{"item_model":"air"}}],"item_name":"\\"%recipe_name%\\"","lore":[%lore%]}'\
