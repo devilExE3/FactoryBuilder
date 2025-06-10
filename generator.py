@@ -36,7 +36,7 @@ GENERATORS = [
         "model": "birch_sapling",
         "output": "birch_log",
         "gen_block": "yellow_glazed_terracotta",
-        "price": 375 * 10 ** 6,
+        "price": 400 * 10 ** 6,
         "id": "birch",
         "type": "cross",
         "rp_texture": "minecraft:block/birch_sapling"
