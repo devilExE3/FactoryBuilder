@@ -103,7 +103,7 @@ ITEMS = {
     "raw_copper": 1_500_000,
     "copper_ingot": 2_000_000,
     "glowstone_dust": 2_000_000,
-    "orange_dye": 4_000_000,
+    "orange_dye": 5_000_000,
     "gunpowder": 2_500_000,
     "tnt": 3_750_000,
     "coal_block": 5_000_000,
