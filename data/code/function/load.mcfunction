@@ -22,6 +22,7 @@ scoreboard players set #2 math 2
 scoreboard players set #4 math 4
 scoreboard players set #10 math 10
 scoreboard players set #16 math 16
+scoreboard players set #20 math 20
 scoreboard players set #32 math 32
 scoreboard players set #90 math 90
 scoreboard players set #100 math 100
@@ -37,6 +38,8 @@ scoreboard objectives add stagger dummy
 scoreboard players set #stagger stagger 0
 scoreboard players set #tick stagger 0
 scoreboard players set #wait stagger 0
+scoreboard objectives add stagger.plot dummy
+scoreboard players set #tick stagger.plot 0
 scoreboard objectives add timer dummy
 scoreboard players add #timer timer 1
 scoreboard objectives add id dummy

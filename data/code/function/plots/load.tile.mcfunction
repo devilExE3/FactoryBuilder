@@ -16,7 +16,9 @@ execute store result score @n[type=#code:block,tag=block.this,distance=..330] bl
 execute store result score @n[type=#code:block,tag=block.this,distance=..330] block.owner2 run data get storage temp uuid.uuid[2]
 execute store result score @n[type=#code:block,tag=block.this,distance=..330] block.owner3 run data get storage temp uuid.uuid[3]
 $scoreboard players set @n[type=#code:block,tag=block.this,distance=..330] id $(id)
-execute as @n[type=#code:block,tag=block.this,distance=..330] run function code:blocks/util/stagger
+$scoreboard players set @n[type=#code:block,tag=block.this,distance=..330] stagger.plot $(id)
+scoreboard players operation @n[type=#code:block,tag=block.this,distance=..330] stagger.plot %= #20 math
+execute as @n[type=block_display,tag=block.this,tag=block.generator,distance=..330] run function code:blocks/util/stagger
 tag @n[type=#code:block,tag=block.this,distance=..330] remove block.this
 
 data remove storage tiles tiles[0]

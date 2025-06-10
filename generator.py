@@ -5,7 +5,7 @@ GENERATORS = [
         "name": "Oak Tree Farm",
         "model": "oak_sapling",
         "output": "oak_log",
-        "gen_block": "petrified_oak_slab[type=double]",
+        "gen_block": "copper_grate",
         "price": 50,
         "id": "oak",
         "type": "cross",
@@ -39,7 +39,7 @@ GENERATORS = [
         "price": 400 * 10 ** 6,
         "id": "birch",
         "type": "cross",
-        "rp_texture": "minecraft:block/birch_sapling"
+        "rp_texture": "exposed_copper_grate"
     },
     {
         "name": "Copper Farm",
