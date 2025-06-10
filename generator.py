@@ -109,7 +109,7 @@ ITEMS = {
     "coal_block": 5_000_000,
     "raw_iron": 5_000_000,
     "iron_ingot": 10_000_000,
-    "anvil": 25_000_000,
+    "anvil": 5_000_000,
     "iron_door": 85_000_000,
 
     # LuveelVoom
@@ -443,7 +443,7 @@ RECIPES = {
             "in2": "iron_ingot",
             "in3": "iron_ingot",
             "out": "anvil",
-            "count": 1
+            "count": 5
         },
         {
             "in1": "tinted_glass",
