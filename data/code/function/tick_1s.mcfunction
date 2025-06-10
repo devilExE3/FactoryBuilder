@@ -6,7 +6,8 @@ execute as @a run scoreboard players operation @s prev_money.2 = @s money.2
 execute as @a run scoreboard players operation @s prev_money.3 = @s money.3
 
 # item decay logic
-execute as @e[type=item_display,tag=item,x=0] run function code:logic/item.despawn
+scoreboard players add @e[type=item_display,tag=item,x=0] timer 1
+execute as @e[type=item_display,tag=item,x=0,scores={timer=121..}] run kill @s
 
 # crafters
 execute as @e[type=marker,tag=block.limiter,x=0] at @s run function code:logic/limiter
@@ -18,10 +19,7 @@ execute as @e[type=marker,tag=block.enchanter,x=0] at @s run function code:logic
 # conveyor logic
 tag @e[type=item_display,tag=item.cut,tag=item.moved,x=0] remove item.cut
 tag @e[type=item_display,tag=item.moved,x=0] remove item.moved
-execute as @e[type=item_display,tag=item,x=0] at @s run function code:logic/item
-
-# update item count
-execute as @e[type=item_display,tag=item,x=0] run function code:logic/item.name
+execute as @e[type=item_display,tag=item,x=0] at @s run function code:tick_1s.item
 
 # calculate mspt average
 scoreboard players operation #round_factor math = #avg_COUNT math
@@ -46,3 +44,4 @@ scoreboard players add @a stats.playtime 1
 
 function code:update_sidebar
 execute as @a run function code:update_list
+execute as @a[gamemode=creative] run function code:alert_gmc

@@ -621,7 +621,7 @@ SHOP_ITEMS = [
         "name": "Crafter (3 inputs)",
         "id": "crafter_3",
         "model": "crafter",
-        "price": 100_000_000,
+        "price": 5_000_000,
         "description": "Used for various recipes."
     },
     {
