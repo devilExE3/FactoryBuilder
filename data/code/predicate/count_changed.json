@@ -1,0 +1,26 @@
+{
+    "condition": "inverted",
+    "term": {
+        "condition": "value_check",
+        "value": {
+            "type": "score",
+            "target": {
+                "type": "context",
+                "target": "this"
+            },
+            "score": "count"
+        },
+        "range": {
+            "min": {
+                "type": "score",
+                "target": "this",
+                "score": "prev_count"
+            },
+            "max": {
+                "type": "score",
+                "target": "this",
+                "score": "prev_count"
+            }
+        }
+    }
+}
