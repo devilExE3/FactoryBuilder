@@ -26,4 +26,5 @@ tag @n[type=item_display,tag=limiter,distance=..1.01] remove limiter
 # setup limiter count
 scoreboard players set @n[type=item_display,tag=limiter.output,distance=..0.01] count 1
 scoreboard players operation @n[type=item_display,tag=limiter.output,distance=..0.01] id = @s id
+scoreboard players operation @n[type=item_display,tag=limiter.output,distance=..0.01] stagger.plot = @s stagger.plot
 tag @n[type=item_display,tag=limiter.output,distance=..0.01] remove limiter.output

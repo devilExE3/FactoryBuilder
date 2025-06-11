@@ -9,12 +9,7 @@ execute as @a run scoreboard players operation @s prev_money.3 = @s money.3
 scoreboard players add @e[type=item_display,tag=item,x=0] timer 1
 execute as @e[type=item_display,tag=item,x=0,scores={timer=121..}] run kill @s
 
-# crafters
-execute as @e[type=marker,tag=block.limiter,x=0] at @s run function code:logic/limiter
-execute as @e[type=marker,tag=block.crafter_2,x=0] at @s run function code:logic/crafter_2
-execute as @e[type=marker,tag=block.crafter_3,x=0] at @s run function code:logic/crafter_3
-execute as @e[type=marker,tag=block.crusher,x=0] at @s run function code:logic/crusher
-execute as @e[type=marker,tag=block.enchanter,x=0] at @s run function code:logic/enchanter
+function code:tick_1s.crafters_stagger
 
 # conveyor logic
 tag @e[type=item_display,tag=item.cut,tag=item.moved,x=0] remove item.cut
