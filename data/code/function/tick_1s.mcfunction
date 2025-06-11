@@ -36,9 +36,7 @@ scoreboard players set #avg_MSPT math 0
 scoreboard players set #avg_COUNT math 0
 
 scoreboard players add #wait stagger 1
-execute if score #wait stagger matches 5.. run scoreboard players set #tick stagger 0
 execute if score #wait stagger matches 5.. run function code:tick_1s.gen_stagger
-execute if score #wait stagger matches 5.. run scoreboard players set #wait stagger 0
 
 scoreboard players add @a stats.playtime 1
 
