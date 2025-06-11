@@ -19,8 +19,7 @@ execute as @e[type=marker,tag=block.enchanter,x=0] at @s run function code:logic
 # conveyor logic
 tag @e[type=item_display,tag=item.cut,tag=item.moved,x=0] remove item.cut
 tag @e[type=item_display,tag=item.moved,x=0] remove item.moved
-execute as @e[type=item_display,tag=item,x=0] at @s run function code:logic/item
-execute as @e[type=item_display,tag=item,x=0,predicate=code:count_changed] run function code:logic/item.name
+function code:tick_1s.item_stagger
 
 # calculate mspt average
 scoreboard players operation #round_factor math = #avg_COUNT math

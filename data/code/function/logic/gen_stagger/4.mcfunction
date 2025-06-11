@@ -1,0 +1,1 @@
+execute as @e[type=block_display,tag=block.generator,scores={stagger=4},x=0] at @s run function code:logic/generator

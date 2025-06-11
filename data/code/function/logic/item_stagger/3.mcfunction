@@ -1,0 +1,2 @@
+execute as @e[type=item_display,tag=item,scores={stagger.plot=3},x=0] at @s run function code:logic/item
+execute as @e[type=item_display,tag=item,scores={stagger.plot=3},x=0,predicate=code:count_changed] run function code:logic/item.name
