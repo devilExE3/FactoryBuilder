@@ -5,14 +5,10 @@ worldborder set 40010000 10
 
 execute store result storage profiling:times this.pre.tick_1s int 1 run worldborder get
 
-# execute as @a run scoreboard players operation @s prev_money.0 = @s money.0
-# execute as @a run scoreboard players operation @s prev_money.1 = @s money.1
-# execute as @a run scoreboard players operation @s prev_money.2 = @s money.2
-# execute as @a run scoreboard players operation @s prev_money.3 = @s money.3
-scoreboard players operation @a prev_money.0 = @a money.0
-scoreboard players operation @a prev_money.1 = @a money.1
-scoreboard players operation @a prev_money.2 = @a money.2
-scoreboard players operation @a prev_money.3 = @a money.3
+execute as @a run scoreboard players operation @s prev_money.0 = @s money.0
+execute as @a run scoreboard players operation @s prev_money.1 = @s money.1
+execute as @a run scoreboard players operation @s prev_money.2 = @s money.2
+execute as @a run scoreboard players operation @s prev_money.3 = @s money.3
 
 execute store result storage profiling:times this.pre.item_decay int 1 run worldborder get
 # item decay logic
