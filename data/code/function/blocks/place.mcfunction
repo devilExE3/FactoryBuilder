@@ -22,9 +22,8 @@ execute store result score @n[type=#code:block,tag=block.this,distance=..1] bloc
 execute store result score @n[type=#code:block,tag=block.this,distance=..1] block.owner2 run data get entity @p[tag=rc] UUID[2]
 execute store result score @n[type=#code:block,tag=block.this,distance=..1] block.owner3 run data get entity @p[tag=rc] UUID[3]
 scoreboard players operation @n[type=#code:block,tag=block.this,distance=..1] id = @p[tag=rc] id
-scoreboard players operation @n[type=#code:block,tag=block.this,distance=..1] stagger.plot = @p[tag=rc] id
-scoreboard players operation @n[type=#code:block,tag=block.this,distance=..1] stagger.plot %= #20 math
-execute as @n[type=block_display,tag=block.this,tag=block.generator,distance=..1] run function code:blocks/util/stagger
+scoreboard players operation @n[type=#code:block,tag=block.this,distance=..1] stagger = @p[tag=rc] id
+scoreboard players operation @n[type=#code:block,tag=block.this,distance=..1] stagger %= #20 math
 tag @n[type=#code:block,tag=block.this,distance=..1] remove block.this
 
 kill @s

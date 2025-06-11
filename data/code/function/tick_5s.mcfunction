@@ -1,4 +1,4 @@
-scoreboard players set #wait stagger 0
+schedule function code:tick_5s 100t replace
 function code:logic/gen_stagger/0
 schedule function code:logic/gen_stagger/1 1t
 schedule function code:logic/gen_stagger/2 2t

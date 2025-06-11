@@ -35,11 +35,7 @@ scoreboard objectives add plot.y dummy
 scoreboard objectives add count dummy
 scoreboard objectives add prev_count dummy
 scoreboard objectives add stagger dummy
-scoreboard players set #stagger stagger 0
 scoreboard players set #tick stagger 0
-scoreboard players set #wait stagger 0
-scoreboard objectives add stagger.plot dummy
-scoreboard players set #tick stagger.plot 0
 scoreboard objectives add timer dummy
 scoreboard players add #timer timer 1
 scoreboard objectives add id dummy
@@ -128,7 +124,6 @@ kill @e[type=item_display,tag=item,x=0]
 schedule function code:tick 1t replace
 schedule function code:tick_1s 1s replace
 schedule function code:backups 1800s replace
-schedule function code:stagger 2s replace
 
 # reset online list
 data modify storage online online set value []
