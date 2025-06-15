@@ -46,6 +46,11 @@
 
         "iron_trapdoor",
 
+        "white_concrete",
+        "light_gray_concrete",
+        "gray_concrete",
+        "black_concrete",
+
         "#code:generators"
     ]
 }

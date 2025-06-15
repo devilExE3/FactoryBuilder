@@ -40,25 +40,21 @@ attribute @s minecraft:burning_time base set 0
 team join default @s
 execute as @s[tag=is_am] run team join am @s
 execute as @s[tag=is_fm] run team join afm @s
-execute as @s[nbt={UUID:[I;1429119367,1574388562,-1077129316,-394790930]}] run team join aerecipes @s
+execute as @s[tag=recipe_helper] run team join aerecipes @s
+execute as @s[tag=is_tester] run team join aetester @s
+execute as @s[tag=is_artist] run team join aesartist @s
 execute as @s[tag=is_owner] run team join adev @s
 
 execute unless score @s money.0 matches 0.. run scoreboard players set @s money.0 0
 execute unless score @s money.1 matches 0.. run scoreboard players set @s money.1 0
 execute unless score @s money.2 matches 0.. run scoreboard players set @s money.2 0
 execute unless score @s money.3 matches 0.. run scoreboard players set @s money.3 0
-execute if score @s money matches ..-1 run tellraw @s "Your money overflowed.. i just give you 3 billions"
-execute if score @s money matches ..-1 run scoreboard players set @s money.1 2
-execute if score @s money matches 2000000000.. run scoreboard players add @s money.1 1
-execute if score @s money matches 2000000000.. run scoreboard players remove @s money 1000000000
-execute if score @s money matches 1000000000.. run scoreboard players add @s money.1 1
-execute if score @s money matches 1000000000.. run scoreboard players remove @s money 1000000000
-execute if score @s money matches 1.. run scoreboard players operation @s money.0 = @s money
-scoreboard players reset @s money
+scoreboard players set @s z_show_recipe -2
 function code:plots/load
 tp @s -15.5 1 -15.5 -45 0
 gamemode adventure @s
 data modify entity @s abilities.mayfly set value 1b
+data modify entity @s Invulnerable set value 1b
 
 # remove stray tags / states
 tag @s remove in_plot
@@ -66,6 +62,13 @@ tag @s remove holding_shop
 tag @s remove shrinked
 attribute @s scale base set 1
 
-execute if items entity @s container.* minecraft:written_book run function code:joined.book
-execute at @s run function code:reload_inventory
-playerlist @s header set <gradient:#ffaa00:#ffff00><bold>Fᴀᴄᴛᴏʀʏ<gradient:#aaaaaa:#dddddd><bold>Bᴜɪʟᴅᴇʀ
+clear @s written_book
+clear @s wooden_pickaxe
+playerlist @s header set <gradient:#ffaa00:#ffe500><bold>Fᴀᴄᴛᴏʀʏ</gradient><gradient:#aaaaaa:#e5e5e5><bold>Bᴜɪʟᴅᴇʀ</gradient>
+execute if entity @n[type=marker,tag=devbranch,x=0] run function code:joined.devbranch
+
+# enable triggers
+execute unless score @s settings.chat_notifications matches 0.. run scoreboard players set @s settings.chat_notifications 0
+execute unless score @s settings.alert_zero_production matches 0.. run scoreboard players set @s settings.alert_zero_production 0
+
+function code:changelog

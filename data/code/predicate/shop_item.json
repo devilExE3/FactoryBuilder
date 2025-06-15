@@ -1,15 +1,35 @@
 {
-    "condition": "entity_properties",
-    "entity": "this",
-    "predicate": {
-        "slots": {
-            "contents": {
-                "predicates": {
-                    "custom_data": {
-                        "shop_item": true
+    "condition": "any_of",
+    "terms": [
+        {
+            "condition": "entity_properties",
+            "entity": "this",
+            "predicate": {
+                "slots": {
+                    "contents": {
+                        "predicates": {
+                            "custom_data": {
+                                "shop_item": true
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "condition": "entity_properties",
+            "entity": "this",
+            "predicate": {
+                "slots": {
+                    "contents": {
+                        "predicates": {
+                            "custom_data": {
+                                "recipe": true
+                            }
+                        }
                     }
                 }
             }
         }
-    }
+    ]
 }

@@ -6,3 +6,8 @@ execute as @s[tag=block.generator.copper] run loot replace entity @n[type=item,t
 execute as @s[tag=block.generator.iron] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/generator/iron
 execute as @s[tag=block.generator.netherrack] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/generator/netherrack
 execute as @s[tag=block.generator.end_stone] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/generator/end_stone
+execute as @s[tag=block.generator.spruce] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/generator/spruce
+execute as @s[tag=block.generator.stick] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/generator/stick
+execute as @s[tag=block.generator.anvil] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/generator/anvil
+execute as @s[tag=block.generator.raw_gold] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/generator/raw_gold
+execute as @s[tag=block.generator.quartz] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/generator/quartz

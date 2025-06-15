@@ -1,0 +1,2 @@
+title @s actionbar [{"text":"Money: ","color":"white"},{"text": "$","color": "green"},{"storage":"numeral:io","nbt":"format","color": "green"}]
+execute as @s[scores={settings.alert_zero_production=2}] run title @s actionbar [{"text":"Money: ","color":"white"},{"text": "$","color": "green"},{"storage":"numeral:io","nbt":"format","color": "green"},{"text": " ZERO","bold": true,"color": "dark_red"}]

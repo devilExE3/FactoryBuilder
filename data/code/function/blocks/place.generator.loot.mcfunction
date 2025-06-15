@@ -6,3 +6,8 @@ execute as @s[tag=place.generator.copper] run loot give @p[tag=rc] loot code:blo
 execute as @s[tag=place.generator.iron] run loot give @p[tag=rc] loot code:blocks/generator/iron
 execute as @s[tag=place.generator.netherrack] run loot give @p[tag=rc] loot code:blocks/generator/netherrack
 execute as @s[tag=place.generator.end_stone] run loot give @p[tag=rc] loot code:blocks/generator/end_stone
+execute as @s[tag=place.generator.spruce] run loot give @p[tag=rc] loot code:blocks/generator/spruce
+execute as @s[tag=place.generator.stick] run loot give @p[tag=rc] loot code:blocks/generator/stick
+execute as @s[tag=place.generator.anvil] run loot give @p[tag=rc] loot code:blocks/generator/anvil
+execute as @s[tag=place.generator.raw_gold] run loot give @p[tag=rc] loot code:blocks/generator/raw_gold
+execute as @s[tag=place.generator.quartz] run loot give @p[tag=rc] loot code:blocks/generator/quartz

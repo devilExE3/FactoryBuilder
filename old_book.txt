@@ -1,0 +1,245 @@
+# it was fun while it lasted :p
+
+# # #  BOOK GENERATOR  # # #
+BOOK_TEMPLATE = """{"type":"entity","pools":[{"rolls":1,"entries":[{"type":"item","name":"written_book","functions":[{"function":"set_components","components":{"minecraft:enchantment_glint_override":false,"written_book_content":{"author":"Factory Builder","title":"Factory Builder","pages":[%]}}}]}]}]}"""
+
+class BookSpace:
+    def __init__(self):
+        pass
+    def compile(self):
+        return '" "'
+
+class BookComponent:
+    def __init__(self, text):
+        self._text = text
+        self._italic = False
+        self._bold = False
+        self._color = "black"
+        self._underlined = False
+        self._target_page = -1
+        self._click_command = None
+        self._hover = None
+        self._hover_item = None
+    def italic(self, b :bool):
+        self._italic = b
+        return self
+    def bold(self, b :bool):
+        self._bold = b
+        return self
+    def color(self, b :str):
+        self._color = b
+        return self
+    def underlined(self, b :bool):
+        self._underlined = b
+        return self
+    def target_page(self, b :int):
+        self._target_page = b
+        return self
+    def click_command(self, c :str):
+        self._click_command = c
+        return self
+    def hover(self, h):
+        self._hover = h
+        return self
+    def hover_recipe(self, in1,in2,in3,block,recipe_name,out,out_cnt,in4=0):
+        # generate lore
+        lore = ""
+        if in1 == 0 and in3 == 0:
+            lore += '"{\\"text\\":\\"Input: % ($*)\\",\\"color\\":\\"white\\",\\"italic\\":false}"'.replace("%", ITEM_TRANSLATE[in2]).replace("*", number_to_human(ITEMS[in2]))
+        else:
+            lore += '"{\\"text\\":\\"Inputs:\\",\\"color\\":\\"white\\",\\"italic\\":false}"'
+            if in1 != 0:
+                lore += ',"{\\"text\\":\\"- % ($*)\\",\\"color\\":\\"white\\",\\"italic\\":false}"'.replace("%", ITEM_TRANSLATE[in1]).replace("*", number_to_human(ITEMS[in1]))
+            if in2 != 0:
+                lore += ',"{\\"text\\":\\"- % ($*)\\",\\"color\\":\\"white\\",\\"italic\\":false}"'.replace("%", ITEM_TRANSLATE[in2]).replace("*", number_to_human(ITEMS[in2]))
+            if in3 != 0:
+                lore += ',"{\\"text\\":\\"- % ($*)\\",\\"color\\":\\"white\\",\\"italic\\":false}"'.replace("%", ITEM_TRANSLATE[in3]).replace("*", number_to_human(ITEMS[in3]))
+        if out_cnt > 1:
+            lore += ',"{\\"text\\":\\"Output: &x % ($*)\\",\\"color\\":\\"white\\",\\"italic\\":false}"'.replace("&", str(out_cnt)).replace("%", ITEM_TRANSLATE[out]).replace("*", number_to_human(ITEMS[out]))
+        else:
+            lore += ',"{\\"text\\":\\"Output: % ($*)\\",\\"color\\":\\"white\\",\\"italic\\":false}"'.replace("%", ITEM_TRANSLATE[out]).replace("*", number_to_human(ITEMS[out]))
+        self._hover_item = '{"bundle_contents":[{"id":"barrier","components":{"item_model":"%in1%"}},{"id":"barrier","components":{"item_model":"%in4%"}},{"id":"barrier","components":{"item_model":"air"}},{"id":"barrier","components":{"item_model":"air"}},{"id":"barrier","components":{"item_model":"%in2%"}},{"id":"barrier","components":{"item_model":"%block%"}},{"id":"barrier","components":{"item_model":"%output%"},"count":%count%},{"id":"barrier","components":{"item_model":"air"}},{"id":"barrier","components":{"item_model":"%in3%"}},{"id":"barrier","components":{"item_model":"air"}},{"id":"barrier","components":{"item_model":"air"}},{"id":"barrier","components":{"item_model":"air"}}],"item_name":"\\"%recipe_name%\\"","lore":[%lore%]}'\
+            .replace("%in1%", in1 == 0 and "air" or in1)\
+            .replace("%in2%", in2 == 0 and "air" or in2)\
+            .replace("%in3%", in3 == 0 and "air" or in3)\
+            .replace("%in4%", in4 == 0 and "air" or in4)\
+            .replace("%block%", block)\
+            .replace("%output%", out)\
+            .replace("%count%", str(out_cnt))\
+            .replace("%recipe_name%", recipe_name)\
+            .replace("%lore%", lore)
+        return self
+    def compile(self):
+        ret = '{"text":"' + self._text + '"'
+        ret += ',"bold":' + ("true" if self._bold else "false")
+        ret += ',"italic":' + ("true" if self._italic else "false")
+        ret += ',"color":"' + self._color + '"'
+        ret += ',"underlined":' + ("true" if self._underlined else "false")
+        if self._target_page != -1:
+            ret += ',"clickEvent":{"action":"change_page","value":"' + str(self._target_page) + '"}'
+        elif not self._click_command is None:
+            ret += ',"clickEvent":{"action":"run_command","value":"' + self._click_command + '"}'
+        if not self._hover is None:
+            ret += ',"hoverEvent":{"action":"show_text","value":' + self._hover.compile() + '}'
+        elif not self._hover_item is None:
+            ret += ',"hoverEvent":{"action":"show_item","contents":{"id":"bundle","count":1,"components":%}}'.replace("%", self._hover_item)
+        return ret + '}'
+# bundle[bundle_contents=[{id:"barrier",components:{item_model:"raw_gold_block"}},{id:"barrier",components:{item_model:"air"}},{id:"barrier",components:{item_model:"air"}},{id:"barrier",components:{item_model:"air"}},{id:"barrier",components:{item_model:"raw_gold"}},{id:"barrier",components:{item_model:"air"}},{id:"barrier",components:{item_model:"air"}},{id:"barrier",components:{item_model:"coal_block"},count:4},{id:"barrier",components:{item_model:"gold_ingot"}},{id:"barrier",components:{item_model:"air"}},{id:"barrier",components:{item_model:"air"}},{id:"barrier",components:{item_model:"air"}}],lore=['{"text":"Input:","color":"white","italic":false}','{"text":"- A","color":"white","italic":false}','{"text":"- B","color":"white","italic":false}','{"text":"- C","color":"white","italic":false}','{"text":"Output: 4x idk","color":"white","italic":false}']]
+# {"id":"bundle","count":1,"components":{"bundle_contents":[{id:"barrier",components:{item_model:"raw_gold_block"}},{id:"barrier",components:{item_model:"air"}},{id:"barrier",components:{item_model:"air"}},{id:"barrier",components:{item_model:"air"}},{id:"barrier",components:{item_model:"raw_gold"}},{id:"barrier",components:{item_model:"air"}},{id:"barrier",components:{item_model:"air"}},{id:"barrier",components:{item_model:"coal_block"},count:4},{id:"barrier",components:{item_model:"gold_ingot"}},{id:"barrier",components:{item_model:"air"}},{id:"barrier",components:{item_model:"air"}},{id:"barrier",components:{item_model:"air"}}]}}
+
+class BookLine:
+    def __init__(self):
+        self.components = []
+    def add_comp(self, comp :BookComponent):
+        self.components.append(comp)
+        return self
+    def compile(self):
+        ret = '['
+        for comp in self.components:
+            ret += comp.compile() + ","
+        return ret[:-1] + "]"
+    def sort_key(self):
+        return self.components[0]._text
+class BookLineEmpty:
+    def __init__(self):
+        pass
+    def compile(self): return '""'
+
+class BookPage:
+    def __init__(self):
+        self.lines = []
+    def add_line(self, line: BookLine):
+        self.lines.append(line)
+        return self
+    def compile(self):
+        ret = ""
+        for comp in self.lines:
+            if type(comp) is BookLine:
+                ret += "," + comp.compile()
+            ret += ',"\\n"'
+        return '[' + ret[1:] + ']'
+
+def esc_string(string :str):
+    return string.replace("\\", "\\\\").replace('"', '\\"')
+
+pages = []
+
+pages.append(BookPage()\
+    .add_line(BookLineEmpty())\
+    .add_line(BookLine().add_comp(BookComponent("  Factory Builder").color("gold").bold(True)))\
+    .add_line(BookLine().add_comp(BookComponent("            by devilexe3")))\
+    .add_line(BookLineEmpty())\
+    .add_line(BookLine().add_comp(BookComponent("    A book about all")))\
+    .add_line(BookLine().add_comp(BookComponent("    the recipes in")))\
+    .add_line(BookLine().add_comp(BookComponent("    this minigame.")))\
+    .add_line(BookLineEmpty())\
+    .add_line(BookLine().add_comp(BookComponent("Made with help from:")))\
+    .add_line(BookLine().add_comp(BookComponent("  LuveelVoom")))\
+    .add_line(BookLineEmpty())\
+    .add_line(BookLineEmpty())\
+)
+# pre-calc item pages
+# max 14 lines per page
+item_pages = (len(ITEMS) + 1) // 14 + 1
+pages.append(BookPage()\
+    .add_line(BookLine().add_comp(BookComponent("TABLE").bold(True)).add_comp(BookComponent(" of ")).add_comp(BookComponent("CONTENTS").bold(True)))\
+    .add_line(BookLineEmpty())\
+    .add_line(BookLine().add_comp(BookComponent("Items (Order by price)").underlined(True).target_page(3)))\
+    .add_line(BookLineEmpty())\
+    .add_line(BookLine().add_comp(BookComponent("Recipes (Order by name)").underlined(True).target_page(3 + item_pages)))\
+)
+# pages.append(BookPage()\
+#     .add_line(BookLine().add_comp(BookComponent("^").target_page(2)).add_comp(BookComponent("     TUTORIAL").bold(True)))\
+#     .add_line(BookLineEmpty())\
+#     .add_line(BookLine().add_comp(BookComponent("You can go to your plot by using \\n     ")).add_comp(BookComponent("/trigger plot").underlined(True)))\
+#     .add_line(BookLineEmpty())\
+#     .add_line(BookLine().add_comp(BookComponent("You can buy stuff using the shop (nether star)")))\
+#     .add_line(BookLineEmpty())\
+#     .add_line(BookLine().add_comp(BookComponent("You can only place tiles when you are strictly inside your plot")))\
+# )
+# pages.append(BookPage()\
+#     .add_line(BookLine().add_comp(BookComponent("You can only destroy tiles with the Destroy Tool")))
+#     .add_line(BookLineEmpty())\
+#     .add_line(BookLine().add_comp(BookComponent("Generators create different items which can be crafted into other items more valuable")))
+#     .add_line(BookLineEmpty())\
+#     .add_line(BookLine().add_comp(BookComponent("Items can be moved around with conveyors, elevators and chutes")))
+# )
+# pages.append(BookPage()\
+#     .add_line(BookLine().add_comp(BookComponent("Items can only be sold with Selling Platforms")))
+#     .add_line(BookLineEmpty())\
+#     .add_line(BookLine().add_comp(BookComponent("You can flip tile orientation by crouching")))
+#     .add_line(BookLineEmpty())\
+#     .add_line(BookLine().add_comp(BookComponent("Your plot gets automatically saved when you leave")))
+#     .add_line(BookLineEmpty())\
+#     .add_line(BookLine().add_comp(BookComponent("If you don't know how to get started, check out the plot at spawn")))
+# )
+# pages.append(BookPage()\
+#     .add_line(BookLine().add_comp(BookComponent("Trigger commands:")))
+#     .add_line(BookLine().add_comp(BookComponent("/trigger spawn")))
+#     .add_line(BookLine().add_comp(BookComponent("/trigger plot")))
+#     .add_line(BookLine().add_comp(BookComponent("/trigger spec")))
+#     .add_line(BookLine().add_comp(BookComponent("/trigger shrink")))
+#     .add_line(BookLine().add_comp(BookComponent("/trigger kill_items")))
+#     .add_line(BookLine().add_comp(BookComponent("- removes all item entities in the plot")))
+#     .add_line(BookLine().add_comp(BookComponent("/trigger wipe_plot")))
+#     .add_line(BookLine().add_comp(BookComponent("- removes and drops all blocks")))
+#     .add_line(BookLine().add_comp(BookComponent("/trigger reload_plot")))
+#     .add_line(BookLine().add_comp(BookComponent("- reloads the plot and your data")))
+# )
+# recipes
+recipe_lines = []
+for recipe_type in RECIPES:
+    for recipe in RECIPES[recipe_type]:
+        if recipe_type == "cutter":
+            recipe_lines.append(BookLine().add_comp(BookComponent(ellipse(ITEM_TRANSLATE[recipe["output"]])).hover_recipe(0,recipe["input"],0,"stonecutter","Block Cutter",recipe["output"],recipe["mul"]).click_command("/trigger z_show_recipe set {}".format(item_to_id[recipe["output"]]))))
+        elif recipe_type == "furnace":
+            recipe_lines.append(BookLine().add_comp(BookComponent(ellipse(ITEM_TRANSLATE[recipe["output"]])).hover_recipe(0,recipe["input"],0,"blast_furnace","Furnace",recipe["output"],1).click_command("/trigger z_show_recipe set {}".format(item_to_id[recipe["output"]]))))
+        elif recipe_type == "crafter_2":
+            recipe_lines.append(BookLine().add_comp(BookComponent(ellipse(ITEM_TRANSLATE[recipe["out"]])).hover_recipe(recipe["in1"],0,recipe["in2"],"fb:crafter_2","Crafter (2 inputs)",recipe["out"],recipe["count"]).click_command("/trigger z_show_recipe set {}".format(item_to_id[recipe["out"]]))))
+        elif recipe_type == "crafter_3":
+            recipe_lines.append(BookLine().add_comp(BookComponent(ellipse(ITEM_TRANSLATE[recipe["out"]])).hover_recipe(recipe["in1"],recipe["in2"],recipe["in3"],"fb:crafter_3","Crafter (3 inputs)",recipe["out"],recipe["count"]).click_command("/trigger z_show_recipe set {}".format(item_to_id[recipe["out"]]))))
+        elif recipe_type == "washer":
+            recipe_lines.append(BookLine().add_comp(BookComponent(ellipse(ITEM_TRANSLATE[recipe["output"]])).hover_recipe(0,recipe["input"],0,"fb:water_cauldron","Washer",recipe["output"],1).click_command("/trigger z_show_recipe set {}".format(item_to_id[recipe["output"]]))))
+        elif recipe_type == "crusher":
+            recipe_lines.append(BookLine().add_comp(BookComponent(ellipse(ITEM_TRANSLATE[recipe["out"]])).hover_recipe(0,recipe["side"],0,"smoker","Crusher",recipe["out"],recipe["count"],recipe["top"]).click_command("/trigger z_show_recipe set {}".format(item_to_id[recipe["out"]]))))
+        elif recipe_type == "flashbaker":
+            recipe_lines.append(BookLine().add_comp(BookComponent(ellipse(ITEM_TRANSLATE[recipe["output"]])).hover_recipe(0,recipe["input"],0,"fb:lava_cauldron","Flashbaker",recipe["output"],1).click_command("/trigger z_show_recipe set {}".format(item_to_id[recipe["output"]]))))
+        elif recipe_type == "sonic_zapper":
+            recipe_lines.append(BookLine().add_comp(BookComponent(ellipse(ITEM_TRANSLATE[recipe["output"]])).hover_recipe(0,recipe["input"],0,"reinforced_deepslate","Sonic Zapper",recipe["output"],1).click_command("/trigger z_show_recipe set {}".format(item_to_id[recipe["output"]]))))
+        elif recipe_type == "enchanter":
+            recipe_lines.append(BookLine().add_comp(BookComponent(ellipse(ITEM_TRANSLATE[recipe["out"]])).hover_recipe(recipe["in1"],recipe["in2"],recipe["in3"],"enchanting_table","Enchanter",recipe["out"],recipe["count"]).click_command("/trigger z_show_recipe set {}".format(item_to_id[recipe["out"]]))))
+        elif recipe_type == "explosive_furnace":
+            recipe_lines.append(BookLine().add_comp(BookComponent(ellipse(ITEM_TRANSLATE[recipe["output"]])).hover_recipe(0,recipe["input"],0,"fb:explosive_furnace","Explosive Furnace",recipe["output"],1).click_command("/trigger z_show_recipe set {}".format(item_to_id[recipe["output"]]))))
+        else:
+            print("[book/recipe] Unknown recipe type " + recipe_type)
+
+# item pages
+current_page = BookPage().add_line(BookLine().add_comp(BookComponent("^").target_page(2)).add_comp(BookComponent("       ITEMS").bold(True)))\
+                         .add_line(BookLine().add_comp(BookComponent("   (Click item for JEI)").color("dark_gray")))
+line = 2
+for item in dict(sorted(ITEMS.items(), key=lambda item: item[1])):
+    if line == 14:
+        pages.append(current_page)
+        current_page = BookPage()
+        line = 0
+    current_page.add_line(BookLine().add_comp(BookComponent(ellipse(ITEM_TRANSLATE[item])).hover(BookLine().add_comp(BookComponent(ITEM_TRANSLATE[item]).color("white")).add_comp(BookComponent("\\n$" + number_to_human(ITEMS[item])).color("green"))).click_command("/trigger z_show_recipe set {}".format(item_to_id[item]))))
+    line += 1
+pages.append(current_page)
+
+current_page = BookPage().add_line(BookLine().add_comp(BookComponent("^").target_page(2)).add_comp(BookComponent("      RECIPES").bold(True)))\
+                         .add_line(BookLine().add_comp(BookComponent("   (Click item for JEI)").color("dark_gray")))
+line = 2
+for recipe in sorted(recipe_lines, key=lambda x: x.sort_key()):
+    if line == 14:
+        pages.append(current_page)
+        current_page = BookPage()
+        line = 0
+    current_page.add_line(recipe)
+    line += 1
+pages.append(current_page)
+# compile pages
+compiled = ""
+for page in pages:
+    compiled += '"' + esc_string(page.compile()) + '",'
+with open("data/code/loot_table/book.json", "w") as f:
+    f.write(BOOK_TEMPLATE.replace("%", compiled[:-1]))

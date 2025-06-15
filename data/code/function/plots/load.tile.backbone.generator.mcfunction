@@ -6,3 +6,8 @@ execute if data storage temp this{id:"generator.copper"} run function code:block
 execute if data storage temp this{id:"generator.iron"} run function code:blocks/backbone/generator/iron
 execute if data storage temp this{id:"generator.netherrack"} run function code:blocks/backbone/generator/netherrack
 execute if data storage temp this{id:"generator.end_stone"} run function code:blocks/backbone/generator/end_stone
+execute if data storage temp this{id:"generator.spruce"} run function code:blocks/backbone/generator/spruce
+execute if data storage temp this{id:"generator.stick"} run function code:blocks/backbone/generator/stick
+execute if data storage temp this{id:"generator.anvil"} run function code:blocks/backbone/generator/anvil
+execute if data storage temp this{id:"generator.raw_gold"} run function code:blocks/backbone/generator/raw_gold
+execute if data storage temp this{id:"generator.quartz"} run function code:blocks/backbone/generator/quartz

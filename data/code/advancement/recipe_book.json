@@ -1,0 +1,17 @@
+{
+    "parent": "code:trigger",
+    "criteria": {
+        "req": {
+            "trigger": "consume_item",
+            "conditions": {
+                "item": {
+                    "items": "book"
+                }
+            }
+        }
+    },
+    "requirements": [["req"]],
+    "rewards": {
+        "function": "code:recipe_book"
+    }
+}

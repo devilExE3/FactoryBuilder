@@ -15,6 +15,7 @@ execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_d
 execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.flashbaker"]} run return run data modify storage numeral:io B set value [0,4,0,0]
 execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.enchanter"]} run return run data modify storage numeral:io B set value [0,300,0,0]
 execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.sonic_zapper"]} run return run data modify storage numeral:io B set value [0,700,0,0]
+execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.explosive_furnace"]} run return run data modify storage numeral:io B set value [0,0,5,0]
 execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.generator.oak"]} run return run data modify storage numeral:io B set value [50,0,0,0]
 execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.generator.stone"]} run return run data modify storage numeral:io B set value [500,0,0,0]
 execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.generator.coal"]} run return run data modify storage numeral:io B set value [100000,0,0,0]
@@ -23,4 +24,9 @@ execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_d
 execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.generator.iron"]} run return run data modify storage numeral:io B set value [500000000.0,7.0,0.0,0.0]
 execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.generator.netherrack"]} run return run data modify storage numeral:io B set value [0,25,0,0]
 execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.generator.end_stone"]} run return run data modify storage numeral:io B set value [0,10000,0,0]
+execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.generator.spruce"]} run return run data modify storage numeral:io B set value [0,5000000,0,0]
+execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.generator.stick"]} run return run data modify storage numeral:io B set value [0,50000000,0,0]
+execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.generator.anvil"]} run return run data modify storage numeral:io B set value [0,500000000,0,0]
+execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.generator.raw_gold"]} run return run data modify storage numeral:io B set value [0,0,1,0]
+execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.generator.quartz"]} run return run data modify storage numeral:io B set value [0.0,500000000.0,2.0,0.0]
 return fail

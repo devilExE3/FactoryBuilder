@@ -15,6 +15,7 @@ execute as @s[tag=place.limiter] run loot give @p[tag=rc] loot code:blocks/limit
 execute as @s[tag=place.splitter] run loot give @p[tag=rc] loot code:blocks/splitter
 execute as @s[tag=place.air_conveyor] run loot give @p[tag=rc] loot code:blocks/air_conveyor
 execute as @s[tag=place.air_sell] run loot give @p[tag=rc] loot code:blocks/air_sell
+execute as @s[tag=place.explosive_furnace] run loot give @p[tag=rc] loot code:blocks/explosive_furnace
 
 execute as @s[tag=place.generator] run function code:blocks/place.generator.loot
 

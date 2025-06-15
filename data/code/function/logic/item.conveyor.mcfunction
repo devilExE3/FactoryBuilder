@@ -3,6 +3,7 @@ execute if entity @n[type=marker,tag=block.furnace,distance=..0.01] run function
 execute if entity @n[type=text_display,tag=block.washer,distance=..0.01] run function code:logic/washer
 execute if entity @n[type=text_display,tag=block.flashbaker,distance=..0.01] run function code:logic/flashbaker
 execute if entity @n[type=text_display,tag=block.sonic_zapper,distance=..0.01] run function code:logic/sonic_zapper
+execute if entity @n[type=marker,tag=block.explosive_furnace,distance=..0.01] run function code:logic/explosive_furnace
 
 execute if entity @n[type=marker,tag=block.splitter,distance=..0.01] run return run function code:logic/splitter
 

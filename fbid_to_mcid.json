@@ -1,0 +1,20 @@
+{
+    "conveyor": ["gray_carpet"],
+    "chute": ["tripwire"],
+    "elevator": ["lodestone"],
+    "sell": ["lime_carpet"],
+    "cutter": ["stone_slab","cobblestone_slab"],
+    "furnace": ["pink_terracotta","magenta_terracotta","purple_terracotta","blue_terracotta"],
+    "crafter_2": ["bricks", "brick_slab", "tuff_bricks", "tuff_brick_slab"],
+    "crafter_3": ["nether_bricks", "nether_brick_slab","cracked_nether_bricks","chiseled_nether_bricks"],
+    "washer": ["water_cauldron[level=3]"],
+    "flashbaker": ["lava_cauldron"],
+    "sonic_zapper": ["black_glazed_terracotta"],
+    "crusher": ["terracotta","white_terracotta","light_gray_terracotta","gray_terracotta"],
+    "enchanter": ["blackstone_slab","polished_blackstone_slab","polished_blackstone_brick_slab","purpur_slab"],
+    "limiter": ["black_terracotta","brown_terracotta","red_terracotta","orange_terracotta"],
+    "splitter": ["yellow_terracotta","lime_terracotta"],
+    "air_conveyor": ["iron_trapdoor[facing=north]"],
+    "air_sell": ["iron_trapdoor[facing=south]"],
+    "explosive_furnace": ["white_concrete","light_gray_concrete","gray_concrete","black_concrete"]
+}

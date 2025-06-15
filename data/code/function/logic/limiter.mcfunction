@@ -2,10 +2,10 @@
 execute if entity @n[type=item_display,tag=item,distance=..0.01] run return 0
 
 # check if there are both items
-execute as @s[tag=block.conveyor.n] positioned ~ ~ ~1 unless entity @n[type=item_display,tag=item,distance=..0.01] run return 0
-execute as @s[tag=block.conveyor.w] positioned ~1 ~ ~ unless entity @n[type=item_display,tag=item,distance=..0.01] run return 0
-execute as @s[tag=block.conveyor.s] positioned ~ ~ ~-1 unless entity @n[type=item_display,tag=item,distance=..0.01] run return 0
-execute as @s[tag=block.conveyor.e] positioned ~-1 ~ ~ unless entity @n[type=item_display,tag=item,distance=..0.01] run return 0
+execute as @s[tag=block.conveyor.n] positioned ~ ~ ~1 unless entity @n[type=item_display,tag=item,tag=!item.container,distance=..0.01] run return 0
+execute as @s[tag=block.conveyor.w] positioned ~1 ~ ~ unless entity @n[type=item_display,tag=item,tag=!item.container,distance=..0.01] run return 0
+execute as @s[tag=block.conveyor.s] positioned ~ ~ ~-1 unless entity @n[type=item_display,tag=item,tag=!item.container,distance=..0.01] run return 0
+execute as @s[tag=block.conveyor.e] positioned ~-1 ~ ~ unless entity @n[type=item_display,tag=item,tag=!item.container,distance=..0.01] run return 0
 
 execute as @s[tag=block.conveyor.n] positioned ~ ~ ~1 run tag @n[type=item_display,tag=item,distance=..0.01] add limiter
 execute as @s[tag=block.conveyor.w] positioned ~1 ~ ~ run tag @n[type=item_display,tag=item,distance=..0.01] add limiter
@@ -24,6 +24,7 @@ kill @n[type=item_display,tag=limiter,distance=..1.01,scores={count=..0}]
 tag @n[type=item_display,tag=limiter,distance=..1.01] remove limiter
 
 # setup limiter count
+tag @n[type=item_display,tag=limiter.output,distance=..0.01] remove item.air_carpet
 scoreboard players set @n[type=item_display,tag=limiter.output,distance=..0.01] count 1
 scoreboard players operation @n[type=item_display,tag=limiter.output,distance=..0.01] id = @s id
 scoreboard players operation @n[type=item_display,tag=limiter.output,distance=..0.01] stagger = @s stagger

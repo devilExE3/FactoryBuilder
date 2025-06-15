@@ -9,3 +9,4 @@ execute as @s[tag=itemid.gunpowder] run return run function code:logic/furnace/t
 execute as @s[tag=itemid.gravel] run return run function code:logic/furnace/andesite
 execute as @s[tag=itemid.gold_ore] run return run function code:logic/furnace/raw_gold_block
 execute as @s[tag=itemid.sand] run return run function code:logic/furnace/tinted_glass
+execute as @s[tag=itemid.nether_bricks] run return run function code:logic/furnace/cracked_nether_bricks

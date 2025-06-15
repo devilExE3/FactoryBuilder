@@ -1,5 +1,4 @@
 macro_gen.py
 macro_gen/
-generator.py
-generator_templates/
 fb.zip
+data.js

@@ -15,6 +15,7 @@ execute if items entity @s container.* *[custom_data~{shop:"crusher"}] run retur
 execute if items entity @s container.* *[custom_data~{shop:"flashbaker"}] run return run function code:shop/shop_logic/bulk/flashbaker
 execute if items entity @s container.* *[custom_data~{shop:"enchanter"}] run return run function code:shop/shop_logic/bulk/enchanter
 execute if items entity @s container.* *[custom_data~{shop:"sonic_zapper"}] run return run function code:shop/shop_logic/bulk/sonic_zapper
+execute if items entity @s container.* *[custom_data~{shop:"explosive_furnace"}] run return run function code:shop/shop_logic/bulk/explosive_furnace
 execute if items entity @s container.* *[custom_data~{shop:"generator.oak"}] run return run function code:shop/shop_logic/bulk/generator.oak
 execute if items entity @s container.* *[custom_data~{shop:"generator.stone"}] run return run function code:shop/shop_logic/bulk/generator.stone
 execute if items entity @s container.* *[custom_data~{shop:"generator.coal"}] run return run function code:shop/shop_logic/bulk/generator.coal
@@ -23,3 +24,8 @@ execute if items entity @s container.* *[custom_data~{shop:"generator.copper"}] 
 execute if items entity @s container.* *[custom_data~{shop:"generator.iron"}] run return run function code:shop/shop_logic/bulk/generator.iron
 execute if items entity @s container.* *[custom_data~{shop:"generator.netherrack"}] run return run function code:shop/shop_logic/bulk/generator.netherrack
 execute if items entity @s container.* *[custom_data~{shop:"generator.end_stone"}] run return run function code:shop/shop_logic/bulk/generator.end_stone
+execute if items entity @s container.* *[custom_data~{shop:"generator.spruce"}] run return run function code:shop/shop_logic/bulk/generator.spruce
+execute if items entity @s container.* *[custom_data~{shop:"generator.stick"}] run return run function code:shop/shop_logic/bulk/generator.stick
+execute if items entity @s container.* *[custom_data~{shop:"generator.anvil"}] run return run function code:shop/shop_logic/bulk/generator.anvil
+execute if items entity @s container.* *[custom_data~{shop:"generator.raw_gold"}] run return run function code:shop/shop_logic/bulk/generator.raw_gold
+execute if items entity @s container.* *[custom_data~{shop:"generator.quartz"}] run return run function code:shop/shop_logic/bulk/generator.quartz

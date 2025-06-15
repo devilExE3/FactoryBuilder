@@ -21,7 +21,7 @@
                         }],
                         "show_in_tooltip": false
                     },
-                    "item_model": "water_bucket"
+                    "item_model": "fb:water_cauldron"
                 }
             }]
         }]

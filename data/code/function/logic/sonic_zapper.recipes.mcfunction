@@ -1,3 +1,12 @@
 execute as @s[tag=itemid.purpur_block] run return run function code:logic/sonic_zapper/purpur_pillar
 execute as @s[tag=itemid.cherry_wood] run return run function code:logic/sonic_zapper/stripped_pale_oak_wood
 execute as @s[tag=itemid.quartz_block] run return run function code:logic/sonic_zapper/chiseled_quartz_block
+execute as @s[tag=itemid.torch] run return run function code:logic/sonic_zapper/soul_torch
+execute as @s[tag=itemid.breeze_rod] run return run function code:logic/sonic_zapper/blaze_rod
+execute as @s[tag=itemid.sand] run return run function code:logic/sonic_zapper/red_sand
+execute as @s[tag=itemid.copper_ingot] run return run function code:logic/sonic_zapper/resin_clump
+execute as @s[tag=itemid.blackstone] run return run function code:logic/sonic_zapper/polished_blackstone
+execute as @s[tag=itemid.gilded_blackstone] run return run function code:logic/sonic_zapper/obsidian
+execute as @s[tag=itemid.smooth_sandstone] run return run function code:logic/sonic_zapper/end_stone_bricks
+execute as @s[tag=itemid.stone_bricks] run return run function code:logic/sonic_zapper/chiseled_stone_bricks
+execute as @s[tag=itemid.nether_bricks] run return run function code:logic/sonic_zapper/red_nether_bricks

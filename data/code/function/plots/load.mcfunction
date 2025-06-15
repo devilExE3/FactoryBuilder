@@ -11,4 +11,4 @@ data remove storage player player.plot.hex
 
 # if any blocks are improperly placed
 function code:destroied
-tellraw @s [{"text":"Your plot has been loaded. (","color":"light_purple"},{"score": {"name": "#tiles","objective": "math"},"color": "light_purple"},{"text":" tiles)","color": "light_purple"}]
+tellraw @s [{"text":"💾 Your plot has been loaded. (","color":"light_purple"},{"score": {"name": "#tiles","objective": "math"},"color": "light_purple"},{"text":" tiles)","color": "light_purple"}]
