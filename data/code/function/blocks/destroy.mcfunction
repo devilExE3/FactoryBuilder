@@ -27,6 +27,7 @@ execute as @s[tag=block.splitter] run loot replace entity @n[type=item,tag=item.
 execute as @s[tag=block.air_conveyor] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/air_conveyor
 execute as @s[tag=block.air_sell] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/air_sell
 execute as @s[tag=block.explosive_furnace] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/explosive_furnace
+execute as @s[tag=block.crafter_5] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/crafter_5
 
 execute as @s[tag=block.generator] run function code:blocks/destroy.generator
 

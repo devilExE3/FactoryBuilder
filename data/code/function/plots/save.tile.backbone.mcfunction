@@ -17,5 +17,6 @@ execute as @s[tag=block.splitter] run data modify storage temp this.id set value
 execute as @s[tag=block.air_conveyor] run data modify storage temp this.id set value "air_conveyor"
 execute as @s[tag=block.air_sell] run data modify storage temp this.id set value "air_sell"
 execute as @s[tag=block.explosive_furnace] run data modify storage temp this.id set value "explosive_furnace"
+execute as @s[tag=block.crafter_5] run data modify storage temp this.id set value "crafter_5"
 
 execute as @s[tag=block.generator] run function code:plots/save.tile.backbone.generator

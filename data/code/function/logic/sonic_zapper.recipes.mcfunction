@@ -10,3 +10,4 @@ execute as @s[tag=itemid.gilded_blackstone] run return run function code:logic/s
 execute as @s[tag=itemid.smooth_sandstone] run return run function code:logic/sonic_zapper/end_stone_bricks
 execute as @s[tag=itemid.stone_bricks] run return run function code:logic/sonic_zapper/chiseled_stone_bricks
 execute as @s[tag=itemid.nether_bricks] run return run function code:logic/sonic_zapper/red_nether_bricks
+execute as @s[tag=itemid.iron_block] run return run function code:logic/sonic_zapper/bone_block

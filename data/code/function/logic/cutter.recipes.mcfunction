@@ -7,3 +7,4 @@ execute as @s[tag=itemid.andesite] run return run function code:logic/cutter/gol
 execute as @s[tag=itemid.prismarine] run return run function code:logic/cutter/ender_pearl
 execute as @s[tag=itemid.nether_bricks] run return run function code:logic/cutter/nether_brick_slab
 execute as @s[tag=itemid.chiseled_quartz_block] run return run function code:logic/cutter/quartz
+execute as @s[tag=itemid.diamond_block] run return run function code:logic/cutter/diamond

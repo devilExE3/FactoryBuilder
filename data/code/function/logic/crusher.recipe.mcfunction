@@ -8,4 +8,5 @@ execute if entity @n[type=item_display,tag=crusher.side,distance=..1.01,tag=item
 execute if entity @n[type=item_display,tag=crusher.side,distance=..1.01,tag=itemid.end_crystal] if entity @n[type=item_display,tag=crusher.top,distance=..1.01,tag=itemid.obsidian] run return run function code:logic/crusher/ghast_tear
 execute if entity @n[type=item_display,tag=crusher.side,distance=..1.01,tag=itemid.obsidian] if entity @n[type=item_display,tag=crusher.top,distance=..1.01,tag=itemid.obsidian] run return run function code:logic/crusher/black_dye
 execute if entity @n[type=item_display,tag=crusher.side,distance=..1.01,tag=itemid.amethyst_block] if entity @n[type=item_display,tag=crusher.top,distance=..1.01,tag=itemid.anvil] run return run function code:logic/crusher/purple_concrete_powder
+execute if entity @n[type=item_display,tag=crusher.side,distance=..1.01,tag=itemid.command_block] if entity @n[type=item_display,tag=crusher.top,distance=..1.01,tag=itemid.bedrock] run return run function code:logic/crusher/mangrove_button
 return fail

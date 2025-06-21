@@ -11,3 +11,13 @@ execute as @s[tag=place.generator.stick] run loot give @p[tag=rc] loot code:bloc
 execute as @s[tag=place.generator.anvil] run loot give @p[tag=rc] loot code:blocks/generator/anvil
 execute as @s[tag=place.generator.raw_gold] run loot give @p[tag=rc] loot code:blocks/generator/raw_gold
 execute as @s[tag=place.generator.quartz] run loot give @p[tag=rc] loot code:blocks/generator/quartz
+execute as @s[tag=place.generator.glass] run loot give @p[tag=rc] loot code:blocks/generator/glass
+execute as @s[tag=place.generator.coal_block] run loot give @p[tag=rc] loot code:blocks/generator/coal_block
+execute as @s[tag=place.generator.iron_axe] run loot give @p[tag=rc] loot code:blocks/generator/iron_axe
+execute as @s[tag=place.generator.blaze_rod] run loot give @p[tag=rc] loot code:blocks/generator/blaze_rod
+execute as @s[tag=place.generator.purpur_block] run loot give @p[tag=rc] loot code:blocks/generator/purpur_block
+execute as @s[tag=place.generator.purpur_pillar] run loot give @p[tag=rc] loot code:blocks/generator/purpur_pillar
+execute as @s[tag=place.generator.ender_pearl] run loot give @p[tag=rc] loot code:blocks/generator/ender_pearl
+execute as @s[tag=place.generator.obsidian] run loot give @p[tag=rc] loot code:blocks/generator/obsidian
+execute as @s[tag=place.generator.gray_concrete_powder] run loot give @p[tag=rc] loot code:blocks/generator/gray_concrete_powder
+execute as @s[tag=place.generator.spruce_planks] run loot give @p[tag=rc] loot code:blocks/generator/spruce_planks

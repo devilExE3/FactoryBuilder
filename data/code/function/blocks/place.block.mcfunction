@@ -16,5 +16,6 @@ execute as @s[tag=place.splitter] run function code:blocks/frontbone/splitter
 execute as @s[tag=place.air_conveyor] run function code:blocks/frontbone/air_conveyor
 execute as @s[tag=place.air_sell] run function code:blocks/frontbone/air_sell
 execute as @s[tag=place.explosive_furnace] run function code:blocks/frontbone/explosive_furnace
+execute as @s[tag=place.crafter_5] run function code:blocks/frontbone/crafter_5
 
 execute as @s[tag=place.generator] run function code:blocks/place.generator.block

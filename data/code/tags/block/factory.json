@@ -51,6 +51,11 @@
         "gray_concrete",
         "black_concrete",
 
+        "granite",
+        "granite_slab",
+        "polished_granite",
+        "polished_granite_slab",
+
         "#code:generators"
     ]
 }

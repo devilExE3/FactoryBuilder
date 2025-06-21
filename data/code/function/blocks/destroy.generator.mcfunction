@@ -11,3 +11,13 @@ execute as @s[tag=block.generator.stick] run loot replace entity @n[type=item,ta
 execute as @s[tag=block.generator.anvil] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/generator/anvil
 execute as @s[tag=block.generator.raw_gold] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/generator/raw_gold
 execute as @s[tag=block.generator.quartz] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/generator/quartz
+execute as @s[tag=block.generator.glass] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/generator/glass
+execute as @s[tag=block.generator.coal_block] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/generator/coal_block
+execute as @s[tag=block.generator.iron_axe] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/generator/iron_axe
+execute as @s[tag=block.generator.blaze_rod] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/generator/blaze_rod
+execute as @s[tag=block.generator.purpur_block] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/generator/purpur_block
+execute as @s[tag=block.generator.purpur_pillar] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/generator/purpur_pillar
+execute as @s[tag=block.generator.ender_pearl] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/generator/ender_pearl
+execute as @s[tag=block.generator.obsidian] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/generator/obsidian
+execute as @s[tag=block.generator.gray_concrete_powder] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/generator/gray_concrete_powder
+execute as @s[tag=block.generator.spruce_planks] run loot replace entity @n[type=item,tag=item.target,distance=..3] container.0 loot code:blocks/generator/spruce_planks

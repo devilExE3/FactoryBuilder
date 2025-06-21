@@ -1,0 +1,2 @@
+execute if entity @n[type=item_display,tag=crafting.input,distance=..1.5,tag=itemid.soul_sand] if entity @n[type=item_display,tag=crafting.input,distance=..1.5,tag=itemid.soul_torch] if entity @n[type=item_display,tag=crafting.input,distance=..1.5,tag=itemid.wither_skeleton_skull] if entity @n[type=item_display,tag=crafting.input,distance=..1.5,tag=itemid.netherite_axe] if entity @n[type=item_display,tag=crafting.input,distance=..1.5,tag=itemid.netherite_chestplate] run return run function code:logic/crafter_5/nether_star
+return fail

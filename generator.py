@@ -132,7 +132,107 @@ GENERATORS = [
         "type": "ore",
         "rp_texture": "minecraft:block/nether_quartz_ore",
         "alt": True
-    }
+    },
+    {
+        "name": "Clean Glass Container",
+        "model": "glass",
+        "output": "glass",
+        "gen_block": "oxidized_copper_grate",
+        "price": 50e18,
+        "id": "glass",
+        "type": "container",
+        "alt": True
+    },
+    {
+        "name": "Coal Block Container",
+        "model": "coal_block",
+        "output": "coal_block",
+        "gen_block": "cyan_terracotta",
+        "price": 75e18,
+        "id": "coal_block",
+        "type": "container",
+        "alt": True
+    },
+    {
+        "name": "Iron Axe Container",
+        "model": "iron_axe",
+        "output": "iron_axe",
+        "gen_block": "pink_glazed_terracotta",
+        "price": 100e18,
+        "id": "iron_axe",
+        "type": "container",
+        "alt": True
+    },
+    {
+        "name": "Blaze Rod Container",
+        "model": "blaze_rod",
+        "output": "blaze_rod",
+        "gen_block": "yellow_glazed_terracotta",
+        "price": 100e18,
+        "id": "blaze_rod",
+        "type": "container",
+        "alt": True
+    },
+    {
+        "name": "Unchiseled Purpur Container",
+        "model": "purpur_block",
+        "output": "purpur_block",
+        "gen_block": "purpur_block",
+        "price": 100e18,
+        "id": "purpur_block",
+        "type": "container",
+        "alt": True
+    },
+    {
+        "name": "Chiseled Purpur Container",
+        "model": "purpur_pillar",
+        "output": "purpur_pillar",
+        "gen_block": "purpur_pillar",
+        "price": 100e18,
+        "id": "purpur_pillar",
+        "type": "container",
+        "alt": True
+    },
+    {
+        "name": "Ender Pearl Container",
+        "model": "ender_pearl",
+        "output": "ender_pearl",
+        "gen_block": "blue_glazed_terracotta",
+        "price": 150e18,
+        "id": "ender_pearl",
+        "type": "container",
+        "alt": True
+    },
+    {
+        "name": "Obsidian Container",
+        "model": "obsidian",
+        "output": "obsidian",
+        "gen_block": "purple_glazed_terracotta",
+        "price": 150e18,
+        "id": "obsidian",
+        "type": "container",
+        "alt": True
+    },
+    {
+        "name": "Antimatter Container",
+        "model": "gray_concrete_powder",
+        "output": "gray_concrete_powder",
+        "gen_block": "pink_concrete",
+        "price": 250e18,
+        "id": "gray_concrete_powder",
+        "type": "container",
+        "alt": True
+    },
+    {
+        "name": "Spruce Planks Container",
+        "model": "spruce_planks",
+        "output": "spruce_planks",
+        "gen_block": "light_blue_terracotta",
+        "price": 400e18,
+        "id": "spruce_planks",
+        "type": "container",
+        "alt": True
+    },
 ]
 
 ITEMS = {
@@ -258,8 +358,8 @@ ITEMS = {
     "echo_shard": 250e9,
     "amethyst_shard": 300e9,
     "amethyst_block": 750e9,
-    "purple_concrete_powder": 500e9,
-    "crying_obsidian": 1e12,
+    "purple_concrete_powder": 1e12,
+    "crying_obsidian": 1.5e12,
     "smooth_sandstone": 250e6,
     "end_stone_bricks": 500e6,
     "chiseled_stone_bricks": 1e3,
@@ -267,6 +367,24 @@ ITEMS = {
     "magma_block": 7.5e9,
     "gray_concrete_powder": 15e9,
     "bedrock": 200e15,
+
+    # nether star update
+    "command_block": 500e15,
+    "mangrove_button": 300e15,
+    "mangrove_pressure_plate": 800e15,
+    "netherite_scrap": 2.5e18,
+    "netherite_ingot": 3e18,
+    "diamond_block": 200e9,
+    "diamond": 100e9,
+    "diamond_chestplate": 500e9,
+    "netherite_chestplate": 5.5e18,
+    "diamond_axe": 350e9,
+    "netherite_axe": 4e18,
+    "iron_block": 200e9,
+    "bone_block": 500e9,
+    "skeleton_skull": 750e9,
+    "wither_skeleton_skull": 2e12,
+    "nether_star": 50e18,
 }
 ITEM_TRANSLATE = {
     "oak_log": "Oak Log",
@@ -377,7 +495,7 @@ ITEM_TRANSLATE = {
     "brown_dye": "Spruce Wood Shavings",
     "spruce_pressure_plate": "Spruce Plate",
     "chest": "Chest",
-    "spruce_chest_boat": "Spruse Boat with Chest",
+    "spruce_chest_boat": "Spruce Boat with Chest",
 
     # bedrock update
     "glass_bottle": "Glass Bottle",
@@ -400,6 +518,24 @@ ITEM_TRANSLATE = {
     "magma_block": "Magma Block",
     "gray_concrete_powder": "Antimatter",
     "bedrock": "Bedrock",
+
+    # nether star update
+    "command_block": "Command Block",
+    "mangrove_button": "Netherite Chip",
+    "mangrove_pressure_plate": "Netherite Scrap",
+    "netherite_scrap": "Netherite Scraps",
+    "netherite_ingot": "Netherite Ingot",
+    "diamond_block": "Diamond Block",
+    "diamond": "Diamond",
+    "diamond_chestplate": "Diamond Chestplate",
+    "netherite_chestplate": "Netherite Chestplate",
+    "diamond_axe": "Diamond Axe",
+    "netherite_axe": "Netherite Axe",
+    "iron_block": "Iron Block",
+    "bone_block": "Bone Block",
+    "skeleton_skull": "Skeleton Skull",
+    "wither_skeleton_skull": "Wither Skeleton Skull",
+    "nether_star": "Nether Star",
 }
 
 RECIPES = {
@@ -448,7 +584,12 @@ RECIPES = {
             "input": "chiseled_quartz_block",
             "output": "quartz",
             "mul": 4
-        }
+        },
+        {
+            "input": "diamond_block",
+            "output": "diamond",
+            "mul": 3
+        },
     ],
     "furnace": [
         {
@@ -668,7 +809,19 @@ RECIPES = {
             "in2": "end_stone",
             "out": "smooth_sandstone",
             "count": 1
-        }
+        },
+        {
+            "in1": "spruce_chest_boat",
+            "in2": "bedrock",
+            "out": "command_block",
+            "count": 1
+        },
+        {
+            "in1": "mangrove_pressure_plate",
+            "in2": "mangrove_pressure_plate",
+            "out": "netherite_scrap",
+            "count": 1
+        },
     ],
     "crafter_3": [
         {
@@ -796,7 +949,21 @@ RECIPES = {
             "in3": "red_nether_bricks",
             "out": "magma_block",
             "count": 1
-        }
+        },
+        {
+            "in1": "mangrove_button",
+            "in2": "mangrove_button",
+            "in3": "blaze_powder",
+            "out": "mangrove_pressure_plate",
+            "count": 1
+        },
+        {
+            "in1": "diamond",
+            "in2": "diamond",
+            "in3": "diamond",
+            "out": "diamond_chestplate",
+            "count": 1
+        },
     ],
     "washer": [
         {
@@ -892,7 +1059,13 @@ RECIPES = {
             "top": "anvil",
             "count": 1,
             "out": "purple_concrete_powder"
-        }
+        },
+        {
+            "side": "command_block",
+            "top": "bedrock",
+            "count": 4,
+            "out": "mangrove_button"
+        },
     ],
     "flashbaker": [
         {
@@ -968,7 +1141,11 @@ RECIPES = {
         {
             "input": "nether_bricks",
             "output": "red_nether_bricks"
-        }
+        },
+        {
+            "input": "iron_block",
+            "output": "bone_block"
+        },
     ],
     "enchanter": [
         {
@@ -1020,6 +1197,62 @@ RECIPES = {
             "count": 1,
             "out": "bedrock"
         },
+        {
+            "in1": "nether_brick",
+            "in2": "gold_ingot",
+            "in3": "netherite_scrap",
+            "count": 1,
+            "out": "netherite_ingot"
+        },
+        {
+            "in1": "coal_block",
+            "in2": "coal_block",
+            "in3": "blaze_powder",
+            "count": 1,
+            "out": "diamond_block"
+        },
+        {
+            "in1": "netherite_ingot",
+            "in2": "blaze_powder",
+            "in3": "diamond_chestplate",
+            "count": 1,
+            "out": "netherite_chestplate"
+        },
+        {
+            "in1": "iron_axe",
+            "in2": "blaze_powder",
+            "in3": "diamond",
+            "count": 1,
+            "out": "diamond_axe"
+        },
+        {
+            "in1": "netherite_ingot",
+            "in2": "blaze_powder",
+            "in3": "diamond_axe",
+            "count": 1,
+            "out": "netherite_axe"
+        },
+        {
+            "in1": "coal_block",
+            "in2": "blaze_powder",
+            "in3": "iron_ingot",
+            "count": 1,
+            "out": "iron_block"
+        },
+        {
+            "in1": "bone_block",
+            "in2": "bone_block",
+            "in3": "gray_concrete_powder",
+            "count": 2,
+            "out": "skeleton_skull"
+        },
+        {
+            "in1": "gray_concrete_powder",
+            "in2": "soul_sand",
+            "in3": "skeleton_skull",
+            "count": 1,
+            "out": "wither_skeleton_skull"
+        },
     ],
     "explosive_furnace": [
         {
@@ -1032,7 +1265,18 @@ RECIPES = {
             "output": "coal_block",
             "alt": True
         }
-    ]
+    ],
+    "crafter_5": [
+        {
+            "in1": "soul_sand",
+            "in2": "soul_torch",
+            "in3": "wither_skeleton_skull",
+            "in4": "netherite_axe",
+            "in5": "netherite_chestplate",
+            "count": 1,
+            "out": "nether_star"
+        },
+    ],
 }
 
 SHOP_ITEMS = [
@@ -1154,7 +1398,8 @@ SHOP_ITEMS = [
         "id": "enchanter",
         "model": "enchanting_table",
         "price": 300 * 10 ** 9,
-        "description": "Used for various recipes."
+        "description": "Used for various recipes.",
+        "item_model": "fb:enchanter"
     },
     {
         "name": "Sonic Zapper",
@@ -1171,7 +1416,15 @@ SHOP_ITEMS = [
         "price": 5 * 10 ** 18,
         "description": "Used for various recipes.",
         "item_model": "fb:explosive_furnace"
-    }
+    },
+    {
+        "name": "Crafter (5 inputs)",
+        "id": "crafter_5",
+        "model": "crafter",
+        "price": 750e18,
+        "description": "Used for various recipes.",
+        "item_model": "fb:crafter_5"
+    },
 ]
 
 RECIPE_TYPE_DISPLAY = {
@@ -1185,7 +1438,8 @@ RECIPE_TYPE_DISPLAY = {
     "flashbaker": "fb:lava_cauldron",
     "enchanter": "enchanting_table",
     "sonic_zapper": "reinforced_deepslate",
-    "explosive_furnace": "fb:explosive_furnace"
+    "explosive_furnace": "fb:explosive_furnace",
+    "crafter_5": "fb:crafter_5",
 }
 RECIPE_TYPE_NAME = {
     "generator": "Farm",
@@ -1198,7 +1452,8 @@ RECIPE_TYPE_NAME = {
     "flashbaker": "Flashbaker",
     "enchanter": "Enchanter",
     "sonic_zapper": "Sonic Zapper",
-    "explosive_furnace": "Explosive Furnace"
+    "explosive_furnace": "Explosive Furnace",
+    "crafter_5": "Crafter (5 inputs)",
 }
 
 def number_to_numeral(n):
@@ -1430,6 +1685,18 @@ with open("data/code/function/logic/crafter_3.recipe.mcfunction", "w") as f:
             print("[recipe/crafter_3] Unpriced item " + recipe["out"])
     f.write("return fail")
 
+# Crafter 5 recipes
+with open("data/code/function/logic/crafter_5.recipe.mcfunction", "w") as f:
+    for recipe in RECIPES["crafter_5"]:
+        f.write("""execute if entity @n[type=item_display,tag=crafting.input,distance=..1.5,tag=itemid.%in1%] if entity @n[type=item_display,tag=crafting.input,distance=..1.5,tag=itemid.%in2%] if entity @n[type=item_display,tag=crafting.input,distance=..1.5,tag=itemid.%in3%] if entity @n[type=item_display,tag=crafting.input,distance=..1.5,tag=itemid.%in4%] if entity @n[type=item_display,tag=crafting.input,distance=..1.5,tag=itemid.%in5%] run return run function code:logic/crafter_5/%out%\n"""\
+            .replace("%in1%", recipe["in1"]).replace("%in2%", recipe["in2"]).replace("%in3%", recipe["in3"]).replace("%in4%", recipe["in4"]).replace("%in5%", recipe["in5"]).replace("%out%", recipe["out"]))
+        with open("data/code/function/logic/crafter_5/%.mcfunction".replace("%", recipe["out"]), "w") as g:
+            g.write("""scoreboard players remove @e[type=item_display,tag=crafting.input,distance=..1.5,limit=5] count 1\nscoreboard players set #count math %count%\nsummon item_display ~ ~ ~ {item:{id:"%out%",count:1},teleport_duration:20,transformation:{scale:[0.4f,0.4f,0.4f],translation:[0f,-.23f,0f],left_rotation:[0,0,0,1],right_rotation:[0,0,0,1]},view_range:0.25,Tags:["item","crafting.output","itemid.%out%"],CustomName:'"4"',CustomNameVisible:true}"""\
+                .replace("%out%", recipe["out"]).replace("%count%", str(recipe["count"])))
+        if not recipe["out"] in ITEMS:
+            print("[recipe/crafter_5] Unpriced item " + recipe["out"])
+    f.write("return fail")
+
 # Crusher recipes
 with open("data/code/function/logic/crusher.recipe.mcfunction", "w") as f:
     for recipe in RECIPES["crusher"]:
@@ -1515,12 +1782,15 @@ with open("data/code/function/logic/explosive_furnace.recipes.mcfunction", "w") 
 # # #  SHOP PAGES  # # #
 # convert generators to SHOP_ITEMS
 for gen in GENERATORS:
+    desc = "Generates " + ITEM_TRANSLATE[gen["output"]] + " ($" + number_to_human(ITEMS[gen["output"]]) + ")"
+    if gen["type"] == "container":
+        desc = "Provides " + ITEM_TRANSLATE[gen["output"]] + " as a crafting component"
     SHOP_ITEMS.append({
         "name": gen["name"],
         "id": "generator." + gen["id"],
         "model": gen["model"],
         "price": gen["price"],
-        "description": "Generates " + ITEM_TRANSLATE[gen["output"]] + " ($" + number_to_human(ITEMS[gen["output"]]) + ")"
+        "description": desc
     })
 
 # page 0 logic
@@ -1603,13 +1873,14 @@ if not os.path.exists("../rp/assets/minecraft/blockstates"):
 
 for gen in GENERATORS:
     # block model
-    with open("../rp/assets/fb/models/block/generator/" + gen["id"] + ".json", "w") as f:
-        if gen["type"] == "cross":
-            f.write("""{"parent":"fb:block/cross","textures":{"cross":"%"}}""".replace("%", gen["rp_texture"]))
-        elif gen["type"] == "ore":
-            f.write("""{"parent":"fb:block/ore","textures":{"ore":"%"}}""".replace("%", gen["rp_texture"]))
-        else:
-            print("[rp/model] Unknown generator type " + gen["type"])
+    if gen["type"] != "container":
+        with open("../rp/assets/fb/models/block/generator/" + gen["id"] + ".json", "w") as f:
+            if gen["type"] == "cross":
+                f.write("""{"parent":"fb:block/cross","textures":{"cross":"%"}}""".replace("%", gen["rp_texture"]))
+            elif gen["type"] == "ore":
+                f.write("""{"parent":"fb:block/ore","textures":{"ore":"%"}}""".replace("%", gen["rp_texture"]))
+            else:
+                print("[rp/model] Unknown generator type " + gen["type"])
     # block state
     # get block state
     block_state = str(gen["gen_block"])
@@ -1693,6 +1964,26 @@ def render_recipe(f, super_recipe):
         dependency(recipe["in1"], recipe["out"])
         dependency(recipe["in2"], recipe["out"])
         dependency(recipe["in3"], recipe["out"])
+    elif recipe_type == "crafter_5":
+        f.write('data modify block {0} {1} {2} CustomName set value \'{{"text":"-A","font":"fb:gui","color":"white"}}\'\n'.format(x,y,z))
+        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:\'"{5}"\',lore:[\'{{"text":"${price}","color":"green","italic":false}}\']}},Slot:2}}\n'\
+                .format(x,y,z,recipe["in1"],item_to_id[recipe["in1"]],ITEM_TRANSLATE[recipe["in1"]], price=number_to_human(ITEMS[recipe["in1"]])))
+        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:\'"{5}"\',lore:[\'{{"text":"${price}","color":"green","italic":false}}\']}},Slot:20}}\n'\
+                .format(x,y,z,recipe["in2"],item_to_id[recipe["in2"]],ITEM_TRANSLATE[recipe["in2"]], price=number_to_human(ITEMS[recipe["in2"]])))
+        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:\'"{5}"\',lore:[\'{{"text":"${price}","color":"green","italic":false}}\']}},Slot:10}}\n'\
+                .format(x,y,z,recipe["in3"],item_to_id[recipe["in3"]],ITEM_TRANSLATE[recipe["in3"]], price=number_to_human(ITEMS[recipe["in3"]])))
+        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:\'"{5}"\',lore:[\'{{"text":"${price}","color":"green","italic":false}}\']}},Slot:1}}\n'\
+                .format(x,y,z,recipe["in4"],item_to_id[recipe["in4"]],ITEM_TRANSLATE[recipe["in4"]], price=number_to_human(ITEMS[recipe["in4"]])))
+        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:\'"{5}"\',lore:[\'{{"text":"${price}","color":"green","italic":false}}\']}},Slot:19}}\n'\
+                .format(x,y,z,recipe["in5"],item_to_id[recipe["in5"]],ITEM_TRANSLATE[recipe["in5"]], price=number_to_human(ITEMS[recipe["in5"]])))
+        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:{6},components:{{max_damage:-1,max_stack_size:64,custom_data:{{recipe:1b,recipe_id:{4}}},item_name:\'"{5}"\',lore:[\'{{"text":"${price}","color":"green","italic":false}}\']}},Slot:15}}\n'\
+                .format(x,y,z,recipe["out"],recipe_id,ITEM_TRANSLATE[recipe["out"]],recipe["count"], price=number_to_human(ITEMS[recipe["out"]])))
+        occupied_slots = [1, 2, 19, 20, 10, 15]
+        dependency(recipe["in1"], recipe["out"])
+        dependency(recipe["in2"], recipe["out"])
+        dependency(recipe["in3"], recipe["out"])
+        dependency(recipe["in4"], recipe["out"])
+        dependency(recipe["in5"], recipe["out"])
     elif recipe_type == "washer":
         f.write('data modify block {0} {1} {2} CustomName set value \'{{"text":"-4","font":"fb:gui","color":"white"}}\'\n'.format(x,y,z))
         f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:\'"{5}"\',lore:[\'{{"text":"${price}","color":"green","italic":false}}\']}},Slot:11}}\n'\

@@ -26,4 +26,6 @@ execute if entity @n[type=item_display,tag=crafting.input,distance=..1.01,tag=it
 execute if entity @n[type=item_display,tag=crafting.input,distance=..1.01,tag=itemid.echo_shard] if entity @n[type=item_display,tag=crafting.input,distance=..1.01,tag=itemid.resin_brick] run return run function code:logic/crafter_2/amethyst_shard
 execute if entity @n[type=item_display,tag=crafting.1,distance=..1.01,tag=itemid.amethyst_shard] if entity @n[type=item_display,tag=crafting.2,distance=..1.01,tag=itemid.amethyst_shard] run return run function code:logic/crafter_2/amethyst_block
 execute if entity @n[type=item_display,tag=crafting.1,distance=..1.01,tag=itemid.end_stone] if entity @n[type=item_display,tag=crafting.2,distance=..1.01,tag=itemid.end_stone] run return run function code:logic/crafter_2/smooth_sandstone
+execute if entity @n[type=item_display,tag=crafting.input,distance=..1.01,tag=itemid.spruce_chest_boat] if entity @n[type=item_display,tag=crafting.input,distance=..1.01,tag=itemid.bedrock] run return run function code:logic/crafter_2/command_block
+execute if entity @n[type=item_display,tag=crafting.1,distance=..1.01,tag=itemid.mangrove_pressure_plate] if entity @n[type=item_display,tag=crafting.2,distance=..1.01,tag=itemid.mangrove_pressure_plate] run return run function code:logic/crafter_2/netherite_scrap
 return fail
