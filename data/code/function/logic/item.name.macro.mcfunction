@@ -1,1 +1,1 @@
-$data modify entity @s CustomName set value '"$(value)"'
+$data modify entity @s CustomName set value '$(value)'

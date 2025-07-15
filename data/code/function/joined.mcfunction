@@ -8,7 +8,7 @@ scoreboard players operation @s timer = #timer timer
 scoreboard players set #ID id 1
 scoreboard players set @s id 0
 function code:assign_id
-tellraw @s {"text": "\u2139 Assigned plot ID: ","color": "aqua","extra":[{"score": {"name": "@s","objective": "id"},"color": "aqua"}],"hoverEvent": {"action": "show_text","contents": {"text": "Click to teleport","color": "white"}},"clickEvent": {"action": "run_command","value": "/trigger plot"}}
+tellraw @s {"text": "\u2139 Assigned plot ID: ","color": "aqua","extra":[{"score": {"name": "@s","objective": "id"},"color": "aqua"}],"hover_event": {"action": "show_text","value": {"text": "Click to teleport","color": "white"}},"click_event": {"action": "run_command","command": "/trigger plot"}}
 function code:storage/init
 
 # calculate plot
@@ -43,7 +43,7 @@ execute as @s[tag=is_fm] run team join afm @s
 execute as @s[tag=recipe_helper] run team join aerecipes @s
 execute as @s[tag=is_tester] run team join aetester @s
 execute as @s[tag=is_artist] run team join aesartist @s
-execute as @s[tag=is_owner] run team join adev @s
+execute as @s[tag=is_owner,tag=is_coowner] run team join adev @s
 
 execute unless score @s money.0 matches 0.. run scoreboard players set @s money.0 0
 execute unless score @s money.1 matches 0.. run scoreboard players set @s money.1 0

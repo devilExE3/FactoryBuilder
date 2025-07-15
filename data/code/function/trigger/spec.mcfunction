@@ -4,4 +4,4 @@ tag @s remove executor
 execute as @s[gamemode=spectator] run return run function code:trigger/spec.adventure
 function code:trigger/spec.make_head
 gamemode spectator @s
-tellraw @s[scores={settings.chat_notifications=0}] [{"text":"\u2139 You can leave spectator mode by using ","color": "yellow"},{"text":"/trigger spec","underlined": true,"clickEvent": {"action": "run_command","value": "/trigger spec"},"color": "white"},{"text": " again","color": "yellow"}]
+tellraw @s[scores={settings.chat_notifications=0}] [{"text":"\u2139 You can leave spectator mode by using ","color": "yellow"},{"text":"/trigger spec","underlined": true,"click_event": {"action": "run_command","command": "/trigger spec"},"color": "white"},{"text": " again","color": "yellow"}]

@@ -20,7 +20,7 @@ execute as @a[predicate=code:clicked_recipe] run function code:jei/open_cursor_r
 execute as @a[predicate=code:shift_clicked_recipe] run function code:jei/show_used_by
 clear @a jigsaw
 execute as @a[gamemode=adventure] at @s run function code:inventory
-execute as @a[tag=resync_offhand] run item replace entity @s weapon.offhand with barrier[item_model="air",hide_tooltip={}]
+execute as @a[tag=resync_offhand] run item replace entity @s weapon.offhand with barrier[item_model="air",tooltip_display={hide_tooltip:true,hidden_components:[]}]
 tag @a[tag=resync_offhand] remove resync_offhand
 
 execute if entity @a[scores={used.pickaxe=1..}] run function code:destroied

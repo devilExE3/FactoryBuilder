@@ -6,4 +6,4 @@ tellraw @a [" "," "," ",{"text":"Please be patient this might take a while.","co
 execute as @a run function code:reload.player
 
 # why can't i /reload btw
-tellraw @s {"clickEvent":{"action":"run_command","value":"/reload"},"hoverEvent":{"action":"show_text","value":[{"text":"Click to run"}]},"text":"Run /reload"}
+tellraw @s {"click_event":{"action":"run_command","command":"/reload"},"hover_event":{"action":"show_text","value":[{"text":"Click to run"}]},"text":"Run /reload"}

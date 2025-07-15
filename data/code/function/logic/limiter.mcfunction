@@ -13,7 +13,7 @@ execute as @s[tag=block.conveyor.s] positioned ~ ~ ~-1 run tag @n[type=item_disp
 execute as @s[tag=block.conveyor.e] positioned ~-1 ~ ~ run tag @n[type=item_display,tag=item,distance=..0.01] add limiter
 
 # clone tag=limiter
-summon item_display ~ ~ ~ {item:{id:"barrier",count:1},teleport_duration:20,transformation:{scale:[0.4f,0.4f,0.4f],translation:[0f,-.23f,0f],left_rotation:[0,0,0,1],right_rotation:[0,0,0,1]},view_range:0.25,Tags:["item","limiter.output"],CustomName:'"1"',CustomNameVisible:true}
+summon item_display ~ ~ ~ {item:{id:"barrier",count:1},teleport_duration:20,transformation:{scale:[0.4f,0.4f,0.4f],translation:[0f,-.23f,0f],left_rotation:[0,0,0,1],right_rotation:[0,0,0,1]},view_range:0.25,Tags:["item","limiter.output"],CustomName:'1',CustomNameVisible:true}
 # copy item
 data modify entity @n[type=item_display,tag=limiter.output,distance=..0.01] item.id set from entity @n[type=item_display,tag=limiter,distance=..1.01] item.id
 data modify entity @n[type=item_display,tag=limiter.output,distance=..0.01] Tags append from entity @n[type=item_display,tag=limiter,distance=..1.01] Tags[]

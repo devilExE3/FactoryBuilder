@@ -1,3 +1,3 @@
 scoreboard players remove @e[type=item_display,tag=crafting.input,distance=..1.01,limit=2] count 1
 scoreboard players set #count math 1
-summon item_display ~ ~ ~ {item:{id:"spruce_planks",count:1},teleport_duration:20,transformation:{scale:[0.4f,0.4f,0.4f],translation:[0f,-.23f,0f],left_rotation:[0,0,0,1],right_rotation:[0,0,0,1]},view_range:0.25,Tags:["item","crafting.output","itemid.spruce_planks"],CustomName:'"4"',CustomNameVisible:true}
+summon item_display ~ ~ ~ {item:{id:"spruce_planks",count:1},teleport_duration:20,transformation:{scale:[0.4f,0.4f,0.4f],translation:[0f,-.23f,0f],left_rotation:[0,0,0,1],right_rotation:[0,0,0,1]},view_range:0.25,Tags:["item","crafting.output","itemid.spruce_planks"],CustomName:'4',CustomNameVisible:true}
