@@ -1,29 +1,43 @@
 {
     "type": "minecraft:entity",
-    "pools": [{
+    "pools": [
+      {
         "rolls": 1,
-        "entries": [{
+        "entries": [
+          {
             "type": "item",
             "name": "pig_spawn_egg",
-            "functions": [{
+            "functions": [
+              {
                 "function": "set_components",
                 "components": {
-                    "custom_name": "{\"text\":\"Floating Conveyor\",\"italic\":false}",
-                    "entity_data": {
-                        "id": "marker",
-                        "Silent": true,
-                        "Tags": ["place","place.air_conveyor"]
-                    },
-                    "max_stack_size": 99,
-                    "can_place_on": {
-                        "predicates": [{
-                            "blocks": "#code:factory_place"
-                        }],
-                        "show_in_tooltip": false
-                    },
-                    "item_model": "pale_moss_carpet"
+                  "custom_name": {
+                    "text": "Floating Conveyor",
+                    "italic": false
+                  },
+                  "entity_data": {
+                    "id": "marker",
+                    "Silent": true,
+                    "Tags": [
+                      "place",
+                      "place.air_conveyor"
+                    ]
+                  },
+                  "max_stack_size": 99,
+                  "item_model": "pale_moss_carpet",
+                  "minecraft:can_place_on": {
+                    "blocks": "#code:factory_place"
+                  },
+                  "minecraft:tooltip_display": {
+                    "hidden_components": [
+                      "minecraft:can_place_on"
+                    ]
+                  }
                 }
-            }]
-        }]
-    }]
-}
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }

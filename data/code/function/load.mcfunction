@@ -15,6 +15,7 @@ gamerule commandBlockOutput false
 gamerule disableElytraMovementCheck true
 gamerule disablePlayerMovementCheck true
 gamerule sendCommandFeedback false
+gamerule locatorBar false
 
 # objectives
 scoreboard objectives add math dummy

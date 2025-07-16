@@ -1,3 +1,3 @@
 scoreboard players remove @e[type=item_display,tag=enchanter.input,distance=..1.01,limit=3] count 1
 scoreboard players set #count math 1
-summon item_display ~ ~ ~ {item:{id:"wither_skeleton_skull",count:1},teleport_duration:20,transformation:{scale:[0.4f,0.4f,0.4f],translation:[0f,-.23f,0f],left_rotation:[0,0,0,1],right_rotation:[0,0,0,1]},view_range:0.25,Tags:["item","enchanter.output","itemid.wither_skeleton_skull"],CustomName:'"1"',CustomNameVisible:true}
+summon item_display ~ ~ ~ {item:{id:"wither_skeleton_skull",count:1},teleport_duration:20,transformation:{scale:[0.4f,0.4f,0.4f],translation:[0f,-.23f,0f],left_rotation:[0,0,0,1],right_rotation:[0,0,0,1]},view_range:0.25,Tags:["item","enchanter.output","itemid.wither_skeleton_skull"],CustomName:'1',CustomNameVisible:true}

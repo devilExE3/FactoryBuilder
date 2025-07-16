@@ -1,29 +1,43 @@
 {
     "type": "minecraft:entity",
-    "pools": [{
+    "pools": [
+      {
         "rolls": 1,
-        "entries": [{
+        "entries": [
+          {
             "type": "item",
             "name": "pig_spawn_egg",
-            "functions": [{
+            "functions": [
+              {
                 "function": "set_components",
                 "components": {
-                    "custom_name": "{\"text\":\"Chute\",\"italic\":false}",
-                    "entity_data": {
-                        "id": "marker",
-                        "Silent": true,
-                        "Tags": ["place","place.chute"]
-                    },
-                    "max_stack_size": 99,
-                    "can_place_on": {
-                        "predicates": [{
-                            "blocks": "#code:factory_place"
-                        }],
-                        "show_in_tooltip": false
-                    },
-                    "item_model": "hopper"
+                  "custom_name": {
+                    "text": "Chute",
+                    "italic": false
+                  },
+                  "entity_data": {
+                    "id": "marker",
+                    "Silent": true,
+                    "Tags": [
+                      "place",
+                      "place.chute"
+                    ]
+                  },
+                  "max_stack_size": 99,
+                  "can_place_on": {
+                    "blocks": "#code:factory_place"
+                  },
+                  "item_model": "hopper",
+                  "minecraft:tooltip_display": {
+                    "hidden_components": [
+                      "minecraft:can_place_on"
+                    ]
+                  }
                 }
-            }]
-        }]
-    }]
-}
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
