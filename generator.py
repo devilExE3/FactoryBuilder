@@ -194,6 +194,16 @@ GENERATORS = [
         "alt": True
     },
     {
+        "name": "Ender-Infused Soil Container",
+        "model": "soul_sand",
+        "output": "soul_sand",
+        "gen_block": "light_blue_glazed_terracotta",
+        "price": 150e18,
+        "id": "soul_sand",
+        "type": "container",
+        "alt": True
+    },
+    {
         "name": "Ender Pearl Container",
         "model": "ender_pearl",
         "output": "ender_pearl",

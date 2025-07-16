@@ -73,3 +73,6 @@ execute unless score @s settings.chat_notifications matches 0.. run scoreboard p
 execute unless score @s settings.alert_zero_production matches 0.. run scoreboard players set @s settings.alert_zero_production 0
 
 function code:changelog
+
+# fix fox
+data modify entity @n[tag=fox] Sleeping set value 1b
