@@ -17,6 +17,7 @@ execute as @s[tag=place.generator.iron_axe] run loot give @p[tag=rc] loot code:b
 execute as @s[tag=place.generator.blaze_rod] run loot give @p[tag=rc] loot code:blocks/generator/blaze_rod
 execute as @s[tag=place.generator.purpur_block] run loot give @p[tag=rc] loot code:blocks/generator/purpur_block
 execute as @s[tag=place.generator.purpur_pillar] run loot give @p[tag=rc] loot code:blocks/generator/purpur_pillar
+execute as @s[tag=place.generator.soul_sand] run loot give @p[tag=rc] loot code:blocks/generator/soul_sand
 execute as @s[tag=place.generator.ender_pearl] run loot give @p[tag=rc] loot code:blocks/generator/ender_pearl
 execute as @s[tag=place.generator.obsidian] run loot give @p[tag=rc] loot code:blocks/generator/obsidian
 execute as @s[tag=place.generator.gray_concrete_powder] run loot give @p[tag=rc] loot code:blocks/generator/gray_concrete_powder

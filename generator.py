@@ -194,6 +194,16 @@ GENERATORS = [
         "alt": True
     },
     {
+        "name": "Ender-Infused Soil Container",
+        "model": "soul_sand",
+        "output": "soul_sand",
+        "gen_block": "light_blue_glazed_terracotta",
+        "price": 150e18,
+        "id": "soul_sand",
+        "type": "container",
+        "alt": True
+    },
+    {
         "name": "Ender Pearl Container",
         "model": "ender_pearl",
         "output": "ender_pearl",
@@ -1292,7 +1302,7 @@ SHOP_ITEMS = [
         "id": "air_conveyor",
         "model": "pale_moss_carpet",
         "price": 25_000_000,
-        "description": "Doesn\\'t need a support block below!"
+        "description": "Doesn't need a support block below!"
     },
     {
         "name": "Chute",
@@ -1321,7 +1331,7 @@ SHOP_ITEMS = [
         "id": "air_sell",
         "model": "moss_carpet",
         "price": 1_000_000_000_000,
-        "description": "Doesn\\'t need a support block below!"
+        "description": "Doesn't need a support block below!"
     },
     {
         "name": "Limiter",
@@ -1797,27 +1807,28 @@ for gen in GENERATORS:
 with open("data/code/function/shop_pages.mcfunction", "w") as f, open("data/code/function/shop/shop_logic/tick.update.mcfunction", "w") as g:
     g.write("data modify block 29999999 -64 0 Items set from block 29999998 -64 0 Items\n")
     # Page 0
-    f.write("setblock 29999999 -64 0 barrel\ndata modify block 29999999 -64 0 CustomName set value '\"Shop\"'\nsetblock 29999998 -64 0 barrel\ndata remove block 29999998 -64 0 Items\n")
+    f.write("setblock 29999999 -64 0 barrel\ndata modify block 29999999 -64 0 CustomName set value \"Shop\"\nsetblock 29999998 -64 0 barrel\ndata remove block 29999998 -64 0 Items\n")
     page = 0
     i = 0
     for item in SHOP_ITEMS:
         if i == 24:
             # end of current page
             if page == 0:
-                f.write("""data modify block 29999998 -64 % Items append value {id:"jigsaw",count:1,components:{hide_tooltip:{},item_model:"fb:full"},Slot:8}\ndata modify block 29999998 -64 % Items append value {id:"jigsaw",count:1,components:{hide_tooltip:{},item_model:"fb:full"},Slot:17}\ndata modify block 29999998 -64 % Items append value {id:"jigsaw",count:1,components:{item_name:'"Next Page"',rarity:"common",custom_data:{shop_item:1b,next_page:1b},item_model:"fb:next"},Slot:26}\n""".replace("%", str(page)))
+                f.write("""data modify block 29999998 -64 % Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:8}\ndata modify block 29999998 -64 % Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:17}\ndata modify block 29999998 -64 % Items append value {id:"jigsaw",count:1,components:{item_name:"Next Page",rarity:"common",custom_data:{shop_item:1b,next_page:1b},item_model:"fb:next"},Slot:26}\n""".replace("%", str(page)))
             else:
-                f.write("""data modify block 29999998 -64 % Items append value {id:"jigsaw",count:1,components:{item_name:'"Prev Page"',rarity:"common",custom_data:{shop_item:1b,prev_page:1b},item_model:"fb:prev"},Slot:8}\ndata modify block 29999998 -64 % Items append value {id:"jigsaw",count:1,components:{hide_tooltip:{},item_model:"fb:full"},Slot:17}\ndata modify block 29999998 -64 % Items append value {id:"jigsaw",count:1,components:{item_name:'"Next Page"',rarity:"common",custom_data:{shop_item:1b,next_page:1b},item_model:"fb:next"},Slot:26}\n""".replace("%", str(page)))
+                f.write("""data modify block 29999998 -64 % Items append value {id:"jigsaw",count:1,components:{item_name:"Prev Page",rarity:"common",custom_data:{shop_item:1b,prev_page:1b},item_model:"fb:prev"},Slot:8}\ndata modify block 29999998 -64 % Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:17}\ndata modify block 29999998 -64 % Items append value {id:"jigsaw",count:1,components:{item_name:"Next Page",rarity:"common",custom_data:{shop_item:1b,next_page:1b},item_model:"fb:next"},Slot:26}\n""".replace("%", str(page)))
+                f.write("""data modify block 29999998 -64 % Items append value {id:"jigsaw",count:1,components:{item_name:"Prev Page",rarity:"common",custom_data:{shop_item:1b,prev_page:1b},item_model:"fb:prev"},Slot:8}\ndata modify block 29999998 -64 % Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:17}\ndata modify block 29999998 -64 % Items append value {id:"jigsaw",count:1,components:{item_name:"Next Page",rarity:"common",custom_data:{shop_item:1b,next_page:1b},item_model:"fb:next"},Slot:26}\n""".replace("%", str(page)))
             # start new one
             page += 1
             i = 0
-            f.write("setblock 29999999 -64 % barrel\ndata modify block 29999999 -64 % CustomName set value '\"Shop\"'\n\nsetblock 29999998 -64 % barrel\ndata remove block 29999998 -64 % Items\n".replace("%", str(page)))
+            f.write("setblock 29999999 -64 % barrel\ndata modify block 29999999 -64 % CustomName set value \"Shop\"\n\nsetblock 29999998 -64 % barrel\ndata remove block 29999998 -64 % Items\n".replace("%", str(page)))
             g.write("data modify block 29999999 -64 % Items set from block 29999998 -64 % Items\n".replace("%", str(page)))
 
         # convert i to slot
         ii = i // 8
         jj = i % 8
         k = ii * 9 + jj
-        f.write("""data modify block 29999998 -64 % Items append value {id:"jigsaw",count:1,components:{item_name:'"@name@"',rarity:"common",item_model:"@model@",lore:['[{"text":"Price: ","color":"gray","italic":false},{"text":"$@price@","color":"green","italic":false}]','[{"text":"@description@","color":"gray","italic":false}]'],custom_data:{shop:"@id@",shop_item:1b}@item_model@},Slot:&}\n"""\
+        f.write("""data modify block 29999998 -64 % Items append value {id:"jigsaw",count:1,components:{item_name:"@name@",rarity:"common",item_model:"@model@",lore:[[{"text":"Price: ","color":"gray","italic":false},{"text":"$@price@","color":"green","italic":false}],[{"text":"@description@","color":"gray","italic":false}]],custom_data:{shop:"@id@",shop_item:1b}@item_model@},Slot:&}\n"""\
             .replace("%", str(page)).replace("&", str(k))\
             .replace("@model@", item["model"])\
             .replace("@name@", item["name"])\
@@ -1832,13 +1843,13 @@ with open("data/code/function/shop_pages.mcfunction", "w") as f, open("data/code
         ii = i // 8
         jj = i % 8
         k = ii * 9 + jj
-        f.write("""data modify block 29999998 -64 % Items append value {id:"jigsaw",count:1,components:{hide_tooltip:{},item_model:"fb:full"},Slot:&}\n"""\
+        f.write("""data modify block 29999998 -64 % Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:&}\n"""\
                 .replace("%", str(page)).replace("&", str(k)))
         i += 1
     if page == 0:
-        f.write("""data modify block 29999998 -64 % Items append value {id:"jigsaw",count:1,components:{hide_tooltip:{},item_model:"fb:full"},Slot:8}\ndata modify block 29999998 -64 % Items append value {id:"jigsaw",count:1,components:{hide_tooltip:{}},Slot:17}\ndata modify block 29999998 -64 % Items append value {id:"jigsaw",count:1,components:{hide_tooltip:{},item_model:"fb:full"},Slot:26}""".replace("%", str(page)))
+        f.write("""data modify block 29999998 -64 % Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:8}\ndata modify block 29999998 -64 % Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true}},Slot:17}\ndata modify block 29999998 -64 % Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:26}""".replace("%", str(page)))
     else:
-        f.write("""data modify block 29999998 -64 % Items append value {id:"jigsaw",count:1,components:{item_name:'"Prev Page"',rarity:"common",custom_data:{shop_item:1b,prev_page:1b},item_model:"fb:prev"},Slot:8}\ndata modify block 29999998 -64 % Items append value {id:"jigsaw",count:1,components:{hide_tooltip:{},item_model:"fb:full"},Slot:17}\ndata modify block 29999998 -64 % Items append value {id:"jigsaw",count:1,components:{hide_tooltip:{},item_model:"fb:full"},Slot:26}""".replace("%", str(page)))
+        f.write("""data modify block 29999998 -64 % Items append value {id:"jigsaw",count:1,components:{item_name:"Prev Page",rarity:"common",custom_data:{shop_item:1b,prev_page:1b},item_model:"fb:prev"},Slot:8}\ndata modify block 29999998 -64 % Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:17}\ndata modify block 29999998 -64 % Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:26}""".replace("%", str(page)))
 
 # page 0 shop defs
 with open("data/code/function/shop/shop_logic/shop_item.item.mcfunction", "w") as f:
@@ -1919,64 +1930,64 @@ def render_recipe(f, super_recipe):
     # make original/copy barrel
     f.write("setblock {0} {1} {2} barrel\ndata remove block {0} {1} {2} Items\n".format(x, y, z))
     if recipe_type == "generator":
-        f.write('data modify block {0} {1} {2} CustomName set value \'{{"text":"-g","font":"fb:gui","color":"white"}}\'\n'.format(x,y,z))
-        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:\'"{5}"\',lore:[\'{{"text":"${price}","color":"green","italic":false}}\']}},Slot:13}}\n'\
+        f.write('data modify block {0} {1} {2} CustomName set value {{"text":"-g","font":"fb:gui","color":"white"}}\n'.format(x,y,z))
+        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:13}}\n'\
             .format(x,y,z,recipe["output"],recipe_id,ITEM_TRANSLATE[recipe["output"]], price=number_to_human(ITEMS[recipe["output"]])))
         occupied_slots = [13]
     elif recipe_type == "cutter":
-        f.write('data modify block {0} {1} {2} CustomName set value \'{{"text":"-0","font":"fb:gui","color":"white"}}\'\n'.format(x,y,z))
-        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:\'"{5}"\',lore:[\'{{"text":"${price}","color":"green","italic":false}}\']}},Slot:11}}\n'\
+        f.write('data modify block {0} {1} {2} CustomName set value {{"text":"-0","font":"fb:gui","color":"white"}}\n'.format(x,y,z))
+        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:11}}\n'\
                 .format(x,y,z,recipe["input"],item_to_id[recipe["input"]],ITEM_TRANSLATE[recipe["input"]], price=number_to_human(ITEMS[recipe["input"]])))
-        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:{6},components:{{max_damage:-1,max_stack_size:64,custom_data:{{recipe:1b,recipe_id:{4}}},item_name:\'"{5}"\',lore:[\'{{"text":"${price}","color":"green","italic":false}}\']}},Slot:15}}\n'\
+        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:{6},components:{{max_stack_size:64,custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:15}}\n'\
                 .format(x,y,z,recipe["output"],recipe_id,ITEM_TRANSLATE[recipe["output"]],recipe["mul"], price=number_to_human(ITEMS[recipe["output"]])))
         occupied_slots = [11, 15]
         dependency(recipe["input"], recipe["output"])
     elif recipe_type == "furnace":
-        f.write('data modify block {0} {1} {2} CustomName set value \'{{"text":"-1","font":"fb:gui","color":"white"}}\'\n'.format(x,y,z))
-        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:\'"{5}"\',lore:[\'{{"text":"${price}","color":"green","italic":false}}\']}},Slot:11}}\n'\
+        f.write('data modify block {0} {1} {2} CustomName set value {{"text":"-1","font":"fb:gui","color":"white"}}\n'.format(x,y,z))
+        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:11}}\n'\
                 .format(x,y,z,recipe["input"],item_to_id[recipe["input"]],ITEM_TRANSLATE[recipe["input"]], price=number_to_human(ITEMS[recipe["input"]])))
-        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:\'"{5}"\',lore:[\'{{"text":"${price}","color":"green","italic":false}}\']}},Slot:15}}\n'\
+        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:15}}\n'\
                 .format(x,y,z,recipe["output"],recipe_id,ITEM_TRANSLATE[recipe["output"]], price=number_to_human(ITEMS[recipe["output"]])))
         occupied_slots = [11, 15]
         dependency(recipe["input"], recipe["output"])
     elif recipe_type == "crafter_2":
-        f.write('data modify block {0} {1} {2} CustomName set value \'{{"text":"-2","font":"fb:gui","color":"white"}}\'\n'.format(x,y,z))
-        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:\'"{5}"\',lore:[\'{{"text":"${price}","color":"green","italic":false}}\']}},Slot:2}}\n'\
+        f.write('data modify block {0} {1} {2} CustomName set value {{"text":"-2","font":"fb:gui","color":"white"}}\n'.format(x,y,z))
+        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:2}}\n'\
                 .format(x,y,z,recipe["in1"],item_to_id[recipe["in1"]],ITEM_TRANSLATE[recipe["in1"]], price=number_to_human(ITEMS[recipe["in1"]])))
-        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:\'"{5}"\',lore:[\'{{"text":"${price}","color":"green","italic":false}}\']}},Slot:20}}\n'\
+        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:20}}\n'\
                 .format(x,y,z,recipe["in2"],item_to_id[recipe["in2"]],ITEM_TRANSLATE[recipe["in2"]], price=number_to_human(ITEMS[recipe["in2"]])))
-        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:{6},components:{{max_damage:-1,max_stack_size:64,custom_data:{{recipe:1b,recipe_id:{4}}},item_name:\'"{5}"\',lore:[\'{{"text":"${price}","color":"green","italic":false}}\']}},Slot:15}}\n'\
+        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:{6},components:{{max_stack_size:64,custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:15}}\n'\
                 .format(x,y,z,recipe["out"],recipe_id,ITEM_TRANSLATE[recipe["out"]],recipe["count"], price=number_to_human(ITEMS[recipe["out"]])))
         occupied_slots = [2, 20, 15]
         dependency(recipe["in1"], recipe["out"])
         dependency(recipe["in2"], recipe["out"])
     elif recipe_type == "crafter_3":
-        f.write('data modify block {0} {1} {2} CustomName set value \'{{"text":"-3","font":"fb:gui","color":"white"}}\'\n'.format(x,y,z))
-        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:\'"{5}"\',lore:[\'{{"text":"${price}","color":"green","italic":false}}\']}},Slot:2}}\n'\
+        f.write('data modify block {0} {1} {2} CustomName set value {{"text":"-3","font":"fb:gui","color":"white"}}\n'.format(x,y,z))
+        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:2}}\n'\
                 .format(x,y,z,recipe["in1"],item_to_id[recipe["in1"]],ITEM_TRANSLATE[recipe["in1"]], price=number_to_human(ITEMS[recipe["in1"]])))
-        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:\'"{5}"\',lore:[\'{{"text":"${price}","color":"green","italic":false}}\']}},Slot:20}}\n'\
+        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:20}}\n'\
                 .format(x,y,z,recipe["in2"],item_to_id[recipe["in2"]],ITEM_TRANSLATE[recipe["in2"]], price=number_to_human(ITEMS[recipe["in2"]])))
-        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:\'"{5}"\',lore:[\'{{"text":"${price}","color":"green","italic":false}}\']}},Slot:10}}\n'\
+        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:10}}\n'\
                 .format(x,y,z,recipe["in3"],item_to_id[recipe["in3"]],ITEM_TRANSLATE[recipe["in3"]], price=number_to_human(ITEMS[recipe["in3"]])))
-        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:{6},components:{{max_damage:-1,max_stack_size:64,custom_data:{{recipe:1b,recipe_id:{4}}},item_name:\'"{5}"\',lore:[\'{{"text":"${price}","color":"green","italic":false}}\']}},Slot:15}}\n'\
+        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:{6},components:{{max_stack_size:64,custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:15}}\n'\
                 .format(x,y,z,recipe["out"],recipe_id,ITEM_TRANSLATE[recipe["out"]],recipe["count"], price=number_to_human(ITEMS[recipe["out"]])))
         occupied_slots = [2, 20, 10, 15]
         dependency(recipe["in1"], recipe["out"])
         dependency(recipe["in2"], recipe["out"])
         dependency(recipe["in3"], recipe["out"])
     elif recipe_type == "crafter_5":
-        f.write('data modify block {0} {1} {2} CustomName set value \'{{"text":"-A","font":"fb:gui","color":"white"}}\'\n'.format(x,y,z))
-        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:\'"{5}"\',lore:[\'{{"text":"${price}","color":"green","italic":false}}\']}},Slot:2}}\n'\
+        f.write('data modify block {0} {1} {2} CustomName set value {{"text":"-A","font":"fb:gui","color":"white"}}\n'.format(x,y,z))
+        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:2}}\n'\
                 .format(x,y,z,recipe["in1"],item_to_id[recipe["in1"]],ITEM_TRANSLATE[recipe["in1"]], price=number_to_human(ITEMS[recipe["in1"]])))
-        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:\'"{5}"\',lore:[\'{{"text":"${price}","color":"green","italic":false}}\']}},Slot:20}}\n'\
+        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:20}}\n'\
                 .format(x,y,z,recipe["in2"],item_to_id[recipe["in2"]],ITEM_TRANSLATE[recipe["in2"]], price=number_to_human(ITEMS[recipe["in2"]])))
-        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:\'"{5}"\',lore:[\'{{"text":"${price}","color":"green","italic":false}}\']}},Slot:10}}\n'\
+        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:10}}\n'\
                 .format(x,y,z,recipe["in3"],item_to_id[recipe["in3"]],ITEM_TRANSLATE[recipe["in3"]], price=number_to_human(ITEMS[recipe["in3"]])))
-        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:\'"{5}"\',lore:[\'{{"text":"${price}","color":"green","italic":false}}\']}},Slot:1}}\n'\
+        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:1}}\n'\
                 .format(x,y,z,recipe["in4"],item_to_id[recipe["in4"]],ITEM_TRANSLATE[recipe["in4"]], price=number_to_human(ITEMS[recipe["in4"]])))
-        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:\'"{5}"\',lore:[\'{{"text":"${price}","color":"green","italic":false}}\']}},Slot:19}}\n'\
+        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:19}}\n'\
                 .format(x,y,z,recipe["in5"],item_to_id[recipe["in5"]],ITEM_TRANSLATE[recipe["in5"]], price=number_to_human(ITEMS[recipe["in5"]])))
-        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:{6},components:{{max_damage:-1,max_stack_size:64,custom_data:{{recipe:1b,recipe_id:{4}}},item_name:\'"{5}"\',lore:[\'{{"text":"${price}","color":"green","italic":false}}\']}},Slot:15}}\n'\
+        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:{6},components:{{max_stack_size:64,custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:15}}\n'\
                 .format(x,y,z,recipe["out"],recipe_id,ITEM_TRANSLATE[recipe["out"]],recipe["count"], price=number_to_human(ITEMS[recipe["out"]])))
         occupied_slots = [1, 2, 19, 20, 10, 15]
         dependency(recipe["in1"], recipe["out"])
@@ -1985,59 +1996,59 @@ def render_recipe(f, super_recipe):
         dependency(recipe["in4"], recipe["out"])
         dependency(recipe["in5"], recipe["out"])
     elif recipe_type == "washer":
-        f.write('data modify block {0} {1} {2} CustomName set value \'{{"text":"-4","font":"fb:gui","color":"white"}}\'\n'.format(x,y,z))
-        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:\'"{5}"\',lore:[\'{{"text":"${price}","color":"green","italic":false}}\']}},Slot:11}}\n'\
+        f.write('data modify block {0} {1} {2} CustomName set value {{"text":"-4","font":"fb:gui","color":"white"}}\n'.format(x,y,z))
+        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:11}}\n'\
                 .format(x,y,z,recipe["input"],item_to_id[recipe["input"]],ITEM_TRANSLATE[recipe["input"]], price=number_to_human(ITEMS[recipe["input"]])))
-        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:\'"{5}"\',lore:[\'{{"text":"${price}","color":"green","italic":false}}\']}},Slot:15}}\n'\
+        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:15}}\n'\
                 .format(x,y,z,recipe["output"],recipe_id,ITEM_TRANSLATE[recipe["output"]], price=number_to_human(ITEMS[recipe["output"]])))
         occupied_slots = [11, 15]
         dependency(recipe["input"], recipe["output"])
     elif recipe_type == "crusher":
-        f.write('data modify block {0} {1} {2} CustomName set value \'{{"text":"-5","font":"fb:gui","color":"white"}}\'\n'.format(x,y,z))
-        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:\'"{5}"\',lore:[\'{{"text":"${price}","color":"green","italic":false}}\']}},Slot:3}}\n'\
+        f.write('data modify block {0} {1} {2} CustomName set value {{"text":"-5","font":"fb:gui","color":"white"}}\n'.format(x,y,z))
+        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:3}}\n'\
                 .format(x,y,z,recipe["top"],item_to_id[recipe["top"]],ITEM_TRANSLATE[recipe["top"]], price=number_to_human(ITEMS[recipe["top"]])))
-        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:\'"{5}"\',lore:[\'{{"text":"${price}","color":"green","italic":false}}\']}},Slot:10}}\n'\
+        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:10}}\n'\
                 .format(x,y,z,recipe["side"],item_to_id[recipe["side"]],ITEM_TRANSLATE[recipe["side"]], price=number_to_human(ITEMS[recipe["side"]])))
-        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:{6},components:{{max_damage:-1,max_stack_size:64,custom_data:{{recipe:1b,recipe_id:{4}}},item_name:\'"{5}"\',lore:[\'{{"text":"${price}","color":"green","italic":false}}\']}},Slot:15}}\n'\
+        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:{6},components:{{max_stack_size:64,custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:15}}\n'\
                 .format(x,y,z,recipe["out"],recipe_id,ITEM_TRANSLATE[recipe["out"]],recipe["count"], price=number_to_human(ITEMS[recipe["out"]])))
         occupied_slots = [3, 10, 15]
         dependency(recipe["side"], recipe["out"])
         dependency(recipe["top"], recipe["out"])
     elif recipe_type == "flashbaker":
-        f.write('data modify block {0} {1} {2} CustomName set value \'{{"text":"-6","font":"fb:gui","color":"white"}}\'\n'.format(x,y,z))
-        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:\'"{5}"\',lore:[\'{{"text":"${price}","color":"green","italic":false}}\']}},Slot:11}}\n'\
+        f.write('data modify block {0} {1} {2} CustomName set value {{"text":"-6","font":"fb:gui","color":"white"}}\n'.format(x,y,z))
+        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:11}}\n'\
                 .format(x,y,z,recipe["input"],item_to_id[recipe["input"]],ITEM_TRANSLATE[recipe["input"]], price=number_to_human(ITEMS[recipe["input"]])))
-        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:\'"{5}"\',lore:[\'{{"text":"${price}","color":"green","italic":false}}\']}},Slot:15}}\n'\
+        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:15}}\n'\
                 .format(x,y,z,recipe["output"],recipe_id,ITEM_TRANSLATE[recipe["output"]], price=number_to_human(ITEMS[recipe["output"]])))
         occupied_slots = [11, 15]
         dependency(recipe["input"], recipe["output"])
     elif recipe_type == "sonic_zapper":
-        f.write('data modify block {0} {1} {2} CustomName set value \'{{"text":"-7","font":"fb:gui","color":"white"}}\'\n'.format(x,y,z))
-        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:\'"{5}"\',lore:[\'{{"text":"${price}","color":"green","italic":false}}\']}},Slot:11}}\n'\
+        f.write('data modify block {0} {1} {2} CustomName set value {{"text":"-7","font":"fb:gui","color":"white"}}\n'.format(x,y,z))
+        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:11}}\n'\
                 .format(x,y,z,recipe["input"],item_to_id[recipe["input"]],ITEM_TRANSLATE[recipe["input"]], price=number_to_human(ITEMS[recipe["input"]])))
-        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:\'"{5}"\',lore:[\'{{"text":"${price}","color":"green","italic":false}}\']}},Slot:15}}\n'\
+        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:15}}\n'\
                 .format(x,y,z,recipe["output"],recipe_id,ITEM_TRANSLATE[recipe["output"]], price=number_to_human(ITEMS[recipe["output"]])))
         occupied_slots = [11, 15]
         dependency(recipe["input"], recipe["output"])
     elif recipe_type == "enchanter":
-        f.write('data modify block {0} {1} {2} CustomName set value \'{{"text":"-8","font":"fb:gui","color":"white"}}\'\n'.format(x,y,z))
-        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:\'"{5}"\',lore:[\'{{"text":"${price}","color":"green","italic":false}}\']}},Slot:2}}\n'\
+        f.write('data modify block {0} {1} {2} CustomName set value {{"text":"-8","font":"fb:gui","color":"white"}}\n'.format(x,y,z))
+        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:2}}\n'\
                 .format(x,y,z,recipe["in1"],item_to_id[recipe["in1"]],ITEM_TRANSLATE[recipe["in1"]], price=number_to_human(ITEMS[recipe["in1"]])))
-        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:\'"{5}"\',lore:[\'{{"text":"${price}","color":"green","italic":false}}\']}},Slot:20}}\n'\
+        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:20}}\n'\
                 .format(x,y,z,recipe["in2"],item_to_id[recipe["in2"]],ITEM_TRANSLATE[recipe["in2"]], price=number_to_human(ITEMS[recipe["in2"]])))
-        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:\'"{5}"\',lore:[\'{{"text":"${price}","color":"green","italic":false}}\']}},Slot:10}}\n'\
+        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:10}}\n'\
                 .format(x,y,z,recipe["in3"],item_to_id[recipe["in3"]],ITEM_TRANSLATE[recipe["in3"]], price=number_to_human(ITEMS[recipe["in3"]])))
-        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:{6},components:{{max_damage:-1,max_stack_size:64,custom_data:{{recipe:1b,recipe_id:{4}}},item_name:\'"{5}"\',lore:[\'{{"text":"${price}","color":"green","italic":false}}\']}},Slot:15}}\n'\
+        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:{6},components:{{max_stack_size:64,custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:15}}\n'\
                 .format(x,y,z,recipe["out"],recipe_id,ITEM_TRANSLATE[recipe["out"]],recipe["count"], price=number_to_human(ITEMS[recipe["out"]])))
         occupied_slots = [2, 10, 15, 20]
         dependency(recipe["in1"], recipe["out"])
         dependency(recipe["in2"], recipe["out"])
         dependency(recipe["in3"], recipe["out"])
     elif recipe_type == "explosive_furnace":
-        f.write('data modify block {0} {1} {2} CustomName set value \'{{"text":"-9","font":"fb:gui","color":"white"}}\'\n'.format(x,y,z))
-        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:\'"{5}"\',lore:[\'{{"text":"${price}","color":"green","italic":false}}\']}},Slot:11}}\n'\
+        f.write('data modify block {0} {1} {2} CustomName set value {{"text":"-9","font":"fb:gui","color":"white"}}\n'.format(x,y,z))
+        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:11}}\n'\
                 .format(x,y,z,recipe["input"],item_to_id[recipe["input"]],ITEM_TRANSLATE[recipe["input"]], price=number_to_human(ITEMS[recipe["input"]])))
-        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:\'"{5}"\',lore:[\'{{"text":"${price}","color":"green","italic":false}}\']}},Slot:15}}\n'\
+        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:15}}\n'\
                 .format(x,y,z,recipe["output"],recipe_id,ITEM_TRANSLATE[recipe["output"]], price=number_to_human(ITEMS[recipe["output"]])))
         occupied_slots = [11, 15]
         dependency(recipe["input"], recipe["output"])
@@ -2046,18 +2057,18 @@ def render_recipe(f, super_recipe):
     for alt in item_recipes[target_item]["alt"] + [item_recipes[target_item]["primary"]]:
         if alt["recipe_id"] == recipe_id:
             continue
-        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:crafting_table",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{3}}},item_name:\'"{4}"\',lore:[\'{{"text":"Alternative recipe","color":"gray"}}\'],item_model:"{5}"}},Slot:{6}}}\n'\
+        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:crafting_table",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{3}}},item_name:"{4}",lore:[{{"text":"Alternative recipe","color":"gray"}}],item_model:"{5}"}},Slot:{6}}}\n'\
                 .format(x,y,z,alt["recipe_id"],RECIPE_TYPE_NAME[alt["type"]],RECIPE_TYPE_DISPLAY[alt["type"]],j * 9 + 8))
         occupied_slots.append(j * 9 + 8)
         j += 1
-    f.write('data modify block {0} {1} {2} Items append value {{id:"book",count:1,components:{{item_name:\'"Back to list"\',custom_data:{{recipe:1b,recipe_id:2000}}}},Slot:18}}\n'.format(x,y,z))
+    f.write('data modify block {0} {1} {2} Items append value {{id:"book",count:1,components:{{item_name:"Back to list",custom_data:{{recipe:1b,recipe_id:2000}}}},Slot:18}}\n'.format(x,y,z))
     occupied_slots.append(18)
     # fill empty slots
     for i in range(27):
         if i in occupied_slots:
             continue
         item_model = "air" if not i in [8,17,26] else "fb:full"
-        f.write('data modify block {} {} {} Items append value {{id:"jigsaw",count:1,components:{{hide_tooltip:{{}},item_model:"{}"}},Slot:{}}}\n'.format(x,y,z,item_model,i))
+        f.write('data modify block {} {} {} Items append value {{id:"jigsaw",count:1,components:{{tooltip_display:{{hide_tooltip:true}},item_model:"{}"}},Slot:{}}}\n'.format(x,y,z,item_model,i))
 # recipe JEI
 # start at 29999984 319 0
 # gui barrels:
@@ -2088,17 +2099,17 @@ with open("data/code/function/jei/barrels.mcfunction", "w") as f:
         (x,y,z) = (29999984 + recipe_id % 16, 300 - recipe_id // 256, recipe_id // 16 % 16)
         # make original/copy barrel
         f.write("setblock {0} {1} {2} barrel\ndata remove block {0} {1} {2} Items\n".format(x, y, z))
-        f.write('data modify block {0} {1} {2} CustomName set value \'"Recipes using the item"\'\n'.format(x,y,z))
+        f.write('data modify block {0} {1} {2} CustomName set value "Recipes using the item"\n'.format(x,y,z))
         k = 0
         if item in component_used_in:
             for supper in component_used_in[item]:
-                f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:\'"{5}"\',lore:[\'{{"text":"${price}","color":"green","italic":false}}\']}},Slot:{6}}}\n'\
+                f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:{6}}}\n'\
                     .format(x,y,z,supper,item_to_id[supper],ITEM_TRANSLATE[supper], k, price=number_to_human(ITEMS[supper])))
                 k += 1
         for j in range(k, 25):
-            f.write('data modify block {} {} {} Items append value {{id:"jigsaw",count:1,components:{{hide_tooltip:{{}},item_model:"fb:full"}},Slot:{}}}\n'.format(x,y,z,j))
-        f.write('data modify block {0} {1} {2} Items append value {{id:"book",count:1,components:{{item_name:\'"Back to list"\',custom_data:{{recipe:1b,recipe_id:2000}}}},Slot:25}}\n'.format(x,y,z))
-        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:\'"{5}"\',lore:[\'{{"text":"${price}","color":"green","italic":false}}\']}},Slot:26}}\n'\
+            f.write('data modify block {} {} {} Items append value {{id:"jigsaw",count:1,components:{{tooltip_display:{{hide_tooltip:true}},item_model:"fb:full"}},Slot:{}}}\n'.format(x,y,z,j))
+        f.write('data modify block {0} {1} {2} Items append value {{id:"book",count:1,components:{{item_name:"Back to list",custom_data:{{recipe:1b,recipe_id:2000}}}},Slot:25}}\n'.format(x,y,z))
+        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:26}}\n'\
             .format(x,y,z,item,item_to_id[item],ITEM_TRANSLATE[item], price=number_to_human(ITEMS[item])))
     
     # phase out book in favor of item browser
@@ -2109,39 +2120,39 @@ with open("data/code/function/jei/barrels.mcfunction", "w") as f:
     first_barrel = True
     (x,y,z) = (29999984 + barrel_id % 16, 319 - barrel_id // 256, barrel_id // 16 % 16)
     f.write('setblock {0} {1} {2} barrel\ndata remove block {0} {1} {2} Items\n'.format(x,y,z))
-    f.write('data modify block {0} {1} {2} CustomName set value \'"Items ordered by price (1/{count})"\'\n'.format(x,y,z,count = (len(ITEMS) + 23) // 24))
+    f.write('data modify block {0} {1} {2} CustomName set value "Items ordered by price (1/{count})"\n'.format(x,y,z,count = (len(ITEMS) + 23) // 24))
     i = 0
     for item in dict(sorted(ITEMS.items(), key=lambda item: item[1])):
         if i == 24:
             # finish barrel
             if first_barrel:
-                f.write('data modify block {0} {1} {2} Items append value {{id:"jigsaw",count:1,components:{{hide_tooltip:{{}},item_model:"fb:full"}},Slot:8}}\n'.format(x,y,z))
+                f.write('data modify block {0} {1} {2} Items append value {{id:"jigsaw",count:1,components:{{tooltip_display:{{hide_tooltip:true}},item_model:"fb:full"}},Slot:8}}\n'.format(x,y,z))
             else:
-                f.write('data modify block {0} {1} {2} Items append value {{id:"jigsaw",count:1,components:{{item_name:\'"Prev Page"\',rarity:"common",item_model:"fb:prev",custom_data:{{recipe:1b,recipe_id:{3}}}}},Slot:8}}\n'.format(x,y,z,barrel_id - 1))
-            f.write('data modify block {0} {1} {2} Items append value {{id:"name_tag",count:1,components:{{item_name:\'"Order by name"\',custom_data:{{recipe:1b,recipe_id:2100}}}},Slot:17}}\ndata modify block {0} {1} {2} Items append value {{id:"jigsaw",count:1,components:{{item_name:\'"Next Page"\',rarity:"common",item_model:"fb:next",custom_data:{{recipe:1b,recipe_id:{3}}}}},Slot:26}}\n'.format(x,y,z,barrel_id + 1))
+                f.write('data modify block {0} {1} {2} Items append value {{id:"jigsaw",count:1,components:{{item_name:"Prev Page",rarity:"common",item_model:"fb:prev",custom_data:{{recipe:1b,recipe_id:{3}}}}},Slot:8}}\n'.format(x,y,z,barrel_id - 1))
+            f.write('data modify block {0} {1} {2} Items append value {{id:"name_tag",count:1,components:{{item_name:"Order by name",custom_data:{{recipe:1b,recipe_id:2100}}}},Slot:17}}\ndata modify block {0} {1} {2} Items append value {{id:"jigsaw",count:1,components:{{item_name:"Next Page",rarity:"common",item_model:"fb:next",custom_data:{{recipe:1b,recipe_id:{3}}}}},Slot:26}}\n'.format(x,y,z,barrel_id + 1))
             first_barrel = False
             barrel_id += 1
             # start next barrel
             (x,y,z) = (29999984 + barrel_id % 16, 319 - barrel_id // 256, barrel_id // 16 % 16)
             f.write('setblock {0} {1} {2} barrel\ndata remove block {0} {1} {2} Items\n'.format(x,y,z))
-            f.write('data modify block {0} {1} {2} CustomName set value \'"Items ordered by price ({page}/{count})"\'\n'.format(x,y,z,page=barrel_id - 2000 + 1,count = (len(ITEMS) + 23) // 24))
+            f.write('data modify block {0} {1} {2} CustomName set value "Items ordered by price ({page}/{count})"\n'.format(x,y,z,page=barrel_id - 2000 + 1,count = (len(ITEMS) + 23) // 24))
             i = 0
         # calculate slot
         slot = i // 8 * 9 + i % 8
-        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:\'"{5}"\',lore:[\'{{"text":"${price}","color":"green","italic":false}}\']}},Slot:{6}}}\n'\
+        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:{6}}}\n'\
                 .format(x,y,z,item,item_to_id[item],ITEM_TRANSLATE[item],slot, price=number_to_human(ITEMS[item])))
         i += 1
     # finish last barrel
     while i < 24:
         slot = i // 8 * 9 + i % 8
-        f.write('data modify block {0} {1} {2} Items append value {{id:"jigsaw",count:1,components:{{hide_tooltip:{{}},item_model:"fb:full"}},Slot:{3}}}\n'\
+        f.write('data modify block {0} {1} {2} Items append value {{id:"jigsaw",count:1,components:{{tooltip_display:{{hide_tooltip:true}},item_model:"fb:full"}},Slot:{3}}}\n'\
             .format(x,y,z,slot))
         i += 1
     if first_barrel:
-        f.write('data modify block {0} {1} {2} Items append value {{id:"jigsaw",count:1,components:{{hide_tooltip:{{}},item_model:"fb:full"}},Slot:8}}\n'.format(x,y,z))
+        f.write('data modify block {0} {1} {2} Items append value {{id:"jigsaw",count:1,components:{{tooltip_display:{{hide_tooltip:true}},item_model:"fb:full"}},Slot:8}}\n'.format(x,y,z))
     else:
-        f.write('data modify block {0} {1} {2} Items append value {{id:"jigsaw",count:1,components:{{item_name:\'"Prev Page"\',rarity:"common",item_model:"fb:prev",custom_data:{{recipe:1b,recipe_id:{3}}}}},Slot:8}}\n'.format(x,y,z,barrel_id - 1))
-    f.write('data modify block {0} {1} {2} Items append value {{id:"name_tag",count:1,components:{{item_name:\'"Order by name"\',custom_data:{{recipe:1b,recipe_id:2100}}}},Slot:17}}\ndata modify block {0} {1} {2} Items append value {{id:"jigsaw",count:1,components:{{hide_tooltip:{{}},item_model:"fb:full"}},Slot:26}}\n'.format(x,y,z))
+        f.write('data modify block {0} {1} {2} Items append value {{id:"jigsaw",count:1,components:{{item_name:"Prev Page",rarity:"common",item_model:"fb:prev",custom_data:{{recipe:1b,recipe_id:{3}}}}},Slot:8}}\n'.format(x,y,z,barrel_id - 1))
+    f.write('data modify block {0} {1} {2} Items append value {{id:"name_tag",count:1,components:{{item_name:"Order by name",custom_data:{{recipe:1b,recipe_id:2100}}}},Slot:17}}\ndata modify block {0} {1} {2} Items append value {{id:"jigsaw",count:1,components:{{tooltip_display:{{hide_tooltip:true}},item_model:"fb:full"}},Slot:26}}\n'.format(x,y,z))
 
     # name sorted view
     # first barrel boiler
@@ -2149,36 +2160,36 @@ with open("data/code/function/jei/barrels.mcfunction", "w") as f:
     first_barrel = True
     (x,y,z) = (29999984 + barrel_id % 16, 319 - barrel_id // 256, barrel_id // 16 % 16)
     f.write('setblock {0} {1} {2} barrel\ndata remove block {0} {1} {2} Items\n'.format(x,y,z))
-    f.write('data modify block {0} {1} {2} CustomName set value \'"Items ordered by name (1/{count})"\'\n'.format(x,y,z,count = (len(ITEMS) + 23) // 24))
+    f.write('data modify block {0} {1} {2} CustomName set value "Items ordered by name (1/{count})"\n'.format(x,y,z,count = (len(ITEMS) + 23) // 24))
     i = 0
     for item in dict(sorted(ITEMS.items(), key=lambda item: ITEM_TRANSLATE[item[0]])):
         if i == 24:
             # finish barrel
             if first_barrel:
-                f.write('data modify block {0} {1} {2} Items append value {{id:"jigsaw",count:1,components:{{hide_tooltip:{{}},item_model:"fb:full"}},Slot:8}}\n'.format(x,y,z))
+                f.write('data modify block {0} {1} {2} Items append value {{id:"jigsaw",count:1,components:{{tooltip_display:{{hide_tooltip:true}},item_model:"fb:full"}},Slot:8}}\n'.format(x,y,z))
             else:
-                f.write('data modify block {0} {1} {2} Items append value {{id:"jigsaw",count:1,components:{{item_name:\'"Prev Page"\',rarity:"common",item_model:"fb:prev",custom_data:{{recipe:1b,recipe_id:{3}}}}},Slot:8}}\n'.format(x,y,z,barrel_id - 1))
-            f.write('data modify block {0} {1} {2} Items append value {{id:"emerald",count:1,components:{{item_name:\'"Order by price"\',custom_data:{{recipe:1b,recipe_id:2000}}}},Slot:17}}\ndata modify block {0} {1} {2} Items append value {{id:"jigsaw",count:1,components:{{item_name:\'"Next Page"\',rarity:"common",item_model:"fb:next",custom_data:{{recipe:1b,recipe_id:{3}}}}},Slot:26}}\n'.format(x,y,z,barrel_id + 1))
+                f.write('data modify block {0} {1} {2} Items append value {{id:"jigsaw",count:1,components:{{item_name:"Prev Page",rarity:"common",item_model:"fb:prev",custom_data:{{recipe:1b,recipe_id:{3}}}}},Slot:8}}\n'.format(x,y,z,barrel_id - 1))
+            f.write('data modify block {0} {1} {2} Items append value {{id:"emerald",count:1,components:{{item_name:"Order by price",custom_data:{{recipe:1b,recipe_id:2000}}}},Slot:17}}\ndata modify block {0} {1} {2} Items append value {{id:"jigsaw",count:1,components:{{item_name:"Next Page",rarity:"common",item_model:"fb:next",custom_data:{{recipe:1b,recipe_id:{3}}}}},Slot:26}}\n'.format(x,y,z,barrel_id + 1))
             first_barrel = False
             barrel_id += 1
             # start next barrel
             (x,y,z) = (29999984 + barrel_id % 16, 319 - barrel_id // 256, barrel_id // 16 % 16)
             f.write('setblock {0} {1} {2} barrel\ndata remove block {0} {1} {2} Items\n'.format(x,y,z))
-            f.write('data modify block {0} {1} {2} CustomName set value \'"Items ordered by name ({page}/{count})"\'\n'.format(x,y,z,page=barrel_id - 2100 + 1,count = (len(ITEMS) + 23) // 24))
+            f.write('data modify block {0} {1} {2} CustomName set value "Items ordered by name ({page}/{count})"\n'.format(x,y,z,page=barrel_id - 2100 + 1,count = (len(ITEMS) + 23) // 24))
             i = 0
         # calculate slot
         slot = i // 8 * 9 + i % 8
-        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:\'"{5}"\',lore:[\'{{"text":"${price}","color":"green","italic":false}}\']}},Slot:{6}}}\n'\
+        f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:{6}}}\n'\
                 .format(x,y,z,item,item_to_id[item],ITEM_TRANSLATE[item],slot, price=number_to_human(ITEMS[item])))
         i += 1
     # finish last barrel
     while i < 24:
         slot = i // 8 * 9 + i % 8
-        f.write('data modify block {0} {1} {2} Items append value {{id:"jigsaw",count:1,components:{{hide_tooltip:{{}},item_model:"fb:full"}},Slot:{3}}}\n'\
+        f.write('data modify block {0} {1} {2} Items append value {{id:"jigsaw",count:1,components:{{tooltip_display:{{hide_tooltip:true}},item_model:"fb:full"}},Slot:{3}}}\n'\
             .format(x,y,z,slot))
         i += 1
     if first_barrel:
-        f.write('data modify block {0} {1} {2} Items append value {{id:"jigsaw",count:1,components:{{hide_tooltip:{{}},item_model:"fb:full"}},Slot:8}}\n'.format(x,y,z))
+        f.write('data modify block {0} {1} {2} Items append value {{id:"jigsaw",count:1,components:{{tooltip_display:{{hide_tooltip:true}},item_model:"fb:full"}},Slot:8}}\n'.format(x,y,z))
     else:
-        f.write('data modify block {0} {1} {2} Items append value {{id:"jigsaw",count:1,components:{{item_name:\'"Prev Page"\',rarity:"common",item_model:"fb:prev",custom_data:{{recipe:1b,recipe_id:{3}}}}},Slot:8}}\n'.format(x,y,z,barrel_id - 1))
-    f.write('data modify block {0} {1} {2} Items append value {{id:"emerald",count:1,components:{{item_name:\'"Order by price"\',custom_data:{{recipe:1b,recipe_id:2000}}}},Slot:17}}\ndata modify block {0} {1} {2} Items append value {{id:"jigsaw",count:1,components:{{hide_tooltip:{{}},item_model:"fb:full"}},Slot:26}}\n'.format(x,y,z))
+        f.write('data modify block {0} {1} {2} Items append value {{id:"jigsaw",count:1,components:{{item_name:"Prev Page",rarity:"common",item_model:"fb:prev",custom_data:{{recipe:1b,recipe_id:{3}}}}},Slot:8}}\n'.format(x,y,z,barrel_id - 1))
+    f.write('data modify block {0} {1} {2} Items append value {{id:"emerald",count:1,components:{{item_name:"Order by price",custom_data:{{recipe:1b,recipe_id:2000}}}},Slot:17}}\ndata modify block {0} {1} {2} Items append value {{id:"jigsaw",count:1,components:{{tooltip_display:{{hide_tooltip:true}},item_model:"fb:full"}},Slot:26}}\n'.format(x,y,z))

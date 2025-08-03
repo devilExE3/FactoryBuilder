@@ -17,6 +17,7 @@ execute as @s[tag=block.generator.iron_axe] run data modify storage temp this.id
 execute as @s[tag=block.generator.blaze_rod] run data modify storage temp this.id set value "generator.blaze_rod"
 execute as @s[tag=block.generator.purpur_block] run data modify storage temp this.id set value "generator.purpur_block"
 execute as @s[tag=block.generator.purpur_pillar] run data modify storage temp this.id set value "generator.purpur_pillar"
+execute as @s[tag=block.generator.soul_sand] run data modify storage temp this.id set value "generator.soul_sand"
 execute as @s[tag=block.generator.ender_pearl] run data modify storage temp this.id set value "generator.ender_pearl"
 execute as @s[tag=block.generator.obsidian] run data modify storage temp this.id set value "generator.obsidian"
 execute as @s[tag=block.generator.gray_concrete_powder] run data modify storage temp this.id set value "generator.gray_concrete_powder"

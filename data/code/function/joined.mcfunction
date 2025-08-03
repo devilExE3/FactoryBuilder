@@ -43,7 +43,8 @@ execute as @s[tag=is_fm] run team join afm @s
 execute as @s[tag=recipe_helper] run team join aerecipes @s
 execute as @s[tag=is_tester] run team join aetester @s
 execute as @s[tag=is_artist] run team join aesartist @s
-execute as @s[tag=is_owner,tag=is_coowner] run team join adev @s
+execute as @s[tag=dev_helper] run team join adev @s
+execute as @s[tag=is_owner] run team join adev @s
 
 execute unless score @s money.0 matches 0.. run scoreboard players set @s money.0 0
 execute unless score @s money.1 matches 0.. run scoreboard players set @s money.1 0
@@ -72,3 +73,6 @@ execute unless score @s settings.chat_notifications matches 0.. run scoreboard p
 execute unless score @s settings.alert_zero_production matches 0.. run scoreboard players set @s settings.alert_zero_production 0
 
 function code:changelog
+
+# fix fox
+data modify entity @n[tag=fox] Sleeping set value 1b

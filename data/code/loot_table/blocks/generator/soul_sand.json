@@ -9,13 +9,13 @@
                 "function": "set_components",
                 "components": {
                     "custom_name": {
-                        "text": "%name%",
+                        "text": "Ender-Infused Soil Container",
                         "italic": false
                     },
                     "entity_data": {
                         "id": "marker",
                         "Silent": true,
-                        "Tags": ["place","place.generator","place.generator.%id%"]
+                        "Tags": ["place","place.generator","place.generator.soul_sand"]
                     },
                     "max_stack_size": 99,
                     "can_place_on": {
@@ -26,7 +26,7 @@
                           "minecraft:can_place_on"
                         ]
                     },
-                    "item_model": "%model%"
+                    "item_model": "soul_sand"
                 }
             }]
         }]
