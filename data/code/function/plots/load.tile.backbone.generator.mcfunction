@@ -17,6 +17,7 @@ execute if data storage temp this{id:"generator.iron_axe"} run function code:blo
 execute if data storage temp this{id:"generator.blaze_rod"} run function code:blocks/backbone/generator/blaze_rod
 execute if data storage temp this{id:"generator.purpur_block"} run function code:blocks/backbone/generator/purpur_block
 execute if data storage temp this{id:"generator.purpur_pillar"} run function code:blocks/backbone/generator/purpur_pillar
+execute if data storage temp this{id:"generator.soul_sand"} run function code:blocks/backbone/generator/soul_sand
 execute if data storage temp this{id:"generator.ender_pearl"} run function code:blocks/backbone/generator/ender_pearl
 execute if data storage temp this{id:"generator.obsidian"} run function code:blocks/backbone/generator/obsidian
 execute if data storage temp this{id:"generator.gray_concrete_powder"} run function code:blocks/backbone/generator/gray_concrete_powder

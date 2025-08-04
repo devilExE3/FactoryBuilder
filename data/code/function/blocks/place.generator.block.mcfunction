@@ -17,6 +17,7 @@ execute as @s[tag=place.generator.iron_axe] run function code:blocks/frontbone/g
 execute as @s[tag=place.generator.blaze_rod] run function code:blocks/frontbone/generator/blaze_rod
 execute as @s[tag=place.generator.purpur_block] run function code:blocks/frontbone/generator/purpur_block
 execute as @s[tag=place.generator.purpur_pillar] run function code:blocks/frontbone/generator/purpur_pillar
+execute as @s[tag=place.generator.soul_sand] run function code:blocks/frontbone/generator/soul_sand
 execute as @s[tag=place.generator.ender_pearl] run function code:blocks/frontbone/generator/ender_pearl
 execute as @s[tag=place.generator.obsidian] run function code:blocks/frontbone/generator/obsidian
 execute as @s[tag=place.generator.gray_concrete_powder] run function code:blocks/frontbone/generator/gray_concrete_powder

@@ -36,6 +36,7 @@ execute if items entity @s container.* *[custom_data~{shop:"generator.iron_axe"}
 execute if items entity @s container.* *[custom_data~{shop:"generator.blaze_rod"}] run return run function code:shop/shop_logic/bulk/generator.blaze_rod
 execute if items entity @s container.* *[custom_data~{shop:"generator.purpur_block"}] run return run function code:shop/shop_logic/bulk/generator.purpur_block
 execute if items entity @s container.* *[custom_data~{shop:"generator.purpur_pillar"}] run return run function code:shop/shop_logic/bulk/generator.purpur_pillar
+execute if items entity @s container.* *[custom_data~{shop:"generator.soul_sand"}] run return run function code:shop/shop_logic/bulk/generator.soul_sand
 execute if items entity @s container.* *[custom_data~{shop:"generator.ender_pearl"}] run return run function code:shop/shop_logic/bulk/generator.ender_pearl
 execute if items entity @s container.* *[custom_data~{shop:"generator.obsidian"}] run return run function code:shop/shop_logic/bulk/generator.obsidian
 execute if items entity @s container.* *[custom_data~{shop:"generator.gray_concrete_powder"}] run return run function code:shop/shop_logic/bulk/generator.gray_concrete_powder
