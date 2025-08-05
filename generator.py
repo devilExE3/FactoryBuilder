@@ -1870,7 +1870,7 @@ with open("data/code/function/shop/shop_logic/bulk_item.item.mcfunction", "w") a
             g.write("loot give @s loot code:blocks/%id%\nloot give @s loot code:blocks/%id%\nloot give @s loot code:blocks/%id%\nloot give @s loot code:blocks/%id%\nloot give @s loot code:blocks/%id%\nfunction code:shop/shop_logic/purchase_ok".replace("%id%", item["id"].replace(".", "/")))
 with open("data/code/function/shop/shop_logic/shop_sell.item.mcfunction", "w") as f:
     for item in SHOP_ITEMS:
-        f.write("""execute if data entity @s Inventory[{Slot:-106b}].components."minecraft:entity_data"{Tags:["place.%"]} run return run data modify storage numeral:io B set value $\n"""\
+        f.write("""execute if data entity @s equipment.offhand.components."minecraft:entity_data"{Tags:["place.%"]} run return run data modify storage numeral:io B set value $\n"""\
                 .replace("%", item["id"]).replace("$", number_to_numeral(item["price"])))
     f.write("return fail")
 
