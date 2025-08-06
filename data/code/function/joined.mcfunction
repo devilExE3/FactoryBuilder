@@ -73,6 +73,6 @@ execute unless score @s settings.chat_notifications matches 0.. run scoreboard p
 execute unless score @s settings.alert_zero_production matches 0.. run scoreboard players set @s settings.alert_zero_production 0
 
 function code:changelog
-
+tellraw @s [ "", {"text":"[Factory Builder] ","color":"gold","bold":true}, {"text":"Hey everyone! ","color":"yellow"}, {"text":"I'm ","color":"white"}, {"text":"Aunn","color":"aqua","bold":true}, {"text":", the developer of Factory Builder. ","color":"white"}, {"text":"I'm thinking about doing a major update:\n\n","color":"gray"}, {"text":"• Resetting everyone's stats\n","color":"red"}, {"text":"• Rolling back the game to when ","color":"gray"}, {"text":"End Crystal ","color":"light_purple","bold":true}, {"text":"was the final item\n","color":"gray"}, {"text":"• Rebuilding the game from there\n\n","color":"green"}, {"text":"But this is NOT confirmed yet! ","color":"yellow","bold":true}, {"text":"I want your input. ","color":"white"}, {"text":"Please vote in the poll on the ","color":"aqua"}, {"text":"Legitimoose Discord","color":"blue","underlined":true,"click_event":{"action":"open_url","url":"https://discord.gg/NGAhKgh56v"},"hover_event":{"action":"show_text","value":{"text":"","extra":[{"text":"Click to open the Legitimoose Discord and vote!"}]}}}, {"text":" to help decide.","color":"aqua"} ]
 # fix fox
 data modify entity @n[tag=fox] Sleeping set value 1b
