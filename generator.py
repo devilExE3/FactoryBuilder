@@ -361,7 +361,7 @@ ITEMS = {
     "allay_spawn_egg": 4e9,
     "ghast_tear": 300e12,
     "prismarine_crystals": 1.5e15,
-    "ghast_spawn_egg": 3e15,
+    "dried_ghast": 3e15,
     "experience_bottle": 50e15,
     "black_dye": 25e9,
     "echo_shard": 250e9,
@@ -511,7 +511,7 @@ ITEM_TRANSLATE = {
     "allay_spawn_egg": "Water Bottle",
     "ghast_tear": "Ghast Tear",
     "prismarine_crystals": "Ghast Tear Cluster",
-    "ghast_spawn_egg": "Dried Ghast",
+    "dried_ghast": "Dried Ghast",
     "experience_bottle": "Ghast Soul",
     "black_dye": "Obsidian Shard",
     "echo_shard": "Purified Obsidian Shard",
@@ -942,7 +942,7 @@ RECIPES = {
             "in1": "prismarine_crystals",
             "in2": "prismarine_crystals",
             "in3": "soul_sand",
-            "out": "ghast_spawn_egg",
+            "out": "dried_ghast",
             "count": 6
         },
         {
@@ -1174,7 +1174,7 @@ RECIPES = {
         {
             "in1": "glass_bottle",
             "in2": "allay_spawn_egg",
-            "in3": "ghast_spawn_egg",
+            "in3": "dried_ghast",
             "count": 1,
             "out": "experience_bottle"
         },

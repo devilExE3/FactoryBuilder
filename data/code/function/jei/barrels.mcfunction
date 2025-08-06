@@ -3574,7 +3574,7 @@ data modify block 29999991 319 6 CustomName set value {"text":"-3","font":"fb:gu
 data modify block 29999991 319 6 Items append value {id:"minecraft:prismarine_crystals",count:1,components:{custom_data:{recipe:1b,recipe_id:102},item_name:"Ghast Tear Cluster",lore:[{"text":"$1.5 e15","color":"green","italic":false}]},Slot:2}
 data modify block 29999991 319 6 Items append value {id:"minecraft:prismarine_crystals",count:1,components:{custom_data:{recipe:1b,recipe_id:102},item_name:"Ghast Tear Cluster",lore:[{"text":"$1.5 e15","color":"green","italic":false}]},Slot:20}
 data modify block 29999991 319 6 Items append value {id:"minecraft:soul_sand",count:1,components:{custom_data:{recipe:1b,recipe_id:40},item_name:"Ender-Infused Soil",lore:[{"text":"$1.0 T","color":"green","italic":false}]},Slot:10}
-data modify block 29999991 319 6 Items append value {id:"minecraft:ghast_spawn_egg",count:6,components:{max_stack_size:64,custom_data:{recipe:1b,recipe_id:103},item_name:"Dried Ghast",lore:[{"text":"$3.0 e15","color":"green","italic":false}]},Slot:15}
+data modify block 29999991 319 6 Items append value {id:"minecraft:dried_ghast",count:6,components:{max_stack_size:64,custom_data:{recipe:1b,recipe_id:103},item_name:"Dried Ghast",lore:[{"text":"$3.0 e15","color":"green","italic":false}]},Slot:15}
 data modify block 29999991 319 6 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:18}
 data modify block 29999991 319 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:0}
 data modify block 29999991 319 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:1}
@@ -3603,7 +3603,7 @@ data remove block 29999992 319 6 Items
 data modify block 29999992 319 6 CustomName set value {"text":"-8","font":"fb:gui","color":"white"}
 data modify block 29999992 319 6 Items append value {id:"minecraft:glass_bottle",count:1,components:{custom_data:{recipe:1b,recipe_id:98},item_name:"Glass Bottle",lore:[{"text":"$3.0 B","color":"green","italic":false}]},Slot:2}
 data modify block 29999992 319 6 Items append value {id:"minecraft:allay_spawn_egg",count:1,components:{custom_data:{recipe:1b,recipe_id:100},item_name:"Water Bottle",lore:[{"text":"$4.0 B","color":"green","italic":false}]},Slot:20}
-data modify block 29999992 319 6 Items append value {id:"minecraft:ghast_spawn_egg",count:1,components:{custom_data:{recipe:1b,recipe_id:103},item_name:"Dried Ghast",lore:[{"text":"$3.0 e15","color":"green","italic":false}]},Slot:10}
+data modify block 29999992 319 6 Items append value {id:"minecraft:dried_ghast",count:1,components:{custom_data:{recipe:1b,recipe_id:103},item_name:"Dried Ghast",lore:[{"text":"$3.0 e15","color":"green","italic":false}]},Slot:10}
 data modify block 29999992 319 6 Items append value {id:"minecraft:experience_bottle",count:1,components:{max_stack_size:64,custom_data:{recipe:1b,recipe_id:104},item_name:"Ghast Soul",lore:[{"text":"$50.0 e15","color":"green","italic":false}]},Slot:15}
 data modify block 29999992 319 6 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:18}
 data modify block 29999992 319 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:0}
@@ -5732,7 +5732,7 @@ setblock 29999992 300 2 barrel
 data remove block 29999992 300 2 Items
 data modify block 29999992 300 2 CustomName set value "Recipes using the item"
 data modify block 29999992 300 2 Items append value {id:"minecraft:soul_soil",count:1,components:{custom_data:{recipe:1b,recipe_id:41},item_name:"Hardened Soil",lore:[{"text":"$2.0 T","color":"green","italic":false}]},Slot:0}
-data modify block 29999992 300 2 Items append value {id:"minecraft:ghast_spawn_egg",count:1,components:{custom_data:{recipe:1b,recipe_id:103},item_name:"Dried Ghast",lore:[{"text":"$3.0 e15","color":"green","italic":false}]},Slot:1}
+data modify block 29999992 300 2 Items append value {id:"minecraft:dried_ghast",count:1,components:{custom_data:{recipe:1b,recipe_id:103},item_name:"Dried Ghast",lore:[{"text":"$3.0 e15","color":"green","italic":false}]},Slot:1}
 data modify block 29999992 300 2 Items append value {id:"minecraft:wither_skeleton_skull",count:1,components:{custom_data:{recipe:1b,recipe_id:132},item_name:"Wither Skeleton Skull",lore:[{"text":"$2.0 T","color":"green","italic":false}]},Slot:2}
 data modify block 29999992 300 2 Items append value {id:"minecraft:nether_star",count:1,components:{custom_data:{recipe:1b,recipe_id:133},item_name:"Nether Star",lore:[{"text":"$50.0 e18","color":"green","italic":false}]},Slot:3}
 data modify block 29999992 300 2 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:4}
@@ -7591,7 +7591,7 @@ data modify block 29999989 300 6 Items append value {id:"minecraft:ghast_tear",c
 setblock 29999990 300 6 barrel
 data remove block 29999990 300 6 Items
 data modify block 29999990 300 6 CustomName set value "Recipes using the item"
-data modify block 29999990 300 6 Items append value {id:"minecraft:ghast_spawn_egg",count:1,components:{custom_data:{recipe:1b,recipe_id:103},item_name:"Dried Ghast",lore:[{"text":"$3.0 e15","color":"green","italic":false}]},Slot:0}
+data modify block 29999990 300 6 Items append value {id:"minecraft:dried_ghast",count:1,components:{custom_data:{recipe:1b,recipe_id:103},item_name:"Dried Ghast",lore:[{"text":"$3.0 e15","color":"green","italic":false}]},Slot:0}
 data modify block 29999990 300 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:1}
 data modify block 29999990 300 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:2}
 data modify block 29999990 300 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:3}
@@ -7647,7 +7647,7 @@ data modify block 29999991 300 6 Items append value {id:"jigsaw",count:1,compone
 data modify block 29999991 300 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:23}
 data modify block 29999991 300 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:24}
 data modify block 29999991 300 6 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:25}
-data modify block 29999991 300 6 Items append value {id:"minecraft:ghast_spawn_egg",count:1,components:{custom_data:{recipe:1b,recipe_id:103},item_name:"Dried Ghast",lore:[{"text":"$3.0 e15","color":"green","italic":false}]},Slot:26}
+data modify block 29999991 300 6 Items append value {id:"minecraft:dried_ghast",count:1,components:{custom_data:{recipe:1b,recipe_id:103},item_name:"Dried Ghast",lore:[{"text":"$3.0 e15","color":"green","italic":false}]},Slot:26}
 setblock 29999992 300 6 barrel
 data remove block 29999992 300 6 Items
 data modify block 29999992 300 6 CustomName set value "Recipes using the item"
@@ -8703,7 +8703,7 @@ data remove block 29999989 312 13 Items
 data modify block 29999989 312 13 CustomName set value "Items ordered by price (6/6)"
 data modify block 29999989 312 13 Items append value {id:"minecraft:prismarine_crystals",count:1,components:{custom_data:{recipe:1b,recipe_id:102},item_name:"Ghast Tear Cluster",lore:[{"text":"$1.5 e15","color":"green","italic":false}]},Slot:0}
 data modify block 29999989 312 13 Items append value {id:"minecraft:spruce_boat",count:1,components:{custom_data:{recipe:1b,recipe_id:93},item_name:"Spruce Boat",lore:[{"text":"$3.0 e15","color":"green","italic":false}]},Slot:1}
-data modify block 29999989 312 13 Items append value {id:"minecraft:ghast_spawn_egg",count:1,components:{custom_data:{recipe:1b,recipe_id:103},item_name:"Dried Ghast",lore:[{"text":"$3.0 e15","color":"green","italic":false}]},Slot:2}
+data modify block 29999989 312 13 Items append value {id:"minecraft:dried_ghast",count:1,components:{custom_data:{recipe:1b,recipe_id:103},item_name:"Dried Ghast",lore:[{"text":"$3.0 e15","color":"green","italic":false}]},Slot:2}
 data modify block 29999989 312 13 Items append value {id:"minecraft:spruce_chest_boat",count:1,components:{custom_data:{recipe:1b,recipe_id:97},item_name:"Spruce Boat with Chest",lore:[{"text":"$7.5 e15","color":"green","italic":false}]},Slot:3}
 data modify block 29999989 312 13 Items append value {id:"minecraft:experience_bottle",count:1,components:{custom_data:{recipe:1b,recipe_id:104},item_name:"Ghast Soul",lore:[{"text":"$50.0 e15","color":"green","italic":false}]},Slot:4}
 data modify block 29999989 312 13 Items append value {id:"minecraft:bedrock",count:1,components:{custom_data:{recipe:1b,recipe_id:117},item_name:"Bedrock",lore:[{"text":"$200.0 e15","color":"green","italic":false}]},Slot:5}
@@ -8774,7 +8774,7 @@ data modify block 29999989 311 3 Items append value {id:"minecraft:diamond",coun
 data modify block 29999989 311 3 Items append value {id:"minecraft:diamond_axe",count:1,components:{custom_data:{recipe:1b,recipe_id:127},item_name:"Diamond Axe",lore:[{"text":"$350.0 B","color":"green","italic":false}]},Slot:11}
 data modify block 29999989 311 3 Items append value {id:"minecraft:diamond_block",count:1,components:{custom_data:{recipe:1b,recipe_id:123},item_name:"Diamond Block",lore:[{"text":"$200.0 B","color":"green","italic":false}]},Slot:12}
 data modify block 29999989 311 3 Items append value {id:"minecraft:diamond_chestplate",count:1,components:{custom_data:{recipe:1b,recipe_id:125},item_name:"Diamond Chestplate",lore:[{"text":"$500.0 B","color":"green","italic":false}]},Slot:13}
-data modify block 29999989 311 3 Items append value {id:"minecraft:ghast_spawn_egg",count:1,components:{custom_data:{recipe:1b,recipe_id:103},item_name:"Dried Ghast",lore:[{"text":"$3.0 e15","color":"green","italic":false}]},Slot:14}
+data modify block 29999989 311 3 Items append value {id:"minecraft:dried_ghast",count:1,components:{custom_data:{recipe:1b,recipe_id:103},item_name:"Dried Ghast",lore:[{"text":"$3.0 e15","color":"green","italic":false}]},Slot:14}
 data modify block 29999989 311 3 Items append value {id:"minecraft:breeze_rod",count:1,components:{custom_data:{recipe:1b,recipe_id:68},item_name:"Empty Rod",lore:[{"text":"$150.0 B","color":"green","italic":false}]},Slot:15}
 data modify block 29999989 311 3 Items append value {id:"minecraft:soul_torch",count:1,components:{custom_data:{recipe:1b,recipe_id:64},item_name:"Enchanted Torch",lore:[{"text":"$1.0 B","color":"green","italic":false}]},Slot:16}
 data modify block 29999989 311 3 Items append value {id:"minecraft:end_crystal",count:1,components:{custom_data:{recipe:1b,recipe_id:72},item_name:"End Crystal",lore:[{"text":"$30.0 T","color":"green","italic":false}]},Slot:18}
