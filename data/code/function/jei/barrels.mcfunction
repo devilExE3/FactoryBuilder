@@ -3301,7 +3301,7 @@ data modify block 29999997 319 5 Items append value {id:"jigsaw",count:1,compone
 setblock 29999998 319 5 barrel
 data remove block 29999998 319 5 Items
 data modify block 29999998 319 5 CustomName set value {"text":"-5","font":"fb:gui","color":"white"}
-data modify block 29999998 319 5 Items append value {id:"minecraft:obsidian",count:1,components:{custom_data:{recipe:1b,recipe_id:80},item_name:"Obsidian",lore:[{"text":"$30.0 B","color":"green","italic":false}]},Slot:3}
+data modify block 29999998 319 5 Items append value {id:"minecraft:anvil",count:1,components:{custom_data:{recipe:1b,recipe_id:25},item_name:"Anvil",lore:[{"text":"$5.0 M","color":"green","italic":false}]},Slot:3}
 data modify block 29999998 319 5 Items append value {id:"minecraft:spruce_planks",count:1,components:{custom_data:{recipe:1b,recipe_id:87},item_name:"Spruce Planks",lore:[{"text":"$150.0 T","color":"green","italic":false}]},Slot:10}
 data modify block 29999998 319 5 Items append value {id:"minecraft:brown_dye",count:3,components:{max_stack_size:64,custom_data:{recipe:1b,recipe_id:94},item_name:"Spruce Wood Shavings",lore:[{"text":"$50.0 T","color":"green","italic":false}]},Slot:15}
 data modify block 29999998 319 5 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:18}
@@ -5287,8 +5287,8 @@ data modify block 29999993 300 1 Items append value {id:"minecraft:nether_brick"
 data modify block 29999993 300 1 Items append value {id:"minecraft:quartz_slab",count:1,components:{custom_data:{recipe:1b,recipe_id:54},item_name:"Quartz Slab",lore:[{"text":"$4.0 B","color":"green","italic":false}]},Slot:3}
 data modify block 29999993 300 1 Items append value {id:"minecraft:blaze_powder",count:1,components:{custom_data:{recipe:1b,recipe_id:70},item_name:"Blaze Powder",lore:[{"text":"$150.0 B","color":"green","italic":false}]},Slot:4}
 data modify block 29999993 300 1 Items append value {id:"minecraft:brown_concrete_powder",count:1,components:{custom_data:{recipe:1b,recipe_id:74},item_name:"Nether Dust",lore:[{"text":"$5.0 M","color":"green","italic":false}]},Slot:5}
-data modify block 29999993 300 1 Items append value {id:"minecraft:purple_concrete_powder",count:1,components:{custom_data:{recipe:1b,recipe_id:109},item_name:"Glowing Obsidian Powder",lore:[{"text":"$1.0 T","color":"green","italic":false}]},Slot:6}
-data modify block 29999993 300 1 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:7}
+data modify block 29999993 300 1 Items append value {id:"minecraft:brown_dye",count:1,components:{custom_data:{recipe:1b,recipe_id:94},item_name:"Spruce Wood Shavings",lore:[{"text":"$50.0 T","color":"green","italic":false}]},Slot:6}
+data modify block 29999993 300 1 Items append value {id:"minecraft:purple_concrete_powder",count:1,components:{custom_data:{recipe:1b,recipe_id:109},item_name:"Glowing Obsidian Powder",lore:[{"text":"$1.0 T","color":"green","italic":false}]},Slot:7}
 data modify block 29999993 300 1 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:8}
 data modify block 29999993 300 1 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:9}
 data modify block 29999993 300 1 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:10}
@@ -6931,9 +6931,9 @@ data modify block 29999999 300 4 Items append value {id:"minecraft:gilded_blacks
 setblock 29999984 300 5 barrel
 data remove block 29999984 300 5 Items
 data modify block 29999984 300 5 CustomName set value "Recipes using the item"
-data modify block 29999984 300 5 Items append value {id:"minecraft:brown_dye",count:1,components:{custom_data:{recipe:1b,recipe_id:94},item_name:"Spruce Wood Shavings",lore:[{"text":"$50.0 T","color":"green","italic":false}]},Slot:0}
-data modify block 29999984 300 5 Items append value {id:"minecraft:ghast_tear",count:1,components:{custom_data:{recipe:1b,recipe_id:101},item_name:"Ghast Tear",lore:[{"text":"$300.0 T","color":"green","italic":false}]},Slot:1}
-data modify block 29999984 300 5 Items append value {id:"minecraft:black_dye",count:1,components:{custom_data:{recipe:1b,recipe_id:105},item_name:"Obsidian Shard",lore:[{"text":"$25.0 B","color":"green","italic":false}]},Slot:2}
+data modify block 29999984 300 5 Items append value {id:"minecraft:ghast_tear",count:1,components:{custom_data:{recipe:1b,recipe_id:101},item_name:"Ghast Tear",lore:[{"text":"$300.0 T","color":"green","italic":false}]},Slot:0}
+data modify block 29999984 300 5 Items append value {id:"minecraft:black_dye",count:1,components:{custom_data:{recipe:1b,recipe_id:105},item_name:"Obsidian Shard",lore:[{"text":"$25.0 B","color":"green","italic":false}]},Slot:1}
+data modify block 29999984 300 5 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:2}
 data modify block 29999984 300 5 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:3}
 data modify block 29999984 300 5 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:4}
 data modify block 29999984 300 5 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:5}

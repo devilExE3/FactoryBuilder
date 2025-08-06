@@ -1040,7 +1040,7 @@ RECIPES = {
         },
         {
             "side": "spruce_planks",
-            "top": "obsidian",
+            "top": "anvil",
             "count": 3,
             "out": "brown_dye"
         },
