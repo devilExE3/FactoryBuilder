@@ -1,1 +1,0 @@
-$attribute @s scale base set $(shrink_value)
