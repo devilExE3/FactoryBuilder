@@ -158,7 +158,7 @@ GENERATORS = [
         "model": "iron_axe",
         "output": "iron_axe",
         "gen_block": "pink_glazed_terracotta",
-        "price": 100e18,
+        "price": 50e18,
         "id": "iron_axe",
         "type": "container",
         "alt": True
@@ -340,9 +340,8 @@ ITEMS = {
 
     # spruce tier
     "iron_axe": 4.5e6,
-    "spruce_log": 25e12,
+    "spruce_log": 12.5e12,
     "spruce_wood": 50e12,
-    "stripped_spruce_wood": 125e12,
     "stripped_spruce_log": 137.5e12,
     "spruce_planks": 150e12,
     "spruce_stairs": 162.5e12,
@@ -493,7 +492,6 @@ ITEM_TRANSLATE = {
     "iron_axe": "Iron Axe",
     "spruce_log": "Spruce Log",
     "spruce_wood": "Spruce Wood",
-    "stripped_spruce_wood": "Stripped Spruce Wood",
     "stripped_spruce_log": "Refined Spruce Wood",
     "spruce_planks": "Spruce Planks",
     "spruce_stairs": "Chopped Spruce Planks",
@@ -769,12 +767,6 @@ RECIPES = {
         {
             "in1": "spruce_wood",
             "in2": "iron_axe",
-            "out": "stripped_spruce_wood",
-            "count": 1
-        },
-        {
-            "in1": "stripped_spruce_wood",
-            "in2": "iron_axe",
             "out": "stripped_spruce_log",
             "count": 1
         },
@@ -916,7 +908,7 @@ RECIPES = {
             "in2": "spruce_trapdoor",
             "in3": "copper_ingot",
             "out": "spruce_door",
-            "count": 1
+            "count": 2
         },
         {
             "in1": "wooden_shovel",
@@ -1049,7 +1041,7 @@ RECIPES = {
         {
             "side": "spruce_planks",
             "top": "obsidian",
-            "count": 4,
+            "count": 3,
             "out": "brown_dye"
         },
         {

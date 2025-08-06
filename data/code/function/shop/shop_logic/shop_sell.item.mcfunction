@@ -32,7 +32,7 @@ execute if data entity @s equipment.offhand.components."minecraft:entity_data"{T
 execute if data entity @s equipment.offhand.components."minecraft:entity_data"{Tags:["place.generator.quartz"]} run return run data modify storage numeral:io B set value [0.0,500000000.0,2.0,0.0]
 execute if data entity @s equipment.offhand.components."minecraft:entity_data"{Tags:["place.generator.glass"]} run return run data modify storage numeral:io B set value [0.0,0.0,50.0,0.0]
 execute if data entity @s equipment.offhand.components."minecraft:entity_data"{Tags:["place.generator.coal_block"]} run return run data modify storage numeral:io B set value [0.0,0.0,75.0,0.0]
-execute if data entity @s equipment.offhand.components."minecraft:entity_data"{Tags:["place.generator.iron_axe"]} run return run data modify storage numeral:io B set value [0.0,0.0,100.0,0.0]
+execute if data entity @s equipment.offhand.components."minecraft:entity_data"{Tags:["place.generator.iron_axe"]} run return run data modify storage numeral:io B set value [0.0,0.0,50.0,0.0]
 execute if data entity @s equipment.offhand.components."minecraft:entity_data"{Tags:["place.generator.blaze_rod"]} run return run data modify storage numeral:io B set value [0.0,0.0,100.0,0.0]
 execute if data entity @s equipment.offhand.components."minecraft:entity_data"{Tags:["place.generator.purpur_block"]} run return run data modify storage numeral:io B set value [0.0,0.0,100.0,0.0]
 execute if data entity @s equipment.offhand.components."minecraft:entity_data"{Tags:["place.generator.purpur_pillar"]} run return run data modify storage numeral:io B set value [0.0,0.0,100.0,0.0]
