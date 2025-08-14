@@ -3274,7 +3274,7 @@ data modify block 29999997 319 5 CustomName set value {"text":"-3","font":"fb:gu
 data modify block 29999997 319 5 Items append value {id:"minecraft:wooden_shovel",count:1,components:{custom_data:{recipe:1b,recipe_id:90},item_name:"Wooden Shovel",lore:[{"text":"$187.5 T","color":"green","italic":false}]},Slot:2}
 data modify block 29999997 319 5 Items append value {id:"minecraft:wooden_shovel",count:1,components:{custom_data:{recipe:1b,recipe_id:90},item_name:"Wooden Shovel",lore:[{"text":"$187.5 T","color":"green","italic":false}]},Slot:20}
 data modify block 29999997 319 5 Items append value {id:"minecraft:spruce_door",count:1,components:{custom_data:{recipe:1b,recipe_id:92},item_name:"Spruce Door",lore:[{"text":"$400.0 T","color":"green","italic":false}]},Slot:10}
-data modify block 29999997 319 5 Items append value {id:"minecraft:spruce_boat",count:1,components:{max_stack_size:64,custom_data:{recipe:1b,recipe_id:93},item_name:"Spruce Boat",lore:[{"text":"$3.0 e15","color":"green","italic":false}]},Slot:15}
+data modify block 29999997 319 5 Items append value {id:"minecraft:spruce_boat",count:1,components:{max_stack_size:64,custom_data:{recipe:1b,recipe_id:93},item_name:"Spruce Boat",lore:[{"text":"$3.0 Qa","color":"green","italic":false}]},Slot:15}
 data modify block 29999997 319 5 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:18}
 data modify block 29999997 319 5 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:0}
 data modify block 29999997 319 5 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:1}
@@ -3364,7 +3364,7 @@ data modify block 29999984 319 6 CustomName set value {"text":"-3","font":"fb:gu
 data modify block 29999984 319 6 Items append value {id:"minecraft:spruce_pressure_plate",count:1,components:{custom_data:{recipe:1b,recipe_id:95},item_name:"Spruce Plate",lore:[{"text":"$150.0 T","color":"green","italic":false}]},Slot:2}
 data modify block 29999984 319 6 Items append value {id:"minecraft:spruce_pressure_plate",count:1,components:{custom_data:{recipe:1b,recipe_id:95},item_name:"Spruce Plate",lore:[{"text":"$150.0 T","color":"green","italic":false}]},Slot:20}
 data modify block 29999984 319 6 Items append value {id:"minecraft:spruce_pressure_plate",count:1,components:{custom_data:{recipe:1b,recipe_id:95},item_name:"Spruce Plate",lore:[{"text":"$150.0 T","color":"green","italic":false}]},Slot:10}
-data modify block 29999984 319 6 Items append value {id:"minecraft:chest",count:1,components:{max_stack_size:64,custom_data:{recipe:1b,recipe_id:96},item_name:"Chest",lore:[{"text":"$1.0 e15","color":"green","italic":false}]},Slot:15}
+data modify block 29999984 319 6 Items append value {id:"minecraft:chest",count:1,components:{max_stack_size:64,custom_data:{recipe:1b,recipe_id:96},item_name:"Chest",lore:[{"text":"$1.0 Qa","color":"green","italic":false}]},Slot:15}
 data modify block 29999984 319 6 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:18}
 data modify block 29999984 319 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:0}
 data modify block 29999984 319 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:1}
@@ -3391,9 +3391,9 @@ data modify block 29999984 319 6 Items append value {id:"jigsaw",count:1,compone
 setblock 29999985 319 6 barrel
 data remove block 29999985 319 6 Items
 data modify block 29999985 319 6 CustomName set value {"text":"-2","font":"fb:gui","color":"white"}
-data modify block 29999985 319 6 Items append value {id:"minecraft:spruce_boat",count:1,components:{custom_data:{recipe:1b,recipe_id:93},item_name:"Spruce Boat",lore:[{"text":"$3.0 e15","color":"green","italic":false}]},Slot:2}
-data modify block 29999985 319 6 Items append value {id:"minecraft:chest",count:1,components:{custom_data:{recipe:1b,recipe_id:96},item_name:"Chest",lore:[{"text":"$1.0 e15","color":"green","italic":false}]},Slot:20}
-data modify block 29999985 319 6 Items append value {id:"minecraft:spruce_chest_boat",count:1,components:{max_stack_size:64,custom_data:{recipe:1b,recipe_id:97},item_name:"Spruce Boat with Chest",lore:[{"text":"$7.5 e15","color":"green","italic":false}]},Slot:15}
+data modify block 29999985 319 6 Items append value {id:"minecraft:spruce_boat",count:1,components:{custom_data:{recipe:1b,recipe_id:93},item_name:"Spruce Boat",lore:[{"text":"$3.0 Qa","color":"green","italic":false}]},Slot:2}
+data modify block 29999985 319 6 Items append value {id:"minecraft:chest",count:1,components:{custom_data:{recipe:1b,recipe_id:96},item_name:"Chest",lore:[{"text":"$1.0 Qa","color":"green","italic":false}]},Slot:20}
+data modify block 29999985 319 6 Items append value {id:"minecraft:spruce_chest_boat",count:1,components:{max_stack_size:64,custom_data:{recipe:1b,recipe_id:97},item_name:"Spruce Boat with Chest",lore:[{"text":"$7.5 Qa","color":"green","italic":false}]},Slot:15}
 data modify block 29999985 319 6 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:18}
 data modify block 29999985 319 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:0}
 data modify block 29999985 319 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:1}
@@ -3544,7 +3544,7 @@ data modify block 29999990 319 6 CustomName set value {"text":"-3","font":"fb:gu
 data modify block 29999990 319 6 Items append value {id:"minecraft:ghast_tear",count:1,components:{custom_data:{recipe:1b,recipe_id:101},item_name:"Ghast Tear",lore:[{"text":"$300.0 T","color":"green","italic":false}]},Slot:2}
 data modify block 29999990 319 6 Items append value {id:"minecraft:ghast_tear",count:1,components:{custom_data:{recipe:1b,recipe_id:101},item_name:"Ghast Tear",lore:[{"text":"$300.0 T","color":"green","italic":false}]},Slot:20}
 data modify block 29999990 319 6 Items append value {id:"minecraft:ghast_tear",count:1,components:{custom_data:{recipe:1b,recipe_id:101},item_name:"Ghast Tear",lore:[{"text":"$300.0 T","color":"green","italic":false}]},Slot:10}
-data modify block 29999990 319 6 Items append value {id:"minecraft:prismarine_crystals",count:1,components:{max_stack_size:64,custom_data:{recipe:1b,recipe_id:102},item_name:"Ghast Tear Cluster",lore:[{"text":"$1.5 e15","color":"green","italic":false}]},Slot:15}
+data modify block 29999990 319 6 Items append value {id:"minecraft:prismarine_crystals",count:1,components:{max_stack_size:64,custom_data:{recipe:1b,recipe_id:102},item_name:"Ghast Tear Cluster",lore:[{"text":"$1.5 Qa","color":"green","italic":false}]},Slot:15}
 data modify block 29999990 319 6 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:18}
 data modify block 29999990 319 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:0}
 data modify block 29999990 319 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:1}
@@ -3571,10 +3571,10 @@ data modify block 29999990 319 6 Items append value {id:"jigsaw",count:1,compone
 setblock 29999991 319 6 barrel
 data remove block 29999991 319 6 Items
 data modify block 29999991 319 6 CustomName set value {"text":"-3","font":"fb:gui","color":"white"}
-data modify block 29999991 319 6 Items append value {id:"minecraft:prismarine_crystals",count:1,components:{custom_data:{recipe:1b,recipe_id:102},item_name:"Ghast Tear Cluster",lore:[{"text":"$1.5 e15","color":"green","italic":false}]},Slot:2}
-data modify block 29999991 319 6 Items append value {id:"minecraft:prismarine_crystals",count:1,components:{custom_data:{recipe:1b,recipe_id:102},item_name:"Ghast Tear Cluster",lore:[{"text":"$1.5 e15","color":"green","italic":false}]},Slot:20}
+data modify block 29999991 319 6 Items append value {id:"minecraft:prismarine_crystals",count:1,components:{custom_data:{recipe:1b,recipe_id:102},item_name:"Ghast Tear Cluster",lore:[{"text":"$1.5 Qa","color":"green","italic":false}]},Slot:2}
+data modify block 29999991 319 6 Items append value {id:"minecraft:prismarine_crystals",count:1,components:{custom_data:{recipe:1b,recipe_id:102},item_name:"Ghast Tear Cluster",lore:[{"text":"$1.5 Qa","color":"green","italic":false}]},Slot:20}
 data modify block 29999991 319 6 Items append value {id:"minecraft:soul_sand",count:1,components:{custom_data:{recipe:1b,recipe_id:40},item_name:"Ender-Infused Soil",lore:[{"text":"$1.0 T","color":"green","italic":false}]},Slot:10}
-data modify block 29999991 319 6 Items append value {id:"minecraft:dried_ghast",count:6,components:{max_stack_size:64,custom_data:{recipe:1b,recipe_id:103},item_name:"Dried Ghast",lore:[{"text":"$3.0 e15","color":"green","italic":false}]},Slot:15}
+data modify block 29999991 319 6 Items append value {id:"minecraft:dried_ghast",count:6,components:{max_stack_size:64,custom_data:{recipe:1b,recipe_id:103},item_name:"Dried Ghast",lore:[{"text":"$3.0 Qa","color":"green","italic":false}]},Slot:15}
 data modify block 29999991 319 6 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:18}
 data modify block 29999991 319 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:0}
 data modify block 29999991 319 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:1}
@@ -3603,8 +3603,8 @@ data remove block 29999992 319 6 Items
 data modify block 29999992 319 6 CustomName set value {"text":"-8","font":"fb:gui","color":"white"}
 data modify block 29999992 319 6 Items append value {id:"minecraft:glass_bottle",count:1,components:{custom_data:{recipe:1b,recipe_id:98},item_name:"Glass Bottle",lore:[{"text":"$3.0 B","color":"green","italic":false}]},Slot:2}
 data modify block 29999992 319 6 Items append value {id:"minecraft:allay_spawn_egg",count:1,components:{custom_data:{recipe:1b,recipe_id:100},item_name:"Water Bottle",lore:[{"text":"$4.0 B","color":"green","italic":false}]},Slot:20}
-data modify block 29999992 319 6 Items append value {id:"minecraft:dried_ghast",count:1,components:{custom_data:{recipe:1b,recipe_id:103},item_name:"Dried Ghast",lore:[{"text":"$3.0 e15","color":"green","italic":false}]},Slot:10}
-data modify block 29999992 319 6 Items append value {id:"minecraft:experience_bottle",count:1,components:{max_stack_size:64,custom_data:{recipe:1b,recipe_id:104},item_name:"Ghast Soul",lore:[{"text":"$50.0 e15","color":"green","italic":false}]},Slot:15}
+data modify block 29999992 319 6 Items append value {id:"minecraft:dried_ghast",count:1,components:{custom_data:{recipe:1b,recipe_id:103},item_name:"Dried Ghast",lore:[{"text":"$3.0 Qa","color":"green","italic":false}]},Slot:10}
+data modify block 29999992 319 6 Items append value {id:"minecraft:experience_bottle",count:1,components:{max_stack_size:64,custom_data:{recipe:1b,recipe_id:104},item_name:"Ghast Soul",lore:[{"text":"$50.0 Qa","color":"green","italic":false}]},Slot:15}
 data modify block 29999992 319 6 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:18}
 data modify block 29999992 319 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:0}
 data modify block 29999992 319 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:1}
@@ -4023,8 +4023,8 @@ data remove block 29999989 319 7 Items
 data modify block 29999989 319 7 CustomName set value {"text":"-8","font":"fb:gui","color":"white"}
 data modify block 29999989 319 7 Items append value {id:"minecraft:gray_concrete_powder",count:1,components:{custom_data:{recipe:1b,recipe_id:116},item_name:"Antimatter",lore:[{"text":"$15.0 B","color":"green","italic":false}]},Slot:2}
 data modify block 29999989 319 7 Items append value {id:"minecraft:crying_obsidian",count:1,components:{custom_data:{recipe:1b,recipe_id:110},item_name:"Glowing Obsidian",lore:[{"text":"$1.5 T","color":"green","italic":false}]},Slot:20}
-data modify block 29999989 319 7 Items append value {id:"minecraft:experience_bottle",count:1,components:{custom_data:{recipe:1b,recipe_id:104},item_name:"Ghast Soul",lore:[{"text":"$50.0 e15","color":"green","italic":false}]},Slot:10}
-data modify block 29999989 319 7 Items append value {id:"minecraft:bedrock",count:1,components:{max_stack_size:64,custom_data:{recipe:1b,recipe_id:117},item_name:"Bedrock",lore:[{"text":"$200.0 e15","color":"green","italic":false}]},Slot:15}
+data modify block 29999989 319 7 Items append value {id:"minecraft:experience_bottle",count:1,components:{custom_data:{recipe:1b,recipe_id:104},item_name:"Ghast Soul",lore:[{"text":"$50.0 Qa","color":"green","italic":false}]},Slot:10}
+data modify block 29999989 319 7 Items append value {id:"minecraft:bedrock",count:1,components:{max_stack_size:64,custom_data:{recipe:1b,recipe_id:117},item_name:"Bedrock",lore:[{"text":"$200.0 Qa","color":"green","italic":false}]},Slot:15}
 data modify block 29999989 319 7 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:18}
 data modify block 29999989 319 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:0}
 data modify block 29999989 319 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:1}
@@ -4051,9 +4051,9 @@ data modify block 29999989 319 7 Items append value {id:"jigsaw",count:1,compone
 setblock 29999990 319 7 barrel
 data remove block 29999990 319 7 Items
 data modify block 29999990 319 7 CustomName set value {"text":"-2","font":"fb:gui","color":"white"}
-data modify block 29999990 319 7 Items append value {id:"minecraft:spruce_chest_boat",count:1,components:{custom_data:{recipe:1b,recipe_id:97},item_name:"Spruce Boat with Chest",lore:[{"text":"$7.5 e15","color":"green","italic":false}]},Slot:2}
-data modify block 29999990 319 7 Items append value {id:"minecraft:bedrock",count:1,components:{custom_data:{recipe:1b,recipe_id:117},item_name:"Bedrock",lore:[{"text":"$200.0 e15","color":"green","italic":false}]},Slot:20}
-data modify block 29999990 319 7 Items append value {id:"minecraft:command_block",count:1,components:{max_stack_size:64,custom_data:{recipe:1b,recipe_id:118},item_name:"Command Block",lore:[{"text":"$500.0 e15","color":"green","italic":false}]},Slot:15}
+data modify block 29999990 319 7 Items append value {id:"minecraft:spruce_chest_boat",count:1,components:{custom_data:{recipe:1b,recipe_id:97},item_name:"Spruce Boat with Chest",lore:[{"text":"$7.5 Qa","color":"green","italic":false}]},Slot:2}
+data modify block 29999990 319 7 Items append value {id:"minecraft:bedrock",count:1,components:{custom_data:{recipe:1b,recipe_id:117},item_name:"Bedrock",lore:[{"text":"$200.0 Qa","color":"green","italic":false}]},Slot:20}
+data modify block 29999990 319 7 Items append value {id:"minecraft:command_block",count:1,components:{max_stack_size:64,custom_data:{recipe:1b,recipe_id:118},item_name:"Command Block",lore:[{"text":"$500.0 Qa","color":"green","italic":false}]},Slot:15}
 data modify block 29999990 319 7 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:18}
 data modify block 29999990 319 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:0}
 data modify block 29999990 319 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:1}
@@ -4081,9 +4081,9 @@ data modify block 29999990 319 7 Items append value {id:"jigsaw",count:1,compone
 setblock 29999991 319 7 barrel
 data remove block 29999991 319 7 Items
 data modify block 29999991 319 7 CustomName set value {"text":"-5","font":"fb:gui","color":"white"}
-data modify block 29999991 319 7 Items append value {id:"minecraft:bedrock",count:1,components:{custom_data:{recipe:1b,recipe_id:117},item_name:"Bedrock",lore:[{"text":"$200.0 e15","color":"green","italic":false}]},Slot:3}
-data modify block 29999991 319 7 Items append value {id:"minecraft:command_block",count:1,components:{custom_data:{recipe:1b,recipe_id:118},item_name:"Command Block",lore:[{"text":"$500.0 e15","color":"green","italic":false}]},Slot:10}
-data modify block 29999991 319 7 Items append value {id:"minecraft:mangrove_button",count:4,components:{max_stack_size:64,custom_data:{recipe:1b,recipe_id:119},item_name:"Netherite Chip",lore:[{"text":"$300.0 e15","color":"green","italic":false}]},Slot:15}
+data modify block 29999991 319 7 Items append value {id:"minecraft:bedrock",count:1,components:{custom_data:{recipe:1b,recipe_id:117},item_name:"Bedrock",lore:[{"text":"$200.0 Qa","color":"green","italic":false}]},Slot:3}
+data modify block 29999991 319 7 Items append value {id:"minecraft:command_block",count:1,components:{custom_data:{recipe:1b,recipe_id:118},item_name:"Command Block",lore:[{"text":"$500.0 Qa","color":"green","italic":false}]},Slot:10}
+data modify block 29999991 319 7 Items append value {id:"minecraft:mangrove_button",count:4,components:{max_stack_size:64,custom_data:{recipe:1b,recipe_id:119},item_name:"Netherite Chip",lore:[{"text":"$300.0 Qa","color":"green","italic":false}]},Slot:15}
 data modify block 29999991 319 7 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:18}
 data modify block 29999991 319 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:0}
 data modify block 29999991 319 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:1}
@@ -4111,10 +4111,10 @@ data modify block 29999991 319 7 Items append value {id:"jigsaw",count:1,compone
 setblock 29999992 319 7 barrel
 data remove block 29999992 319 7 Items
 data modify block 29999992 319 7 CustomName set value {"text":"-3","font":"fb:gui","color":"white"}
-data modify block 29999992 319 7 Items append value {id:"minecraft:mangrove_button",count:1,components:{custom_data:{recipe:1b,recipe_id:119},item_name:"Netherite Chip",lore:[{"text":"$300.0 e15","color":"green","italic":false}]},Slot:2}
-data modify block 29999992 319 7 Items append value {id:"minecraft:mangrove_button",count:1,components:{custom_data:{recipe:1b,recipe_id:119},item_name:"Netherite Chip",lore:[{"text":"$300.0 e15","color":"green","italic":false}]},Slot:20}
+data modify block 29999992 319 7 Items append value {id:"minecraft:mangrove_button",count:1,components:{custom_data:{recipe:1b,recipe_id:119},item_name:"Netherite Chip",lore:[{"text":"$300.0 Qa","color":"green","italic":false}]},Slot:2}
+data modify block 29999992 319 7 Items append value {id:"minecraft:mangrove_button",count:1,components:{custom_data:{recipe:1b,recipe_id:119},item_name:"Netherite Chip",lore:[{"text":"$300.0 Qa","color":"green","italic":false}]},Slot:20}
 data modify block 29999992 319 7 Items append value {id:"minecraft:blaze_powder",count:1,components:{custom_data:{recipe:1b,recipe_id:70},item_name:"Blaze Powder",lore:[{"text":"$150.0 B","color":"green","italic":false}]},Slot:10}
-data modify block 29999992 319 7 Items append value {id:"minecraft:mangrove_pressure_plate",count:1,components:{max_stack_size:64,custom_data:{recipe:1b,recipe_id:120},item_name:"Netherite Scrap",lore:[{"text":"$800.0 e15","color":"green","italic":false}]},Slot:15}
+data modify block 29999992 319 7 Items append value {id:"minecraft:mangrove_pressure_plate",count:1,components:{max_stack_size:64,custom_data:{recipe:1b,recipe_id:120},item_name:"Netherite Scrap",lore:[{"text":"$800.0 Qa","color":"green","italic":false}]},Slot:15}
 data modify block 29999992 319 7 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:18}
 data modify block 29999992 319 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:0}
 data modify block 29999992 319 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:1}
@@ -4141,9 +4141,9 @@ data modify block 29999992 319 7 Items append value {id:"jigsaw",count:1,compone
 setblock 29999993 319 7 barrel
 data remove block 29999993 319 7 Items
 data modify block 29999993 319 7 CustomName set value {"text":"-2","font":"fb:gui","color":"white"}
-data modify block 29999993 319 7 Items append value {id:"minecraft:mangrove_pressure_plate",count:1,components:{custom_data:{recipe:1b,recipe_id:120},item_name:"Netherite Scrap",lore:[{"text":"$800.0 e15","color":"green","italic":false}]},Slot:2}
-data modify block 29999993 319 7 Items append value {id:"minecraft:mangrove_pressure_plate",count:1,components:{custom_data:{recipe:1b,recipe_id:120},item_name:"Netherite Scrap",lore:[{"text":"$800.0 e15","color":"green","italic":false}]},Slot:20}
-data modify block 29999993 319 7 Items append value {id:"minecraft:netherite_scrap",count:1,components:{max_stack_size:64,custom_data:{recipe:1b,recipe_id:121},item_name:"Netherite Scraps",lore:[{"text":"$2.5 e18","color":"green","italic":false}]},Slot:15}
+data modify block 29999993 319 7 Items append value {id:"minecraft:mangrove_pressure_plate",count:1,components:{custom_data:{recipe:1b,recipe_id:120},item_name:"Netherite Scrap",lore:[{"text":"$800.0 Qa","color":"green","italic":false}]},Slot:2}
+data modify block 29999993 319 7 Items append value {id:"minecraft:mangrove_pressure_plate",count:1,components:{custom_data:{recipe:1b,recipe_id:120},item_name:"Netherite Scrap",lore:[{"text":"$800.0 Qa","color":"green","italic":false}]},Slot:20}
+data modify block 29999993 319 7 Items append value {id:"minecraft:netherite_scrap",count:1,components:{max_stack_size:64,custom_data:{recipe:1b,recipe_id:121},item_name:"Netherite Scraps",lore:[{"text":"$2.5 Qu","color":"green","italic":false}]},Slot:15}
 data modify block 29999993 319 7 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:18}
 data modify block 29999993 319 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:0}
 data modify block 29999993 319 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:1}
@@ -4173,8 +4173,8 @@ data remove block 29999994 319 7 Items
 data modify block 29999994 319 7 CustomName set value {"text":"-8","font":"fb:gui","color":"white"}
 data modify block 29999994 319 7 Items append value {id:"minecraft:nether_brick",count:1,components:{custom_data:{recipe:1b,recipe_id:47},item_name:"Nether Brick",lore:[{"text":"$5.0 M","color":"green","italic":false}]},Slot:2}
 data modify block 29999994 319 7 Items append value {id:"minecraft:gold_ingot",count:1,components:{custom_data:{recipe:1b,recipe_id:33},item_name:"Gold Ingot",lore:[{"text":"$200.0 M","color":"green","italic":false}]},Slot:20}
-data modify block 29999994 319 7 Items append value {id:"minecraft:netherite_scrap",count:1,components:{custom_data:{recipe:1b,recipe_id:121},item_name:"Netherite Scraps",lore:[{"text":"$2.5 e18","color":"green","italic":false}]},Slot:10}
-data modify block 29999994 319 7 Items append value {id:"minecraft:netherite_ingot",count:1,components:{max_stack_size:64,custom_data:{recipe:1b,recipe_id:122},item_name:"Netherite Ingot",lore:[{"text":"$3.0 e18","color":"green","italic":false}]},Slot:15}
+data modify block 29999994 319 7 Items append value {id:"minecraft:netherite_scrap",count:1,components:{custom_data:{recipe:1b,recipe_id:121},item_name:"Netherite Scraps",lore:[{"text":"$2.5 Qu","color":"green","italic":false}]},Slot:10}
+data modify block 29999994 319 7 Items append value {id:"minecraft:netherite_ingot",count:1,components:{max_stack_size:64,custom_data:{recipe:1b,recipe_id:122},item_name:"Netherite Ingot",lore:[{"text":"$3.0 Qu","color":"green","italic":false}]},Slot:15}
 data modify block 29999994 319 7 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:18}
 data modify block 29999994 319 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:0}
 data modify block 29999994 319 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:1}
@@ -4291,10 +4291,10 @@ data modify block 29999997 319 7 Items append value {id:"jigsaw",count:1,compone
 setblock 29999998 319 7 barrel
 data remove block 29999998 319 7 Items
 data modify block 29999998 319 7 CustomName set value {"text":"-8","font":"fb:gui","color":"white"}
-data modify block 29999998 319 7 Items append value {id:"minecraft:netherite_ingot",count:1,components:{custom_data:{recipe:1b,recipe_id:122},item_name:"Netherite Ingot",lore:[{"text":"$3.0 e18","color":"green","italic":false}]},Slot:2}
+data modify block 29999998 319 7 Items append value {id:"minecraft:netherite_ingot",count:1,components:{custom_data:{recipe:1b,recipe_id:122},item_name:"Netherite Ingot",lore:[{"text":"$3.0 Qu","color":"green","italic":false}]},Slot:2}
 data modify block 29999998 319 7 Items append value {id:"minecraft:blaze_powder",count:1,components:{custom_data:{recipe:1b,recipe_id:70},item_name:"Blaze Powder",lore:[{"text":"$150.0 B","color":"green","italic":false}]},Slot:20}
 data modify block 29999998 319 7 Items append value {id:"minecraft:diamond_chestplate",count:1,components:{custom_data:{recipe:1b,recipe_id:125},item_name:"Diamond Chestplate",lore:[{"text":"$500.0 B","color":"green","italic":false}]},Slot:10}
-data modify block 29999998 319 7 Items append value {id:"minecraft:netherite_chestplate",count:1,components:{max_stack_size:64,custom_data:{recipe:1b,recipe_id:126},item_name:"Netherite Chestplate",lore:[{"text":"$5.5 e18","color":"green","italic":false}]},Slot:15}
+data modify block 29999998 319 7 Items append value {id:"minecraft:netherite_chestplate",count:1,components:{max_stack_size:64,custom_data:{recipe:1b,recipe_id:126},item_name:"Netherite Chestplate",lore:[{"text":"$5.5 Qu","color":"green","italic":false}]},Slot:15}
 data modify block 29999998 319 7 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:18}
 data modify block 29999998 319 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:0}
 data modify block 29999998 319 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:1}
@@ -4351,10 +4351,10 @@ data modify block 29999999 319 7 Items append value {id:"jigsaw",count:1,compone
 setblock 29999984 319 8 barrel
 data remove block 29999984 319 8 Items
 data modify block 29999984 319 8 CustomName set value {"text":"-8","font":"fb:gui","color":"white"}
-data modify block 29999984 319 8 Items append value {id:"minecraft:netherite_ingot",count:1,components:{custom_data:{recipe:1b,recipe_id:122},item_name:"Netherite Ingot",lore:[{"text":"$3.0 e18","color":"green","italic":false}]},Slot:2}
+data modify block 29999984 319 8 Items append value {id:"minecraft:netherite_ingot",count:1,components:{custom_data:{recipe:1b,recipe_id:122},item_name:"Netherite Ingot",lore:[{"text":"$3.0 Qu","color":"green","italic":false}]},Slot:2}
 data modify block 29999984 319 8 Items append value {id:"minecraft:blaze_powder",count:1,components:{custom_data:{recipe:1b,recipe_id:70},item_name:"Blaze Powder",lore:[{"text":"$150.0 B","color":"green","italic":false}]},Slot:20}
 data modify block 29999984 319 8 Items append value {id:"minecraft:diamond_axe",count:1,components:{custom_data:{recipe:1b,recipe_id:127},item_name:"Diamond Axe",lore:[{"text":"$350.0 B","color":"green","italic":false}]},Slot:10}
-data modify block 29999984 319 8 Items append value {id:"minecraft:netherite_axe",count:1,components:{max_stack_size:64,custom_data:{recipe:1b,recipe_id:128},item_name:"Netherite Axe",lore:[{"text":"$4.0 e18","color":"green","italic":false}]},Slot:15}
+data modify block 29999984 319 8 Items append value {id:"minecraft:netherite_axe",count:1,components:{max_stack_size:64,custom_data:{recipe:1b,recipe_id:128},item_name:"Netherite Axe",lore:[{"text":"$4.0 Qu","color":"green","italic":false}]},Slot:15}
 data modify block 29999984 319 8 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:18}
 data modify block 29999984 319 8 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:0}
 data modify block 29999984 319 8 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:1}
@@ -4504,9 +4504,9 @@ data modify block 29999989 319 8 CustomName set value {"text":"-A","font":"fb:gu
 data modify block 29999989 319 8 Items append value {id:"minecraft:soul_sand",count:1,components:{custom_data:{recipe:1b,recipe_id:40},item_name:"Ender-Infused Soil",lore:[{"text":"$1.0 T","color":"green","italic":false}]},Slot:2}
 data modify block 29999989 319 8 Items append value {id:"minecraft:soul_torch",count:1,components:{custom_data:{recipe:1b,recipe_id:64},item_name:"Enchanted Torch",lore:[{"text":"$1.0 B","color":"green","italic":false}]},Slot:20}
 data modify block 29999989 319 8 Items append value {id:"minecraft:wither_skeleton_skull",count:1,components:{custom_data:{recipe:1b,recipe_id:132},item_name:"Wither Skeleton Skull",lore:[{"text":"$2.0 T","color":"green","italic":false}]},Slot:10}
-data modify block 29999989 319 8 Items append value {id:"minecraft:netherite_axe",count:1,components:{custom_data:{recipe:1b,recipe_id:128},item_name:"Netherite Axe",lore:[{"text":"$4.0 e18","color":"green","italic":false}]},Slot:1}
-data modify block 29999989 319 8 Items append value {id:"minecraft:netherite_chestplate",count:1,components:{custom_data:{recipe:1b,recipe_id:126},item_name:"Netherite Chestplate",lore:[{"text":"$5.5 e18","color":"green","italic":false}]},Slot:19}
-data modify block 29999989 319 8 Items append value {id:"minecraft:nether_star",count:1,components:{max_stack_size:64,custom_data:{recipe:1b,recipe_id:133},item_name:"Nether Star",lore:[{"text":"$50.0 e18","color":"green","italic":false}]},Slot:15}
+data modify block 29999989 319 8 Items append value {id:"minecraft:netherite_axe",count:1,components:{custom_data:{recipe:1b,recipe_id:128},item_name:"Netherite Axe",lore:[{"text":"$4.0 Qu","color":"green","italic":false}]},Slot:1}
+data modify block 29999989 319 8 Items append value {id:"minecraft:netherite_chestplate",count:1,components:{custom_data:{recipe:1b,recipe_id:126},item_name:"Netherite Chestplate",lore:[{"text":"$5.5 Qu","color":"green","italic":false}]},Slot:19}
+data modify block 29999989 319 8 Items append value {id:"minecraft:nether_star",count:1,components:{max_stack_size:64,custom_data:{recipe:1b,recipe_id:133},item_name:"Nether Star",lore:[{"text":"$50.0 Qu","color":"green","italic":false}]},Slot:15}
 data modify block 29999989 319 8 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:18}
 data modify block 29999989 319 8 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:0}
 data modify block 29999989 319 8 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:3}
@@ -5523,7 +5523,7 @@ data remove block 29999985 300 2 Items
 data modify block 29999985 300 2 CustomName set value "Recipes using the item"
 data modify block 29999985 300 2 Items append value {id:"minecraft:purpur_block",count:1,components:{custom_data:{recipe:1b,recipe_id:38},item_name:"Unchiseled Purpur",lore:[{"text":"$50.0 B","color":"green","italic":false}]},Slot:0}
 data modify block 29999985 300 2 Items append value {id:"minecraft:cherry_button",count:1,components:{custom_data:{recipe:1b,recipe_id:48},item_name:"Uncoagulated Mote",lore:[{"text":"$200.0 M","color":"green","italic":false}]},Slot:1}
-data modify block 29999985 300 2 Items append value {id:"minecraft:netherite_ingot",count:1,components:{custom_data:{recipe:1b,recipe_id:122},item_name:"Netherite Ingot",lore:[{"text":"$3.0 e18","color":"green","italic":false}]},Slot:2}
+data modify block 29999985 300 2 Items append value {id:"minecraft:netherite_ingot",count:1,components:{custom_data:{recipe:1b,recipe_id:122},item_name:"Netherite Ingot",lore:[{"text":"$3.0 Qu","color":"green","italic":false}]},Slot:2}
 data modify block 29999985 300 2 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:3}
 data modify block 29999985 300 2 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:4}
 data modify block 29999985 300 2 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:5}
@@ -5732,9 +5732,9 @@ setblock 29999992 300 2 barrel
 data remove block 29999992 300 2 Items
 data modify block 29999992 300 2 CustomName set value "Recipes using the item"
 data modify block 29999992 300 2 Items append value {id:"minecraft:soul_soil",count:1,components:{custom_data:{recipe:1b,recipe_id:41},item_name:"Hardened Soil",lore:[{"text":"$2.0 T","color":"green","italic":false}]},Slot:0}
-data modify block 29999992 300 2 Items append value {id:"minecraft:dried_ghast",count:1,components:{custom_data:{recipe:1b,recipe_id:103},item_name:"Dried Ghast",lore:[{"text":"$3.0 e15","color":"green","italic":false}]},Slot:1}
+data modify block 29999992 300 2 Items append value {id:"minecraft:dried_ghast",count:1,components:{custom_data:{recipe:1b,recipe_id:103},item_name:"Dried Ghast",lore:[{"text":"$3.0 Qa","color":"green","italic":false}]},Slot:1}
 data modify block 29999992 300 2 Items append value {id:"minecraft:wither_skeleton_skull",count:1,components:{custom_data:{recipe:1b,recipe_id:132},item_name:"Wither Skeleton Skull",lore:[{"text":"$2.0 T","color":"green","italic":false}]},Slot:2}
-data modify block 29999992 300 2 Items append value {id:"minecraft:nether_star",count:1,components:{custom_data:{recipe:1b,recipe_id:133},item_name:"Nether Star",lore:[{"text":"$50.0 e18","color":"green","italic":false}]},Slot:3}
+data modify block 29999992 300 2 Items append value {id:"minecraft:nether_star",count:1,components:{custom_data:{recipe:1b,recipe_id:133},item_name:"Nether Star",lore:[{"text":"$50.0 Qu","color":"green","italic":false}]},Slot:3}
 data modify block 29999992 300 2 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:4}
 data modify block 29999992 300 2 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:5}
 data modify block 29999992 300 2 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:6}
@@ -5942,7 +5942,7 @@ setblock 29999999 300 2 barrel
 data remove block 29999999 300 2 Items
 data modify block 29999999 300 2 CustomName set value "Recipes using the item"
 data modify block 29999999 300 2 Items append value {id:"minecraft:cherry_button",count:1,components:{custom_data:{recipe:1b,recipe_id:48},item_name:"Uncoagulated Mote",lore:[{"text":"$200.0 M","color":"green","italic":false}]},Slot:0}
-data modify block 29999999 300 2 Items append value {id:"minecraft:netherite_ingot",count:1,components:{custom_data:{recipe:1b,recipe_id:122},item_name:"Netherite Ingot",lore:[{"text":"$3.0 e18","color":"green","italic":false}]},Slot:1}
+data modify block 29999999 300 2 Items append value {id:"minecraft:netherite_ingot",count:1,components:{custom_data:{recipe:1b,recipe_id:122},item_name:"Netherite Ingot",lore:[{"text":"$3.0 Qu","color":"green","italic":false}]},Slot:1}
 data modify block 29999999 300 2 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:2}
 data modify block 29999999 300 2 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:3}
 data modify block 29999999 300 2 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:4}
@@ -6452,7 +6452,7 @@ setblock 29999984 300 4 barrel
 data remove block 29999984 300 4 Items
 data modify block 29999984 300 4 CustomName set value "Recipes using the item"
 data modify block 29999984 300 4 Items append value {id:"minecraft:breeze_rod",count:1,components:{custom_data:{recipe:1b,recipe_id:68},item_name:"Empty Rod",lore:[{"text":"$150.0 B","color":"green","italic":false}]},Slot:0}
-data modify block 29999984 300 4 Items append value {id:"minecraft:nether_star",count:1,components:{custom_data:{recipe:1b,recipe_id:133},item_name:"Nether Star",lore:[{"text":"$50.0 e18","color":"green","italic":false}]},Slot:1}
+data modify block 29999984 300 4 Items append value {id:"minecraft:nether_star",count:1,components:{custom_data:{recipe:1b,recipe_id:133},item_name:"Nether Star",lore:[{"text":"$50.0 Qu","color":"green","italic":false}]},Slot:1}
 data modify block 29999984 300 4 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:2}
 data modify block 29999984 300 4 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:3}
 data modify block 29999984 300 4 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:4}
@@ -6632,11 +6632,11 @@ setblock 29999990 300 4 barrel
 data remove block 29999990 300 4 Items
 data modify block 29999990 300 4 CustomName set value "Recipes using the item"
 data modify block 29999990 300 4 Items append value {id:"minecraft:ender_eye",count:1,components:{custom_data:{recipe:1b,recipe_id:71},item_name:"Eye of Ender",lore:[{"text":"$6.0 T","color":"green","italic":false}]},Slot:0}
-data modify block 29999990 300 4 Items append value {id:"minecraft:mangrove_pressure_plate",count:1,components:{custom_data:{recipe:1b,recipe_id:120},item_name:"Netherite Scrap",lore:[{"text":"$800.0 e15","color":"green","italic":false}]},Slot:1}
+data modify block 29999990 300 4 Items append value {id:"minecraft:mangrove_pressure_plate",count:1,components:{custom_data:{recipe:1b,recipe_id:120},item_name:"Netherite Scrap",lore:[{"text":"$800.0 Qa","color":"green","italic":false}]},Slot:1}
 data modify block 29999990 300 4 Items append value {id:"minecraft:diamond_block",count:1,components:{custom_data:{recipe:1b,recipe_id:123},item_name:"Diamond Block",lore:[{"text":"$200.0 B","color":"green","italic":false}]},Slot:2}
-data modify block 29999990 300 4 Items append value {id:"minecraft:netherite_chestplate",count:1,components:{custom_data:{recipe:1b,recipe_id:126},item_name:"Netherite Chestplate",lore:[{"text":"$5.5 e18","color":"green","italic":false}]},Slot:3}
+data modify block 29999990 300 4 Items append value {id:"minecraft:netherite_chestplate",count:1,components:{custom_data:{recipe:1b,recipe_id:126},item_name:"Netherite Chestplate",lore:[{"text":"$5.5 Qu","color":"green","italic":false}]},Slot:3}
 data modify block 29999990 300 4 Items append value {id:"minecraft:diamond_axe",count:1,components:{custom_data:{recipe:1b,recipe_id:127},item_name:"Diamond Axe",lore:[{"text":"$350.0 B","color":"green","italic":false}]},Slot:4}
-data modify block 29999990 300 4 Items append value {id:"minecraft:netherite_axe",count:1,components:{custom_data:{recipe:1b,recipe_id:128},item_name:"Netherite Axe",lore:[{"text":"$4.0 e18","color":"green","italic":false}]},Slot:5}
+data modify block 29999990 300 4 Items append value {id:"minecraft:netherite_axe",count:1,components:{custom_data:{recipe:1b,recipe_id:128},item_name:"Netherite Axe",lore:[{"text":"$4.0 Qu","color":"green","italic":false}]},Slot:5}
 data modify block 29999990 300 4 Items append value {id:"minecraft:iron_block",count:1,components:{custom_data:{recipe:1b,recipe_id:129},item_name:"Iron Block",lore:[{"text":"$200.0 B","color":"green","italic":false}]},Slot:6}
 data modify block 29999990 300 4 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:7}
 data modify block 29999990 300 4 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:8}
@@ -7231,7 +7231,7 @@ data modify block 29999993 300 5 Items append value {id:"minecraft:spruce_slab",
 setblock 29999994 300 5 barrel
 data remove block 29999994 300 5 Items
 data modify block 29999994 300 5 CustomName set value "Recipes using the item"
-data modify block 29999994 300 5 Items append value {id:"minecraft:spruce_boat",count:1,components:{custom_data:{recipe:1b,recipe_id:93},item_name:"Spruce Boat",lore:[{"text":"$3.0 e15","color":"green","italic":false}]},Slot:0}
+data modify block 29999994 300 5 Items append value {id:"minecraft:spruce_boat",count:1,components:{custom_data:{recipe:1b,recipe_id:93},item_name:"Spruce Boat",lore:[{"text":"$3.0 Qa","color":"green","italic":false}]},Slot:0}
 data modify block 29999994 300 5 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:1}
 data modify block 29999994 300 5 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:2}
 data modify block 29999994 300 5 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:3}
@@ -7291,7 +7291,7 @@ data modify block 29999995 300 5 Items append value {id:"minecraft:spruce_trapdo
 setblock 29999996 300 5 barrel
 data remove block 29999996 300 5 Items
 data modify block 29999996 300 5 CustomName set value "Recipes using the item"
-data modify block 29999996 300 5 Items append value {id:"minecraft:spruce_boat",count:1,components:{custom_data:{recipe:1b,recipe_id:93},item_name:"Spruce Boat",lore:[{"text":"$3.0 e15","color":"green","italic":false}]},Slot:0}
+data modify block 29999996 300 5 Items append value {id:"minecraft:spruce_boat",count:1,components:{custom_data:{recipe:1b,recipe_id:93},item_name:"Spruce Boat",lore:[{"text":"$3.0 Qa","color":"green","italic":false}]},Slot:0}
 data modify block 29999996 300 5 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:1}
 data modify block 29999996 300 5 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:2}
 data modify block 29999996 300 5 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:3}
@@ -7321,7 +7321,7 @@ data modify block 29999996 300 5 Items append value {id:"minecraft:spruce_door",
 setblock 29999997 300 5 barrel
 data remove block 29999997 300 5 Items
 data modify block 29999997 300 5 CustomName set value "Recipes using the item"
-data modify block 29999997 300 5 Items append value {id:"minecraft:spruce_chest_boat",count:1,components:{custom_data:{recipe:1b,recipe_id:97},item_name:"Spruce Boat with Chest",lore:[{"text":"$7.5 e15","color":"green","italic":false}]},Slot:0}
+data modify block 29999997 300 5 Items append value {id:"minecraft:spruce_chest_boat",count:1,components:{custom_data:{recipe:1b,recipe_id:97},item_name:"Spruce Boat with Chest",lore:[{"text":"$7.5 Qa","color":"green","italic":false}]},Slot:0}
 data modify block 29999997 300 5 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:1}
 data modify block 29999997 300 5 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:2}
 data modify block 29999997 300 5 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:3}
@@ -7347,7 +7347,7 @@ data modify block 29999997 300 5 Items append value {id:"jigsaw",count:1,compone
 data modify block 29999997 300 5 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:23}
 data modify block 29999997 300 5 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:24}
 data modify block 29999997 300 5 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:25}
-data modify block 29999997 300 5 Items append value {id:"minecraft:spruce_boat",count:1,components:{custom_data:{recipe:1b,recipe_id:93},item_name:"Spruce Boat",lore:[{"text":"$3.0 e15","color":"green","italic":false}]},Slot:26}
+data modify block 29999997 300 5 Items append value {id:"minecraft:spruce_boat",count:1,components:{custom_data:{recipe:1b,recipe_id:93},item_name:"Spruce Boat",lore:[{"text":"$3.0 Qa","color":"green","italic":false}]},Slot:26}
 setblock 29999998 300 5 barrel
 data remove block 29999998 300 5 Items
 data modify block 29999998 300 5 CustomName set value "Recipes using the item"
@@ -7381,7 +7381,7 @@ data modify block 29999998 300 5 Items append value {id:"minecraft:brown_dye",co
 setblock 29999999 300 5 barrel
 data remove block 29999999 300 5 Items
 data modify block 29999999 300 5 CustomName set value "Recipes using the item"
-data modify block 29999999 300 5 Items append value {id:"minecraft:chest",count:1,components:{custom_data:{recipe:1b,recipe_id:96},item_name:"Chest",lore:[{"text":"$1.0 e15","color":"green","italic":false}]},Slot:0}
+data modify block 29999999 300 5 Items append value {id:"minecraft:chest",count:1,components:{custom_data:{recipe:1b,recipe_id:96},item_name:"Chest",lore:[{"text":"$1.0 Qa","color":"green","italic":false}]},Slot:0}
 data modify block 29999999 300 5 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:1}
 data modify block 29999999 300 5 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:2}
 data modify block 29999999 300 5 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:3}
@@ -7411,7 +7411,7 @@ data modify block 29999999 300 5 Items append value {id:"minecraft:spruce_pressu
 setblock 29999984 300 6 barrel
 data remove block 29999984 300 6 Items
 data modify block 29999984 300 6 CustomName set value "Recipes using the item"
-data modify block 29999984 300 6 Items append value {id:"minecraft:spruce_chest_boat",count:1,components:{custom_data:{recipe:1b,recipe_id:97},item_name:"Spruce Boat with Chest",lore:[{"text":"$7.5 e15","color":"green","italic":false}]},Slot:0}
+data modify block 29999984 300 6 Items append value {id:"minecraft:spruce_chest_boat",count:1,components:{custom_data:{recipe:1b,recipe_id:97},item_name:"Spruce Boat with Chest",lore:[{"text":"$7.5 Qa","color":"green","italic":false}]},Slot:0}
 data modify block 29999984 300 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:1}
 data modify block 29999984 300 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:2}
 data modify block 29999984 300 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:3}
@@ -7437,11 +7437,11 @@ data modify block 29999984 300 6 Items append value {id:"jigsaw",count:1,compone
 data modify block 29999984 300 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:23}
 data modify block 29999984 300 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:24}
 data modify block 29999984 300 6 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:25}
-data modify block 29999984 300 6 Items append value {id:"minecraft:chest",count:1,components:{custom_data:{recipe:1b,recipe_id:96},item_name:"Chest",lore:[{"text":"$1.0 e15","color":"green","italic":false}]},Slot:26}
+data modify block 29999984 300 6 Items append value {id:"minecraft:chest",count:1,components:{custom_data:{recipe:1b,recipe_id:96},item_name:"Chest",lore:[{"text":"$1.0 Qa","color":"green","italic":false}]},Slot:26}
 setblock 29999985 300 6 barrel
 data remove block 29999985 300 6 Items
 data modify block 29999985 300 6 CustomName set value "Recipes using the item"
-data modify block 29999985 300 6 Items append value {id:"minecraft:command_block",count:1,components:{custom_data:{recipe:1b,recipe_id:118},item_name:"Command Block",lore:[{"text":"$500.0 e15","color":"green","italic":false}]},Slot:0}
+data modify block 29999985 300 6 Items append value {id:"minecraft:command_block",count:1,components:{custom_data:{recipe:1b,recipe_id:118},item_name:"Command Block",lore:[{"text":"$500.0 Qa","color":"green","italic":false}]},Slot:0}
 data modify block 29999985 300 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:1}
 data modify block 29999985 300 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:2}
 data modify block 29999985 300 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:3}
@@ -7467,13 +7467,13 @@ data modify block 29999985 300 6 Items append value {id:"jigsaw",count:1,compone
 data modify block 29999985 300 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:23}
 data modify block 29999985 300 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:24}
 data modify block 29999985 300 6 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:25}
-data modify block 29999985 300 6 Items append value {id:"minecraft:spruce_chest_boat",count:1,components:{custom_data:{recipe:1b,recipe_id:97},item_name:"Spruce Boat with Chest",lore:[{"text":"$7.5 e15","color":"green","italic":false}]},Slot:26}
+data modify block 29999985 300 6 Items append value {id:"minecraft:spruce_chest_boat",count:1,components:{custom_data:{recipe:1b,recipe_id:97},item_name:"Spruce Boat with Chest",lore:[{"text":"$7.5 Qa","color":"green","italic":false}]},Slot:26}
 setblock 29999986 300 6 barrel
 data remove block 29999986 300 6 Items
 data modify block 29999986 300 6 CustomName set value "Recipes using the item"
 data modify block 29999986 300 6 Items append value {id:"minecraft:honey_bottle",count:1,components:{custom_data:{recipe:1b,recipe_id:99},item_name:"Lava Bottle",lore:[{"text":"$5.0 B","color":"green","italic":false}]},Slot:0}
 data modify block 29999986 300 6 Items append value {id:"minecraft:allay_spawn_egg",count:1,components:{custom_data:{recipe:1b,recipe_id:100},item_name:"Water Bottle",lore:[{"text":"$4.0 B","color":"green","italic":false}]},Slot:1}
-data modify block 29999986 300 6 Items append value {id:"minecraft:experience_bottle",count:1,components:{custom_data:{recipe:1b,recipe_id:104},item_name:"Ghast Soul",lore:[{"text":"$50.0 e15","color":"green","italic":false}]},Slot:2}
+data modify block 29999986 300 6 Items append value {id:"minecraft:experience_bottle",count:1,components:{custom_data:{recipe:1b,recipe_id:104},item_name:"Ghast Soul",lore:[{"text":"$50.0 Qa","color":"green","italic":false}]},Slot:2}
 data modify block 29999986 300 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:3}
 data modify block 29999986 300 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:4}
 data modify block 29999986 300 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:5}
@@ -7531,7 +7531,7 @@ data modify block 29999987 300 6 Items append value {id:"minecraft:honey_bottle"
 setblock 29999988 300 6 barrel
 data remove block 29999988 300 6 Items
 data modify block 29999988 300 6 CustomName set value "Recipes using the item"
-data modify block 29999988 300 6 Items append value {id:"minecraft:experience_bottle",count:1,components:{custom_data:{recipe:1b,recipe_id:104},item_name:"Ghast Soul",lore:[{"text":"$50.0 e15","color":"green","italic":false}]},Slot:0}
+data modify block 29999988 300 6 Items append value {id:"minecraft:experience_bottle",count:1,components:{custom_data:{recipe:1b,recipe_id:104},item_name:"Ghast Soul",lore:[{"text":"$50.0 Qa","color":"green","italic":false}]},Slot:0}
 data modify block 29999988 300 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:1}
 data modify block 29999988 300 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:2}
 data modify block 29999988 300 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:3}
@@ -7561,7 +7561,7 @@ data modify block 29999988 300 6 Items append value {id:"minecraft:allay_spawn_e
 setblock 29999989 300 6 barrel
 data remove block 29999989 300 6 Items
 data modify block 29999989 300 6 CustomName set value "Recipes using the item"
-data modify block 29999989 300 6 Items append value {id:"minecraft:prismarine_crystals",count:1,components:{custom_data:{recipe:1b,recipe_id:102},item_name:"Ghast Tear Cluster",lore:[{"text":"$1.5 e15","color":"green","italic":false}]},Slot:0}
+data modify block 29999989 300 6 Items append value {id:"minecraft:prismarine_crystals",count:1,components:{custom_data:{recipe:1b,recipe_id:102},item_name:"Ghast Tear Cluster",lore:[{"text":"$1.5 Qa","color":"green","italic":false}]},Slot:0}
 data modify block 29999989 300 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:1}
 data modify block 29999989 300 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:2}
 data modify block 29999989 300 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:3}
@@ -7591,7 +7591,7 @@ data modify block 29999989 300 6 Items append value {id:"minecraft:ghast_tear",c
 setblock 29999990 300 6 barrel
 data remove block 29999990 300 6 Items
 data modify block 29999990 300 6 CustomName set value "Recipes using the item"
-data modify block 29999990 300 6 Items append value {id:"minecraft:dried_ghast",count:1,components:{custom_data:{recipe:1b,recipe_id:103},item_name:"Dried Ghast",lore:[{"text":"$3.0 e15","color":"green","italic":false}]},Slot:0}
+data modify block 29999990 300 6 Items append value {id:"minecraft:dried_ghast",count:1,components:{custom_data:{recipe:1b,recipe_id:103},item_name:"Dried Ghast",lore:[{"text":"$3.0 Qa","color":"green","italic":false}]},Slot:0}
 data modify block 29999990 300 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:1}
 data modify block 29999990 300 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:2}
 data modify block 29999990 300 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:3}
@@ -7617,11 +7617,11 @@ data modify block 29999990 300 6 Items append value {id:"jigsaw",count:1,compone
 data modify block 29999990 300 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:23}
 data modify block 29999990 300 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:24}
 data modify block 29999990 300 6 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:25}
-data modify block 29999990 300 6 Items append value {id:"minecraft:prismarine_crystals",count:1,components:{custom_data:{recipe:1b,recipe_id:102},item_name:"Ghast Tear Cluster",lore:[{"text":"$1.5 e15","color":"green","italic":false}]},Slot:26}
+data modify block 29999990 300 6 Items append value {id:"minecraft:prismarine_crystals",count:1,components:{custom_data:{recipe:1b,recipe_id:102},item_name:"Ghast Tear Cluster",lore:[{"text":"$1.5 Qa","color":"green","italic":false}]},Slot:26}
 setblock 29999991 300 6 barrel
 data remove block 29999991 300 6 Items
 data modify block 29999991 300 6 CustomName set value "Recipes using the item"
-data modify block 29999991 300 6 Items append value {id:"minecraft:experience_bottle",count:1,components:{custom_data:{recipe:1b,recipe_id:104},item_name:"Ghast Soul",lore:[{"text":"$50.0 e15","color":"green","italic":false}]},Slot:0}
+data modify block 29999991 300 6 Items append value {id:"minecraft:experience_bottle",count:1,components:{custom_data:{recipe:1b,recipe_id:104},item_name:"Ghast Soul",lore:[{"text":"$50.0 Qa","color":"green","italic":false}]},Slot:0}
 data modify block 29999991 300 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:1}
 data modify block 29999991 300 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:2}
 data modify block 29999991 300 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:3}
@@ -7647,11 +7647,11 @@ data modify block 29999991 300 6 Items append value {id:"jigsaw",count:1,compone
 data modify block 29999991 300 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:23}
 data modify block 29999991 300 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:24}
 data modify block 29999991 300 6 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:25}
-data modify block 29999991 300 6 Items append value {id:"minecraft:dried_ghast",count:1,components:{custom_data:{recipe:1b,recipe_id:103},item_name:"Dried Ghast",lore:[{"text":"$3.0 e15","color":"green","italic":false}]},Slot:26}
+data modify block 29999991 300 6 Items append value {id:"minecraft:dried_ghast",count:1,components:{custom_data:{recipe:1b,recipe_id:103},item_name:"Dried Ghast",lore:[{"text":"$3.0 Qa","color":"green","italic":false}]},Slot:26}
 setblock 29999992 300 6 barrel
 data remove block 29999992 300 6 Items
 data modify block 29999992 300 6 CustomName set value "Recipes using the item"
-data modify block 29999992 300 6 Items append value {id:"minecraft:bedrock",count:1,components:{custom_data:{recipe:1b,recipe_id:117},item_name:"Bedrock",lore:[{"text":"$200.0 e15","color":"green","italic":false}]},Slot:0}
+data modify block 29999992 300 6 Items append value {id:"minecraft:bedrock",count:1,components:{custom_data:{recipe:1b,recipe_id:117},item_name:"Bedrock",lore:[{"text":"$200.0 Qa","color":"green","italic":false}]},Slot:0}
 data modify block 29999992 300 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:1}
 data modify block 29999992 300 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:2}
 data modify block 29999992 300 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:3}
@@ -7677,7 +7677,7 @@ data modify block 29999992 300 6 Items append value {id:"jigsaw",count:1,compone
 data modify block 29999992 300 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:23}
 data modify block 29999992 300 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:24}
 data modify block 29999992 300 6 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:25}
-data modify block 29999992 300 6 Items append value {id:"minecraft:experience_bottle",count:1,components:{custom_data:{recipe:1b,recipe_id:104},item_name:"Ghast Soul",lore:[{"text":"$50.0 e15","color":"green","italic":false}]},Slot:26}
+data modify block 29999992 300 6 Items append value {id:"minecraft:experience_bottle",count:1,components:{custom_data:{recipe:1b,recipe_id:104},item_name:"Ghast Soul",lore:[{"text":"$50.0 Qa","color":"green","italic":false}]},Slot:26}
 setblock 29999993 300 6 barrel
 data remove block 29999993 300 6 Items
 data modify block 29999993 300 6 CustomName set value "Recipes using the item"
@@ -7831,7 +7831,7 @@ data modify block 29999997 300 6 Items append value {id:"minecraft:purple_concre
 setblock 29999998 300 6 barrel
 data remove block 29999998 300 6 Items
 data modify block 29999998 300 6 CustomName set value "Recipes using the item"
-data modify block 29999998 300 6 Items append value {id:"minecraft:bedrock",count:1,components:{custom_data:{recipe:1b,recipe_id:117},item_name:"Bedrock",lore:[{"text":"$200.0 e15","color":"green","italic":false}]},Slot:0}
+data modify block 29999998 300 6 Items append value {id:"minecraft:bedrock",count:1,components:{custom_data:{recipe:1b,recipe_id:117},item_name:"Bedrock",lore:[{"text":"$200.0 Qa","color":"green","italic":false}]},Slot:0}
 data modify block 29999998 300 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:1}
 data modify block 29999998 300 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:2}
 data modify block 29999998 300 6 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:3}
@@ -8011,7 +8011,7 @@ data modify block 29999987 300 7 Items append value {id:"minecraft:magma_block",
 setblock 29999988 300 7 barrel
 data remove block 29999988 300 7 Items
 data modify block 29999988 300 7 CustomName set value "Recipes using the item"
-data modify block 29999988 300 7 Items append value {id:"minecraft:bedrock",count:1,components:{custom_data:{recipe:1b,recipe_id:117},item_name:"Bedrock",lore:[{"text":"$200.0 e15","color":"green","italic":false}]},Slot:0}
+data modify block 29999988 300 7 Items append value {id:"minecraft:bedrock",count:1,components:{custom_data:{recipe:1b,recipe_id:117},item_name:"Bedrock",lore:[{"text":"$200.0 Qa","color":"green","italic":false}]},Slot:0}
 data modify block 29999988 300 7 Items append value {id:"minecraft:skeleton_skull",count:1,components:{custom_data:{recipe:1b,recipe_id:131},item_name:"Skeleton Skull",lore:[{"text":"$750.0 B","color":"green","italic":false}]},Slot:1}
 data modify block 29999988 300 7 Items append value {id:"minecraft:wither_skeleton_skull",count:1,components:{custom_data:{recipe:1b,recipe_id:132},item_name:"Wither Skeleton Skull",lore:[{"text":"$2.0 T","color":"green","italic":false}]},Slot:2}
 data modify block 29999988 300 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:3}
@@ -8041,8 +8041,8 @@ data modify block 29999988 300 7 Items append value {id:"minecraft:gray_concrete
 setblock 29999989 300 7 barrel
 data remove block 29999989 300 7 Items
 data modify block 29999989 300 7 CustomName set value "Recipes using the item"
-data modify block 29999989 300 7 Items append value {id:"minecraft:command_block",count:1,components:{custom_data:{recipe:1b,recipe_id:118},item_name:"Command Block",lore:[{"text":"$500.0 e15","color":"green","italic":false}]},Slot:0}
-data modify block 29999989 300 7 Items append value {id:"minecraft:mangrove_button",count:1,components:{custom_data:{recipe:1b,recipe_id:119},item_name:"Netherite Chip",lore:[{"text":"$300.0 e15","color":"green","italic":false}]},Slot:1}
+data modify block 29999989 300 7 Items append value {id:"minecraft:command_block",count:1,components:{custom_data:{recipe:1b,recipe_id:118},item_name:"Command Block",lore:[{"text":"$500.0 Qa","color":"green","italic":false}]},Slot:0}
+data modify block 29999989 300 7 Items append value {id:"minecraft:mangrove_button",count:1,components:{custom_data:{recipe:1b,recipe_id:119},item_name:"Netherite Chip",lore:[{"text":"$300.0 Qa","color":"green","italic":false}]},Slot:1}
 data modify block 29999989 300 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:2}
 data modify block 29999989 300 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:3}
 data modify block 29999989 300 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:4}
@@ -8067,11 +8067,11 @@ data modify block 29999989 300 7 Items append value {id:"jigsaw",count:1,compone
 data modify block 29999989 300 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:23}
 data modify block 29999989 300 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:24}
 data modify block 29999989 300 7 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:25}
-data modify block 29999989 300 7 Items append value {id:"minecraft:bedrock",count:1,components:{custom_data:{recipe:1b,recipe_id:117},item_name:"Bedrock",lore:[{"text":"$200.0 e15","color":"green","italic":false}]},Slot:26}
+data modify block 29999989 300 7 Items append value {id:"minecraft:bedrock",count:1,components:{custom_data:{recipe:1b,recipe_id:117},item_name:"Bedrock",lore:[{"text":"$200.0 Qa","color":"green","italic":false}]},Slot:26}
 setblock 29999990 300 7 barrel
 data remove block 29999990 300 7 Items
 data modify block 29999990 300 7 CustomName set value "Recipes using the item"
-data modify block 29999990 300 7 Items append value {id:"minecraft:mangrove_button",count:1,components:{custom_data:{recipe:1b,recipe_id:119},item_name:"Netherite Chip",lore:[{"text":"$300.0 e15","color":"green","italic":false}]},Slot:0}
+data modify block 29999990 300 7 Items append value {id:"minecraft:mangrove_button",count:1,components:{custom_data:{recipe:1b,recipe_id:119},item_name:"Netherite Chip",lore:[{"text":"$300.0 Qa","color":"green","italic":false}]},Slot:0}
 data modify block 29999990 300 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:1}
 data modify block 29999990 300 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:2}
 data modify block 29999990 300 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:3}
@@ -8097,11 +8097,11 @@ data modify block 29999990 300 7 Items append value {id:"jigsaw",count:1,compone
 data modify block 29999990 300 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:23}
 data modify block 29999990 300 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:24}
 data modify block 29999990 300 7 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:25}
-data modify block 29999990 300 7 Items append value {id:"minecraft:command_block",count:1,components:{custom_data:{recipe:1b,recipe_id:118},item_name:"Command Block",lore:[{"text":"$500.0 e15","color":"green","italic":false}]},Slot:26}
+data modify block 29999990 300 7 Items append value {id:"minecraft:command_block",count:1,components:{custom_data:{recipe:1b,recipe_id:118},item_name:"Command Block",lore:[{"text":"$500.0 Qa","color":"green","italic":false}]},Slot:26}
 setblock 29999991 300 7 barrel
 data remove block 29999991 300 7 Items
 data modify block 29999991 300 7 CustomName set value "Recipes using the item"
-data modify block 29999991 300 7 Items append value {id:"minecraft:mangrove_pressure_plate",count:1,components:{custom_data:{recipe:1b,recipe_id:120},item_name:"Netherite Scrap",lore:[{"text":"$800.0 e15","color":"green","italic":false}]},Slot:0}
+data modify block 29999991 300 7 Items append value {id:"minecraft:mangrove_pressure_plate",count:1,components:{custom_data:{recipe:1b,recipe_id:120},item_name:"Netherite Scrap",lore:[{"text":"$800.0 Qa","color":"green","italic":false}]},Slot:0}
 data modify block 29999991 300 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:1}
 data modify block 29999991 300 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:2}
 data modify block 29999991 300 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:3}
@@ -8127,11 +8127,11 @@ data modify block 29999991 300 7 Items append value {id:"jigsaw",count:1,compone
 data modify block 29999991 300 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:23}
 data modify block 29999991 300 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:24}
 data modify block 29999991 300 7 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:25}
-data modify block 29999991 300 7 Items append value {id:"minecraft:mangrove_button",count:1,components:{custom_data:{recipe:1b,recipe_id:119},item_name:"Netherite Chip",lore:[{"text":"$300.0 e15","color":"green","italic":false}]},Slot:26}
+data modify block 29999991 300 7 Items append value {id:"minecraft:mangrove_button",count:1,components:{custom_data:{recipe:1b,recipe_id:119},item_name:"Netherite Chip",lore:[{"text":"$300.0 Qa","color":"green","italic":false}]},Slot:26}
 setblock 29999992 300 7 barrel
 data remove block 29999992 300 7 Items
 data modify block 29999992 300 7 CustomName set value "Recipes using the item"
-data modify block 29999992 300 7 Items append value {id:"minecraft:netherite_scrap",count:1,components:{custom_data:{recipe:1b,recipe_id:121},item_name:"Netherite Scraps",lore:[{"text":"$2.5 e18","color":"green","italic":false}]},Slot:0}
+data modify block 29999992 300 7 Items append value {id:"minecraft:netherite_scrap",count:1,components:{custom_data:{recipe:1b,recipe_id:121},item_name:"Netherite Scraps",lore:[{"text":"$2.5 Qu","color":"green","italic":false}]},Slot:0}
 data modify block 29999992 300 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:1}
 data modify block 29999992 300 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:2}
 data modify block 29999992 300 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:3}
@@ -8157,11 +8157,11 @@ data modify block 29999992 300 7 Items append value {id:"jigsaw",count:1,compone
 data modify block 29999992 300 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:23}
 data modify block 29999992 300 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:24}
 data modify block 29999992 300 7 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:25}
-data modify block 29999992 300 7 Items append value {id:"minecraft:mangrove_pressure_plate",count:1,components:{custom_data:{recipe:1b,recipe_id:120},item_name:"Netherite Scrap",lore:[{"text":"$800.0 e15","color":"green","italic":false}]},Slot:26}
+data modify block 29999992 300 7 Items append value {id:"minecraft:mangrove_pressure_plate",count:1,components:{custom_data:{recipe:1b,recipe_id:120},item_name:"Netherite Scrap",lore:[{"text":"$800.0 Qa","color":"green","italic":false}]},Slot:26}
 setblock 29999993 300 7 barrel
 data remove block 29999993 300 7 Items
 data modify block 29999993 300 7 CustomName set value "Recipes using the item"
-data modify block 29999993 300 7 Items append value {id:"minecraft:netherite_ingot",count:1,components:{custom_data:{recipe:1b,recipe_id:122},item_name:"Netherite Ingot",lore:[{"text":"$3.0 e18","color":"green","italic":false}]},Slot:0}
+data modify block 29999993 300 7 Items append value {id:"minecraft:netherite_ingot",count:1,components:{custom_data:{recipe:1b,recipe_id:122},item_name:"Netherite Ingot",lore:[{"text":"$3.0 Qu","color":"green","italic":false}]},Slot:0}
 data modify block 29999993 300 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:1}
 data modify block 29999993 300 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:2}
 data modify block 29999993 300 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:3}
@@ -8187,12 +8187,12 @@ data modify block 29999993 300 7 Items append value {id:"jigsaw",count:1,compone
 data modify block 29999993 300 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:23}
 data modify block 29999993 300 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:24}
 data modify block 29999993 300 7 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:25}
-data modify block 29999993 300 7 Items append value {id:"minecraft:netherite_scrap",count:1,components:{custom_data:{recipe:1b,recipe_id:121},item_name:"Netherite Scraps",lore:[{"text":"$2.5 e18","color":"green","italic":false}]},Slot:26}
+data modify block 29999993 300 7 Items append value {id:"minecraft:netherite_scrap",count:1,components:{custom_data:{recipe:1b,recipe_id:121},item_name:"Netherite Scraps",lore:[{"text":"$2.5 Qu","color":"green","italic":false}]},Slot:26}
 setblock 29999994 300 7 barrel
 data remove block 29999994 300 7 Items
 data modify block 29999994 300 7 CustomName set value "Recipes using the item"
-data modify block 29999994 300 7 Items append value {id:"minecraft:netherite_chestplate",count:1,components:{custom_data:{recipe:1b,recipe_id:126},item_name:"Netherite Chestplate",lore:[{"text":"$5.5 e18","color":"green","italic":false}]},Slot:0}
-data modify block 29999994 300 7 Items append value {id:"minecraft:netherite_axe",count:1,components:{custom_data:{recipe:1b,recipe_id:128},item_name:"Netherite Axe",lore:[{"text":"$4.0 e18","color":"green","italic":false}]},Slot:1}
+data modify block 29999994 300 7 Items append value {id:"minecraft:netherite_chestplate",count:1,components:{custom_data:{recipe:1b,recipe_id:126},item_name:"Netherite Chestplate",lore:[{"text":"$5.5 Qu","color":"green","italic":false}]},Slot:0}
+data modify block 29999994 300 7 Items append value {id:"minecraft:netherite_axe",count:1,components:{custom_data:{recipe:1b,recipe_id:128},item_name:"Netherite Axe",lore:[{"text":"$4.0 Qu","color":"green","italic":false}]},Slot:1}
 data modify block 29999994 300 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:2}
 data modify block 29999994 300 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:3}
 data modify block 29999994 300 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:4}
@@ -8217,7 +8217,7 @@ data modify block 29999994 300 7 Items append value {id:"jigsaw",count:1,compone
 data modify block 29999994 300 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:23}
 data modify block 29999994 300 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:24}
 data modify block 29999994 300 7 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:25}
-data modify block 29999994 300 7 Items append value {id:"minecraft:netherite_ingot",count:1,components:{custom_data:{recipe:1b,recipe_id:122},item_name:"Netherite Ingot",lore:[{"text":"$3.0 e18","color":"green","italic":false}]},Slot:26}
+data modify block 29999994 300 7 Items append value {id:"minecraft:netherite_ingot",count:1,components:{custom_data:{recipe:1b,recipe_id:122},item_name:"Netherite Ingot",lore:[{"text":"$3.0 Qu","color":"green","italic":false}]},Slot:26}
 setblock 29999995 300 7 barrel
 data remove block 29999995 300 7 Items
 data modify block 29999995 300 7 CustomName set value "Recipes using the item"
@@ -8281,7 +8281,7 @@ data modify block 29999996 300 7 Items append value {id:"minecraft:diamond",coun
 setblock 29999997 300 7 barrel
 data remove block 29999997 300 7 Items
 data modify block 29999997 300 7 CustomName set value "Recipes using the item"
-data modify block 29999997 300 7 Items append value {id:"minecraft:netherite_chestplate",count:1,components:{custom_data:{recipe:1b,recipe_id:126},item_name:"Netherite Chestplate",lore:[{"text":"$5.5 e18","color":"green","italic":false}]},Slot:0}
+data modify block 29999997 300 7 Items append value {id:"minecraft:netherite_chestplate",count:1,components:{custom_data:{recipe:1b,recipe_id:126},item_name:"Netherite Chestplate",lore:[{"text":"$5.5 Qu","color":"green","italic":false}]},Slot:0}
 data modify block 29999997 300 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:1}
 data modify block 29999997 300 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:2}
 data modify block 29999997 300 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:3}
@@ -8311,7 +8311,7 @@ data modify block 29999997 300 7 Items append value {id:"minecraft:diamond_chest
 setblock 29999998 300 7 barrel
 data remove block 29999998 300 7 Items
 data modify block 29999998 300 7 CustomName set value "Recipes using the item"
-data modify block 29999998 300 7 Items append value {id:"minecraft:nether_star",count:1,components:{custom_data:{recipe:1b,recipe_id:133},item_name:"Nether Star",lore:[{"text":"$50.0 e18","color":"green","italic":false}]},Slot:0}
+data modify block 29999998 300 7 Items append value {id:"minecraft:nether_star",count:1,components:{custom_data:{recipe:1b,recipe_id:133},item_name:"Nether Star",lore:[{"text":"$50.0 Qu","color":"green","italic":false}]},Slot:0}
 data modify block 29999998 300 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:1}
 data modify block 29999998 300 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:2}
 data modify block 29999998 300 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:3}
@@ -8337,11 +8337,11 @@ data modify block 29999998 300 7 Items append value {id:"jigsaw",count:1,compone
 data modify block 29999998 300 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:23}
 data modify block 29999998 300 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:24}
 data modify block 29999998 300 7 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:25}
-data modify block 29999998 300 7 Items append value {id:"minecraft:netherite_chestplate",count:1,components:{custom_data:{recipe:1b,recipe_id:126},item_name:"Netherite Chestplate",lore:[{"text":"$5.5 e18","color":"green","italic":false}]},Slot:26}
+data modify block 29999998 300 7 Items append value {id:"minecraft:netherite_chestplate",count:1,components:{custom_data:{recipe:1b,recipe_id:126},item_name:"Netherite Chestplate",lore:[{"text":"$5.5 Qu","color":"green","italic":false}]},Slot:26}
 setblock 29999999 300 7 barrel
 data remove block 29999999 300 7 Items
 data modify block 29999999 300 7 CustomName set value "Recipes using the item"
-data modify block 29999999 300 7 Items append value {id:"minecraft:netherite_axe",count:1,components:{custom_data:{recipe:1b,recipe_id:128},item_name:"Netherite Axe",lore:[{"text":"$4.0 e18","color":"green","italic":false}]},Slot:0}
+data modify block 29999999 300 7 Items append value {id:"minecraft:netherite_axe",count:1,components:{custom_data:{recipe:1b,recipe_id:128},item_name:"Netherite Axe",lore:[{"text":"$4.0 Qu","color":"green","italic":false}]},Slot:0}
 data modify block 29999999 300 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:1}
 data modify block 29999999 300 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:2}
 data modify block 29999999 300 7 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:3}
@@ -8371,7 +8371,7 @@ data modify block 29999999 300 7 Items append value {id:"minecraft:diamond_axe",
 setblock 29999984 300 8 barrel
 data remove block 29999984 300 8 Items
 data modify block 29999984 300 8 CustomName set value "Recipes using the item"
-data modify block 29999984 300 8 Items append value {id:"minecraft:nether_star",count:1,components:{custom_data:{recipe:1b,recipe_id:133},item_name:"Nether Star",lore:[{"text":"$50.0 e18","color":"green","italic":false}]},Slot:0}
+data modify block 29999984 300 8 Items append value {id:"minecraft:nether_star",count:1,components:{custom_data:{recipe:1b,recipe_id:133},item_name:"Nether Star",lore:[{"text":"$50.0 Qu","color":"green","italic":false}]},Slot:0}
 data modify block 29999984 300 8 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:1}
 data modify block 29999984 300 8 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:2}
 data modify block 29999984 300 8 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:3}
@@ -8397,7 +8397,7 @@ data modify block 29999984 300 8 Items append value {id:"jigsaw",count:1,compone
 data modify block 29999984 300 8 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:23}
 data modify block 29999984 300 8 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:24}
 data modify block 29999984 300 8 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:25}
-data modify block 29999984 300 8 Items append value {id:"minecraft:netherite_axe",count:1,components:{custom_data:{recipe:1b,recipe_id:128},item_name:"Netherite Axe",lore:[{"text":"$4.0 e18","color":"green","italic":false}]},Slot:26}
+data modify block 29999984 300 8 Items append value {id:"minecraft:netherite_axe",count:1,components:{custom_data:{recipe:1b,recipe_id:128},item_name:"Netherite Axe",lore:[{"text":"$4.0 Qu","color":"green","italic":false}]},Slot:26}
 setblock 29999985 300 8 barrel
 data remove block 29999985 300 8 Items
 data modify block 29999985 300 8 CustomName set value "Recipes using the item"
@@ -8491,7 +8491,7 @@ data modify block 29999987 300 8 Items append value {id:"minecraft:skeleton_skul
 setblock 29999988 300 8 barrel
 data remove block 29999988 300 8 Items
 data modify block 29999988 300 8 CustomName set value "Recipes using the item"
-data modify block 29999988 300 8 Items append value {id:"minecraft:nether_star",count:1,components:{custom_data:{recipe:1b,recipe_id:133},item_name:"Nether Star",lore:[{"text":"$50.0 e18","color":"green","italic":false}]},Slot:0}
+data modify block 29999988 300 8 Items append value {id:"minecraft:nether_star",count:1,components:{custom_data:{recipe:1b,recipe_id:133},item_name:"Nether Star",lore:[{"text":"$50.0 Qu","color":"green","italic":false}]},Slot:0}
 data modify block 29999988 300 8 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:1}
 data modify block 29999988 300 8 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:2}
 data modify block 29999988 300 8 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:3}
@@ -8547,7 +8547,7 @@ data modify block 29999989 300 8 Items append value {id:"jigsaw",count:1,compone
 data modify block 29999989 300 8 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:23}
 data modify block 29999989 300 8 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:24}
 data modify block 29999989 300 8 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:25}
-data modify block 29999989 300 8 Items append value {id:"minecraft:nether_star",count:1,components:{custom_data:{recipe:1b,recipe_id:133},item_name:"Nether Star",lore:[{"text":"$50.0 e18","color":"green","italic":false}]},Slot:26}
+data modify block 29999989 300 8 Items append value {id:"minecraft:nether_star",count:1,components:{custom_data:{recipe:1b,recipe_id:133},item_name:"Nether Star",lore:[{"text":"$50.0 Qu","color":"green","italic":false}]},Slot:26}
 setblock 29999984 312 13 barrel
 data remove block 29999984 312 13 Items
 data modify block 29999984 312 13 CustomName set value "Items ordered by price (1/6)"
@@ -8694,27 +8694,27 @@ data modify block 29999988 312 13 Items append value {id:"minecraft:wooden_shove
 data modify block 29999988 312 13 Items append value {id:"minecraft:spruce_trapdoor",count:1,components:{custom_data:{recipe:1b,recipe_id:91},item_name:"Spruce Trapdoor",lore:[{"text":"$190.0 T","color":"green","italic":false}]},Slot:22}
 data modify block 29999988 312 13 Items append value {id:"minecraft:ghast_tear",count:1,components:{custom_data:{recipe:1b,recipe_id:101},item_name:"Ghast Tear",lore:[{"text":"$300.0 T","color":"green","italic":false}]},Slot:23}
 data modify block 29999988 312 13 Items append value {id:"minecraft:spruce_door",count:1,components:{custom_data:{recipe:1b,recipe_id:92},item_name:"Spruce Door",lore:[{"text":"$400.0 T","color":"green","italic":false}]},Slot:24}
-data modify block 29999988 312 13 Items append value {id:"minecraft:chest",count:1,components:{custom_data:{recipe:1b,recipe_id:96},item_name:"Chest",lore:[{"text":"$1.0 e15","color":"green","italic":false}]},Slot:25}
+data modify block 29999988 312 13 Items append value {id:"minecraft:chest",count:1,components:{custom_data:{recipe:1b,recipe_id:96},item_name:"Chest",lore:[{"text":"$1.0 Qa","color":"green","italic":false}]},Slot:25}
 data modify block 29999988 312 13 Items append value {id:"jigsaw",count:1,components:{item_name:"Prev Page",rarity:"common",item_model:"fb:prev",custom_data:{recipe:1b,recipe_id:2003}},Slot:8}
 data modify block 29999988 312 13 Items append value {id:"name_tag",count:1,components:{item_name:"Order by name",custom_data:{recipe:1b,recipe_id:2100}},Slot:17}
 data modify block 29999988 312 13 Items append value {id:"jigsaw",count:1,components:{item_name:"Next Page",rarity:"common",item_model:"fb:next",custom_data:{recipe:1b,recipe_id:2005}},Slot:26}
 setblock 29999989 312 13 barrel
 data remove block 29999989 312 13 Items
 data modify block 29999989 312 13 CustomName set value "Items ordered by price (6/6)"
-data modify block 29999989 312 13 Items append value {id:"minecraft:prismarine_crystals",count:1,components:{custom_data:{recipe:1b,recipe_id:102},item_name:"Ghast Tear Cluster",lore:[{"text":"$1.5 e15","color":"green","italic":false}]},Slot:0}
-data modify block 29999989 312 13 Items append value {id:"minecraft:spruce_boat",count:1,components:{custom_data:{recipe:1b,recipe_id:93},item_name:"Spruce Boat",lore:[{"text":"$3.0 e15","color":"green","italic":false}]},Slot:1}
-data modify block 29999989 312 13 Items append value {id:"minecraft:dried_ghast",count:1,components:{custom_data:{recipe:1b,recipe_id:103},item_name:"Dried Ghast",lore:[{"text":"$3.0 e15","color":"green","italic":false}]},Slot:2}
-data modify block 29999989 312 13 Items append value {id:"minecraft:spruce_chest_boat",count:1,components:{custom_data:{recipe:1b,recipe_id:97},item_name:"Spruce Boat with Chest",lore:[{"text":"$7.5 e15","color":"green","italic":false}]},Slot:3}
-data modify block 29999989 312 13 Items append value {id:"minecraft:experience_bottle",count:1,components:{custom_data:{recipe:1b,recipe_id:104},item_name:"Ghast Soul",lore:[{"text":"$50.0 e15","color":"green","italic":false}]},Slot:4}
-data modify block 29999989 312 13 Items append value {id:"minecraft:bedrock",count:1,components:{custom_data:{recipe:1b,recipe_id:117},item_name:"Bedrock",lore:[{"text":"$200.0 e15","color":"green","italic":false}]},Slot:5}
-data modify block 29999989 312 13 Items append value {id:"minecraft:mangrove_button",count:1,components:{custom_data:{recipe:1b,recipe_id:119},item_name:"Netherite Chip",lore:[{"text":"$300.0 e15","color":"green","italic":false}]},Slot:6}
-data modify block 29999989 312 13 Items append value {id:"minecraft:command_block",count:1,components:{custom_data:{recipe:1b,recipe_id:118},item_name:"Command Block",lore:[{"text":"$500.0 e15","color":"green","italic":false}]},Slot:7}
-data modify block 29999989 312 13 Items append value {id:"minecraft:mangrove_pressure_plate",count:1,components:{custom_data:{recipe:1b,recipe_id:120},item_name:"Netherite Scrap",lore:[{"text":"$800.0 e15","color":"green","italic":false}]},Slot:9}
-data modify block 29999989 312 13 Items append value {id:"minecraft:netherite_scrap",count:1,components:{custom_data:{recipe:1b,recipe_id:121},item_name:"Netherite Scraps",lore:[{"text":"$2.5 e18","color":"green","italic":false}]},Slot:10}
-data modify block 29999989 312 13 Items append value {id:"minecraft:netherite_ingot",count:1,components:{custom_data:{recipe:1b,recipe_id:122},item_name:"Netherite Ingot",lore:[{"text":"$3.0 e18","color":"green","italic":false}]},Slot:11}
-data modify block 29999989 312 13 Items append value {id:"minecraft:netherite_axe",count:1,components:{custom_data:{recipe:1b,recipe_id:128},item_name:"Netherite Axe",lore:[{"text":"$4.0 e18","color":"green","italic":false}]},Slot:12}
-data modify block 29999989 312 13 Items append value {id:"minecraft:netherite_chestplate",count:1,components:{custom_data:{recipe:1b,recipe_id:126},item_name:"Netherite Chestplate",lore:[{"text":"$5.5 e18","color":"green","italic":false}]},Slot:13}
-data modify block 29999989 312 13 Items append value {id:"minecraft:nether_star",count:1,components:{custom_data:{recipe:1b,recipe_id:133},item_name:"Nether Star",lore:[{"text":"$50.0 e18","color":"green","italic":false}]},Slot:14}
+data modify block 29999989 312 13 Items append value {id:"minecraft:prismarine_crystals",count:1,components:{custom_data:{recipe:1b,recipe_id:102},item_name:"Ghast Tear Cluster",lore:[{"text":"$1.5 Qa","color":"green","italic":false}]},Slot:0}
+data modify block 29999989 312 13 Items append value {id:"minecraft:spruce_boat",count:1,components:{custom_data:{recipe:1b,recipe_id:93},item_name:"Spruce Boat",lore:[{"text":"$3.0 Qa","color":"green","italic":false}]},Slot:1}
+data modify block 29999989 312 13 Items append value {id:"minecraft:dried_ghast",count:1,components:{custom_data:{recipe:1b,recipe_id:103},item_name:"Dried Ghast",lore:[{"text":"$3.0 Qa","color":"green","italic":false}]},Slot:2}
+data modify block 29999989 312 13 Items append value {id:"minecraft:spruce_chest_boat",count:1,components:{custom_data:{recipe:1b,recipe_id:97},item_name:"Spruce Boat with Chest",lore:[{"text":"$7.5 Qa","color":"green","italic":false}]},Slot:3}
+data modify block 29999989 312 13 Items append value {id:"minecraft:experience_bottle",count:1,components:{custom_data:{recipe:1b,recipe_id:104},item_name:"Ghast Soul",lore:[{"text":"$50.0 Qa","color":"green","italic":false}]},Slot:4}
+data modify block 29999989 312 13 Items append value {id:"minecraft:bedrock",count:1,components:{custom_data:{recipe:1b,recipe_id:117},item_name:"Bedrock",lore:[{"text":"$200.0 Qa","color":"green","italic":false}]},Slot:5}
+data modify block 29999989 312 13 Items append value {id:"minecraft:mangrove_button",count:1,components:{custom_data:{recipe:1b,recipe_id:119},item_name:"Netherite Chip",lore:[{"text":"$300.0 Qa","color":"green","italic":false}]},Slot:6}
+data modify block 29999989 312 13 Items append value {id:"minecraft:command_block",count:1,components:{custom_data:{recipe:1b,recipe_id:118},item_name:"Command Block",lore:[{"text":"$500.0 Qa","color":"green","italic":false}]},Slot:7}
+data modify block 29999989 312 13 Items append value {id:"minecraft:mangrove_pressure_plate",count:1,components:{custom_data:{recipe:1b,recipe_id:120},item_name:"Netherite Scrap",lore:[{"text":"$800.0 Qa","color":"green","italic":false}]},Slot:9}
+data modify block 29999989 312 13 Items append value {id:"minecraft:netherite_scrap",count:1,components:{custom_data:{recipe:1b,recipe_id:121},item_name:"Netherite Scraps",lore:[{"text":"$2.5 Qu","color":"green","italic":false}]},Slot:10}
+data modify block 29999989 312 13 Items append value {id:"minecraft:netherite_ingot",count:1,components:{custom_data:{recipe:1b,recipe_id:122},item_name:"Netherite Ingot",lore:[{"text":"$3.0 Qu","color":"green","italic":false}]},Slot:11}
+data modify block 29999989 312 13 Items append value {id:"minecraft:netherite_axe",count:1,components:{custom_data:{recipe:1b,recipe_id:128},item_name:"Netherite Axe",lore:[{"text":"$4.0 Qu","color":"green","italic":false}]},Slot:12}
+data modify block 29999989 312 13 Items append value {id:"minecraft:netherite_chestplate",count:1,components:{custom_data:{recipe:1b,recipe_id:126},item_name:"Netherite Chestplate",lore:[{"text":"$5.5 Qu","color":"green","italic":false}]},Slot:13}
+data modify block 29999989 312 13 Items append value {id:"minecraft:nether_star",count:1,components:{custom_data:{recipe:1b,recipe_id:133},item_name:"Nether Star",lore:[{"text":"$50.0 Qu","color":"green","italic":false}]},Slot:14}
 data modify block 29999989 312 13 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:15}
 data modify block 29999989 312 13 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:16}
 data modify block 29999989 312 13 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"fb:full"},Slot:18}
@@ -8737,7 +8737,7 @@ data modify block 29999988 311 3 Items append value {id:"minecraft:crimson_hypha
 data modify block 29999988 311 3 Items append value {id:"minecraft:andesite",count:1,components:{custom_data:{recipe:1b,recipe_id:28},item_name:"Andesite",lore:[{"text":"$1.0 k","color":"green","italic":false}]},Slot:3}
 data modify block 29999988 311 3 Items append value {id:"minecraft:gray_concrete_powder",count:1,components:{custom_data:{recipe:1b,recipe_id:116},item_name:"Antimatter",lore:[{"text":"$15.0 B","color":"green","italic":false}]},Slot:4}
 data modify block 29999988 311 3 Items append value {id:"minecraft:anvil",count:1,components:{custom_data:{recipe:1b,recipe_id:25},item_name:"Anvil",lore:[{"text":"$5.0 M","color":"green","italic":false}]},Slot:5}
-data modify block 29999988 311 3 Items append value {id:"minecraft:bedrock",count:1,components:{custom_data:{recipe:1b,recipe_id:117},item_name:"Bedrock",lore:[{"text":"$200.0 e15","color":"green","italic":false}]},Slot:6}
+data modify block 29999988 311 3 Items append value {id:"minecraft:bedrock",count:1,components:{custom_data:{recipe:1b,recipe_id:117},item_name:"Bedrock",lore:[{"text":"$200.0 Qa","color":"green","italic":false}]},Slot:6}
 data modify block 29999988 311 3 Items append value {id:"minecraft:birch_log",count:1,components:{custom_data:{recipe:1b,recipe_id:12},item_name:"Birch Log",lore:[{"text":"$1.0 M","color":"green","italic":false}]},Slot:7}
 data modify block 29999988 311 3 Items append value {id:"minecraft:birch_planks",count:1,components:{custom_data:{recipe:1b,recipe_id:14},item_name:"Birch Planks",lore:[{"text":"$300.0 k","color":"green","italic":false}]},Slot:9}
 data modify block 29999988 311 3 Items append value {id:"minecraft:birch_slab",count:1,components:{custom_data:{recipe:1b,recipe_id:15},item_name:"Birch Slab",lore:[{"text":"$150.0 k","color":"green","italic":false}]},Slot:10}
@@ -8747,7 +8747,7 @@ data modify block 29999988 311 3 Items append value {id:"minecraft:blaze_rod",co
 data modify block 29999988 311 3 Items append value {id:"minecraft:bone_block",count:1,components:{custom_data:{recipe:1b,recipe_id:130},item_name:"Bone Block",lore:[{"text":"$500.0 B","color":"green","italic":false}]},Slot:14}
 data modify block 29999988 311 3 Items append value {id:"minecraft:stripped_pale_oak_wood",count:1,components:{custom_data:{recipe:1b,recipe_id:52},item_name:"Calcified Lump",lore:[{"text":"$4.0 B","color":"green","italic":false}]},Slot:15}
 data modify block 29999988 311 3 Items append value {id:"minecraft:charcoal",count:1,components:{custom_data:{recipe:1b,recipe_id:4},item_name:"Charcoal",lore:[{"text":"$25","color":"green","italic":false}]},Slot:16}
-data modify block 29999988 311 3 Items append value {id:"minecraft:chest",count:1,components:{custom_data:{recipe:1b,recipe_id:96},item_name:"Chest",lore:[{"text":"$1.0 e15","color":"green","italic":false}]},Slot:18}
+data modify block 29999988 311 3 Items append value {id:"minecraft:chest",count:1,components:{custom_data:{recipe:1b,recipe_id:96},item_name:"Chest",lore:[{"text":"$1.0 Qa","color":"green","italic":false}]},Slot:18}
 data modify block 29999988 311 3 Items append value {id:"minecraft:chiseled_quartz_block",count:1,components:{custom_data:{recipe:1b,recipe_id:56},item_name:"Chieseled Quartz",lore:[{"text":"$80.0 B","color":"green","italic":false}]},Slot:19}
 data modify block 29999988 311 3 Items append value {id:"minecraft:purpur_pillar",count:1,components:{custom_data:{recipe:1b,recipe_id:39},item_name:"Chiseled Purpur",lore:[{"text":"$300.0 B","color":"green","italic":false}]},Slot:20}
 data modify block 29999988 311 3 Items append value {id:"minecraft:chiseled_stone_bricks",count:1,components:{custom_data:{recipe:1b,recipe_id:113},item_name:"Chiseled Stone Bricks",lore:[{"text":"$1.0 k","color":"green","italic":false}]},Slot:21}
@@ -8766,7 +8766,7 @@ data modify block 29999989 311 3 Items append value {id:"minecraft:coal_block",c
 data modify block 29999989 311 3 Items append value {id:"minecraft:glowstone_dust",count:1,components:{custom_data:{recipe:1b,recipe_id:18},item_name:"Coal-Copper Blend",lore:[{"text":"$2.0 M","color":"green","italic":false}]},Slot:2}
 data modify block 29999989 311 3 Items append value {id:"minecraft:orange_dye",count:1,components:{custom_data:{recipe:1b,recipe_id:19},item_name:"Coal-Copper Ingot",lore:[{"text":"$5.0 M","color":"green","italic":false}]},Slot:3}
 data modify block 29999989 311 3 Items append value {id:"minecraft:cobblestone",count:1,components:{custom_data:{recipe:1b,recipe_id:5},item_name:"Cobblestone",lore:[{"text":"$20","color":"green","italic":false}]},Slot:4}
-data modify block 29999989 311 3 Items append value {id:"minecraft:command_block",count:1,components:{custom_data:{recipe:1b,recipe_id:118},item_name:"Command Block",lore:[{"text":"$500.0 e15","color":"green","italic":false}]},Slot:5}
+data modify block 29999989 311 3 Items append value {id:"minecraft:command_block",count:1,components:{custom_data:{recipe:1b,recipe_id:118},item_name:"Command Block",lore:[{"text":"$500.0 Qa","color":"green","italic":false}]},Slot:5}
 data modify block 29999989 311 3 Items append value {id:"minecraft:copper_ingot",count:1,components:{custom_data:{recipe:1b,recipe_id:17},item_name:"Copper Ingot",lore:[{"text":"$2.0 M","color":"green","italic":false}]},Slot:6}
 data modify block 29999989 311 3 Items append value {id:"minecraft:cracked_nether_bricks",count:1,components:{custom_data:{recipe:1b,recipe_id:73},item_name:"Cracked Nether Bricks",lore:[{"text":"$2.5 M","color":"green","italic":false}]},Slot:7}
 data modify block 29999989 311 3 Items append value {id:"minecraft:stripped_mangrove_wood",count:1,components:{custom_data:{recipe:1b,recipe_id:61},item_name:"Dehydrated Cluster",lore:[{"text":"$3.0 M","color":"green","italic":false}]},Slot:9}
@@ -8774,7 +8774,7 @@ data modify block 29999989 311 3 Items append value {id:"minecraft:diamond",coun
 data modify block 29999989 311 3 Items append value {id:"minecraft:diamond_axe",count:1,components:{custom_data:{recipe:1b,recipe_id:127},item_name:"Diamond Axe",lore:[{"text":"$350.0 B","color":"green","italic":false}]},Slot:11}
 data modify block 29999989 311 3 Items append value {id:"minecraft:diamond_block",count:1,components:{custom_data:{recipe:1b,recipe_id:123},item_name:"Diamond Block",lore:[{"text":"$200.0 B","color":"green","italic":false}]},Slot:12}
 data modify block 29999989 311 3 Items append value {id:"minecraft:diamond_chestplate",count:1,components:{custom_data:{recipe:1b,recipe_id:125},item_name:"Diamond Chestplate",lore:[{"text":"$500.0 B","color":"green","italic":false}]},Slot:13}
-data modify block 29999989 311 3 Items append value {id:"minecraft:dried_ghast",count:1,components:{custom_data:{recipe:1b,recipe_id:103},item_name:"Dried Ghast",lore:[{"text":"$3.0 e15","color":"green","italic":false}]},Slot:14}
+data modify block 29999989 311 3 Items append value {id:"minecraft:dried_ghast",count:1,components:{custom_data:{recipe:1b,recipe_id:103},item_name:"Dried Ghast",lore:[{"text":"$3.0 Qa","color":"green","italic":false}]},Slot:14}
 data modify block 29999989 311 3 Items append value {id:"minecraft:breeze_rod",count:1,components:{custom_data:{recipe:1b,recipe_id:68},item_name:"Empty Rod",lore:[{"text":"$150.0 B","color":"green","italic":false}]},Slot:15}
 data modify block 29999989 311 3 Items append value {id:"minecraft:soul_torch",count:1,components:{custom_data:{recipe:1b,recipe_id:64},item_name:"Enchanted Torch",lore:[{"text":"$1.0 B","color":"green","italic":false}]},Slot:16}
 data modify block 29999989 311 3 Items append value {id:"minecraft:end_crystal",count:1,components:{custom_data:{recipe:1b,recipe_id:72},item_name:"End Crystal",lore:[{"text":"$30.0 T","color":"green","italic":false}]},Slot:18}
@@ -8794,9 +8794,9 @@ data modify block 29999990 311 3 CustomName set value "Items ordered by name (3/
 data modify block 29999990 311 3 Items append value {id:"minecraft:gilded_blackstone",count:1,components:{custom_data:{recipe:1b,recipe_id:79},item_name:"Enriched Volcano Rock",lore:[{"text":"$20.0 B","color":"green","italic":false}]},Slot:0}
 data modify block 29999990 311 3 Items append value {id:"minecraft:ender_eye",count:1,components:{custom_data:{recipe:1b,recipe_id:71},item_name:"Eye of Ender",lore:[{"text":"$6.0 T","color":"green","italic":false}]},Slot:1}
 data modify block 29999990 311 3 Items append value {id:"minecraft:sand",count:1,components:{custom_data:{recipe:1b,recipe_id:36},item_name:"Filtered Endstone Powder",lore:[{"text":"$4.0 B","color":"green","italic":false}]},Slot:2}
-data modify block 29999990 311 3 Items append value {id:"minecraft:experience_bottle",count:1,components:{custom_data:{recipe:1b,recipe_id:104},item_name:"Ghast Soul",lore:[{"text":"$50.0 e15","color":"green","italic":false}]},Slot:3}
+data modify block 29999990 311 3 Items append value {id:"minecraft:experience_bottle",count:1,components:{custom_data:{recipe:1b,recipe_id:104},item_name:"Ghast Soul",lore:[{"text":"$50.0 Qa","color":"green","italic":false}]},Slot:3}
 data modify block 29999990 311 3 Items append value {id:"minecraft:ghast_tear",count:1,components:{custom_data:{recipe:1b,recipe_id:101},item_name:"Ghast Tear",lore:[{"text":"$300.0 T","color":"green","italic":false}]},Slot:4}
-data modify block 29999990 311 3 Items append value {id:"minecraft:prismarine_crystals",count:1,components:{custom_data:{recipe:1b,recipe_id:102},item_name:"Ghast Tear Cluster",lore:[{"text":"$1.5 e15","color":"green","italic":false}]},Slot:5}
+data modify block 29999990 311 3 Items append value {id:"minecraft:prismarine_crystals",count:1,components:{custom_data:{recipe:1b,recipe_id:102},item_name:"Ghast Tear Cluster",lore:[{"text":"$1.5 Qa","color":"green","italic":false}]},Slot:5}
 data modify block 29999990 311 3 Items append value {id:"minecraft:glass_bottle",count:1,components:{custom_data:{recipe:1b,recipe_id:98},item_name:"Glass Bottle",lore:[{"text":"$3.0 B","color":"green","italic":false}]},Slot:6}
 data modify block 29999990 311 3 Items append value {id:"minecraft:crying_obsidian",count:1,components:{custom_data:{recipe:1b,recipe_id:110},item_name:"Glowing Obsidian",lore:[{"text":"$1.5 T","color":"green","italic":false}]},Slot:7}
 data modify block 29999990 311 3 Items append value {id:"minecraft:amethyst_block",count:1,components:{custom_data:{recipe:1b,recipe_id:108},item_name:"Glowing Obsidian Block",lore:[{"text":"$750.0 B","color":"green","italic":false}]},Slot:9}
@@ -8826,14 +8826,14 @@ data modify block 29999991 311 3 Items append value {id:"minecraft:nether_brick"
 data modify block 29999991 311 3 Items append value {id:"minecraft:nether_bricks",count:1,components:{custom_data:{recipe:1b,recipe_id:45},item_name:"Nether Brick Block",lore:[{"text":"$2.0 M","color":"green","italic":false}]},Slot:2}
 data modify block 29999991 311 3 Items append value {id:"minecraft:nether_brick_slab",count:1,components:{custom_data:{recipe:1b,recipe_id:46},item_name:"Nether Brick Slab",lore:[{"text":"$3.0 M","color":"green","italic":false}]},Slot:3}
 data modify block 29999991 311 3 Items append value {id:"minecraft:brown_concrete_powder",count:1,components:{custom_data:{recipe:1b,recipe_id:74},item_name:"Nether Dust",lore:[{"text":"$5.0 M","color":"green","italic":false}]},Slot:4}
-data modify block 29999991 311 3 Items append value {id:"minecraft:nether_star",count:1,components:{custom_data:{recipe:1b,recipe_id:133},item_name:"Nether Star",lore:[{"text":"$50.0 e18","color":"green","italic":false}]},Slot:5}
+data modify block 29999991 311 3 Items append value {id:"minecraft:nether_star",count:1,components:{custom_data:{recipe:1b,recipe_id:133},item_name:"Nether Star",lore:[{"text":"$50.0 Qu","color":"green","italic":false}]},Slot:5}
 data modify block 29999991 311 3 Items append value {id:"minecraft:black_concrete_powder",count:1,components:{custom_data:{recipe:1b,recipe_id:76},item_name:"Nether-End Dust",lore:[{"text":"$10.0 B","color":"green","italic":false}]},Slot:6}
-data modify block 29999991 311 3 Items append value {id:"minecraft:netherite_axe",count:1,components:{custom_data:{recipe:1b,recipe_id:128},item_name:"Netherite Axe",lore:[{"text":"$4.0 e18","color":"green","italic":false}]},Slot:7}
-data modify block 29999991 311 3 Items append value {id:"minecraft:netherite_chestplate",count:1,components:{custom_data:{recipe:1b,recipe_id:126},item_name:"Netherite Chestplate",lore:[{"text":"$5.5 e18","color":"green","italic":false}]},Slot:9}
-data modify block 29999991 311 3 Items append value {id:"minecraft:mangrove_button",count:1,components:{custom_data:{recipe:1b,recipe_id:119},item_name:"Netherite Chip",lore:[{"text":"$300.0 e15","color":"green","italic":false}]},Slot:10}
-data modify block 29999991 311 3 Items append value {id:"minecraft:netherite_ingot",count:1,components:{custom_data:{recipe:1b,recipe_id:122},item_name:"Netherite Ingot",lore:[{"text":"$3.0 e18","color":"green","italic":false}]},Slot:11}
-data modify block 29999991 311 3 Items append value {id:"minecraft:mangrove_pressure_plate",count:1,components:{custom_data:{recipe:1b,recipe_id:120},item_name:"Netherite Scrap",lore:[{"text":"$800.0 e15","color":"green","italic":false}]},Slot:12}
-data modify block 29999991 311 3 Items append value {id:"minecraft:netherite_scrap",count:1,components:{custom_data:{recipe:1b,recipe_id:121},item_name:"Netherite Scraps",lore:[{"text":"$2.5 e18","color":"green","italic":false}]},Slot:13}
+data modify block 29999991 311 3 Items append value {id:"minecraft:netherite_axe",count:1,components:{custom_data:{recipe:1b,recipe_id:128},item_name:"Netherite Axe",lore:[{"text":"$4.0 Qu","color":"green","italic":false}]},Slot:7}
+data modify block 29999991 311 3 Items append value {id:"minecraft:netherite_chestplate",count:1,components:{custom_data:{recipe:1b,recipe_id:126},item_name:"Netherite Chestplate",lore:[{"text":"$5.5 Qu","color":"green","italic":false}]},Slot:9}
+data modify block 29999991 311 3 Items append value {id:"minecraft:mangrove_button",count:1,components:{custom_data:{recipe:1b,recipe_id:119},item_name:"Netherite Chip",lore:[{"text":"$300.0 Qa","color":"green","italic":false}]},Slot:10}
+data modify block 29999991 311 3 Items append value {id:"minecraft:netherite_ingot",count:1,components:{custom_data:{recipe:1b,recipe_id:122},item_name:"Netherite Ingot",lore:[{"text":"$3.0 Qu","color":"green","italic":false}]},Slot:11}
+data modify block 29999991 311 3 Items append value {id:"minecraft:mangrove_pressure_plate",count:1,components:{custom_data:{recipe:1b,recipe_id:120},item_name:"Netherite Scrap",lore:[{"text":"$800.0 Qa","color":"green","italic":false}]},Slot:12}
+data modify block 29999991 311 3 Items append value {id:"minecraft:netherite_scrap",count:1,components:{custom_data:{recipe:1b,recipe_id:121},item_name:"Netherite Scraps",lore:[{"text":"$2.5 Qu","color":"green","italic":false}]},Slot:13}
 data modify block 29999991 311 3 Items append value {id:"minecraft:netherrack",count:1,components:{custom_data:{recipe:1b,recipe_id:44},item_name:"Netherrack",lore:[{"text":"$1.0 M","color":"green","italic":false}]},Slot:14}
 data modify block 29999991 311 3 Items append value {id:"minecraft:oak_log",count:1,components:{custom_data:{recipe:1b,recipe_id:0},item_name:"Oak Log",lore:[{"text":"$5","color":"green","italic":false}]},Slot:15}
 data modify block 29999991 311 3 Items append value {id:"minecraft:oak_planks",count:1,components:{custom_data:{recipe:1b,recipe_id:1},item_name:"Oak Planks",lore:[{"text":"$3","color":"green","italic":false}]},Slot:16}
@@ -8861,8 +8861,8 @@ data modify block 29999992 311 3 Items append value {id:"minecraft:raw_gold_bloc
 data modify block 29999992 311 3 Items append value {id:"minecraft:end_stone_bricks",count:1,components:{custom_data:{recipe:1b,recipe_id:112},item_name:"Smooth End Stone",lore:[{"text":"$500.0 M","color":"green","italic":false}]},Slot:7}
 data modify block 29999992 311 3 Items append value {id:"minecraft:smooth_stone",count:1,components:{custom_data:{recipe:1b,recipe_id:7},item_name:"Smooth Stone",lore:[{"text":"$75","color":"green","italic":false}]},Slot:9}
 data modify block 29999992 311 3 Items append value {id:"minecraft:nether_quartz_ore",count:1,components:{custom_data:{recipe:1b,recipe_id:53},item_name:"Sparse Nether Quartz",lore:[{"text":"$6.0 B","color":"green","italic":false}]},Slot:10}
-data modify block 29999992 311 3 Items append value {id:"minecraft:spruce_boat",count:1,components:{custom_data:{recipe:1b,recipe_id:93},item_name:"Spruce Boat",lore:[{"text":"$3.0 e15","color":"green","italic":false}]},Slot:11}
-data modify block 29999992 311 3 Items append value {id:"minecraft:spruce_chest_boat",count:1,components:{custom_data:{recipe:1b,recipe_id:97},item_name:"Spruce Boat with Chest",lore:[{"text":"$7.5 e15","color":"green","italic":false}]},Slot:12}
+data modify block 29999992 311 3 Items append value {id:"minecraft:spruce_boat",count:1,components:{custom_data:{recipe:1b,recipe_id:93},item_name:"Spruce Boat",lore:[{"text":"$3.0 Qa","color":"green","italic":false}]},Slot:11}
+data modify block 29999992 311 3 Items append value {id:"minecraft:spruce_chest_boat",count:1,components:{custom_data:{recipe:1b,recipe_id:97},item_name:"Spruce Boat with Chest",lore:[{"text":"$7.5 Qa","color":"green","italic":false}]},Slot:12}
 data modify block 29999992 311 3 Items append value {id:"minecraft:spruce_door",count:1,components:{custom_data:{recipe:1b,recipe_id:92},item_name:"Spruce Door",lore:[{"text":"$400.0 T","color":"green","italic":false}]},Slot:13}
 data modify block 29999992 311 3 Items append value {id:"minecraft:spruce_log",count:1,components:{custom_data:{recipe:1b,recipe_id:84},item_name:"Spruce Log",lore:[{"text":"$12.5 T","color":"green","italic":false}]},Slot:14}
 data modify block 29999992 311 3 Items append value {id:"minecraft:spruce_planks",count:1,components:{custom_data:{recipe:1b,recipe_id:87},item_name:"Spruce Planks",lore:[{"text":"$150.0 T","color":"green","italic":false}]},Slot:15}
