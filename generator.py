@@ -1467,7 +1467,7 @@ def number_to_numeral(n):
 def number_to_human(n):
     if n < 1000:
         return str(n)
-    mul = ["","k","M","B","T","Qa","Qu","Sx","Sp","Oc","No","Dc"]
+    mul = ["","k","M","B","T","e15","e18","e21","e24","e27","e30","e33"]
     i = 0
     while n >= 1000:
         n = n / 1000
