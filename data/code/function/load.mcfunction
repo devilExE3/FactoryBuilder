@@ -144,6 +144,7 @@ kill @e[type=item_display,tag=item,x=0]
 schedule function code:tick 1t replace
 schedule function code:tick_1s 20t replace
 schedule function code:tick_5s 100t replace
+schedule function code:tick_60s 60s replace
 schedule function code:backups 1800s replace
 
 # reset online list

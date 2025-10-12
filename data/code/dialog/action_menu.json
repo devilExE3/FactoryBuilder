@@ -1,0 +1,68 @@
+{
+  "type": "minecraft:multi_action",
+  "title": "Utils",
+  "external_title": "Utils",
+  "inputs": [],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "close",
+  "columns": 1,
+  "actions": [
+    {
+      "label": "Export Plot",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger export_plot"
+      }
+    },
+    {
+      "label": "Kill Items",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger kill_items"
+      }
+    },
+    {
+      "label": "Plot",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger plot"
+      }
+    },
+    {
+      "label": "Reload Plot",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger reload_plot"
+      }
+    },
+    {
+      "label": "Shrink",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger shrink"
+      }
+    },
+    {
+      "label": "Spawn",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger spawn"
+      }
+    },
+    {
+      "label": "Spec",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger spec"
+      }
+    },
+    {
+      "label": "Wipe Plot",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger wipe_plot"
+      }
+    }
+  ]
+}
