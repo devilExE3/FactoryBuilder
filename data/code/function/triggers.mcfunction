@@ -45,3 +45,8 @@ scoreboard players enable @a settings.alert_zero_production
 
 execute as @a[scores={z_show_recipe=0..}] run function code:trigger/show_recipe
 scoreboard players set @a z_show_recipe -2
+
+execute as @a[scores={chicken_tp=1}] run tellraw @s [{"text":"Teleporting the chicken!", "color":"red"}]
+execute as @a[scores={chicken_tp=1}] at @s run tp @e[tag=dev,limit=1] @s
+scoreboard players set @a[scores={chicken_tp=1}] chicken_tp 0
+scoreboard players enable @a[tag=chickenOwner] chicken_tp

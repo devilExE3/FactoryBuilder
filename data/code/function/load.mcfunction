@@ -81,6 +81,7 @@ scoreboard objectives add shrink trigger
 scoreboard objectives add settings.chat_notifications trigger
 scoreboard objectives add settings.alert_zero_production trigger
 scoreboard objectives add z_show_recipe dummy
+scoreboard objectives add chicken_tp trigger
 
 # default teams
 team add default

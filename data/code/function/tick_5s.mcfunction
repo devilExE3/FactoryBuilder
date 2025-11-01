@@ -1,3 +1,5 @@
+execute unless entity @e[tag=dev] positioned 2.65 1.00 2.96 run summon chicken ~ ~ ~ {Invulnerable:1b,CustomName:{"text":"Dev","color":"red"},Tags:[dev]}
+
 schedule function code:tick_5s 100t replace
 function code:logic/gen_stagger/0
 schedule function code:logic/gen_stagger/1 1t
