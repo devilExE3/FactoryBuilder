@@ -38,13 +38,15 @@ effect give @s fire_resistance infinite 0 true
 attribute @s minecraft:attack_damage base set 0
 attribute @s minecraft:burning_time base set 0
 team join default @s
-execute as @s[tag=is_am] run team join am @s
-execute as @s[tag=is_fm] run team join afm @s
-execute as @s[tag=recipe_helper] run team join aerecipes @s
-execute as @s[tag=is_tester] run team join aetester @s
-execute as @s[tag=is_artist] run team join aesartist @s
-execute as @s[tag=dev_helper] run team join adev @s
-execute as @s[tag=is_owner] run team join adev @s
+execute as @s[tag=is_am] run team join h_am @s
+execute as @s[tag=is_fm] run team join g_fm @s
+execute as @s[tag=is_fm2] run team join f_fm2 @s
+execute as @s[tag=is_xm] run team join e_xm @s
+execute as @s[tag=is_tester] run team join d_tester @s
+execute as @s[tag=is_artist] run team join c_artist @s
+execute as @s[tag=recipe_helper] run team join b_recipes @s
+execute as @s[tag=dev_helper] run team join a_dev @s
+execute as @s[tag=is_owner] run team join a_dev @s
 
 execute unless score @s money.0 matches 0.. run scoreboard players set @s money.0 0
 execute unless score @s money.1 matches 0.. run scoreboard players set @s money.1 0
