@@ -119,22 +119,22 @@ team modify d_tester deathMessageVisibility never
 
 team add e_xm
 team modify e_xm collisionRule never
-team modify e_xm prefix {"text":"xᴍ ","color":"#FC32FC"}
+team modify e_xm prefix {"text":"xᴍ ","color":"#FF33FF"}
 team modify e_xm deathMessageVisibility never
 
 team add f_fm2
 team modify f_fm2 collisionRule never
-team modify f_fm2 prefix [{"text":"ꜰᴍ","color":"#8686fb"},{"text":"² ","color":"#B80949"}]
+team modify f_fm2 prefix [{"text":"ꜰᴍ","color":"#8888FF"},{"text":"² ","color":"#BA094A"}]
 team modify f_fm2 deathMessageVisibility never
 
 team add g_fm
 team modify g_fm collisionRule never
-team modify g_fm prefix {"text":"ꜰᴍ ","color":"#8686fb"}
+team modify g_fm prefix {"text":"ꜰᴍ ","color":"#8888FF"}
 team modify g_fm deathMessageVisibility never
 
 team add h_am
 team modify h_am collisionRule never
-team modify h_am prefix {"text":"ᴀᴍ ","color":"#96f9b2"}
+team modify h_am prefix {"text":"ᴀᴍ ","color":"#98FDB5"}
 team modify h_am deathMessageVisibility never
 
 # auxiliary blocks
