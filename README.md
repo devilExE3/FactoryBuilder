@@ -1,4 +1,10 @@
-adding new blocks:
+# Factory Builder
+A minigame on Legitimoose.com where you build a factory and become rich!
+
+
+# Editing Information
+
+## To add new blocks you must modify:
 loot_table (item and minecraft block)
 backbone/frontbone
 place.block
@@ -8,11 +14,12 @@ load/save backbone
 tags/block/factory
 shop (in script)
 
-block logic:
+## Block logic is at:
 logic
 tick_1s/item
 
 
+# License
 Copyright (c) 2025 devilExE3
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
