@@ -87,6 +87,7 @@ scoreboard objectives add spec trigger
 scoreboard objectives add shrink trigger
 scoreboard objectives add settings.chat_notifications trigger
 scoreboard objectives add settings.alert_zero_production trigger
+scoreboard objectives add settings.menu_click_sound trigger
 scoreboard objectives add z_show_recipe dummy
 
 # default teams

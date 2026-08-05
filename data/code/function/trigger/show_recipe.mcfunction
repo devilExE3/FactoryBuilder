@@ -30,4 +30,4 @@ execute store result storage temp recipe.px int 1 run scoreboard players get #x 
 execute store result storage temp recipe.py int 1 run scoreboard players get #y math
 execute store result storage temp recipe.pz int 1 run scoreboard players get #z math
 function code:trigger/show_recipe.macro with storage temp recipe
-execute at @s run playsound ui.button.click master @s
+execute as @s[scores={settings.menu_click_sound=0}] at @s run playsound ui.button.click master @s

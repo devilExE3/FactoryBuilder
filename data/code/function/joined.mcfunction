@@ -2,8 +2,7 @@ tellraw @s ""
 tellraw @s ""
 tellraw @s ""
 tellraw @s ""
-tellraw @s [{"text":"Welcome to ","color": "white"},{"text":"Factory ","color": "gold"},{"text":"Builder","color": "gray"},{"text":"!","color": "white"}]
-
+tellraw @s [{"text":"Welcome to ","color": "white"},{"text":"","extra":[{"text":"F","color":"#FFAA00","bold":true},{"text":"ᴀ","color":"#FFB400","bold":true},{"text":"ᴄ","color":"#FFBE00","bold":true},{"text":"ᴛ","color":"#FFC800","bold":true},{"text":"ᴏ","color":"#FFD100","bold":true},{"text":"ʀ","color":"#FFDB00","bold":true},{"text":"ʏ","color":"#FFE500","bold":true}]},{"text":"","extra":[{"text":"B","color":"#AAAAAA","bold":true},{"text":"ᴜ","color":"#B4B4B4","bold":true},{"text":"ɪ","color":"#BEBEBE","bold":true},{"text":"ʟ","color":"#C8C8C8","bold":true},{"text":"ᴅ","color":"#D1D1D1","bold":true},{"text":"ᴇ","color":"#DBDBDB","bold":true},{"text":"ʀ","color":"#E5E5E5","bold":true}]},{"text":"!","color": "white"}]
 scoreboard players operation @s timer = #timer timer
 scoreboard players set #ID id 1
 scoreboard players set @s id 0
@@ -74,6 +73,7 @@ playerlist @s footer set <gray>Made with <red>❤</red> by <gold><b>devilexe3</b
 # enable triggers
 execute unless score @s settings.chat_notifications matches 0.. run scoreboard players set @s settings.chat_notifications 0
 execute unless score @s settings.alert_zero_production matches 0.. run scoreboard players set @s settings.alert_zero_production 0
+execute unless score @s settings.menu_click_sound matches 0.. run scoreboard players set @s settings.menu_click_sound 0
 
 function code:changelog
 # fix fox

@@ -33,15 +33,27 @@ scoreboard players set @a shrink 0
 
 execute as @a[scores={settings.chat_notifications=1}] run tellraw @s [{"text":"🛠","color":"light_purple"},{"text":" Chat notifications: ","color": "white"},{"text":"off","color": "red"}]
 scoreboard players add @a[scores={settings.chat_notifications=1}] settings.chat_notifications 1
-execute as @a[scores={settings.chat_notifications=3}] run tellraw @s [{"text":"🛠","color":"light_purple"},{"text":" Chat notifications: ","color": "white"},{"text":"on","color": "green"}]
-scoreboard players set @a[scores={settings.chat_notifications=3}] settings.chat_notifications 0
+execute as @a[scores={settings.chat_notifications=3..}] run tellraw @s [{"text":"🛠","color":"light_purple"},{"text":" Chat notifications: ","color": "white"},{"text":"on","color": "green"}]
+scoreboard players set @a[scores={settings.chat_notifications=3..}] settings.chat_notifications 0
+execute as @a[scores={settings.chat_notifications=..-1}] run tellraw @s [{"text":"🛠","color":"light_purple"},{"text":" Chat notifications: ","color": "white"},{"text":"on","color": "green"}]
+scoreboard players set @a[scores={settings.chat_notifications=..-1}] settings.chat_notifications 0
 scoreboard players enable @a settings.chat_notifications
 
 execute as @a[scores={settings.alert_zero_production=1}] run tellraw @s [{"text":"🛠","color":"light_purple"},{"text":" Alert when zero production: ","color": "white"},{"text":"on","color": "green"}]
 scoreboard players add @a[scores={settings.alert_zero_production=1}] settings.alert_zero_production 1
-execute as @a[scores={settings.alert_zero_production=3}] run tellraw @s [{"text":"🛠","color":"light_purple"},{"text":" Alert when zero production: ","color": "white"},{"text":"off","color": "red"}]
-scoreboard players set @a[scores={settings.alert_zero_production=3}] settings.alert_zero_production 0
+execute as @a[scores={settings.alert_zero_production=3..}] run tellraw @s [{"text":"🛠","color":"light_purple"},{"text":" Alert when zero production: ","color": "white"},{"text":"off","color": "red"}]
+scoreboard players set @a[scores={settings.alert_zero_production=3..}] settings.alert_zero_production 0
+execute as @a[scores={settings.alert_zero_production=..-1}] run tellraw @s [{"text":"🛠","color":"light_purple"},{"text":" Alert when zero production: ","color": "white"},{"text":"off","color": "red"}]
+scoreboard players set @a[scores={settings.alert_zero_production=..-1}] settings.alert_zero_production 0
 scoreboard players enable @a settings.alert_zero_production
+
+execute as @a[scores={settings.menu_click_sound=1}] run tellraw @s [{"text":"🛠","color":"light_purple"},{"text":" Menu click sound: ","color": "white"},{"text":"off","color": "red"}]
+scoreboard players add @a[scores={settings.menu_click_sound=1}] settings.menu_click_sound 1
+execute as @a[scores={settings.menu_click_sound=3..}] run tellraw @s [{"text":"🛠","color":"light_purple"},{"text":" Menu click sound: ","color": "white"},{"text":"on","color": "green"}]
+scoreboard players set @a[scores={settings.menu_click_sound=3..}] settings.menu_click_sound 0
+execute as @a[scores={settings.menu_click_sound=..-1}] run tellraw @s [{"text":"🛠","color":"light_purple"},{"text":" Menu click sound: ","color": "white"},{"text":"on","color": "green"}]
+scoreboard players set @a[scores={settings.menu_click_sound=..-1}] settings.menu_click_sound 0
+scoreboard players enable @a settings.menu_click_sound
 
 execute as @a[scores={z_show_recipe=0..}] run function code:trigger/show_recipe
 scoreboard players set @a z_show_recipe -2

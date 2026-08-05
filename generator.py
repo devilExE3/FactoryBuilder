@@ -1436,10 +1436,10 @@ RECIPE_TYPE_DISPLAY = {
     "crafter_2": "fb:crafter_2",
     "crafter_3": "fb:crafter_3",
     "washer": "fb:water_cauldron",
-    "crusher": "smoker",
+    "crusher": "fb:crusher",
     "flashbaker": "fb:lava_cauldron",
-    "enchanter": "enchanting_table",
-    "sonic_zapper": "reinforced_deepslate",
+    "enchanter": "fb:enchanter",
+    "sonic_zapper": "fb:zapper",
     "explosive_furnace": "fb:explosive_furnace",
     "crafter_5": "fb:crafter_5",
 }
@@ -1473,11 +1473,6 @@ def number_to_human(n):
         n = n / 1000
         i += 1
     return str((n * 100 // 10) / 10) + " " + mul[i]
-
-def ellipse(str):
-    if len(str) <= 20:
-        return str
-    return str[:17] + "..."
 
 # templates
 TEMPLATE_LOOT_TABLE = ""
@@ -1912,7 +1907,7 @@ with open("fb.generator.json", "w") as f:
         gen_list["generator." + gen["id"]] = [gen["gen_block"]]
     f.write(json.dumps(gen_list))
 
-def render_recipe(f, super_recipe):
+def render_recipe(f, super_recipe, item_id):
     recipe_type = super_recipe["type"]
     recipe = super_recipe["recipe"]
     target_item = recipe["output" if "output" in recipe else "out"]
@@ -1924,14 +1919,14 @@ def render_recipe(f, super_recipe):
     if recipe_type == "generator":
         f.write('data modify block {0} {1} {2} CustomName set value {{"text":"-g","font":"fb:gui","color":"white"}}\n'.format(x,y,z))
         f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:13}}\n'\
-            .format(x,y,z,recipe["output"],recipe_id,ITEM_TRANSLATE[recipe["output"]], price=number_to_human(ITEMS[recipe["output"]])))
+            .format(x,y,z,recipe["output"],item_id,ITEM_TRANSLATE[recipe["output"]], price=number_to_human(ITEMS[recipe["output"]])))
         occupied_slots = [13]
     elif recipe_type == "cutter":
         f.write('data modify block {0} {1} {2} CustomName set value {{"text":"-0","font":"fb:gui","color":"white"}}\n'.format(x,y,z))
         f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:11}}\n'\
                 .format(x,y,z,recipe["input"],item_to_id[recipe["input"]],ITEM_TRANSLATE[recipe["input"]], price=number_to_human(ITEMS[recipe["input"]])))
         f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:{6},components:{{max_stack_size:64,custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:15}}\n'\
-                .format(x,y,z,recipe["output"],recipe_id,ITEM_TRANSLATE[recipe["output"]],recipe["mul"], price=number_to_human(ITEMS[recipe["output"]])))
+                .format(x,y,z,recipe["output"],item_id,ITEM_TRANSLATE[recipe["output"]],recipe["mul"], price=number_to_human(ITEMS[recipe["output"]])))
         occupied_slots = [11, 15]
         dependency(recipe["input"], recipe["output"])
     elif recipe_type == "furnace":
@@ -1939,7 +1934,7 @@ def render_recipe(f, super_recipe):
         f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:11}}\n'\
                 .format(x,y,z,recipe["input"],item_to_id[recipe["input"]],ITEM_TRANSLATE[recipe["input"]], price=number_to_human(ITEMS[recipe["input"]])))
         f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:15}}\n'\
-                .format(x,y,z,recipe["output"],recipe_id,ITEM_TRANSLATE[recipe["output"]], price=number_to_human(ITEMS[recipe["output"]])))
+                .format(x,y,z,recipe["output"],item_id,ITEM_TRANSLATE[recipe["output"]], price=number_to_human(ITEMS[recipe["output"]])))
         occupied_slots = [11, 15]
         dependency(recipe["input"], recipe["output"])
     elif recipe_type == "crafter_2":
@@ -1949,7 +1944,7 @@ def render_recipe(f, super_recipe):
         f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:20}}\n'\
                 .format(x,y,z,recipe["in2"],item_to_id[recipe["in2"]],ITEM_TRANSLATE[recipe["in2"]], price=number_to_human(ITEMS[recipe["in2"]])))
         f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:{6},components:{{max_stack_size:64,custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:15}}\n'\
-                .format(x,y,z,recipe["out"],recipe_id,ITEM_TRANSLATE[recipe["out"]],recipe["count"], price=number_to_human(ITEMS[recipe["out"]])))
+                .format(x,y,z,recipe["out"],item_id,ITEM_TRANSLATE[recipe["out"]],recipe["count"], price=number_to_human(ITEMS[recipe["out"]])))
         occupied_slots = [2, 20, 15]
         dependency(recipe["in1"], recipe["out"])
         dependency(recipe["in2"], recipe["out"])
@@ -1962,7 +1957,7 @@ def render_recipe(f, super_recipe):
         f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:10}}\n'\
                 .format(x,y,z,recipe["in3"],item_to_id[recipe["in3"]],ITEM_TRANSLATE[recipe["in3"]], price=number_to_human(ITEMS[recipe["in3"]])))
         f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:{6},components:{{max_stack_size:64,custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:15}}\n'\
-                .format(x,y,z,recipe["out"],recipe_id,ITEM_TRANSLATE[recipe["out"]],recipe["count"], price=number_to_human(ITEMS[recipe["out"]])))
+                .format(x,y,z,recipe["out"],item_id,ITEM_TRANSLATE[recipe["out"]],recipe["count"], price=number_to_human(ITEMS[recipe["out"]])))
         occupied_slots = [2, 20, 10, 15]
         dependency(recipe["in1"], recipe["out"])
         dependency(recipe["in2"], recipe["out"])
@@ -1980,7 +1975,7 @@ def render_recipe(f, super_recipe):
         f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:19}}\n'\
                 .format(x,y,z,recipe["in5"],item_to_id[recipe["in5"]],ITEM_TRANSLATE[recipe["in5"]], price=number_to_human(ITEMS[recipe["in5"]])))
         f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:{6},components:{{max_stack_size:64,custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:15}}\n'\
-                .format(x,y,z,recipe["out"],recipe_id,ITEM_TRANSLATE[recipe["out"]],recipe["count"], price=number_to_human(ITEMS[recipe["out"]])))
+                .format(x,y,z,recipe["out"],item_id,ITEM_TRANSLATE[recipe["out"]],recipe["count"], price=number_to_human(ITEMS[recipe["out"]])))
         occupied_slots = [1, 2, 19, 20, 10, 15]
         dependency(recipe["in1"], recipe["out"])
         dependency(recipe["in2"], recipe["out"])
@@ -1992,7 +1987,7 @@ def render_recipe(f, super_recipe):
         f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:11}}\n'\
                 .format(x,y,z,recipe["input"],item_to_id[recipe["input"]],ITEM_TRANSLATE[recipe["input"]], price=number_to_human(ITEMS[recipe["input"]])))
         f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:15}}\n'\
-                .format(x,y,z,recipe["output"],recipe_id,ITEM_TRANSLATE[recipe["output"]], price=number_to_human(ITEMS[recipe["output"]])))
+                .format(x,y,z,recipe["output"],item_id,ITEM_TRANSLATE[recipe["output"]], price=number_to_human(ITEMS[recipe["output"]])))
         occupied_slots = [11, 15]
         dependency(recipe["input"], recipe["output"])
     elif recipe_type == "crusher":
@@ -2002,7 +1997,7 @@ def render_recipe(f, super_recipe):
         f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:10}}\n'\
                 .format(x,y,z,recipe["side"],item_to_id[recipe["side"]],ITEM_TRANSLATE[recipe["side"]], price=number_to_human(ITEMS[recipe["side"]])))
         f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:{6},components:{{max_stack_size:64,custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:15}}\n'\
-                .format(x,y,z,recipe["out"],recipe_id,ITEM_TRANSLATE[recipe["out"]],recipe["count"], price=number_to_human(ITEMS[recipe["out"]])))
+                .format(x,y,z,recipe["out"],item_id,ITEM_TRANSLATE[recipe["out"]],recipe["count"], price=number_to_human(ITEMS[recipe["out"]])))
         occupied_slots = [3, 10, 15]
         dependency(recipe["side"], recipe["out"])
         dependency(recipe["top"], recipe["out"])
@@ -2011,7 +2006,7 @@ def render_recipe(f, super_recipe):
         f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:11}}\n'\
                 .format(x,y,z,recipe["input"],item_to_id[recipe["input"]],ITEM_TRANSLATE[recipe["input"]], price=number_to_human(ITEMS[recipe["input"]])))
         f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:15}}\n'\
-                .format(x,y,z,recipe["output"],recipe_id,ITEM_TRANSLATE[recipe["output"]], price=number_to_human(ITEMS[recipe["output"]])))
+                .format(x,y,z,recipe["output"],item_id,ITEM_TRANSLATE[recipe["output"]], price=number_to_human(ITEMS[recipe["output"]])))
         occupied_slots = [11, 15]
         dependency(recipe["input"], recipe["output"])
     elif recipe_type == "sonic_zapper":
@@ -2019,7 +2014,7 @@ def render_recipe(f, super_recipe):
         f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:11}}\n'\
                 .format(x,y,z,recipe["input"],item_to_id[recipe["input"]],ITEM_TRANSLATE[recipe["input"]], price=number_to_human(ITEMS[recipe["input"]])))
         f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:15}}\n'\
-                .format(x,y,z,recipe["output"],recipe_id,ITEM_TRANSLATE[recipe["output"]], price=number_to_human(ITEMS[recipe["output"]])))
+                .format(x,y,z,recipe["output"],item_id,ITEM_TRANSLATE[recipe["output"]], price=number_to_human(ITEMS[recipe["output"]])))
         occupied_slots = [11, 15]
         dependency(recipe["input"], recipe["output"])
     elif recipe_type == "enchanter":
@@ -2031,7 +2026,7 @@ def render_recipe(f, super_recipe):
         f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:10}}\n'\
                 .format(x,y,z,recipe["in3"],item_to_id[recipe["in3"]],ITEM_TRANSLATE[recipe["in3"]], price=number_to_human(ITEMS[recipe["in3"]])))
         f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:{6},components:{{max_stack_size:64,custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:15}}\n'\
-                .format(x,y,z,recipe["out"],recipe_id,ITEM_TRANSLATE[recipe["out"]],recipe["count"], price=number_to_human(ITEMS[recipe["out"]])))
+                .format(x,y,z,recipe["out"],item_id,ITEM_TRANSLATE[recipe["out"]],recipe["count"], price=number_to_human(ITEMS[recipe["out"]])))
         occupied_slots = [2, 10, 15, 20]
         dependency(recipe["in1"], recipe["out"])
         dependency(recipe["in2"], recipe["out"])
@@ -2041,7 +2036,7 @@ def render_recipe(f, super_recipe):
         f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:11}}\n'\
                 .format(x,y,z,recipe["input"],item_to_id[recipe["input"]],ITEM_TRANSLATE[recipe["input"]], price=number_to_human(ITEMS[recipe["input"]])))
         f.write('data modify block {0} {1} {2} Items append value {{id:"minecraft:{3}",count:1,components:{{custom_data:{{recipe:1b,recipe_id:{4}}},item_name:"{5}",lore:[{{"text":"${price}","color":"green","italic":false}}]}},Slot:15}}\n'\
-                .format(x,y,z,recipe["output"],recipe_id,ITEM_TRANSLATE[recipe["output"]], price=number_to_human(ITEMS[recipe["output"]])))
+                .format(x,y,z,recipe["output"],item_id,ITEM_TRANSLATE[recipe["output"]], price=number_to_human(ITEMS[recipe["output"]])))
         occupied_slots = [11, 15]
         dependency(recipe["input"], recipe["output"])
     # add alt recipes
@@ -2076,9 +2071,9 @@ def dependency(dep, result):
 with open("data/code/function/jei/barrels.mcfunction", "w") as f:
     for item in ITEMS:
         recipe_id = item_to_id[item]
-        render_recipe(f, item_recipes[item]["primary"])
+        render_recipe(f, item_recipes[item]["primary"], recipe_id)
         for alt in item_recipes[item]["alt"]:
-            render_recipe(f, alt)
+            render_recipe(f, alt, recipe_id)
 
     # recipe rJEI
     # start at 29999984 300 0

@@ -121,7 +121,7 @@ data modify block 29999987 319 0 Items append value {id:"jigsaw",count:1,compone
 setblock 29999992 316 14 barrel
 data remove block 29999992 316 14 Items
 data modify block 29999992 316 14 CustomName set value {"text":"-g","font":"fb:gui","color":"white"}
-data modify block 29999992 316 14 Items append value {id:"minecraft:stick",count:1,components:{custom_data:{recipe:1b,recipe_id:1000},item_name:"Stick",lore:[{"text":"$1","color":"green","italic":false}]},Slot:13}
+data modify block 29999992 316 14 Items append value {id:"minecraft:stick",count:1,components:{custom_data:{recipe:1b,recipe_id:3},item_name:"Stick",lore:[{"text":"$1","color":"green","italic":false}]},Slot:13}
 data modify block 29999992 316 14 Items append value {id:"minecraft:crafting_table",count:1,components:{custom_data:{recipe:1b,recipe_id:3},item_name:"Block Cutter",lore:[{"text":"Alternative recipe","color":"gray"}],item_model:"stonecutter"},Slot:8}
 data modify block 29999992 316 14 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:18}
 data modify block 29999992 316 14 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:0}
@@ -722,7 +722,7 @@ setblock 29999993 316 14 barrel
 data remove block 29999993 316 14 Items
 data modify block 29999993 316 14 CustomName set value {"text":"-9","font":"fb:gui","color":"white"}
 data modify block 29999993 316 14 Items append value {id:"minecraft:birch_wood",count:1,components:{custom_data:{recipe:1b,recipe_id:13},item_name:"Birch Wood",lore:[{"text":"$1.3 M","color":"green","italic":false}]},Slot:11}
-data modify block 29999993 316 14 Items append value {id:"minecraft:coal_block",count:1,components:{custom_data:{recipe:1b,recipe_id:1001},item_name:"Coal Block",lore:[{"text":"$5.0 M","color":"green","italic":false}]},Slot:15}
+data modify block 29999993 316 14 Items append value {id:"minecraft:coal_block",count:1,components:{custom_data:{recipe:1b,recipe_id:22},item_name:"Coal Block",lore:[{"text":"$5.0 M","color":"green","italic":false}]},Slot:15}
 data modify block 29999993 316 14 Items append value {id:"minecraft:crafting_table",count:1,components:{custom_data:{recipe:1b,recipe_id:1002},item_name:"Farm",lore:[{"text":"Alternative recipe","color":"gray"}],item_model:"trial_spawner"},Slot:8}
 data modify block 29999993 316 14 Items append value {id:"minecraft:crafting_table",count:1,components:{custom_data:{recipe:1b,recipe_id:22},item_name:"Crafter (2 inputs)",lore:[{"text":"Alternative recipe","color":"gray"}],item_model:"fb:crafter_2"},Slot:17}
 data modify block 29999993 316 14 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:18}
@@ -751,7 +751,7 @@ data modify block 29999993 316 14 Items append value {id:"jigsaw",count:1,compon
 setblock 29999994 316 14 barrel
 data remove block 29999994 316 14 Items
 data modify block 29999994 316 14 CustomName set value {"text":"-g","font":"fb:gui","color":"white"}
-data modify block 29999994 316 14 Items append value {id:"minecraft:coal_block",count:1,components:{custom_data:{recipe:1b,recipe_id:1002},item_name:"Coal Block",lore:[{"text":"$5.0 M","color":"green","italic":false}]},Slot:13}
+data modify block 29999994 316 14 Items append value {id:"minecraft:coal_block",count:1,components:{custom_data:{recipe:1b,recipe_id:22},item_name:"Coal Block",lore:[{"text":"$5.0 M","color":"green","italic":false}]},Slot:13}
 data modify block 29999994 316 14 Items append value {id:"minecraft:crafting_table",count:1,components:{custom_data:{recipe:1b,recipe_id:1001},item_name:"Explosive Furnace",lore:[{"text":"Alternative recipe","color":"gray"}],item_model:"fb:explosive_furnace"},Slot:8}
 data modify block 29999994 316 14 Items append value {id:"minecraft:crafting_table",count:1,components:{custom_data:{recipe:1b,recipe_id:22},item_name:"Crafter (2 inputs)",lore:[{"text":"Alternative recipe","color":"gray"}],item_model:"fb:crafter_2"},Slot:17}
 data modify block 29999994 316 14 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:18}
@@ -871,7 +871,7 @@ data modify block 29999993 319 1 Items append value {id:"jigsaw",count:1,compone
 setblock 29999995 316 14 barrel
 data remove block 29999995 316 14 Items
 data modify block 29999995 316 14 CustomName set value {"text":"-g","font":"fb:gui","color":"white"}
-data modify block 29999995 316 14 Items append value {id:"minecraft:anvil",count:1,components:{custom_data:{recipe:1b,recipe_id:1003},item_name:"Anvil",lore:[{"text":"$5.0 M","color":"green","italic":false}]},Slot:13}
+data modify block 29999995 316 14 Items append value {id:"minecraft:anvil",count:1,components:{custom_data:{recipe:1b,recipe_id:25},item_name:"Anvil",lore:[{"text":"$5.0 M","color":"green","italic":false}]},Slot:13}
 data modify block 29999995 316 14 Items append value {id:"minecraft:crafting_table",count:1,components:{custom_data:{recipe:1b,recipe_id:25},item_name:"Crafter (3 inputs)",lore:[{"text":"Alternative recipe","color":"gray"}],item_model:"fb:crafter_3"},Slot:8}
 data modify block 29999995 316 14 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:18}
 data modify block 29999995 316 14 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:0}
@@ -1111,7 +1111,7 @@ data modify block 29999984 319 2 Items append value {id:"jigsaw",count:1,compone
 setblock 29999996 316 14 barrel
 data remove block 29999996 316 14 Items
 data modify block 29999996 316 14 CustomName set value {"text":"-g","font":"fb:gui","color":"white"}
-data modify block 29999996 316 14 Items append value {id:"minecraft:raw_gold",count:1,components:{custom_data:{recipe:1b,recipe_id:1004},item_name:"Gold Ore",lore:[{"text":"$30.0 M","color":"green","italic":false}]},Slot:13}
+data modify block 29999996 316 14 Items append value {id:"minecraft:raw_gold",count:1,components:{custom_data:{recipe:1b,recipe_id:32},item_name:"Gold Ore",lore:[{"text":"$30.0 M","color":"green","italic":false}]},Slot:13}
 data modify block 29999996 316 14 Items append value {id:"minecraft:crafting_table",count:1,components:{custom_data:{recipe:1b,recipe_id:32},item_name:"Washer",lore:[{"text":"Alternative recipe","color":"gray"}],item_model:"fb:water_cauldron"},Slot:8}
 data modify block 29999996 316 14 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:18}
 data modify block 29999996 316 14 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:0}
@@ -1172,7 +1172,7 @@ setblock 29999997 316 14 barrel
 data remove block 29999997 316 14 Items
 data modify block 29999997 316 14 CustomName set value {"text":"-9","font":"fb:gui","color":"white"}
 data modify block 29999997 316 14 Items append value {id:"minecraft:raw_gold",count:1,components:{custom_data:{recipe:1b,recipe_id:32},item_name:"Gold Ore",lore:[{"text":"$30.0 M","color":"green","italic":false}]},Slot:11}
-data modify block 29999997 316 14 Items append value {id:"minecraft:gold_ingot",count:1,components:{custom_data:{recipe:1b,recipe_id:1005},item_name:"Gold Ingot",lore:[{"text":"$200.0 M","color":"green","italic":false}]},Slot:15}
+data modify block 29999997 316 14 Items append value {id:"minecraft:gold_ingot",count:1,components:{custom_data:{recipe:1b,recipe_id:33},item_name:"Gold Ingot",lore:[{"text":"$200.0 M","color":"green","italic":false}]},Slot:15}
 data modify block 29999997 316 14 Items append value {id:"minecraft:crafting_table",count:1,components:{custom_data:{recipe:1b,recipe_id:33},item_name:"Crafter (2 inputs)",lore:[{"text":"Alternative recipe","color":"gray"}],item_model:"fb:crafter_2"},Slot:8}
 data modify block 29999997 316 14 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:18}
 data modify block 29999997 316 14 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:0}
@@ -1351,7 +1351,7 @@ data modify block 29999990 319 2 Items append value {id:"jigsaw",count:1,compone
 setblock 29999998 316 14 barrel
 data remove block 29999998 316 14 Items
 data modify block 29999998 316 14 CustomName set value {"text":"-g","font":"fb:gui","color":"white"}
-data modify block 29999998 316 14 Items append value {id:"minecraft:purpur_block",count:1,components:{custom_data:{recipe:1b,recipe_id:1006},item_name:"Unchiseled Purpur",lore:[{"text":"$50.0 B","color":"green","italic":false}]},Slot:13}
+data modify block 29999998 316 14 Items append value {id:"minecraft:purpur_block",count:1,components:{custom_data:{recipe:1b,recipe_id:38},item_name:"Unchiseled Purpur",lore:[{"text":"$50.0 B","color":"green","italic":false}]},Slot:13}
 data modify block 29999998 316 14 Items append value {id:"minecraft:crafting_table",count:1,components:{custom_data:{recipe:1b,recipe_id:38},item_name:"Crafter (3 inputs)",lore:[{"text":"Alternative recipe","color":"gray"}],item_model:"fb:crafter_3"},Slot:8}
 data modify block 29999998 316 14 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:18}
 data modify block 29999998 316 14 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:0}
@@ -1411,8 +1411,8 @@ data modify block 29999991 319 2 Items append value {id:"jigsaw",count:1,compone
 setblock 29999999 316 14 barrel
 data remove block 29999999 316 14 Items
 data modify block 29999999 316 14 CustomName set value {"text":"-g","font":"fb:gui","color":"white"}
-data modify block 29999999 316 14 Items append value {id:"minecraft:purpur_pillar",count:1,components:{custom_data:{recipe:1b,recipe_id:1007},item_name:"Chiseled Purpur",lore:[{"text":"$300.0 B","color":"green","italic":false}]},Slot:13}
-data modify block 29999999 316 14 Items append value {id:"minecraft:crafting_table",count:1,components:{custom_data:{recipe:1b,recipe_id:39},item_name:"Sonic Zapper",lore:[{"text":"Alternative recipe","color":"gray"}],item_model:"reinforced_deepslate"},Slot:8}
+data modify block 29999999 316 14 Items append value {id:"minecraft:purpur_pillar",count:1,components:{custom_data:{recipe:1b,recipe_id:39},item_name:"Chiseled Purpur",lore:[{"text":"$300.0 B","color":"green","italic":false}]},Slot:13}
+data modify block 29999999 316 14 Items append value {id:"minecraft:crafting_table",count:1,components:{custom_data:{recipe:1b,recipe_id:39},item_name:"Sonic Zapper",lore:[{"text":"Alternative recipe","color":"gray"}],item_model:"fb:zapper"},Slot:8}
 data modify block 29999999 316 14 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:18}
 data modify block 29999999 316 14 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:0}
 data modify block 29999999 316 14 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:1}
@@ -1471,8 +1471,8 @@ data modify block 29999992 319 2 Items append value {id:"jigsaw",count:1,compone
 setblock 29999984 316 15 barrel
 data remove block 29999984 316 15 Items
 data modify block 29999984 316 15 CustomName set value {"text":"-g","font":"fb:gui","color":"white"}
-data modify block 29999984 316 15 Items append value {id:"minecraft:soul_sand",count:1,components:{custom_data:{recipe:1b,recipe_id:1008},item_name:"Ender-Infused Soil",lore:[{"text":"$1.0 T","color":"green","italic":false}]},Slot:13}
-data modify block 29999984 316 15 Items append value {id:"minecraft:crafting_table",count:1,components:{custom_data:{recipe:1b,recipe_id:40},item_name:"Enchanter",lore:[{"text":"Alternative recipe","color":"gray"}],item_model:"enchanting_table"},Slot:8}
+data modify block 29999984 316 15 Items append value {id:"minecraft:soul_sand",count:1,components:{custom_data:{recipe:1b,recipe_id:40},item_name:"Ender-Infused Soil",lore:[{"text":"$1.0 T","color":"green","italic":false}]},Slot:13}
+data modify block 29999984 316 15 Items append value {id:"minecraft:crafting_table",count:1,components:{custom_data:{recipe:1b,recipe_id:40},item_name:"Enchanter",lore:[{"text":"Alternative recipe","color":"gray"}],item_model:"fb:enchanter"},Slot:8}
 data modify block 29999984 316 15 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:18}
 data modify block 29999984 316 15 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:0}
 data modify block 29999984 316 15 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:1}
@@ -1591,7 +1591,7 @@ data modify block 29999995 319 2 Items append value {id:"jigsaw",count:1,compone
 setblock 29999985 316 15 barrel
 data remove block 29999985 316 15 Items
 data modify block 29999985 316 15 CustomName set value {"text":"-g","font":"fb:gui","color":"white"}
-data modify block 29999985 316 15 Items append value {id:"minecraft:ender_pearl",count:1,components:{custom_data:{recipe:1b,recipe_id:1009},item_name:"Ender Pearl",lore:[{"text":"$1.5 T","color":"green","italic":false}]},Slot:13}
+data modify block 29999985 316 15 Items append value {id:"minecraft:ender_pearl",count:1,components:{custom_data:{recipe:1b,recipe_id:43},item_name:"Ender Pearl",lore:[{"text":"$1.5 T","color":"green","italic":false}]},Slot:13}
 data modify block 29999985 316 15 Items append value {id:"minecraft:crafting_table",count:1,components:{custom_data:{recipe:1b,recipe_id:43},item_name:"Block Cutter",lore:[{"text":"Alternative recipe","color":"gray"}],item_model:"stonecutter"},Slot:8}
 data modify block 29999985 316 15 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:18}
 data modify block 29999985 316 15 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:0}
@@ -2041,7 +2041,7 @@ data modify block 29999993 319 3 Items append value {id:"jigsaw",count:1,compone
 setblock 29999986 316 15 barrel
 data remove block 29999986 316 15 Items
 data modify block 29999986 316 15 CustomName set value {"text":"-g","font":"fb:gui","color":"white"}
-data modify block 29999986 316 15 Items append value {id:"minecraft:quartz",count:1,components:{custom_data:{recipe:1b,recipe_id:1010},item_name:"Quartz",lore:[{"text":"$50.0 B","color":"green","italic":false}]},Slot:13}
+data modify block 29999986 316 15 Items append value {id:"minecraft:quartz",count:1,components:{custom_data:{recipe:1b,recipe_id:57},item_name:"Quartz",lore:[{"text":"$50.0 B","color":"green","italic":false}]},Slot:13}
 data modify block 29999986 316 15 Items append value {id:"minecraft:crafting_table",count:1,components:{custom_data:{recipe:1b,recipe_id:57},item_name:"Block Cutter",lore:[{"text":"Alternative recipe","color":"gray"}],item_model:"stonecutter"},Slot:8}
 data modify block 29999986 316 15 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:18}
 data modify block 29999986 316 15 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:0}
@@ -2371,7 +2371,7 @@ data modify block 29999987 319 4 Items append value {id:"jigsaw",count:1,compone
 setblock 29999987 316 15 barrel
 data remove block 29999987 316 15 Items
 data modify block 29999987 316 15 CustomName set value {"text":"-g","font":"fb:gui","color":"white"}
-data modify block 29999987 316 15 Items append value {id:"minecraft:glass",count:1,components:{custom_data:{recipe:1b,recipe_id:1011},item_name:"Clean Glass",lore:[{"text":"$12.5 B","color":"green","italic":false}]},Slot:13}
+data modify block 29999987 316 15 Items append value {id:"minecraft:glass",count:1,components:{custom_data:{recipe:1b,recipe_id:67},item_name:"Clean Glass",lore:[{"text":"$12.5 B","color":"green","italic":false}]},Slot:13}
 data modify block 29999987 316 15 Items append value {id:"minecraft:crafting_table",count:1,components:{custom_data:{recipe:1b,recipe_id:67},item_name:"Washer",lore:[{"text":"Alternative recipe","color":"gray"}],item_model:"fb:water_cauldron"},Slot:8}
 data modify block 29999987 316 15 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:18}
 data modify block 29999987 316 15 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:0}
@@ -2461,8 +2461,8 @@ data modify block 29999989 319 4 Items append value {id:"jigsaw",count:1,compone
 setblock 29999988 316 15 barrel
 data remove block 29999988 316 15 Items
 data modify block 29999988 316 15 CustomName set value {"text":"-g","font":"fb:gui","color":"white"}
-data modify block 29999988 316 15 Items append value {id:"minecraft:blaze_rod",count:1,components:{custom_data:{recipe:1b,recipe_id:1012},item_name:"Blaze Rod",lore:[{"text":"$200.0 B","color":"green","italic":false}]},Slot:13}
-data modify block 29999988 316 15 Items append value {id:"minecraft:crafting_table",count:1,components:{custom_data:{recipe:1b,recipe_id:69},item_name:"Sonic Zapper",lore:[{"text":"Alternative recipe","color":"gray"}],item_model:"reinforced_deepslate"},Slot:8}
+data modify block 29999988 316 15 Items append value {id:"minecraft:blaze_rod",count:1,components:{custom_data:{recipe:1b,recipe_id:69},item_name:"Blaze Rod",lore:[{"text":"$200.0 B","color":"green","italic":false}]},Slot:13}
+data modify block 29999988 316 15 Items append value {id:"minecraft:crafting_table",count:1,components:{custom_data:{recipe:1b,recipe_id:69},item_name:"Sonic Zapper",lore:[{"text":"Alternative recipe","color":"gray"}],item_model:"fb:zapper"},Slot:8}
 data modify block 29999988 316 15 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:18}
 data modify block 29999988 316 15 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:0}
 data modify block 29999988 316 15 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:1}
@@ -2821,8 +2821,8 @@ data modify block 29999984 319 5 Items append value {id:"jigsaw",count:1,compone
 setblock 29999989 316 15 barrel
 data remove block 29999989 316 15 Items
 data modify block 29999989 316 15 CustomName set value {"text":"-g","font":"fb:gui","color":"white"}
-data modify block 29999989 316 15 Items append value {id:"minecraft:obsidian",count:1,components:{custom_data:{recipe:1b,recipe_id:1013},item_name:"Obsidian",lore:[{"text":"$30.0 B","color":"green","italic":false}]},Slot:13}
-data modify block 29999989 316 15 Items append value {id:"minecraft:crafting_table",count:1,components:{custom_data:{recipe:1b,recipe_id:80},item_name:"Sonic Zapper",lore:[{"text":"Alternative recipe","color":"gray"}],item_model:"reinforced_deepslate"},Slot:8}
+data modify block 29999989 316 15 Items append value {id:"minecraft:obsidian",count:1,components:{custom_data:{recipe:1b,recipe_id:80},item_name:"Obsidian",lore:[{"text":"$30.0 B","color":"green","italic":false}]},Slot:13}
+data modify block 29999989 316 15 Items append value {id:"minecraft:crafting_table",count:1,components:{custom_data:{recipe:1b,recipe_id:80},item_name:"Sonic Zapper",lore:[{"text":"Alternative recipe","color":"gray"}],item_model:"fb:zapper"},Slot:8}
 data modify block 29999989 316 15 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:18}
 data modify block 29999989 316 15 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:0}
 data modify block 29999989 316 15 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:1}
@@ -2941,7 +2941,7 @@ data modify block 29999987 319 5 Items append value {id:"jigsaw",count:1,compone
 setblock 29999990 316 15 barrel
 data remove block 29999990 316 15 Items
 data modify block 29999990 316 15 CustomName set value {"text":"-g","font":"fb:gui","color":"white"}
-data modify block 29999990 316 15 Items append value {id:"minecraft:iron_axe",count:1,components:{custom_data:{recipe:1b,recipe_id:1014},item_name:"Iron Axe",lore:[{"text":"$4.5 M","color":"green","italic":false}]},Slot:13}
+data modify block 29999990 316 15 Items append value {id:"minecraft:iron_axe",count:1,components:{custom_data:{recipe:1b,recipe_id:83},item_name:"Iron Axe",lore:[{"text":"$4.5 M","color":"green","italic":false}]},Slot:13}
 data modify block 29999990 316 15 Items append value {id:"minecraft:crafting_table",count:1,components:{custom_data:{recipe:1b,recipe_id:83},item_name:"Crafter (3 inputs)",lore:[{"text":"Alternative recipe","color":"gray"}],item_model:"fb:crafter_3"},Slot:8}
 data modify block 29999990 316 15 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:18}
 data modify block 29999990 316 15 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:0}
@@ -3091,7 +3091,7 @@ data modify block 29999991 319 5 Items append value {id:"jigsaw",count:1,compone
 setblock 29999991 316 15 barrel
 data remove block 29999991 316 15 Items
 data modify block 29999991 316 15 CustomName set value {"text":"-g","font":"fb:gui","color":"white"}
-data modify block 29999991 316 15 Items append value {id:"minecraft:spruce_planks",count:1,components:{custom_data:{recipe:1b,recipe_id:1015},item_name:"Spruce Planks",lore:[{"text":"$150.0 T","color":"green","italic":false}]},Slot:13}
+data modify block 29999991 316 15 Items append value {id:"minecraft:spruce_planks",count:1,components:{custom_data:{recipe:1b,recipe_id:87},item_name:"Spruce Planks",lore:[{"text":"$150.0 T","color":"green","italic":false}]},Slot:13}
 data modify block 29999991 316 15 Items append value {id:"minecraft:crafting_table",count:1,components:{custom_data:{recipe:1b,recipe_id:87},item_name:"Crafter (2 inputs)",lore:[{"text":"Alternative recipe","color":"gray"}],item_model:"fb:crafter_2"},Slot:8}
 data modify block 29999991 316 15 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:18}
 data modify block 29999991 316 15 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:0}
@@ -3991,8 +3991,8 @@ data modify block 29999988 319 7 Items append value {id:"jigsaw",count:1,compone
 setblock 29999992 316 15 barrel
 data remove block 29999992 316 15 Items
 data modify block 29999992 316 15 CustomName set value {"text":"-g","font":"fb:gui","color":"white"}
-data modify block 29999992 316 15 Items append value {id:"minecraft:gray_concrete_powder",count:1,components:{custom_data:{recipe:1b,recipe_id:1016},item_name:"Antimatter",lore:[{"text":"$15.0 B","color":"green","italic":false}]},Slot:13}
-data modify block 29999992 316 15 Items append value {id:"minecraft:crafting_table",count:1,components:{custom_data:{recipe:1b,recipe_id:116},item_name:"Enchanter",lore:[{"text":"Alternative recipe","color":"gray"}],item_model:"enchanting_table"},Slot:8}
+data modify block 29999992 316 15 Items append value {id:"minecraft:gray_concrete_powder",count:1,components:{custom_data:{recipe:1b,recipe_id:116},item_name:"Antimatter",lore:[{"text":"$15.0 B","color":"green","italic":false}]},Slot:13}
+data modify block 29999992 316 15 Items append value {id:"minecraft:crafting_table",count:1,components:{custom_data:{recipe:1b,recipe_id:116},item_name:"Enchanter",lore:[{"text":"Alternative recipe","color":"gray"}],item_model:"fb:enchanter"},Slot:8}
 data modify block 29999992 316 15 Items append value {id:"book",count:1,components:{item_name:"Back to list",custom_data:{recipe:1b,recipe_id:2000}},Slot:18}
 data modify block 29999992 316 15 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:0}
 data modify block 29999992 316 15 Items append value {id:"jigsaw",count:1,components:{tooltip_display:{hide_tooltip:true},item_model:"air"},Slot:1}

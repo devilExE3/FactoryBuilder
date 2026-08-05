@@ -1,4 +1,4 @@
-execute at @s run playsound ui.button.click master @s
+execute as @s[scores={settings.menu_click_sound=0}] at @s run playsound ui.button.click master @s
 execute store result score #recipe_id math run data get entity @s Inventory[{components:{"minecraft:custom_data":{recipe:1b}}}].components."minecraft:custom_data".recipe_id
 clear @s *[custom_data~{recipe:1b}]
 scoreboard players operation #x math = #recipe_id math
