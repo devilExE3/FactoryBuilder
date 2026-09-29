@@ -5,8 +5,8 @@
         "entries": [{
             "type": "item",
             "name": "pig_spawn_egg",
-            "functions": [{
-                "function": "set_components",
+            "modifier": [{
+                "type": "set_components",
                 "components": {
                     "custom_name": {
                         "text": "Spruce Farm",

@@ -1,7 +1,7 @@
 {
-    "condition": "inverted",
+    "type": "inverted",
     "term": {
-        "condition": "value_check",
+        "type": "int_value_check",
         "value": {
             "type": "score",
             "target": {
@@ -10,7 +10,7 @@
             },
             "score": "count"
         },
-        "range": {
+        "test": {
             "min": {
                 "type": "score",
                 "target": "this",
